@@ -41,7 +41,10 @@ import {
 } from "@/src/components/ui/tooltip";
 import { getWords } from "@/src/lib/utils";
 
-import { deleteTaskAction, updateTaskAction } from "@/action/project-action";
+import {
+  deleteTaskAction,
+  updateTaskAction,
+} from "@/src/action/project-action";
 import AssignMembers from "./common/assign-members";
 import DeleteConfirmationDialog from "@/src/components/delete-confirmation-dialog";
 import { cn } from "@/src/lib/utils";

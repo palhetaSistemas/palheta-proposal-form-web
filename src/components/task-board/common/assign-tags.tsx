@@ -10,7 +10,7 @@ import {
   CommandInput,
   CommandItem,
 } from "@/src/components/ui/command";
-import { updateTaskAction } from "@/action/project-action";
+import { updateTaskAction } from "@/src/action/project-action";
 import { Input } from "@/src/components/ui/input";
 import { CustomPopover } from "@/src/components/ui/popover";
 import { Badge } from "@/src/components/ui/badge";

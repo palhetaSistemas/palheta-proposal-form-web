@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Button } from "@/src/components/ui/button";
 import { formatDate } from "@/src/lib/utils";
 
-import { postCommentAction } from "@/action/project-action";
+import { postCommentAction } from "@/src/action/project-action";
 import avatar from "@/public/images/avatar/avatar-7.jpg";
 import { SendHorizontal } from "lucide-react";
 import { type Task as TaskType } from "@/src/app/api/tasks/data";

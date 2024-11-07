@@ -85,7 +85,7 @@ import {
   deleteTaskAction,
   updateTaskAction,
   addTaskAction,
-} from "@/action/project-action";
+} from "@/src/action/project-action";
 import DeleteConfirmationDialog from "@/src/components/delete-confirmation-dialog";
 import { type Task as TaskType } from "@/src/app/api/tasks/data";
 import { type Board as BoardType } from "@/src/app/api/boards/data";

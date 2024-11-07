@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Button } from "@/src/components/ui/button";
 import { Checkbox } from "@/src/components/ui/checkbox";
 import { Icon } from "@iconify/react";
-import { updateTaskAction } from "@/action/project-action";
+import { updateTaskAction } from "@/src/action/project-action";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";

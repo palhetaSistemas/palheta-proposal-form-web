@@ -21,7 +21,7 @@ import { Button } from "@/src/components/ui/button";
 import { cn } from "@/src/lib/utils";
 import { Icon } from "@iconify/react";
 
-import { deleteBoardAction } from "@/action/project-action";
+import { deleteBoardAction } from "@/src/action/project-action";
 import DeleteConfirmationDialog from "@/src/components/delete-confirmation-dialog";
 
 // dnd

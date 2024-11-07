@@ -16,7 +16,7 @@ import {
   CardHeader,
   CardFooter,
 } from "@/src/components/ui/card";
-import { deleteProjectAction } from "@/action/project-action";
+import { deleteProjectAction } from "@/src/action/project-action";
 import { Button } from "@/src/components/ui/button";
 import { Progress } from "@/src/components/ui/progress";
 import {

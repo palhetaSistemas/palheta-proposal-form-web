@@ -30,7 +30,7 @@ import {
   AddEvent,
   deleteEventAction,
   updateEventAction,
-} from "@/action/calendar-action";
+} from "@/src/action/calendar-action";
 import toast from "react-hot-toast";
 import DeleteConfirmationDialog from "@/src/components/delete-confirmation-dialog";
 import { ScrollArea } from "@/src/components/ui/scroll-area";

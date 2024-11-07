@@ -8,7 +8,7 @@ import { z } from "zod";
 import { cn } from "@/src/lib/utils";
 import { useForm, Controller } from "react-hook-form";
 
-import { addBoardAction, editBoardAction } from "@/action/project-action";
+import { addBoardAction, editBoardAction } from "@/src/action/project-action";
 import {
   Dialog,
   DialogContent,

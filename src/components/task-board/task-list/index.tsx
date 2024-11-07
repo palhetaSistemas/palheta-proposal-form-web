@@ -12,7 +12,7 @@ import {
   CollapsibleTrigger,
 } from "@/src/components/ui/collapsible";
 import { ChevronDown, Plus, Trash2, Minus } from "lucide-react";
-import { deleteBoardAction } from "@/action/project-action";
+import { deleteBoardAction } from "@/src/action/project-action";
 import DeleteConfirmationDialog from "@/src/components/delete-confirmation-dialog";
 import { Icon } from "@iconify/react";
 import { cn } from "@/src/lib/utils";

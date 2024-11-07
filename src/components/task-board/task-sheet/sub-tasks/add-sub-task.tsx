@@ -8,7 +8,7 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { cn, formatDate } from "@/src/lib/utils";
 import { toast } from "react-hot-toast";
-import { addSubTaskAction } from "@/action/project-action";
+import { addSubTaskAction } from "@/src/action/project-action";
 const schema = z.object({
   title: z.string().min(2, { message: "title lagbe re vai ." }),
 });
