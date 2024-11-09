@@ -20,37 +20,45 @@ export function FilterFixedData() {
   return (
     <div className="mt-10">
       <div className="flex w-full flex-col items-center gap-4 lg:flex-row ">
-        <div className="relative flex h-full w-full flex-col overflow-hidden rounded-3xl bg-gradient-to-r from-primary-500 via-[#000] to-primary-500 p-6 lg:h-52 xl:h-50 xl:w-1/2">
+        <div className="relative flex h-full w-full flex-col overflow-hidden rounded-3xl bg-gradient-to-r from-primary-500 via-[#000] to-primary-500 p-6 lg:h-48 xl:h-48 xl:w-1/2">
           <div className="absolute -top-20 left-2/3 h-40 w-40 rounded-full bg-primary-500 opacity-50" />
           <div className="z-10 flex w-full flex-col items-center justify-between lg:flex-row">
-            <div className="gap-2 flex flex-col">
+            <div className="gap-2 flex flex-col w-full">
               <div>
-                <span className="font-semibold text-2xl">
+                <span className="font-semibold text-base lg:text-xl">
                   Nome da Fazenda:{" "}
                 </span>
-                <span className="text-xl"> Fazenda do Zé</span>
+                <span className="text:sm lg:text-lg"> Fazenda do Zé</span>
               </div>
               <div>
-                <span className="font-semibold text-2xl">Localização: </span>
-                <span className="text-xl"> Sinop - MT</span>
+                <span className="font-semibold text-base lg:text-xl">
+                  Localização:{" "}
+                </span>
+                <span className="text:sm lg:text-lg"> Sinop - MT</span>
               </div>
               <div>
-                <span className="font-semibold text-2xl">
+                <span className="font-semibold text-base lg:text-xl">
                   Nome da Fazenda:{" "}
                 </span>
-                <span className="text-xl"> Fazenda do Zé</span>
+                <span className="text:sm lg:text-lg"> Fazenda do Zé</span>
               </div>
               <div>
-                <span className="font-semibold text-2xl">Colaboradores: </span>
-                <span className="text-xl"> 15</span>
+                <span className="font-semibold text-base lg:text-xl">
+                  Colaboradores:{" "}
+                </span>
+                <span className="text:sm lg:text-lg"> 15</span>
               </div>
             </div>
             <div>
-              <Image src={LogoWhite} alt="Logo" className="w-56" />
+              <Image
+                src={LogoWhite}
+                alt="Logo"
+                className="w-56 opacity-10 lg:opacity-100 lg:block lg:relative absolute top-0 right-0 bottom-0 left-0 m-auto"
+              />
             </div>
           </div>
         </div>
-        <div className="relative flex w-full flex-col gap-14 rounded-3xl bg-[#202020] p-4 lg:h-52 xl:h-50 xl:w-1/4">
+        <div className="relative flex w-full flex-col gap-14 rounded-3xl bg-[#202020] p-4 lg:h-48 xl:h-50 xl:w-1/4">
           <span className="text-2xl">Quantidade de animais</span>
           <div className="flex flex-col">
             <div className="flex gap-2">
@@ -74,7 +82,7 @@ export function FilterFixedData() {
             className="absolute bottom-2 right-2 w-28 object-contain opacity-50"
           />
         </div>
-        <div className="relative flex h-full w-full flex-col overflow-hidden rounded-3xl lg:h-52 xl:h-50 xl:w-1/4">
+        <div className="relative flex h-full w-full flex-col overflow-hidden rounded-3xl lg:h-48 xl:h-50 xl:w-1/4">
           <div className="z-20 mx-auto flex h-full w-[90%] flex-col items-center justify-between py-2 text-center">
             <span className="text-lg font-medium leading-5 xl:text-2xl xl:leading-7">
               Ganhe Vantagem usando <br />{" "}
@@ -101,8 +109,8 @@ export function FilterFixedData() {
         </div>
       </div>
       <div className="flex mt-4 w-full flex-col gap-2 rounded-2xl bg-[#202020] p-4">
-        <div className="flex w-full flex-col items-center justify-between lg:flex-row">
-          <div className="flex flex-col">
+        <div className="flex w-full  items-center justify-between lg:flex-row">
+          <div className="flex flex-col ">
             <span className="font-semibold">
               Notícias recentes que podem te interessar
             </span>
@@ -111,15 +119,9 @@ export function FilterFixedData() {
               informações
             </span>
           </div>
-          <div className="flex items-center gap-4">
-            <button className="flex items-center justify-center rounded-3xl border border-primary bg-primary px-8 py-2 leading-4 transition duration-200 hover:border-primary hover:bg-transparent hover:font-semibold hover:text-primary-500">
-              Ver todos <br /> recentes
-            </button>
-            <button className="rounded-lg p-2 transition duration-200 hover:bg-primary">
-              <Flag />
-            </button>
-            <button className="rounded-lg p-2 transition duration-200 hover:bg-primary">
-              {/* <EllipsisVertical /> */}
+          <div className="justify-end gap-4 lg:block hidden">
+            <button className="flex items-center  justify-center rounded-3xl border border-primary bg-primary px-8 py-2 leading-4 transition duration-200 hover:border-primary hover:bg-transparent hover:font-semibold hover:text-primary-500">
+              Ver todos recentes
             </button>
           </div>
         </div>
@@ -231,6 +233,11 @@ export function FilterFixedData() {
                 LER RESUMO
               </button>
             </div>
+          </div>
+          <div className="justify-end gap-4 lg:hidden block">
+            <button className="flex items-center  justify-center rounded-3xl border border-primary bg-primary px-8 py-2 leading-4 transition duration-200 hover:border-primary hover:bg-transparent hover:font-semibold hover:text-primary-500">
+              Ver todos recentes
+            </button>
           </div>
         </div>
       </div>

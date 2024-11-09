@@ -51,7 +51,7 @@ const FarmHeader = ({ farm }: { farm: FarmProps }) => {
             <div className="text-sm text-default-600 w-full  mt-1">
               {farm.city + "-" + farm.state}
             </div>
-            <div className="mt-3 flex flex-wrap items-center gap-2 lg:gap-6">
+            <div className="mt-3 flex  items-center gap-2 lg:gap-6">
               <div className="border border-dashed border-default-300 rounded py-2.5 px-3 min-w-fit lg:min-w-[148px]">
                 <div className="text-sm font-medium text-default-500 capitalize">
                   Data de Início

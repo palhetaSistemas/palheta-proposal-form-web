@@ -16,6 +16,7 @@ import { RoundEfficiencyTabContent } from "./tabContent/roundEfficiencyTabConten
 import { MedicationAnalyticsTabContent } from "./tabContent/medicationAnalyticsTabContent";
 import { DeathAnalyticsTabContent } from "./tabContent/deathAnalyticsTabContent";
 import { TreatmentFinancialTabContent } from "./tabContent/treatmentFinancialTabContent";
+import { ScrollArea } from "@/src/components/ui/scroll-area";
 
 export function FilterSelector() {
   const tabs = [
@@ -71,29 +72,31 @@ export function FilterSelector() {
 
   return (
     <div className="w-full flex flex-col items-center justify-center mt-8 ">
-      <div>
-        <Tabs defaultValue="general">
-          <TabsList className="flex justify-center bg-primary-500 rounded-t-md rounded-b-none">
-            {tabs.map((tab) => (
-              <TabsTrigger key={tab.value} value={tab.value}>
-                <div className="flex items-center justify-center p-4">
-                  <tab.icon className="w-6 h-6" />
-                  <span className="ml-2 text-base">{tab.name}</span>
-                </div>
-              </TabsTrigger>
-            ))}
-          </TabsList>
-          <Image src={Background} alt="background" className="w-full" />
-          <div>
-            <FilterFixedData />
-            {tabs.map((tab) => (
-              <TabsContent key={tab.value} value={tab.value}>
-                <tab.component />
-              </TabsContent>
-            ))}
-          </div>
-        </Tabs>
-      </div>
+      <Tabs defaultValue="general" className=" w-[95vw]">
+        <div className="flex justify-center overflow-x-hidden bg-primary-500 rounded-t-md rounded-b-none">
+          <ScrollArea className="w-full" orientation="horizontal">
+            <TabsList className="bg-transparent w-full">
+              {tabs.map((tab) => (
+                <TabsTrigger key={tab.value} value={tab.value}>
+                  <div className="flex items-center justify-center p-4">
+                    <tab.icon className="w-6 h-6" />
+                    <span className="ml-2 text-base">{tab.name}</span>
+                  </div>
+                </TabsTrigger>
+              ))}
+            </TabsList>
+          </ScrollArea>
+        </div>
+        <Image src={Background} alt="background" className="w-full" />
+        <div>
+          <FilterFixedData />
+          {tabs.map((tab) => (
+            <TabsContent key={tab.value} value={tab.value}>
+              <tab.component />
+            </TabsContent>
+          ))}
+        </div>
+      </Tabs>
     </div>
   );
 }
