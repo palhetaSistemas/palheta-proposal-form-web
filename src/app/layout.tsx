@@ -9,7 +9,10 @@ import AuthProvider from "@/src/provider/auth.provider";
 import "flatpickr/dist/themes/light.css";
 import DirectionProvider from "@/src/provider/direction.provider";
 const inter = Inter({ subsets: ["latin"] });
+import moment from "moment";
+import "moment/locale/pt-br";
 
+moment.locale("pt-br");
 export const metadata = {
   title: {
     default: siteConfig.name,

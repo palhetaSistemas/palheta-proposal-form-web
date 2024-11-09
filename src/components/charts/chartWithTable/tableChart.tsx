@@ -6,16 +6,19 @@ import { useTheme } from "next-themes";
 import { themes } from "@/src/config/thems";
 import { getGridConfig } from "@/src/lib/appex-chart-options";
 
-const UsersDataChart = ({ height = 160 }) => {
+interface Props {
+  height?: number;
+  series: {
+    data: number[];
+  }[];
+  colors?: string[];
+  categories: string[];
+}
+
+const TableChart = ({ height = 160, series, categories, colors }: Props) => {
   const { theme: config, setTheme: setConfig } = useThemeStore();
   const { theme: mode } = useTheme();
   const theme = themes.find((theme) => theme.name === config);
-
-  const series = [
-    {
-      data: [400, 60, 448, 50, 540, 580, 690, 800],
-    },
-  ];
 
   const options: any = {
     chart: {
@@ -24,21 +27,13 @@ const UsersDataChart = ({ height = 160 }) => {
       },
     },
     dataLabels: {
-      enabled: false,
+      enabled: true,
     },
     stroke: {
       curve: "smooth",
       width: 0,
     },
-    colors: [
-      `hsl(${theme?.cssVars[mode === "dark" ? "dark" : "light"].primary})`,
-    ],
-    tooltip: {
-      theme: mode === "dark" ? "dark" : "light",
-    },
-    grid: getGridConfig(
-      `hsl(${theme?.cssVars[mode === "dark" ? "dark" : "light"].chartGird})`
-    ),
+    colors: colors || ["#8F1220"],
     yaxis: {
       show: false,
     },
@@ -46,10 +41,14 @@ const UsersDataChart = ({ height = 160 }) => {
       columnWidth: "100%",
       barHeight: "100%",
     },
-
+    grid: getGridConfig("#85888C"),
     xaxis: {
+      categories,
       labels: {
-        show: false,
+        show: true,
+        style: {
+          colors: mode === "dark" ? "#fff" : "#000",
+        },
       },
       axisBorder: {
         show: false,
@@ -81,4 +80,4 @@ const UsersDataChart = ({ height = 160 }) => {
   );
 };
 
-export default UsersDataChart;
+export default TableChart;

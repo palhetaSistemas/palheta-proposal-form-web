@@ -44,7 +44,7 @@ const config = {
 
         input: "hsl(var(--input) / <alpha-value>)",
         ring: "hsl(var(--ring) / <alpha-value>)",
-        background: "#171717",
+        background: "hsl(var(--background) / <alpha-value>)",
         foreground: "hsl(var(--foreground) / <alpha-value>)",
         primary: {
           50: "hsl(var(--primary-50) / <alpha-value>)",
@@ -52,7 +52,7 @@ const config = {
           200: "hsl(var(--primary-200) / <alpha-value>)",
           300: "hsl(var(--primary-300) / <alpha-value>)",
           400: "hsl(var(--primary-400) / <alpha-value>)",
-          500: "#8F1220",
+          500: "hsl(var(--primary-500) / <alpha-value>)",
           600: "hsl(var(--primary-600) / <alpha-value>)",
           700: "hsl(var(--primary-700) / <alpha-value>)",
           800: "hsl(var(--primary-800) / <alpha-value>)",

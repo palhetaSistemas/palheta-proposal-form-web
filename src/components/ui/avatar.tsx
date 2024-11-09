@@ -49,7 +49,7 @@ const AvatarGroup = React.forwardRef<HTMLDivElement, AvatarGroupProps>(
         {avatars.length > max && (
           <>
             {custom ? (
-              <div className=" inline-block">
+              <div className=" inline-block  ">
                 <span className="ltr:ml-5 rtl:mr-5 inline-block">
                   {" "}
                   +{avatars.length - max} more
@@ -58,7 +58,7 @@ const AvatarGroup = React.forwardRef<HTMLDivElement, AvatarGroupProps>(
             ) : (
               <Avatar
                 className={cn(
-                  "ring-1 ring-background ring-offset-[2px]  ring-offset-background ",
+                  "ring-1 ring-primary-500 ring-offset-[1px]  ring-offset-primary-500 ",
                   countClass
                 )}
               >

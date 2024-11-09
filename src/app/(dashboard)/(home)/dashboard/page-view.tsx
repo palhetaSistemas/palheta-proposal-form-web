@@ -10,7 +10,7 @@ import ReportsSnapshot from "./components/reports-snapshot";
 import CountryMap from "./components/country-map";
 import UserDeviceReport from "./components/user-device-report";
 import UserStats from "./components/user-stats-chart";
-import UsersStat from "./components/users-stat";
+import UsersStat from "../../../../components/charts/chartWithTable";
 import ReportsArea from "./components/reports-area";
 import DashboardSelect from "@/src/components/dasboard-select";
 import TopTen from "./components/top-ten";
@@ -36,9 +36,7 @@ const DashboardPageView = ({ trans }: DashboardPageViewProps) => {
         <div className="col-span-12 lg:col-span-8">
           <ReportsSnapshot />
         </div>
-        <div className="col-span-12 lg:col-span-4">
-          <UsersStat />
-        </div>
+        <div className="col-span-12 lg:col-span-4">{/* <UsersStat /> */}</div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

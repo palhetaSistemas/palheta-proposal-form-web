@@ -3,7 +3,8 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import logo from "@/public/images/logo/logo-white.png";
+import logoWhite from "@/public/images/logo/logo-white.png";
+import logoDark from "@/public/images/logo/logo-black.png";
 import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
 import { Label } from "@/src/components/ui/label";
@@ -15,11 +16,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
 import { Checkbox } from "@/src/components/ui/checkbox";
-import googleIcon from "@/public/images/auth/google.png";
-import facebook from "@/public/images/auth/facebook.png";
-import twitter from "@/public/images/auth/twitter.png";
-import GithubIcon from "@/public/images/auth/github.png";
-import { SiteLogo } from "@/src/components/svg";
 import { useMediaQuery } from "@/src/hooks/use-media-query";
 
 const schema = z.object({
@@ -78,21 +74,29 @@ const LogInForm = () => {
       <div className="w-full max-w-[600px] ">
         <Link href="/dashboard" className="inline-block">
           <Image
-            src={logo}
+            src={logoWhite}
             alt="logo"
-            className=""
+            className="hidden dark:block"
+            priority={true}
+            width={370}
+            height={80}
+          />
+          <Image
+            src={logoDark}
+            alt="logo"
+            className="dark:hidden"
             priority={true}
             width={370}
             height={80}
           />
         </Link>
-        <div className="2xl:mt-8 mt-6 2xl:text-3xl text-2xl font-bold text-default-50">
+        <div className="2xl:mt-8 mt-6 2xl:text-3xl text-2xl font-bold text-default-900">
           Login
         </div>
-        <div className="2xl:text-lg text-base text-default-50 mt-2 leading-6">
+        <div className="2xl:text-lg text-base text-default-900 mt-2 leading-6">
           Entre agora no sistema oficial do Grupo Foco
         </div>
-        <div className="2xl:text-lg text-base text-default-100 mt-2 leading-6 ">
+        <div className="2xl:text-lg text-base text-default-900 mt-2 leading-6 ">
           Se quiser conhecer mais pode{" "}
           <Link href="/" className="italic text-primary-500 underline">
             Clicar aqui agora!
@@ -105,7 +109,7 @@ const LogInForm = () => {
               type="email"
               id="email"
               size={!isDesktop2xl ? "xl" : "lg"}
-              placeholder="email@example.com"
+              placeholder=""
               disabled={isPending}
               {...register("email")}
               className={cn(
@@ -113,7 +117,7 @@ const LogInForm = () => {
                 {
                   "border-destructive": errors.email,
                 },
-                " border-t-0 border-l-0 border-r-0 rounded-none border-zinc-200  px-6"
+                " border-t-0 border-l-0 border-r-0 rounded-none border-default-600  px-6"
               )}
             />
 
@@ -121,13 +125,13 @@ const LogInForm = () => {
               htmlFor="email"
               className="rounded-md absolute text-base duration-300 transform -translate-y-5 scale-75 top-2 z-10 origin-[0]   px-6 peer-focus:px-2
                peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 
-               peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1 text-zinc-50"
+               peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1 border-default-900"
             >
               Email
             </Label>
             <Mail
               className="absolute w-6 h-6 duration-300 transform  scale-75  z-10  peer-focus:px-1 top-3
-            peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 text-zinc-50"
+            peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 border-default-900"
             />
           </div>
           {errors.email && (
@@ -147,13 +151,13 @@ const LogInForm = () => {
                 {
                   "border-destructive": errors.password,
                 },
-                " border-t-0 border-l-0 border-r-0 rounded-none border-zinc-200 px-6"
+                " border-t-0 border-l-0 border-r-0 rounded-none border-default-900 px-6"
               )}
             />
             <Label
               htmlFor="password"
               className={cn(
-                "rounded-md absolute text-base text-zinc-50  duration-300 transform -translate-y-5 scale-75 top-2 z-10 origin-[0]   bg-background  px-6 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75  peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1",
+                "rounded-md absolute text-base text-default-900  duration-300 transform -translate-y-5 scale-75 top-2 z-10 origin-[0]   bg-background  px-6 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75  peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1",
                 {
                   " text-sm ": isDesktop2xl,
                 }
@@ -163,7 +167,7 @@ const LogInForm = () => {
             </Label>
             <Lock
               className="absolute w-6 h-6 duration-300 transform  scale-75  z-10  peer-focus:px-1 top-3
-            peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 text-zinc-50"
+            peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 text-default-900"
             />
             <div
               className="absolute top-1/2 -translate-y-1/2 ltr:right-4 rtl:left-4 cursor-pointer"
@@ -198,7 +202,7 @@ const LogInForm = () => {
               />
               <Label
                 htmlFor="isRemebered"
-                className="text-sm text-zinc-300 cursor-pointer whitespace-nowrap"
+                className="text-sm text-default-700 cursor-pointer whitespace-nowrap"
               >
                 Lembrar de mim
               </Label>
@@ -220,7 +224,7 @@ const LogInForm = () => {
           </Button>
         </form>
 
-        <div className="mt-6 text-center text-base text-zinc-200">
+        <div className="mt-6 text-center text-base text-default-600">
           Ainda não possui conta?{" "}
           <Link href="/auth/register4" className="text-primary-500">
             {" "}
