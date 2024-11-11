@@ -1,8 +1,5 @@
-
-
-
 export const siteConfig = {
-  name: "DashTail Next js Admin Template",
+  name: "Foco Consultoria",
   description: null,
   theme: "violet",
   layout: "vertical",
