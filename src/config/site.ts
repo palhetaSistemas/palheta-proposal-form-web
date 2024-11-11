@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Foco Consultoria",
   description: null,
-  theme: "violet",
+  theme: "neutral",
   layout: "vertical",
   // semi-box, horizontal, vertical
   hideSideBar: false,
