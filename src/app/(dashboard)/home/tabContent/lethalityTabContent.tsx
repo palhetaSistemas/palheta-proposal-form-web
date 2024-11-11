@@ -7,8 +7,8 @@ import { Docs } from "@/src/components/svg";
 
 export function LethalityTabContent() {
   return (
-    <div className="grid mt-8">
-      <div className="grid grid-cols-12 gap-4">
+    <div className="mt-8">
+      <div className="lg:grid lg:grid-cols-12 flex flex-col gap-4">
         <div className="col-span-4 grid gap-4 ">
           <div className="flex flex-col w-full  gap-4">
             <CardWithIcon

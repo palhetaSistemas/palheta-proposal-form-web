@@ -92,9 +92,11 @@ export function BarChartWithDropdown({
   return (
     <Card className=" h-full">
       <CardHeader className="border-none pb-0 mb-5">
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1 flex-col lg:flex-row">
           <div className="flex-1">
-            <div className="text-xl font-semibold text-default-900">title</div>
+            <div className="text-xl font-semibold text-default-900">
+              Titulo um pouco maior para testar responsividade
+            </div>
             <span className="text-xs text-default-600 ml-1">subtitle</span>
           </div>
           <div className="flex-none flex items-center gap-1 ">

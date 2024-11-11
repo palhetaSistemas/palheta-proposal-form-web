@@ -4,14 +4,14 @@ import TableWithDropdown from "@/src/components/tables/TableWithDropdown";
 
 export function MedicationAnalyticsTabContent() {
   return (
-    <div className="grid grid-cols-12 gap-4 mt-8">
-      <div className="col-span-12 gap-4 grid grid-cols-12 ">
+    <div className="lg:grid lg:grid-cols-12 flex flex-col gap-4 mt-8">
+      <div className="lg:col-span-12 gap-4 lg:grid lg:grid-cols-12 flex flex-col ">
         <div className="col-span-6"></div>
         <div className="col-span-6">
           <TableWithDropdown />
         </div>
       </div>
-      <div className="col-span-12 gap-4 grid grid-cols-12 ">
+      <div className="lg:col-span-12 gap-4 lg:grid lg:grid-cols-12 flex flex-col ">
         <div className="col-span-6">
           <TableWithDropdown />
         </div>

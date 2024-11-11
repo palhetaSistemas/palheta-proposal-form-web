@@ -8,10 +8,10 @@ import { Docs } from "@/src/components/svg";
 
 export function MorbidityTabContent() {
   return (
-    <div className="grid mt-8">
-      <div className="grid grid-cols-12 gap-4">
+    <div className="mt-8">
+      <div className="lg:grid lg:grid-cols-12 flex flex-col gap-4">
         <div className="col-span-6 grid gap-4 ">
-          <div className="flex w-full  gap-4">
+          <div className="flex w-full flex-col lg:flex-row gap-4">
             <CardWithIcon
               id={1}
               name={"Total Project"}
