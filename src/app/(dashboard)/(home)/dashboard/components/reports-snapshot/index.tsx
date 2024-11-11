@@ -119,7 +119,7 @@ const ReportsSnapshot = () => {
       </CardHeader>
       <CardContent className="p-1 md:p-5">
         <Tabs defaultValue="all">
-          {/* <TabsList className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-6 justify-start w-full bg-transparent h-full">
+          <TabsList className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-6 justify-start w-full bg-transparent h-full">
             {tabsTrigger.map((item, index) => (
               <TabsTrigger
                 key={`report-trigger-${index}`}
@@ -164,13 +164,13 @@ const ReportsSnapshot = () => {
                 </span>
               </TabsTrigger>
             ))}
-          </TabsList> */}
-          {/* charts data */}
-          {/* {tabsContentData.map((item, index) => (
+          </TabsList>
+          charts data
+          {tabsContentData.map((item, index) => (
             <TabsContent key={`report-tab-${index}`} value={item.value}>
               <ReportsChart series={item.series} chartColor={item.color} />
             </TabsContent>
-          ))} */}
+          ))}
         </Tabs>
       </CardContent>
     </Card>

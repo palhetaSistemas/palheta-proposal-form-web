@@ -27,12 +27,12 @@ const NavTools = ({
 }) => {
   return (
     <div className="nav-tools flex items-center  gap-2">
-      {isDesktop && <Language />}
-      {isDesktop && <FullScreen />}
+      {/* {isDesktop && <Language />}
+      {isDesktop && <FullScreen />} */}
 
-      <ThemeButton />
-      <Inbox />
-      <NotificationMessage />
+      {/* <ThemeButton /> */}
+      {/* <Inbox /> */}
+      {/* <NotificationMessage /> */}
 
       <div className="ltr:pl-2 rtl:pr-2">
         <ProfileInfo />
@@ -48,12 +48,10 @@ const Header = ({
   handleOpenSearch: () => void;
   trans: string;
 }) => {
-  const { collapsed, sidebarType, setCollapsed, subMenu, setSidebarType } =
-    useSidebar();
-  const { layout, navbarType, setLayout } = useThemeStore();
+  const { setSidebarType } = useSidebar();
+  const { layout, navbarType } = useThemeStore();
 
   const isDesktop = useMediaQuery("(min-width: 1280px)");
-
   const isMobile = useMediaQuery("(min-width: 768px)");
 
   // set header style to classic if isDesktop
@@ -63,130 +61,27 @@ const Header = ({
     }
   }, [isDesktop]);
 
-  // if horizontal layout
-  if (layout === "horizontal" && navbarType !== "hidden") {
-    return (
-      <ClassicHeader
-        className={cn(" ", {
-          "sticky top-0 z-50": navbarType === "sticky",
-        })}
-      >
-        <div className="w-full bg-card/90 backdrop-blur-lg md:px-6 px-[15px] py-3 border-b">
-          <div className="flex justify-between items-center h-full">
-            <HorizontalHeader handleOpenSearch={handleOpenSearch} />
-            <NavTools
-              isDesktop={isDesktop}
-              isMobile={isMobile}
-              sidebarType={sidebarType}
-            />
-          </div>
-        </div>
-        {isDesktop && (
-          <div className=" bg-card bg-card/90 backdrop-blur-lg  w-full px-6  shadow-md">
-            <HorizontalMenu trans={trans} />
-          </div>
-        )}
-      </ClassicHeader>
-    );
-  }
-  if (layout === "semibox" && navbarType !== "hidden") {
-    return (
-      <ClassicHeader
-        className={cn("has-sticky-header rounded-md   ", {
-          "ltr:xl:ml-[72px] rtl:xl:mr-[72px] ": collapsed,
-          "ltr:xl:ml-[272px] rtl:xl:mr-[272px] ": !collapsed,
-
-          "sticky top-6": navbarType === "sticky",
-        })}
-      >
-        <div className="xl:mx-20 mx-4">
-          <div className="w-full bg-card/90 backdrop-blur-lg md:px-6 px-[15px] py-3 rounded-md my-6 shadow-md border-b">
-            <div className="flex justify-between items-center h-full">
-              <VerticalHeader handleOpenSearch={handleOpenSearch} />
-              <NavTools
-                isDesktop={isDesktop}
-                isMobile={isMobile}
-                sidebarType={sidebarType}
-              />
-            </div>
-          </div>
-        </div>
-      </ClassicHeader>
-    );
-  }
-  if (
-    sidebarType !== "module" &&
-    navbarType !== "floating" &&
-    navbarType !== "hidden"
-  ) {
-    return (
-      <ClassicHeader
-        className={cn("", {
-          "ltr:xl:ml-[248px] rtl:xl:mr-[248px]": !collapsed,
-          "ltr:xl:ml-[72px] rtl:xl:mr-[72px]": collapsed,
-          "sticky top-0": navbarType === "sticky",
-        })}
-      >
-        <div className="w-full bg-card/90 backdrop-blur-lg md:px-6 px-[15px] py-3 border-b">
-          <div className="flex justify-between items-center h-full">
-            <VerticalHeader handleOpenSearch={handleOpenSearch} />
-            <NavTools
-              isDesktop={isDesktop}
-              isMobile={isMobile}
-              sidebarType={sidebarType}
-            />
-          </div>
-        </div>
-      </ClassicHeader>
-    );
-  }
-  if (navbarType === "hidden") {
-    return null;
-  }
-  if (navbarType === "floating") {
-    return (
-      <ClassicHeader
-        className={cn("  has-sticky-header rounded-md sticky top-6  px-6  ", {
-          "ltr:ml-[72px] rtl:mr-[72px]": collapsed,
-          "ltr:xl:ml-[300px] rtl:xl:mr-[300px]  ":
-            !collapsed && sidebarType === "module",
-          "ltr:xl:ml-[248px] rtl:xl:mr-[248px] ":
-            !collapsed && sidebarType !== "module",
-        })}
-      >
-        <div className="w-full bg-card/90 backdrop-blur-lg md:px-6 px-[15px] py-3 rounded-md my-6 shadow-md border-b">
-          <div className="flex justify-between items-center h-full">
-            <VerticalHeader handleOpenSearch={handleOpenSearch} />
-            <NavTools
-              isDesktop={isDesktop}
-              isMobile={isMobile}
-              sidebarType={sidebarType}
-            />
-          </div>
-        </div>
-      </ClassicHeader>
-    );
-  }
-
   return (
     <ClassicHeader
-      className={cn("", {
-        "ltr:xl:ml-[300px] rtl:xl:mr-[300px]": !collapsed,
-        "ltr:xl:ml-[72px] rtl:xl:mr-[72px]": collapsed,
-
-        "sticky top-0": navbarType === "sticky",
+      className={cn(" ", {
+        "sticky top-0 z-50": navbarType === "sticky",
       })}
     >
       <div className="w-full bg-card/90 backdrop-blur-lg md:px-6 px-[15px] py-3 border-b">
         <div className="flex justify-between items-center h-full">
-          <VerticalHeader handleOpenSearch={handleOpenSearch} />
+          <HorizontalHeader handleOpenSearch={handleOpenSearch} />
           <NavTools
             isDesktop={isDesktop}
             isMobile={isMobile}
-            sidebarType={sidebarType}
+            sidebarType="horizontal"
           />
         </div>
       </div>
+      {isDesktop && (
+        <div className=" bg-card bg-card/90 backdrop-blur-lg  w-full px-6  shadow-md">
+          <HorizontalMenu trans={trans} />
+        </div>
+      )}
     </ClassicHeader>
   );
 };

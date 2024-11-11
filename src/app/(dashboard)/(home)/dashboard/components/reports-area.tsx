@@ -42,11 +42,29 @@ const ReportsArea = () => {
       icon: <Cup className="h-4 w-4" />,
       color: "destructive",
     },
+    {
+      id: 5,
+      name: "Bounce Rate",
+      count: "46s",
+      rate: "30",
+      isUp: false,
+      icon: <Cup className="h-4 w-4" />,
+      color: "destructive",
+    },
+    {
+      id: 6,
+      name: "Bounce Rate",
+      count: "46s",
+      rate: "30",
+      isUp: false,
+      icon: <Cup className="h-4 w-4" />,
+      color: "destructive",
+    },
   ];
   return (
     <>
       {reports.map((item, index) => (
-        <Card key={`report-card-${index}`}>
+        <Card className="w-full" key={`report-card-${index}`}>
           <CardHeader className="flex-col-reverse sm:flex-row flex-wrap gap-2  border-none mb-0 pb-0">
             <span className="text-sm font-medium text-default-900 flex-1">
               {item.name}
