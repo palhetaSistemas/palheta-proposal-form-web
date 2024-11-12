@@ -4,16 +4,16 @@ import BaseTable from "@/src/components/tables/baseTable";
 
 export function RoundEfficiencyTabContent() {
   return (
-    <div className="lg:grid lg:grid-cols-12 flex flex-col gap-4 mt-8">
-      <div className="lg:col-span-12 lg:grid lg:grid-cols-12 flex flex-col gap-4">
-        <div className="col-span-7 ">
+    <div className="lg:grid lg:grid-rows-6 h-[104vh] lg:h-[120vh] lg:grid-cols-12 flex flex-col gap-4 mt-8">
+      <div className="lg:col-span-12 lg:row-span-3 lg:grid lg:grid-cols-12 flex flex-col gap-4">
+        <div className="col-span-7">
           <MultiValueBarChart />
         </div>
         <div className="col-span-5">
           <BaseTable />
         </div>
       </div>
-      <div className="lg:col-span-12 lg:grid lg:grid-cols-12 flex flex-col gap-4">
+      <div className="lg:col-span-12 lg:row-span-3 lg:grid lg:grid-cols-12 flex flex-col gap-4 pb-28 md:pb-10">
         <div className="col-span-7">
           <BaseTable />
         </div>

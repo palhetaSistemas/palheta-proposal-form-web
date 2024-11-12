@@ -43,7 +43,7 @@ export function GeneralTabContent() {
 
   return (
     <div>
-      <div className="mt-8 flex flex-col gap-8">
+      <div className="mt-8 flex flex-col gap-8 pb-28 md:pb-10">
         <div className="relative flex h-full w-full items-center flex-col-reverse justify-between lg:h-40 lg:flex-row">
           <span className="text-lg font-semibold lg:w-2/5 lg:text-2xl">
             Alguns Números Gerais de sua Fazenda, sua Criação e seus
@@ -59,7 +59,10 @@ export function GeneralTabContent() {
           />
         </div>
         {data.map((item, index) => (
-          <div className="mx-auto flex w-full flex-col lg:items-center gap-4 lg:flex-row pb-4  ">
+          <div
+            key={index}
+            className="mx-auto flex w-full flex-col lg:items-center gap-4 lg:flex-row pb-4  "
+          >
             <div className="flex  flex-col lg:flex-row w-full justify-between">
               <div className="flex w-full  flex-col transition delay-200 duration-500 ease-in-out lg:w-[80vw]">
                 <div className="flex items-start gap-2">

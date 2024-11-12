@@ -28,6 +28,7 @@ import avatar2 from "@/public/images/avatar/avatar-2.jpg";
 import avatar3 from "@/public/images/avatar/avatar-3.jpg";
 import avatar4 from "@/public/images/avatar/avatar-4.jpg";
 import Link from "next/link";
+import { ScrollArea } from "../ui/scroll-area";
 
 const columns = [
   {
@@ -98,6 +99,30 @@ const users: User[] = [
     overdue: "01",
     avatar: avatar4,
   },
+  {
+    id: 6,
+    name: "Mark Dsuza",
+    task: "Admin dashboard template",
+    deadline: "21 Jan 2024",
+    overdue: "01",
+    avatar: avatar1,
+  },
+  {
+    id: 7,
+    name: "Mark Dsuza",
+    task: "Admin dashboard template",
+    deadline: "21 Jan 2024",
+    overdue: "01",
+    avatar: avatar2,
+  },
+  {
+    id: 8,
+    name: "Mark Dsuza",
+    task: "Admin dashboard template",
+    deadline: "21 Jan 2024",
+    overdue: "01",
+    avatar: avatar3,
+  },
 ];
 
 const BaseTable = () => {
@@ -109,9 +134,9 @@ const BaseTable = () => {
           <Link href="#"> View all</Link>
         </Button>
       </CardHeader>
-      <CardContent className="px-0 pb-0 overflow-x-auto">
+      <CardContent className="px-0 overflow-y-scroll h-80 pb-0 overflow-x-auto">
         <Table>
-          <TableHeader className="bg-default-200">
+          {/* <TableHeader className="bg-default-200">
             <TableRow>
               {columns.map((column) => (
                 <TableHead
@@ -122,7 +147,7 @@ const BaseTable = () => {
                 </TableHead>
               ))}
             </TableRow>
-          </TableHeader>
+          </TableHeader> */}
           <TableBody>
             {users.map((item) => (
               <TableRow key={item.id} className="hover:bg-default-100">

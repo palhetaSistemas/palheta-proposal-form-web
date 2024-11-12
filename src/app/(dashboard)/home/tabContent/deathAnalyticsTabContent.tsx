@@ -13,7 +13,7 @@ export function DeathAnalyticsTabContent() {
           series={morbidityStaticData.chartData.series}
         />
       </div>
-      <div className="lg:col-span-12 lg:grid lg:grid-cols-12 flex flex-col gap-4">
+      <div className="lg:col-span-12 lg:grid lg:grid-cols-12 flex flex-col gap-4 pb-28 md:pb-10">
         <div className="col-span-5">
           <BaseTable />
         </div>

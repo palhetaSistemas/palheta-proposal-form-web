@@ -3,7 +3,7 @@ import ChartWithTable from "@/src/components/charts/chartWithTable";
 
 export function TreatmentFinancialTabContent() {
   return (
-    <div className="gap-4 flex flex-col">
+    <div className="gap-4 flex flex-col pb-28 md:pb-10">
       <ChartWithTable
         title="Custo de Aplicação"
         subtitle="Por Doenças"

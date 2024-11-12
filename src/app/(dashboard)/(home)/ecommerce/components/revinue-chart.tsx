@@ -6,7 +6,7 @@ import { useTheme } from "next-themes";
 import { themes } from "@/src/config/thems";
 import { getGridConfig, getYAxisConfig } from "@/src/lib/appex-chart-options";
 
-const RevinueChart = ({ height = 350 }) => {
+const RevinueChart = ({ height = 200 }) => {
   const { theme: config, setTheme: setConfig, isRtl } = useThemeStore();
   const { theme: mode } = useTheme();
 
@@ -31,6 +31,7 @@ const RevinueChart = ({ height = 350 }) => {
       toolbar: {
         show: false,
       },
+      height: "100%",
       stacked: true,
     },
     plotOptions: {
@@ -117,7 +118,6 @@ const RevinueChart = ({ height = 350 }) => {
         },
       },
     },
-
     legend: {
       position: "bottom",
       horizontalAlign: "center",
@@ -141,16 +141,59 @@ const RevinueChart = ({ height = 350 }) => {
         offsetX: isRtl ? 5 : -5,
       },
     },
+    responsive: [
+      // {
+      //   breakpoint: 1024,
+      //   options: {
+      //     chart: {
+      //       height: 200,
+      //     },
+      //   },
+      // },
+      // {
+      //   breakpoint: 1360,
+      //   options: {
+      //     chart: {
+      //       height: 150,
+      //     },
+      //   },
+      // },
+      // {
+      //   breakpoint: 1440,
+      //   options: {
+      //     chart: {
+      //       height: 150,
+      //     },
+      //   },
+      // },
+      {
+        breakpoint: 1920,
+        options: {
+          chart: {
+            height: 350,
+          },
+        },
+      },
+      // {
+      //   breakpoint: 2560,
+      //   options: {
+      //     chart: {
+      //       height: 200,
+      //     },
+      //   },
+      // },
+      // {
+      //   breakpoint: 2561,
+      //   options: {
+      //     chart: {
+      //       height: 250,
+      //     },
+      //   },
+      // },
+    ],
   };
-  return (
-    <Chart
-      options={options}
-      series={series}
-      type="bar"
-      height={height}
-      width={"100%"}
-    />
-  );
+
+  return <Chart options={options} series={series} type="bar" />;
 };
 
 export default RevinueChart;
