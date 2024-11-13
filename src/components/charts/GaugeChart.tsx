@@ -89,7 +89,7 @@ const GaugeChart: React.FC<GaugeChartProps> = ({ height = 200 }) => {
   const { theme: mode } = useTheme();
   const theme = themes.find((theme) => theme.name === config);
   return (
-    <Card>
+    <Card className="h-full">
       <CardHeader className="flex-row justify-between items-center mb-0 border-none pt-8 pl-6">
         <CardTitle>Project Budget</CardTitle>
       </CardHeader>

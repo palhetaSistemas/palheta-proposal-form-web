@@ -11,7 +11,7 @@ import SimpleTable from "../../(tables)/tailwindui-table/simple-table";
 export function MortalityTabContent() {
   return (
     <div className="flex flex-col lg:grid lg:grid-cols-12 gap-4 mt-8">
-      <div className="lg:col-span-4 lg:grid gap-4 flex flex-col">
+      <div className="lg:col-span-4  gap-4 flex flex-col">
         <Image
           src={LogoWhite}
           alt="logo"
@@ -93,7 +93,7 @@ export function MortalityTabContent() {
         </div>
         <SimpleTable />
       </div>
-      <div className="col-span-8 flex flex-col gap-4">
+      <div className="col-span-8 flex flex-col gap-4 pb-28 md:pb-10">
         <BarChartWithDropdown
           height={380}
           categories={morbidityStaticData.chartData.categories}

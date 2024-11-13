@@ -31,7 +31,7 @@ export function MorbidityTabContent() {
           </div>
           <DoubleBarChart />
         </div>
-        <div className="col-span-6">
+        <div className="col-span-6 pb-28 md:pb-10">
           <ChartWithTable
             title="Morbidade Média por Mês"
             subtitle="Últimos 12 Meses"

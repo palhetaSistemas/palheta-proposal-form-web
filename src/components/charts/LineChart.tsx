@@ -117,6 +117,56 @@ const LineChart = ({ height = 360, colors }: Props) => {
         offsetX: isRtl ? 5 : -5,
       },
     },
+    responsive: [
+      // {
+      //   breakpoint: 1024,
+      //   options: {
+      //     chart: {
+      //       height: 200,
+      //     },
+      //   },
+      // },
+      // {
+      //   breakpoint: 1360,
+      //   options: {
+      //     chart: {
+      //       height: 150,
+      //     },
+      //   },
+      // },
+      // {
+      //   breakpoint: 1440,
+      //   options: {
+      //     chart: {
+      //       height: 150,
+      //     },
+      //   },
+      // },
+      {
+        breakpoint: 1920,
+        options: {
+          chart: {
+            height: 325,
+          },
+        },
+      },
+      // {
+      //   breakpoint: 2560,
+      //   options: {
+      //     chart: {
+      //       height: 200,
+      //     },
+      //   },
+      // },
+      // {
+      //   breakpoint: 2561,
+      //   options: {
+      //     chart: {
+      //       height: 250,
+      //     },
+      //   },
+      // },
+    ],
   };
   return (
     <Card>
@@ -124,13 +174,7 @@ const LineChart = ({ height = 360, colors }: Props) => {
         <CardTitle className="whitespace-nowrap">Report Chart</CardTitle>
       </CardHeader>
       <CardContent className="p-4 pt-0">
-        <Chart
-          options={options}
-          series={series}
-          type="line"
-          height={height}
-          width={"100%"}
-        />
+        <Chart options={options} series={series} type="line" />
       </CardContent>
     </Card>
   );

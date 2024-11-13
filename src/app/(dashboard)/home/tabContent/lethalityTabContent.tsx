@@ -30,7 +30,7 @@ export function LethalityTabContent() {
             <GaugeChart />
           </div>
         </div>
-        <div className="col-span-8">
+        <div className="col-span-8 pb-28 md:pb-10">
           <ChartWithTable
             title="Morbidade Média por Mês"
             subtitle="Últimos 12 Meses"

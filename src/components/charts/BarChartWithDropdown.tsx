@@ -63,7 +63,6 @@ export function BarChartWithDropdown({
       columnWidth: "100%",
       barHeight: "100%",
     },
-
     xaxis: {
       categories,
       labels: {
@@ -87,6 +86,56 @@ export function BarChartWithDropdown({
       bottom: 0,
       left: 0,
     },
+    responsive: [
+      // {
+      //   breakpoint: 1024,
+      //   options: {
+      //     chart: {
+      //       height: 200,
+      //     },
+      //   },
+      // },
+      // {
+      //   breakpoint: 1360,
+      //   options: {
+      //     chart: {
+      //       height: 150,
+      //     },
+      //   },
+      // },
+      // {
+      //   breakpoint: 1440,
+      //   options: {
+      //     chart: {
+      //       height: 150,
+      //     },
+      //   },
+      // },
+      {
+        breakpoint: 1920,
+        options: {
+          chart: {
+            height: 225,
+          },
+        },
+      },
+      // {
+      //   breakpoint: 2560,
+      //   options: {
+      //     chart: {
+      //       height: 200,
+      //     },
+      //   },
+      // },
+      // {
+      //   breakpoint: 2561,
+      //   options: {
+      //     chart: {
+      //       height: 250,
+      //     },
+      //   },
+      // },
+    ],
   };
 
   return (
@@ -99,7 +148,7 @@ export function BarChartWithDropdown({
             </div>
             <span className="text-xs text-default-600 ml-1">subtitle</span>
           </div>
-          <div className="flex-none flex items-center gap-1 ">
+          <div className="flex-none flex-col xl:flex-row flex items-center gap-1 ">
             <Select>
               <SelectTrigger className="w-[160px] border-default-900 text-default-900">
                 <SelectValue
@@ -130,13 +179,7 @@ export function BarChartWithDropdown({
         </div>
       </CardHeader>
       <CardContent className="px-5 pb-0 ">
-        <Chart
-          options={options}
-          series={series}
-          type="bar"
-          height={height}
-          width={"100%"}
-        />
+        <Chart options={options} series={series} type="bar" />
       </CardContent>
     </Card>
   );
