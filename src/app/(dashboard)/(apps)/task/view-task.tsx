@@ -33,10 +33,12 @@ const ViewTask = ({
   return (
     <>
       <div className="flex flex-wrap mb-7">
-        <div className="text-xl font-medium text-default-900 flex-1">Task</div>
-        <div className="flex-none">
-          <TaskBreadCrumbs />
+        <div className="text-xl font-medium text-default-900 flex-1">
+          Tarefas
         </div>
+        {/* <div className="flex-none">
+          <TaskBreadCrumbs />
+        </div> */}
       </div>
 
       <div className="app-height flex gap-6 relative overflow-hidden">
@@ -58,7 +60,7 @@ const ViewTask = ({
           <Card className=" h-full overflow-y-auto no-scrollbar">
             <CardHeader className="sticky top-0 mb-0 bg-card z-50">
               <Button className="w-full" onClick={handleSheetOpen}>
-                + Add Task
+                + Nova Tarefa
               </Button>
             </CardHeader>
             <CardContent className="h-full p-2 md:px-6">

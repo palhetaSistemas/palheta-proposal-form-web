@@ -20,6 +20,7 @@ import { morbidityStaticData } from "@/src/@staticData/morbidity";
 import WorksNote from "../project/components/works-note";
 import UpcomingDeadline from "../project/components/upcoming-deadlines";
 import OverdueTask from "../project/components/overdue-task";
+import ChartWithTable from "../../../../components/charts/chartWithTable";
 
 interface DashboardPageViewProps {
   trans: {
@@ -31,7 +32,7 @@ const DashboardPageView = ({ trans }: DashboardPageViewProps) => {
     <div className="space-y-6">
       <div className="flex items-center flex-wrap justify-between gap-4">
         <div className="text-2xl font-medium text-default-800 ">
-          Analytics {trans?.dashboard}
+          Dashboard Inicial
         </div>
         <DatePickerWithRange />
       </div>
@@ -41,7 +42,7 @@ const DashboardPageView = ({ trans }: DashboardPageViewProps) => {
           <ReportsSnapshot />
         </div>
         <div className="col-span-12 lg:col-span-4">
-          <UsersStat
+          <ChartWithTable
             chartData={morbidityStaticData.chartData}
             chartTitle="Titulo"
             subtitle="subtitulo"

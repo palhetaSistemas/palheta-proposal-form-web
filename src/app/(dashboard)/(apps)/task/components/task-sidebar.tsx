@@ -7,40 +7,40 @@ import { type Contact as ContactType } from "@/src/app/api/chat/data";
 const taskFilters = [
   {
     icon: "heroicons:document-text",
-    label: "My Task",
+    label: "Minhas Tarefas",
     value: "mytask",
   },
   {
     icon: "heroicons:star",
-    label: "Working",
+    label: "Importantes",
     value: "working",
   },
   {
     icon: "heroicons:check",
-    label: "Completed",
+    label: "Completas",
     value: "completed",
   },
   {
     icon: "heroicons:trash",
-    label: "Trash",
+    label: "Excluídas",
     value: "trash",
   },
 ];
 const priorityFilters = [
   {
-    label: "High",
+    label: "Alta",
     value: "high",
     color: "destructive",
     total: "03",
   },
   {
-    label: "Medium",
+    label: "Média",
     value: "medium",
     color: "warning",
     total: "04",
   },
   {
-    label: "Low",
+    label: "Baixa",
     value: "low",
     color: "info",
     total: "03",
@@ -77,8 +77,8 @@ const TaskSidebar = ({ contacts }: { contacts: ContactType[] }) => {
       </ul>
       <div className="border border-dashed mt-3 border-default-300"></div>
       <div className="mt-3 md:px-4 px-2">
-        <div className="text-xs font-medium text-default-800 uppercase">
-          Priority
+        <div className="text-xs font-medium text-primary uppercase">
+          Prioridade
         </div>
         <ul className="mt-3">
           {priorityFilters.map((item, index) => (

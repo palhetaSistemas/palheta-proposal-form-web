@@ -8,7 +8,7 @@ const ReportsArea = () => {
   const reports = [
     {
       id: 1,
-      name: "Sessions",
+      name: "Vacinas Aplicadas",
       count: "6,132",
       rate: "150",
       isUp: true,
@@ -17,7 +17,7 @@ const ReportsArea = () => {
     },
     {
       id: 2,
-      name: "Page Views",
+      name: "Tarefas",
       count: "11,236",
       rate: "202",
       isUp: false,
@@ -26,7 +26,7 @@ const ReportsArea = () => {
     },
     {
       id: 3,
-      name: "Avg. Duration",
+      name: "Visitas Técnicas",
       count: "46s",
       rate: "22",
       isUp: true,
@@ -35,25 +35,7 @@ const ReportsArea = () => {
     },
     {
       id: 4,
-      name: "Bounce Rate",
-      count: "46s",
-      rate: "30",
-      isUp: false,
-      icon: <Cup className="h-4 w-4" />,
-      color: "destructive",
-    },
-    {
-      id: 5,
-      name: "Bounce Rate",
-      count: "46s",
-      rate: "30",
-      isUp: false,
-      icon: <Cup className="h-4 w-4" />,
-      color: "destructive",
-    },
-    {
-      id: 6,
-      name: "Bounce Rate",
+      name: "Novos Clientes",
       count: "46s",
       rate: "30",
       isUp: false,
@@ -64,7 +46,7 @@ const ReportsArea = () => {
   return (
     <>
       {reports.map((item, index) => (
-        <Card className="w-full" key={`report-card-${index}`}>
+        <Card className="w-[48.5%] " key={`report-card-${index}`}>
           <CardHeader className="flex-col-reverse sm:flex-row flex-wrap gap-2  border-none mb-0 pb-0">
             <span className="text-sm font-medium text-default-900 flex-1">
               {item.name}
@@ -86,7 +68,7 @@ const ReportsArea = () => {
               {item.icon}
             </span>
           </CardHeader>
-          <CardContent className="pb-4 px-4">
+          <CardContent className="pb-4 flex-col flex w-full justify-between px-4">
             <div className="text-2xl font-semibold text-default-900 mb-2.5">
               {item.count}
             </div>
@@ -109,9 +91,7 @@ const ReportsArea = () => {
                 </>
               )}
             </div>
-            <div className="mt-1 text-xs text-default-600">
-              vs Previous 30 Days
-            </div>
+            <span className="text-default-600 text-xs">Últimos 30 dias</span>
           </CardContent>
         </Card>
       ))}

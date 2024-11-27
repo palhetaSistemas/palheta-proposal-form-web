@@ -47,8 +47,8 @@ const DashBoardLayoutProvider = ({
           </LayoutWrapper>
         </div>
       </div>
-      <Footer handleOpenSearch={() => setOpen(true)} />
-      <ThemeCustomize />
+      {/* <Footer handleOpenSearch={() => setOpen(true)} /> */}
+      {/* <ThemeCustomize /> */}
     </>
   );
 };

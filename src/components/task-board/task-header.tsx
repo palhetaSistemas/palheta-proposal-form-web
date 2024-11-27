@@ -31,13 +31,13 @@ const TaskHeader = ({
           </span>
           <Input
             type="text"
-            placeholder="search files"
+            placeholder="Pesquisar Clientes"
             className="ltr:pl-7 rtl:pr-7"
             size="lg"
           />
         </div>
-        {/* filter task */}
-        <div className="relative">
+
+        {/* <div className="relative">
           <Icon
             icon="heroicons:swatch"
             className="w-4 h-4 absolute top-1/2 -translate-y-1/2 left-2.5 text-default-600"
@@ -53,7 +53,7 @@ const TaskHeader = ({
             </SelectContent>
           </Select>
         </div>
-        {/* Group By */}
+
         <div className="relative">
           <Icon
             icon="heroicons:swatch"
@@ -69,10 +69,13 @@ const TaskHeader = ({
               <SelectItem value="task_3">Task 3</SelectItem>
             </SelectContent>
           </Select>
-        </div>
+        </div> */}
       </div>
       {/* right */}
       <div className="flex-none flex items-center gap-4">
+        <Button onClick={openCreateBoard}>
+          <Plus className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> Criar Cliente
+        </Button>
         <div className="relative">
           <span className="absolute top-1/2 -translate-y-1/2 right-2.5 text-default-600 w-8 h-full border-l border-default-200 flex justify-center items-center">
             <Settings className="w-4 h-4 " />
@@ -83,14 +86,10 @@ const TaskHeader = ({
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="kanban">Kanban</SelectItem>
-              <SelectItem value="list">List View</SelectItem>
+              {/* <SelectItem value="list">Lista</SelectItem> */}
             </SelectContent>
           </Select>
         </div>
-
-        <Button onClick={openCreateBoard}>
-          <Plus className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> Create Board
-        </Button>
       </div>
     </div>
   );

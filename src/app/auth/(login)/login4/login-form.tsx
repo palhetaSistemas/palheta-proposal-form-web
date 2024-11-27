@@ -45,8 +45,8 @@ const LogInForm = () => {
     resolver: zodResolver(schema),
     mode: "all",
     defaultValues: {
-      email: "dashtail@codeshaper.net",
-      password: "password",
+      email: "foco@exemplo.com.br",
+      password: "1234",
     },
   });
   const [isVisible, setIsVisible] = React.useState(false);
@@ -62,7 +62,7 @@ const LogInForm = () => {
       });
       if (response?.ok) {
         toast.success("Login Successful");
-        window.location.assign("/dashboard");
+        window.location.assign("/");
         reset();
       } else if (response?.error) {
         toast.error(response?.error);
@@ -72,7 +72,7 @@ const LogInForm = () => {
   return (
     <div className="flex flex-row w-full items-center justify-center">
       <div className="w-full max-w-[600px] ">
-        <Link href="/dashboard" className="inline-block">
+        <Link href="#" className="inline-block">
           <Image
             src={logoWhite}
             alt="logo"
@@ -98,7 +98,7 @@ const LogInForm = () => {
         </div>
         <div className="2xl:text-lg text-base text-default-900 mt-2 leading-6 ">
           Se quiser conhecer mais pode{" "}
-          <Link href="/" className="italic text-primary-500 underline">
+          <Link href="#" className="italic text-[#8f1220] underline">
             Clicar aqui agora!
           </Link>
         </div>
@@ -174,14 +174,11 @@ const LogInForm = () => {
               onClick={togglePasswordType}
             >
               {passwordType === "password" ? (
-                <Icon
-                  icon="heroicons:eye"
-                  className="w-4 h-4 text-default-400"
-                />
+                <Icon icon="heroicons:eye" className="w-4 h-4 text-[#8f1220]" />
               ) : (
                 <Icon
                   icon="heroicons:eye-slash"
-                  className="w-4 h-4 text-default-400"
+                  className="w-4 h-4 text-[#8f1220]"
                 />
               )}
             </div>
@@ -197,7 +194,7 @@ const LogInForm = () => {
             <div className="flex-1 flex  items-center gap-1.5 ">
               <Checkbox
                 size="sm"
-                className="border-default-300 mt-[1px]"
+                className="border-[#8f1220] data-[state=checked]:bg-[#8f1220] mt-[1px]"
                 id="isRemebered"
               />
               <Label
@@ -208,14 +205,14 @@ const LogInForm = () => {
               </Label>
             </div>
             <Link
-              href="/auth/forgot4"
-              className="flex-none text-sm text-primary-500"
+              href="#"
+              className="flex-none text-sm text-[#8f1220] hover:text-[#8f1220]/90"
             >
               Esqueceu a senha?
             </Link>
           </div>
           <Button
-            className="w-full bg-primary-500"
+            className="w-full bg-[#8f1220] hover:bg-[#8f1220]/90"
             disabled={isPending}
             size={!isDesktop2xl ? "lg" : "md"}
           >
@@ -226,7 +223,7 @@ const LogInForm = () => {
 
         <div className="mt-6 text-center text-base text-default-600">
           Ainda não possui conta?{" "}
-          <Link href="/auth/register4" className="text-primary-500">
+          <Link href="#" className="text-[#8f1220]">
             {" "}
             Cadastre-se{" "}
           </Link>

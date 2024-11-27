@@ -8,94 +8,94 @@ import {
   CardTitle,
 } from "@/src/components/ui/card";
 import DashboardDropdown from "@/src/components/dashboard-dropdown";
-import facebook from "@/public/images/social/facebook.png";
-import instagram from "@/public/images/social/instagram.png";
-import dribble from "@/public/images/social/dribble.png";
-import linkedin from "@/public/images/social/linkedin.png";
-import github from "@/public/images/social/github.png";
-import behance from "@/public/images/social/behance.png";
-import twitter from "@/public/images/social/twitter.png";
-import pinterest from "@/public/images/social/pinterest.png";
-import whatsapp from "@/public/images/social/whatsapp.png";
-import reddit from "@/public/images/social/reddit.png";
+import farm1 from "@/public/images/staticDataImage/farm1.png";
+import farm2 from "@/public/images/staticDataImage/farm2.png";
+import farm3 from "@/public/images/staticDataImage/farm3.png";
+import farm4 from "@/public/images/staticDataImage/farm4.png";
+import farm5 from "@/public/images/staticDataImage/farm5.png";
+import farm6 from "@/public/images/staticDataImage/farm6.png";
+import farm7 from "@/public/images/staticDataImage/farm7.png";
+import farm8 from "@/public/images/staticDataImage/farm8.png";
+import farm9 from "@/public/images/staticDataImage/farm9.png";
+import farm10 from "@/public/images/staticDataImage/farm10.png";
 const socials = [
   {
     id: 1,
-    name: "facebook",
-    link: "www.facebook.com",
+    name: "Rancho Sol",
+    link: "Sinop - MT",
     total: "4963",
-    image: facebook,
+    image: farm1,
   },
   {
     id: 2,
-    name: "Instagram",
-    link: "www.instagram.com",
+    name: "Fazenda Boa",
+    link: "Sorriso - MT",
     total: "2963",
-    image: instagram,
+    image: farm2,
   },
   {
     id: 3,
-    name: "Dribble",
-    link: "www.dribble.com",
+    name: "Estância Forte",
+    link: "Dourados - MS",
     total: "1963",
-    image: dribble,
+    image: farm3,
   },
   {
     id: 4,
-    name: "LinkedIn",
-    link: "www.linkedin.com",
+    name: "Rancho Verde",
+    link: "Belo Horizonte - MG",
     total: "963",
-    image: linkedin,
+    image: farm4,
   },
   {
     id: 5,
-    name: "GitHub",
-    link: "www.github.com",
+    name: "Sítio Ouro",
+    link: "Beltim - MG",
     total: "663",
-    image: github,
+    image: farm5,
   },
   {
     id: 6,
-    name: "Behance",
-    link: "www.behance.com",
+    name: "Fazenda Vale",
+    link: "Contagem - MG",
     total: "363",
-    image: behance,
+    image: farm6,
   },
   {
     id: 7,
-    name: "Twitter",
-    link: "www.twitter.com",
+    name: "Rancho Paz",
+    link: "Goiânia - GO",
     total: "333",
-    image: twitter,
+    image: farm7,
   },
   {
     id: 8,
-    name: "Pinterest",
-    link: "www.pinterest.com",
+    name: "Estância Rio",
+    link: "Luziânia - GO",
     total: "293",
-    image: pinterest,
+    image: farm8,
   },
   {
     id: 9,
-    name: "WhatsApp",
-    link: "www.whatsapp.com",
+    name: "Fazenda Céu",
+    link: "Anápolis - GO",
     total: "213",
-    image: whatsapp,
+    image: farm9,
   },
   {
     id: 10,
-    name: "Reddit",
-    link: "www.reddit.com",
+    name: "Rancho Brisa",
+    link: "Formosa - GO",
     total: "113",
-    image: reddit,
+    image: farm10,
   },
 ];
 const TopTen = () => {
   return (
-    <Card>
+    <Card className="h-full">
       <CardHeader className="flex-row items-center justify-between border-none pb-0">
-        <CardTitle> Top 10 Referrals </CardTitle>
-        <DashboardDropdown />
+        <CardTitle> Lista de Clientes </CardTitle>
+        {/* <DashboardDropdown /> */}
       </CardHeader>
       <CardContent className="px-0">
         <div>

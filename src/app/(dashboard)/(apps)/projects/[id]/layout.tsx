@@ -19,7 +19,7 @@ const singleProjectLayout = async ({
   return (
     <div>
       <Card className="mb-6">
-        <ProjectHeader project={project} />
+        <ProjectHeader farm={project} />
         <CardFooter className="gap-x-4 gap-y-3  lg:gap-x-6 pb-0 pt-6 flex-wrap">
           <PageLink id={id} />
         </CardFooter>

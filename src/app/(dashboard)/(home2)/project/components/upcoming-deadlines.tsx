@@ -31,19 +31,19 @@ import avatar5 from "@/public/images/avatar/avatar-5.jpg";
 const columns = [
   {
     key: "employee",
-    label: "employee",
+    label: "Cliente",
   },
   {
     key: "task name",
-    label: "task name",
+    label: "Relatório",
   },
   {
     key: "deadline",
-    label: "deadline",
+    label: "Prazo",
   },
   {
     key: "workload",
-    label: "workload",
+    label: "Progresso",
   },
 ];
 
@@ -61,48 +61,48 @@ interface DataItem {
 const upcomingDeadlineData: DataItem[] = [
   {
     id: 1,
-    name: "Mark Dsuza",
-    task: "Admin dashboard template",
+    name: "Marcos Reis",
+    task: "Relatório de animais",
     deadline: "21 Jan 2024",
     workload: 50,
     avatar: avatar1,
   },
   {
     id: 2,
-    name: "Mark Dsuza",
-    task: "Admin dashboard template",
+    name: "Marcos Reis",
+    task: "Relatório de animais",
     deadline: "21 Jan 2024",
     workload: 40,
     avatar: avatar1,
   },
   {
     id: 3,
-    name: "Mark Dsuza",
-    task: "Admin dashboard template",
+    name: "Marcos Reis",
+    task: "Relatório de animais",
     deadline: "21 Jan 2024",
     workload: 70,
     avatar: avatar2,
   },
   {
     id: 4,
-    name: "Mark Dsuza",
-    task: "Admin dashboard template",
+    name: "Marcos Reis",
+    task: "Relatório de animais",
     deadline: "21 Jan 2024",
     workload: 80,
     avatar: avatar3,
   },
   {
     id: 5,
-    name: "Mark Dsuza",
-    task: "Admin dashboard template",
+    name: "Marcos Reis",
+    task: "Relatório de animais",
     deadline: "21 Jan 2024",
     workload: 60,
     avatar: avatar4,
   },
   {
     id: 6,
-    name: "Mark Dsuza",
-    task: "Admin dashboard template",
+    name: "Marcos Reis",
+    task: "Relatório de animais",
     deadline: "21 Jan 2024",
     workload: 90,
     avatar: avatar5,
@@ -112,9 +112,9 @@ const UpcomingDeadline = () => {
   return (
     <Card>
       <CardHeader className="flex-row justify-between items-center mb-0">
-        <CardTitle>Upcoming Deadlines</CardTitle>
+        <CardTitle>Relatórios</CardTitle>
         <Button type="button" color="secondary">
-          View all
+          Ver Todos
         </Button>
       </CardHeader>
       <CardContent className="px-0 overflow-x-auto pb-0">
@@ -146,7 +146,7 @@ const UpcomingDeadline = () => {
                 <TableCell className="text-sm font-medium text-default-600 overflow-hidden text-ellipsis whitespace-nowrap max-w-[181px] py-2">
                   {item.task}
                 </TableCell>
-                <TableCell className="text-sm font-medium text-destructive whitespace-nowrap py-2">
+                <TableCell className="text-sm font-medium text-default-600 whitespace-nowrap py-2">
                   {item.deadline}
                 </TableCell>
                 <TableCell className="min-w-[120px] text-sm font-medium text-default-600 last:text-end py-2">

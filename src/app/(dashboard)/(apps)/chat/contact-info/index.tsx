@@ -62,7 +62,7 @@ const ContactInfo = ({
               {contact?.fullName}
             </div>
             <span className="text-sm text-default-600 capitalize  text-center line-clamp-2">
-              {contact?.about}
+              {contact?.about2 ? contact?.about2 : ""}
             </span>
           </div>
           <div className="flex justify-center gap-6  pt-3">
@@ -76,7 +76,7 @@ const ContactInfo = ({
                   className="text-lg text-default-900"
                 />
               </Link>
-              <span className="text-xs text-default-900">Profile</span>
+              <span className="text-xs text-default-900">Perfil</span>
             </div>
             <MuteNotification />
             <div
@@ -91,7 +91,7 @@ const ContactInfo = ({
               >
                 <Icon icon="zondicons:search" />
               </Button>
-              <span className="text-xs text-default-900">Search</span>
+              <span className="text-xs text-default-900">Pesquisar</span>
             </div>
           </div>
         </CardHeader>
@@ -104,14 +104,14 @@ const ContactInfo = ({
                 value="item-1"
                 className="shadow-none dark:shadow-none dark:bg-card/90 px-4"
               >
-                <AccordionTrigger>Option</AccordionTrigger>
+                <AccordionTrigger>Opções Rápidas</AccordionTrigger>
                 <AccordionContent>
                   <EditNickname />
                   <ChangeTheme />
                 </AccordionContent>
               </AccordionItem>
-              {/* Shared Files */}
-              <AccordionItem
+
+              {/* <AccordionItem
                 value="item-2"
                 className="shadow-none dark:shadow-none dark:bg-card/90 px-4"
               >
@@ -155,7 +155,6 @@ const ContactInfo = ({
                 </AccordionContent>
               </AccordionItem>
 
-              {/* Settings */}
               <AccordionItem
                 value="item-3"
                 className="shadow-none dark:shadow-none dark:bg-card/90 px-4"
@@ -179,7 +178,7 @@ const ContactInfo = ({
                     </Button>
                   </div>
                 </AccordionContent>
-              </AccordionItem>
+              </AccordionItem> */}
             </Accordion>
           </ScrollArea>
         </CardContent>

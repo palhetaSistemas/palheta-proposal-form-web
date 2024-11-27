@@ -66,7 +66,7 @@ import { SortableContext, useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 
 import { type Board as BoardType } from "@/src/app/api/boards/data";
-import { type Task as TaskType } from "@/src/app/api/tasks/data";
+import { type Task as TaskType } from "@/src/app/api/tasks2/data";
 interface TaskProps {
   task: TaskType;
   onUpdateTask: (task: TaskType) => void;
@@ -90,6 +90,7 @@ const Task = ({ task, onUpdateTask, boards }: TaskProps) => {
     link,
     date,
     time,
+    size,
   } = task;
 
   const handleMoveTask = (task: TaskType, boardId: BoardType["id"]) => {
@@ -146,15 +147,24 @@ const Task = ({ task, onUpdateTask, boards }: TaskProps) => {
             "opacity-50": isDragging,
           }
         )}
-        onClick={() => onUpdateTask(task)}
+        // onClick={() => onUpdateTask(task)}
       >
         <CardHeader className="space-x-0 space-y-0 p-0 flex-row items-center justify-between mb-0 border-none">
           <div className="flex items-center gap-1">
-            <div className="text-[10px] leading-[14px] font-semibold uppercase text-default-600 border border-default-200 px-1.5  rounded-sm">
-              {getWords(title)}
+            <div
+              className={cn(
+                "text-[10px] leading-[14px] font-semibold uppercase text-default-600 border border-default-200 px-1.5  rounded-sm",
+                size === "Fazenda Média"
+                  ? "text-blue-700"
+                  : size === "Fazenda Pequena"
+                  ? "text-orange-700"
+                  : "text-green-700"
+              )}
+            >
+              {size}
             </div>
 
-            <div onClick={(e) => e.stopPropagation()}>
+            {/* <div onClick={(e) => e.stopPropagation()}>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <div className="text-[10px] leading-[14px] font-semibold  text-default-600 border border-default-200 px-1.5  rounded-sm flex justify-center items-center gap-[2px]">
@@ -174,7 +184,7 @@ const Task = ({ task, onUpdateTask, boards }: TaskProps) => {
                   ))}
                 </DropdownMenuContent>
               </DropdownMenu>
-            </div>
+            </div> */}
           </div>
           <div
             className="flex items-center gap-1 opacity-0 group-hover:opacity-100"
@@ -206,7 +216,9 @@ const Task = ({ task, onUpdateTask, boards }: TaskProps) => {
               {title}
             </div>
           </div>
-          <div className="text-[13px] text-default-500">{desc}</div>
+          <div className="text-[13px] whitespace-pre-line text-default-500">
+            {desc}
+          </div>
           {image && (
             <div className="w-full mt-3 rounded">
               <Image
@@ -219,7 +231,7 @@ const Task = ({ task, onUpdateTask, boards }: TaskProps) => {
             </div>
           )}
 
-          <div className="flex flex-wrap items-center gap-1 mt-2">
+          {/* <div className="flex flex-wrap items-center gap-1 mt-2">
             <Badge
               color={prioritiesColorMap[task.priority]}
               className="text-[10px] px-1 py-0 rounded leading-4 capitalize"
@@ -260,9 +272,9 @@ const Task = ({ task, onUpdateTask, boards }: TaskProps) => {
                 ))}
               </AvatarGroup>
             )}
-          </div>
+          </div> */}
         </CardContent>
-        <CardFooter className="p-0 mt-2">
+        {/* <CardFooter className="p-0 mt-2">
           <div className="w-full flex flex-wrap items-center gap-x-3 gap-y-2">
             <div className="flex items-center gap-1 text-xs text-default-600">
               <List className="w-3.5 h-3.5 text-default-500" />
@@ -295,7 +307,7 @@ const Task = ({ task, onUpdateTask, boards }: TaskProps) => {
               {date} / {time}
             </div>
           </div>
-        </CardFooter>
+        </CardFooter> */}
       </Card>
     </>
   );

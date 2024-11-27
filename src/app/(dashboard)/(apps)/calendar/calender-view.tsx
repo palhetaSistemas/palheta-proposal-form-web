@@ -14,6 +14,7 @@ import { Card, CardContent, CardHeader } from "@/src/components/ui/card";
 import { Plus } from "lucide-react";
 import { Checkbox } from "@/src/components/ui/checkbox";
 import { CalendarEvent, CalendarCategory } from "@/src/app/api/calendars/data";
+import ptBR from "@fullcalendar/core/locales/pt-br";
 import {
   EventApi,
   DateSelectArg,
@@ -43,10 +44,10 @@ const CalendarView = ({ events, categories }: CalendarViewProps) => {
   const [date, setDate] = React.useState<Date>(new Date());
 
   const [dragEvents] = useState([
-    { title: "New Event Planning", id: "101", tag: "business" },
-    { title: "Meeting", id: "102", tag: "meeting" },
-    { title: "Generating Reports", id: "103", tag: "holiday" },
-    { title: "Create New theme", id: "104", tag: "etc" },
+    { title: "Reuniões / Eventos", id: "101", tag: "business" },
+    { title: "Reunião Interna", id: "102", tag: "meeting" },
+    { title: "Atendimento Clientes", id: "103", tag: "holiday" },
+    { title: "Compromissos com Clientes", id: "104", tag: "etc" },
   ]);
 
   useEffect(() => {
@@ -137,13 +138,21 @@ const CalendarView = ({ events, categories }: CalendarViewProps) => {
 
   return (
     <>
+      <div className="flex flex-wrap mb-7">
+        <div className="text-xl font-medium text-default-900 flex-1">
+          Agenda
+        </div>
+        {/* <div className="flex-none">
+          <TaskBreadCrumbs />
+        </div> */}
+      </div>
       <div className=" grid grid-cols-12 gap-6 divide-x  divide-border">
         <Card className="col-span-12 lg:col-span-4 2xl:col-span-3  pb-5">
           <CardContent className="p-0 ">
             <CardHeader className="border-none mb-2 pt-5">
               <Button onClick={handleDateClick}>
                 <Plus className="w-4 h-4 text-primary-foreground ltr:mr-1 rtl:ml-1" />
-                Add Event
+                Adicionar Compromisso
               </Button>
             </CardHeader>
             <div className="px-3">
@@ -159,13 +168,13 @@ const CalendarView = ({ events, categories }: CalendarViewProps) => {
 
             <div id="external-events" className=" space-y-1.5 mt-6 px-4">
               <p className=" text-sm font-medium text-default-700 pb-2">
-                Drag and drop your event or click in the calendar
+                Seleção Rápida de Compromissos
               </p>
               {dragEvents.map((event) => (
                 <ExternalDraggingevent key={event.id} event={event} />
               ))}
             </div>
-            <div className="py-4 text-default-800  font-semibold text-xs uppercase mt-4 px-4">
+            {/* <div className="py-4 text-default-800  font-semibold text-xs uppercase mt-4 px-4">
               FILTER
             </div>
             <ul className=" space-y-2 px-4">
@@ -193,13 +202,14 @@ const CalendarView = ({ events, categories }: CalendarViewProps) => {
                   <Label htmlFor={category.label}>{category.label}</Label>
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </CardContent>
         </Card>
 
         <Card className="col-span-12 lg:col-span-8 2xl:col-span-9  pt-5">
           <CardContent className="dash-tail-calendar">
             <FullCalendar
+              locale={ptBR}
               plugins={[
                 dayGridPlugin,
                 timeGridPlugin,

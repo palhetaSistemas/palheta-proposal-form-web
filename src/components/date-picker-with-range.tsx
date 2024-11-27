@@ -13,6 +13,7 @@ import {
   PopoverTrigger,
 } from "@/src/components/ui/popover";
 import { useTheme } from "next-themes";
+import { ptBR } from "date-fns/locale";
 
 export default function DatePickerWithRange({
   className,
@@ -43,12 +44,13 @@ export default function DatePickerWithRange({
                 format(date.from, "LLL dd, y")
               )
             ) : (
-              <span>Pick a date</span>
+              <span>Filtrar</span>
             )}
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-auto p-0" align="end">
           <Calendar
+            locale={ptBR}
             initialFocus
             mode="range"
             defaultMonth={date?.from}

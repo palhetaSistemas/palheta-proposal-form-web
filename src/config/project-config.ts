@@ -55,6 +55,11 @@ export const getTasks = async () => {
   return response.data;
 };
 
+export const getTasks2 = async () => {
+  const response = await api.get("/tasks2");
+  return response.data;
+};
+
 export const createTask = async (board: Board) => {
   const response = await api.post("/tasks", board);
   return response.data;

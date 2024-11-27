@@ -1,12 +1,18 @@
-"use client"
+"use client";
 
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./ui/select";
 
 const DashboardSelect = () => {
   return (
     <Select>
       <SelectTrigger className="w-[124px]">
-        <SelectValue placeholder="Select Date" className="whitespace-nowrap" />
+        <SelectValue placeholder="Filtrar Data" className="whitespace-nowrap" />
       </SelectTrigger>
       <SelectContent>
         <SelectItem value="jan-12">Jan 12</SelectItem>

@@ -30,7 +30,7 @@ import { SortableContext, arrayMove } from "@dnd-kit/sortable";
 import { createPortal } from "react-dom";
 import { editBoardAction, swapBoardAction } from "@/src/action/project-action";
 import { type Board as BoardType } from "@/src/app/api/boards/data";
-import { type Task as TaskType } from "@/src/app/api/tasks/data";
+import { type Task as TaskType } from "@/src/app/api/tasks2/data";
 import { type SubTask as SubTaskType } from "@/src/app/api/tasks/data";
 import { type Comment as CommentType } from "@/src/app/api/comments/data";
 const wait = () => new Promise((resolve) => setTimeout(resolve, 1000));

@@ -32,19 +32,19 @@ import Link from "next/link";
 const columns = [
   {
     key: "employee",
-    label: "employee",
+    label: "Colaborador",
   },
   {
     key: "task name",
-    label: "task name",
+    label: "Tarefa",
   },
   {
     key: "deadline",
-    label: "deadline",
+    label: "Prazo",
   },
   {
     key: "overdue",
-    label: "overdue",
+    label: "Atrasado",
   },
 ];
 
@@ -60,40 +60,40 @@ interface User {
 const users: User[] = [
   {
     id: 1,
-    name: "Mark Dsuza",
-    task: "Admin dashboard template",
+    name: "João da Silva",
+    task: "Ligar para cliente x",
     deadline: "21 Jan 2024",
     overdue: "01",
     avatar: avatar1,
   },
   {
     id: 2,
-    name: "Mark Dsuza",
-    task: "Admin dashboard template",
+    name: "João da Silva",
+    task: "Enviar relatório para cliente",
     deadline: "21 Jan 2024",
     overdue: "01",
     avatar: avatar1,
   },
   {
     id: 3,
-    name: "Mark Dsuza",
-    task: "Admin dashboard template",
+    name: "João da Silva",
+    task: "Visitar o cliente",
     deadline: "21 Jan 2024",
     overdue: "01",
     avatar: avatar2,
   },
   {
     id: 4,
-    name: "Mark Dsuza",
-    task: "Admin dashboard template",
+    name: "João da Silva",
+    task: "Levar vacinas para fazenda",
     deadline: "21 Jan 2024",
     overdue: "01",
     avatar: avatar3,
   },
   {
     id: 5,
-    name: "Mark Dsuza",
-    task: "Admin dashboard template",
+    name: "João da Silva",
+    task: "Entregar produtos",
     deadline: "21 Jan 2024",
     overdue: "01",
     avatar: avatar4,
@@ -102,11 +102,11 @@ const users: User[] = [
 
 const OverdueTask = () => {
   return (
-    <Card>
+    <Card className="h-full">
       <CardHeader className="flex-row justify-between items-center mb-0">
-        <CardTitle>Overdue Task</CardTitle>
+        <CardTitle>Tarefas Atrasadas</CardTitle>
         <Button type="button" color="secondary" asChild>
-          <Link href="#"> View all</Link>
+          <Link href="#">Ver Todos</Link>
         </Button>
       </CardHeader>
       <CardContent className="px-0 pb-0 overflow-x-auto">
@@ -143,7 +143,7 @@ const OverdueTask = () => {
                 </TableCell>
                 <TableCell className="text-sm font-medium text-default-600 last:text-end py-1 whitespace-nowrap">
                   <Badge color="warning" variant="soft">
-                    {item.overdue} day
+                    {item.overdue} dia
                   </Badge>
                 </TableCell>
               </TableRow>

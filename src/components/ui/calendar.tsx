@@ -4,6 +4,8 @@ import { DayPicker } from "react-day-picker";
 
 import { cn } from "@/src/lib/utils";
 import { buttonVariants } from "@/src/components/ui/button";
+import { ptBR } from "date-fns/locale";
+
 export type CalendarProps = React.ComponentProps<typeof DayPicker>;
 function Calendar({
   className,
@@ -13,6 +15,7 @@ function Calendar({
 }: CalendarProps) {
   return (
     <DayPicker
+      locale={ptBR}
       showOutsideDays={showOutsideDays}
       className={cn("p-0 md:p-3", className)}
       classNames={{

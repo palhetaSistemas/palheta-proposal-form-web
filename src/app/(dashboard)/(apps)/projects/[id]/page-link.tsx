@@ -5,52 +5,43 @@ import Link from "next/link";
 import { cn } from "@/src/lib/utils";
 const pages = [
   {
-    text: "overview",
-    value: "overview",
+    text: "Panorama",
+    value: "",
   },
   {
-    text: "task",
+    text: "Tarefas",
     value: "task",
   },
   {
-    text: "docs",
+    text: "Documentos",
     value: "documents",
   },
   {
-    text: "files",
+    text: "Formulários",
     value: "files",
   },
   {
-    text: "activity",
-    value: "activity",
-  },
-  {
-    text: "team",
-    value: "team",
-  },
-  {
-    text: "discussion",
-    value: "discussion",
-  },
-  {
-    text: "settings",
+    text: "Ajustes",
     value: "settings",
   },
 ];
 const PageLink = ({ id }: { id: string }) => {
   const locationName = usePathname();
+  console.log("locationName: ", locationName);
   return pages.map((item) => (
     <Link
       key={item.value}
-      href={`/projects/${id}/${item.value}`}
+      href={`/projects/${item.value}`}
       className={cn(
         "text-sm font-semibold text-default-500 capitalize pb-3 border-b border-transparent cursor-pointer",
         {
-          "border-primary": locationName === `/projects/${id}/${item.value}`,
+          "border-primary":
+            locationName === `/projects/${item.value}` ||
+            (item.value === "" && locationName === "/projects"),
         }
       )}
     >
-      {item.value}
+      {item.text}
     </Link>
   ));
 };

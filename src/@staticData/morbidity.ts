@@ -1,12 +1,12 @@
 export const morbidityStaticData = {
   tableData: {
-    headers: ["Mês", "Morbidade", "Tradados", "Tratados (%)"],
+    headers: ["Raças", "Quantidade"],
     content: [
-      ["Janeiro", "350", "35", "10%"],
-      ["Janeiro", "350", "35", "10%"],
-      ["Janeiro", "350", "35", "10%"],
-      ["Janeiro", "350", "35", "10%"],
-      ["Janeiro", "350", "35", "10%"],
+      ["Nelore", "05"],
+      ["Angus", "06"],
+      ["Devon", "06"],
+      ["Brahman", "10"],
+      ["Senepol", "08"],
     ],
   },
   chartData: {

@@ -59,9 +59,9 @@ const statusColors: { [key: string]: any } = {
   completed: "success",
 };
 const priorityColors: { [key: string]: any } = {
-  high: "success",
+  high: "destructive",
   medium: "warning",
-  low: "destructive",
+  low: "success",
 };
 import { Menu } from "lucide-react";
 import { type Task as TaskType } from "@/src/app/api/tasks/data";
@@ -98,7 +98,7 @@ const TaskTable = ({
             }
             aria-label="Select all"
           />
-          <span className="text-default-800">Task Name</span>
+          <span className="text-default-800">Tarefa</span>
         </div>
       ),
       cell: ({ row }) => (
@@ -139,14 +139,20 @@ const TaskTable = ({
             color={statusColors[row.getValue("status") as string]}
             className="capitalize"
           >
-            {row.getValue("status")}
+            {row.getValue("status") === "inprogress"
+              ? "Pendente"
+              : row.getValue("status") === "todo"
+              ? "Em Andamento"
+              : row.getValue("status") === "completed"
+              ? "Completa"
+              : ""}
           </Badge>
         </div>
       ),
     },
     {
       accessorKey: "assign",
-      header: "Assigned",
+      header: "Designado",
       cell: ({ row }: any) => (
         <div>
           {row.getValue("assign")?.length > 0 && (
@@ -180,19 +186,23 @@ const TaskTable = ({
     },
     {
       accessorKey: "priority",
-      header: "Priority",
+      header: "Prioridade",
       cell: ({ row }) => (
         <Badge
           color={priorityColors[row.getValue("priority") as string] || ""}
           className="capitalize"
         >
-          {row.getValue("priority")}
+          {row.getValue("priority") === "high"
+            ? "Alta"
+            : row.getValue("priority") === "medium"
+            ? "Média"
+            : "Baixa"}
         </Badge>
       ),
     },
     {
       accessorKey: "date",
-      header: "Due Date",
+      header: "Data Limite",
       cell: ({ row }) => (
         <div className="text-sm  text-default-600 whitespace-nowrap">
           {row.getValue("date")}
@@ -201,7 +211,7 @@ const TaskTable = ({
     },
     {
       accessorKey: "id",
-      header: "Actions",
+      header: "Ações",
       cell: ({ row }) => {
         return (
           <div className="flex justify-center items-center gap-2">
@@ -262,7 +272,7 @@ const TaskTable = ({
                 variant="outline"
                 className="border-default-300 text-default-500"
               >
-                Sort <ChevronDown className="ml-2 h-4 w-4" />
+                Filtrar <ChevronDown className="ml-2 h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start">
@@ -277,13 +287,13 @@ const TaskTable = ({
                 variant="outline"
                 className="border-default-300 text-default-500"
               >
-                All Tasks <ChevronDown className="ml-2 h-4 w-4" />
+                Todas Tarefas <ChevronDown className="ml-2 h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start">
-              <DropdownMenuItem>Task 1</DropdownMenuItem>
-              <DropdownMenuItem>Task 2</DropdownMenuItem>
-              <DropdownMenuItem>Task 3</DropdownMenuItem>
+              <DropdownMenuItem>Tarefa 1</DropdownMenuItem>
+              <DropdownMenuItem>Tarefa 2</DropdownMenuItem>
+              <DropdownMenuItem>Tarefa 3</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
@@ -291,7 +301,7 @@ const TaskTable = ({
           <div className="relative">
             <Search className="w-4 h-4 text-default-400 absolute top-1/2 ltr:left-2 rtl:right-2 -translate-y-1/2" />
             <Input
-              placeholder="Search Projects"
+              placeholder="Buscar Tarefas"
               className="ltr:pl-7 rtl:pr-7 h-10"
               value={
                 (table.getColumn("title")?.getFilterValue() as string) ?? ""
@@ -365,8 +375,8 @@ const TaskTable = ({
       <CardFooter className="flex-none mt-4">
         <div className="flex items-center gap-4 flex-wrap  w-full">
           <div className="flex-1 text-sm whitespace-nowrap text-muted-foreground">
-            {table.getFilteredSelectedRowModel().rows.length} of{" "}
-            {table.getFilteredRowModel().rows.length} row(s) selected.
+            {table.getFilteredSelectedRowModel().rows.length} de{" "}
+            {table.getFilteredRowModel().rows.length} lista(s) selecionada(s).
           </div>
 
           <div className="flex-none flex items-center gap-3">

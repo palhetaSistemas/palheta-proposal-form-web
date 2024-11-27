@@ -28,10 +28,10 @@ const ChangeTheme = () => {
           <span className="w-5 h-5 rounded-full bg-default-200 group-hover:bg-default-300 flex justify-center items-center">
             <span className="w-3 h-3 rounded-full bg-primary"></span>
           </span>
-          <span className="text-xs text-default-600">Change Theme</span>
+          <span className="text-xs text-default-600">Trocar Tema</span>
         </Button>
       </DialogTrigger>
-      <DialogContent size="sm">
+      {/* <DialogContent size="sm">
         <DialogHeader className="flex justify-between">
           <DialogTitle className="text-center text-2xl">Themes</DialogTitle>
         </DialogHeader>
@@ -97,7 +97,7 @@ const ChangeTheme = () => {
           </DialogClose>
           <Button type="submit">Save</Button>
         </DialogFooter>
-      </DialogContent>
+      </DialogContent> */}
     </Dialog>
   );
 };

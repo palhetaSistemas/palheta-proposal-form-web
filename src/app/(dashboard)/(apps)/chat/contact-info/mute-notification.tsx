@@ -26,7 +26,7 @@ const MuteNotification = () => {
           >
             <Icon icon="ci:bell-ring" className="h-5 w-5" />
           </Button>
-          <span className="text-xs text-default-900">Mute</span>
+          <span className="text-xs text-default-900">Silenciar</span>
         </div>
       </DialogTrigger>
       <DialogContent>

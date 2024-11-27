@@ -29,7 +29,7 @@ import { SortableContext, useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import Task from "./task";
 import { type Board as BoardType } from "@/src/app/api/boards/data";
-import { type Task as TaskType } from "@/src/app/api/tasks/data";
+import { type Task as TaskType } from "@/src/app/api/tasks2/data";
 interface TaskBoardProps {
   board: BoardType;
   children?: React.ReactNode;
@@ -126,16 +126,16 @@ const taskBoard = ({
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-[196px]" align="end">
-              <DropdownMenuItem onSelect={onEdit}>
+              <DropdownMenuItem>
                 <Icon
                   icon="heroicons:pencil-square"
                   className="w-3.5 h-3.5 mr-1 text-default-700"
                 />
-                Edit
+                Editar
               </DropdownMenuItem>
-              <DropdownMenuItem onSelect={() => setOpen(true)}>
+              <DropdownMenuItem>
                 <Trash2 className="w-3.5 h-3.5 mr-1 text-default-600" />
-                Delete
+                Apagar
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -157,7 +157,7 @@ const taskBoard = ({
             >
               <Plus className="w-5 h-5 text-primary" />
               <span className="text-xs font-semibold text-primary">
-                Add Task
+                Adicionar Novo
               </span>
             </Button>
           )}

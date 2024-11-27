@@ -5,7 +5,7 @@ import { useThemeStore } from "@/src/store";
 import { useTheme } from "next-themes";
 import { themes } from "@/src/config/thems";
 import { getGridConfig, getYAxisConfig } from "@/src/lib/appex-chart-options";
-import RevinueChart from "@/src/app/(dashboard)/(home)/ecommerce/components/revinue-chart";
+import RevinueChart from "@/src/app/(dashboard)/(home2)/ecommerce/components/revinue-chart";
 import DashboardSelect from "../dasboard-select";
 import { Card, CardHeader, CardTitle, CardContent } from "../ui/card";
 

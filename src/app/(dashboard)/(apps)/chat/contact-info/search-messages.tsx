@@ -24,7 +24,7 @@ const SearchMessages = ({
         />
         <Input
           type="text"
-          placeholder="Search"
+          placeholder="Pesquisar"
           radius="xl"
           className="pl-10 pr-10 bg-default-200 "
           variant="flat"
@@ -70,7 +70,7 @@ const SearchMessages = ({
         className="bg-default-200 text-default-900 hover:bg-default-600 hover:text-primary-foreground"
         onClick={handleSetIsOpenSearch}
       >
-        Close
+        Fechar
       </Button>
     </div>
   );

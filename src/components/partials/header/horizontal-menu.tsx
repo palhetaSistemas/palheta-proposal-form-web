@@ -31,7 +31,7 @@ export default function MainMenu({ trans }: { trans: any }) {
                   className={twMerge([
                     " flex items-center gap-2 py-4 cursor-pointer group data-[state=open]:text-primary-300 px-6  ",
                     path === item.route
-                      ? "bg-primary-500/30 border-t-2 border-primary-500 text-default-900"
+                      ? "bg-gradient-to-r from-primary/5 from-0% to-100% via-primary/30 to-primary/5 backdrop-filter backdrop-blur border-t-2 border-primary-500 text-default-900"
                       : "text-default-500",
                   ])}
                 >
@@ -41,11 +41,13 @@ export default function MainMenu({ trans }: { trans: any }) {
                   </Link>
                 </div>
               </NavigationMenu.Trigger>
-              <NavigationMenu.Content
-                className={cn(
-                  "w-full border-primary-300  rounded-md border bg-popover text-popover-foreground shadow-lg   "
-                )}
-              ></NavigationMenu.Content>
+              {path !== item.route && (
+                <NavigationMenu.Content
+                  className={cn(
+                    "w-full border-primary-300  rounded-md border bg-popover text-popover-foreground shadow-lg   "
+                  )}
+                />
+              )}
             </NavigationMenu.Item>
           ))}
         </NavigationMenu.List>

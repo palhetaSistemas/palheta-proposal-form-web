@@ -107,7 +107,7 @@ const MessageFooter = ({
                       </Button>
                     </TooltipTrigger>
                     <TooltipContent side="top" align="start">
-                      <p>Open More Actions </p>
+                      <p>Mais ações</p>
                       <TooltipArrow className="fill-primary" />
                     </TooltipContent>
                   </Tooltip>
@@ -126,7 +126,7 @@ const MessageFooter = ({
                     className="text-xl text-primary"
                   />
                   <span className="text-sm font-medium text-default-900">
-                    Send a voice clip
+                    Enviar Áudio
                   </span>
                 </div>
               </DropdownMenuItem>
@@ -140,7 +140,7 @@ const MessageFooter = ({
                       />
                       <Input type="file" className="hidden" id="attachement" />
                       <span className="text-sm font-medium text-defualt-900 inline-block ml-1">
-                        Attach a file
+                        Enviar Arquivo
                       </span>
                     </Label>
                   </DropdownMenuItem>
@@ -151,7 +151,7 @@ const MessageFooter = ({
                         className="text-xl text-primary"
                       />
                       <span className="text-sm font-medium text-defualt-900 inline-block ml-1">
-                        Choose a sticker
+                        Enviar Sticker
                       </span>
                     </div>
                   </DropdownMenuItem>
@@ -180,7 +180,7 @@ const MessageFooter = ({
                       </Label>
                     </TooltipTrigger>
                     <TooltipContent align="start">
-                      <p>Attach a file</p>
+                      <p>Enviar Arquivo</p>
                       <TooltipArrow className="fill-primary" />
                     </TooltipContent>
                   </Tooltip>
@@ -202,7 +202,7 @@ const MessageFooter = ({
                       </Button>
                     </TooltipTrigger>
                     <TooltipContent align="start">
-                      <p> Choose a sticker </p>
+                      <p>Enviar Sticker</p>
                       <TooltipArrow className="fill-primary" />
                     </TooltipContent>
                   </Tooltip>
@@ -217,7 +217,7 @@ const MessageFooter = ({
               <textarea
                 value={message}
                 onChange={handleChange}
-                placeholder="Type your message..."
+                placeholder="Escreva sua mensagem"
                 className="bg-background border border-default-200 outline-none focus:border-primary  rounded-xl break-words pl-8  md:pl-3 px-3 flex-1 h-10 pt-2 p-1 pr-8 no-scrollbar "
                 onKeyDown={(e) => {
                   if (e.key === "Enter" && !e.shiftKey) {
@@ -233,7 +233,7 @@ const MessageFooter = ({
                 }}
               />
 
-              <Popover>
+              {/* <Popover>
                 <PopoverTrigger asChild>
                   <span className="absolute ltr:right-12 rtl:left-12 bottom-1.5 h-7 w-7 rounded-full cursor-pointer  ">
                     <Annoyed className="w-6 h-6 text-primary" />
@@ -249,7 +249,7 @@ const MessageFooter = ({
                     theme="light"
                   />
                 </PopoverContent>
-              </Popover>
+              </Popover> */}
               <Button
                 type="submit"
                 className="rounded-full bg-default-200 hover:bg-default-300 h-[42px] w-[42px] p-0 self-end"

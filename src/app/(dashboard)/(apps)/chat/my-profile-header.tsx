@@ -23,7 +23,12 @@ const MyProfileHeader = ({ profile }: { profile: ProfileUserType }) => {
       <div className="flex  justify-between mb-4">
         <div className="flex   gap-3">
           <Avatar className="h-10 w-10">
-            <AvatarImage src={profile?.avatar.src} alt="" />
+            <AvatarImage
+              src="/images/avatar/user.png"
+              width={100}
+              height={100}
+              alt=""
+            />
             <AvatarFallback>{profile?.fullName.slice(0, 2)}</AvatarFallback>
           </Avatar>
           <div className="block">
@@ -55,30 +60,28 @@ const MyProfileHeader = ({ profile }: { profile: ProfileUserType }) => {
               align="end"
               avoidCollisions
             >
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuLabel>Minha Conta</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem className="focus:bg-primary/10 focus:text-primary">
-                Profile
+                Perfil
               </DropdownMenuItem>
               <DropdownMenuItem className="focus:bg-primary/10 focus:text-primary">
-                Billing
-              </DropdownMenuItem>
-              <DropdownMenuItem className="focus:bg-primary/10 focus:text-primary">
-                Team
-              </DropdownMenuItem>
-              <DropdownMenuItem className="focus:bg-primary/10 focus:text-primary">
-                Subscription
+                Editar
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
       </div>
       {/* search */}
-      <InputGroup merged className="hidden lg:flex">
-        <InputGroupText>
+      <InputGroup merged className="hidden  lg:flex">
+        <InputGroupText className="border-default-700">
           <Icon icon="heroicons:magnifying-glass" />
         </InputGroupText>
-        <Input type="text" placeholder="Search by name" />
+        <Input
+          className="group-focus-within:border-primary"
+          type="text"
+          placeholder="Buscar por Nome"
+        />
       </InputGroup>
       {/* actions */}
       <div className="hidden lg:flex flex-wrap justify-between py-4 border-b border-default-200">
@@ -86,19 +89,19 @@ const MyProfileHeader = ({ profile }: { profile: ProfileUserType }) => {
           <span className="text-xl mb-1">
             <Icon icon="gala:chat" />
           </span>
-          <span className="text-xs">Chats</span>
+          <span className="text-xs">Conversas</span>
         </Button>
         <Button className="flex flex-col items-center px-0 bg-transparent hover:bg-transparent text-default-500 hover:text-default-900">
           <span className="text-xl mb-1">
             <Icon icon="material-symbols:group" />
           </span>
-          <span className="text-xs">Groups</span>
+          <span className="text-xs">Contatos</span>
         </Button>
         <Button className="flex flex-col items-center px-0 bg-transparent hover:bg-transparent text-default-500 hover:text-default-900">
           <span className="text-xl mb-1">
             <Icon icon="ci:bell-ring" />
           </span>
-          <span className="text-xs">Notification</span>
+          <span className="text-xs">Notificações</span>
         </Button>
       </div>
     </>

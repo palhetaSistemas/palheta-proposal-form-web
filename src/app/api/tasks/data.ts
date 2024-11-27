@@ -8,26 +8,26 @@ export const tasks = [
   {
     boardId: demoBoards[0].id,
     id: "2e09c2fc-9d92-4df1-a3cc-bd8c8c51d85c",
-    title: "the dashtail template",
+    title: "Enviar B.I Fazenda A...",
     desc: "Create a Brand logo design for a DashTail Admin.",
     status: "inprogress",
     tags: ["design", "planning"],
     priority: "high",
     assign: [
       {
-        name: "Rajib",
+        name: "João",
         image: avatar,
       },
       {
-        name: "Rakib",
+        name: "Gabriel",
         image: avatar,
       },
       {
-        name: "Rajib",
+        name: "Victor",
         image: avatar,
       },
       {
-        name: "Rahad",
+        name: "Maycon",
         image: avatar,
       },
     ],
@@ -56,18 +56,18 @@ export const tasks = [
   {
     boardId: demoBoards[1].id,
     id: "8613e1d1-2046-4f0e-bacb-dca57db5b1a9",
-    title: "the dashtail template",
+    title: "Reunião Antônio São...",
     desc: "Create a Brand logo design for a DashTail Admin.",
     status: "completed",
     tags: ["development", "planning"],
     priority: "low",
     assign: [
       {
-        name: "Rajib",
+        name: "João",
         image: avatar,
       },
       {
-        name: "Rakib",
+        name: "Gabriel",
         image: avatar,
       },
     ],
@@ -96,26 +96,26 @@ export const tasks = [
   {
     boardId: demoBoards[2].id,
     id: "5d4818ef-9f51-48f2-80bc-2df7e50a1f64",
-    title: "the dashtail template",
+    title: "Reunião interna",
     desc: "Create a Brand logo design for a DashTail Admin.",
-    status: "inprogress",
+    status: "todo",
     tags: ["development", "planning"],
     priority: "medium",
     assign: [
       {
-        name: "Rajib",
+        name: "João",
         image: avatar,
       },
       {
-        name: "Rakib",
+        name: "Gabriel",
         image: avatar,
       },
       {
-        name: "Rajib",
+        name: "Victor",
         image: avatar,
       },
       {
-        name: "Rahad",
+        name: "Maycon",
         image: avatar,
       },
     ],
@@ -144,26 +144,26 @@ export const tasks = [
   {
     boardId: demoBoards[2].id,
     id: "e0e88989-0876-4f1f-9e07-3b69e7e6e05c",
-    title: "New template",
+    title: "Estande Evento",
     desc: "Create a Brand logo design for a DashTail Admin.",
     status: "inprogress",
     tags: ["development", "planning"],
     priority: "medium",
     assign: [
       {
-        name: "Rajib",
+        name: "João",
         image: avatar,
       },
       {
-        name: "Rakib",
+        name: "Gabriel",
         image: avatar,
       },
       {
-        name: "Rajib",
+        name: "Victor",
         image: avatar,
       },
       {
-        name: "Rahad",
+        name: "Maycon",
         image: avatar,
       },
     ],

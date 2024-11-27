@@ -68,6 +68,8 @@ const ChatPage = () => {
     queryKey: ["contacts"],
     queryFn: () => getContacts(),
   });
+
+  console.log("contacts: ", contacts);
   const {
     isLoading: messageLoading,
     isError: messageIsError,
@@ -216,142 +218,154 @@ const ChatPage = () => {
   };
   const isLg = useMediaQuery("(max-width: 1024px)");
   return (
-    <div className="flex gap-5 app-height  relative rtl:space-x-reverse">
-      {isLg && showContactSidebar && (
-        <div
-          className=" bg-background/60 backdrop-filter
-         backdrop-blur-sm absolute w-full flex-1 inset-0 z-[99] rounded-md"
-          onClick={() => setShowContactSidebar(false)}
-        ></div>
-      )}
-      {isLg && showInfo && (
-        <div
-          className=" bg-background/60 backdrop-filter
-         backdrop-blur-sm absolute w-full flex-1 inset-0 z-40 rounded-md"
-          onClick={() => setShowInfo(false)}
-        ></div>
-      )}
-      <div
-        className={cn("transition-all duration-150 flex-none  ", {
-          "absolute h-full top-0 md:w-[260px] w-[200px] z-[999]": isLg,
-          "flex-none min-w-[260px]": !isLg,
-          "left-0": isLg && showContactSidebar,
-          "-left-full": isLg && !showContactSidebar,
-        })}
-      >
-        <Card className="h-full pb-0">
-          <CardHeader className="border-none pb-0 mb-0">
-            <MyProfileHeader profile={profileData} />
-          </CardHeader>
-          <CardContent className="pt-0 px-0   lg:h-[calc(100%-170px)] h-[calc(100%-70px)]   ">
-            <ScrollArea className="h-full">
-              {isLoading ? (
-                <Loader />
-              ) : (
-                contacts?.contacts?.map((contact: ContactType) => (
-                  <ContactList
-                    key={contact.id}
-                    contact={contact}
-                    selectedChatId={selectedChatId}
-                    openChat={openChat}
-                  />
-                ))
-              )}
-            </ScrollArea>
-          </CardContent>
-        </Card>
-      </div>
-      {/* chat sidebar  end*/}
-      {/* chat messages start */}
-      {selectedChatId ? (
-        <div className="flex-1 ">
-          <div className=" flex space-x-5 h-full rtl:space-x-reverse">
-            <div className="flex-1">
-              <Card className="h-full flex flex-col ">
-                <CardHeader className="flex-none mb-0">
-                  <MessageHeader
-                    showInfo={showInfo}
-                    handleShowInfo={handleShowInfo}
-                    profile={profileData}
-                    mblChatHandler={() =>
-                      setShowContactSidebar(!showContactSidebar)
-                    }
-                  />
-                </CardHeader>
-                {isOpenSearch && (
-                  <SearchMessages
-                    handleSetIsOpenSearch={handleSetIsOpenSearch}
-                  />
-                )}
-
-                <CardContent className=" !p-0 relative flex-1 overflow-y-auto">
-                  <div
-                    className="h-full py-4 overflow-y-auto no-scrollbar"
-                    ref={chatHeightRef}
-                  >
-                    {messageLoading ? (
-                      <Loader />
-                    ) : (
-                      <>
-                        {messageIsError ? (
-                          <EmptyMessage />
-                        ) : (
-                          chats?.chat?.chat?.map((message: any, i: number) => (
-                            <Messages
-                              key={`message-list-${i}`}
-                              message={message}
-                              contact={chats?.contact}
-                              profile={profileData}
-                              onDelete={onDelete}
-                              index={i}
-                              selectedChatId={selectedChatId}
-                              handleReply={handleReply}
-                              replayData={replayData}
-                              handleForward={handleForward}
-                              handlePinMessage={handlePinMessage}
-                              pinnedMessages={pinnedMessages}
-                            />
-                          ))
-                        )}
-                      </>
-                    )}
-                    <PinnedMessages
-                      pinnedMessages={pinnedMessages}
-                      handleUnpinMessage={handleUnpinMessage}
-                    />
-                  </div>
-                </CardContent>
-                <CardFooter className="flex-none flex-col px-0 py-4 border-t border-border">
-                  <MessageFooter
-                    handleSendMessage={handleSendMessage}
-                    replay={replay}
-                    setReply={setReply}
-                    replayData={replayData}
-                  />
-                </CardFooter>
-              </Card>
-            </div>
-
-            {showInfo && (
-              <ContactInfo
-                handleSetIsOpenSearch={handleSetIsOpenSearch}
-                handleShowInfo={handleShowInfo}
-                contact={contacts?.contacts?.find(
-                  (contact: ContactType) => contact.id === selectedChatId
-                )}
-              />
-            )}
-          </div>
+    <>
+      <div className="flex flex-wrap mb-7">
+        <div className="text-xl font-medium text-default-900 flex-1">
+          Chat Interno
         </div>
-      ) : (
-        <Blank mblChatHandler={() => setShowContactSidebar(true)} />
-      )}
-      <ForwardMessage
-        open={isForward}
-        setIsOpen={setIsForward}
-        contacts={contacts}
-      />
-    </div>
+        {/* <div className="flex-none">
+          <TaskBreadCrumbs />
+        </div> */}
+      </div>
+      <div className="flex gap-5 app-height  relative rtl:space-x-reverse">
+        {isLg && showContactSidebar && (
+          <div
+            className=" bg-background/60 backdrop-filter
+         backdrop-blur-sm absolute w-full flex-1 inset-0 z-[99] rounded-md"
+            onClick={() => setShowContactSidebar(false)}
+          ></div>
+        )}
+        {isLg && showInfo && (
+          <div
+            className=" bg-background/60 backdrop-filter
+         backdrop-blur-sm absolute w-full flex-1 inset-0 z-40 rounded-md"
+            onClick={() => setShowInfo(false)}
+          ></div>
+        )}
+        <div
+          className={cn("transition-all duration-150 flex-none  ", {
+            "absolute h-full top-0 md:w-[260px] w-[200px] z-[999]": isLg,
+            "flex-none min-w-[260px]": !isLg,
+            "left-0": isLg && showContactSidebar,
+            "-left-full": isLg && !showContactSidebar,
+          })}
+        >
+          <Card className="h-full pb-0">
+            <CardHeader className="border-none pb-0 mb-0">
+              <MyProfileHeader profile={profileData} />
+            </CardHeader>
+            <CardContent className="pt-0 px-0   lg:h-[calc(100%-170px)] h-[calc(100%-70px)]   ">
+              <ScrollArea className="h-full">
+                {isLoading ? (
+                  <Loader />
+                ) : (
+                  contacts?.contacts?.map((contact: ContactType) => (
+                    <ContactList
+                      key={contact.id}
+                      contact={contact}
+                      selectedChatId={selectedChatId}
+                      openChat={openChat}
+                    />
+                  ))
+                )}
+              </ScrollArea>
+            </CardContent>
+          </Card>
+        </div>
+        {/* chat sidebar  end*/}
+        {/* chat messages start */}
+        {selectedChatId ? (
+          <div className="flex-1 ">
+            <div className=" flex space-x-5 h-full rtl:space-x-reverse">
+              <div className="flex-1">
+                <Card className="h-full flex flex-col ">
+                  <CardHeader className="flex-none mb-0">
+                    <MessageHeader
+                      showInfo={showInfo}
+                      handleShowInfo={handleShowInfo}
+                      profile={profileData}
+                      mblChatHandler={() =>
+                        setShowContactSidebar(!showContactSidebar)
+                      }
+                    />
+                  </CardHeader>
+                  {isOpenSearch && (
+                    <SearchMessages
+                      handleSetIsOpenSearch={handleSetIsOpenSearch}
+                    />
+                  )}
+
+                  <CardContent className=" !p-0 relative flex-1 overflow-y-auto">
+                    <div
+                      className="h-full py-4 overflow-y-auto no-scrollbar"
+                      ref={chatHeightRef}
+                    >
+                      {messageLoading ? (
+                        <Loader />
+                      ) : (
+                        <>
+                          {messageIsError ? (
+                            <EmptyMessage />
+                          ) : (
+                            chats?.chat?.chat?.map(
+                              (message: any, i: number) => (
+                                <Messages
+                                  key={`message-list-${i}`}
+                                  message={message}
+                                  contact={chats?.contact}
+                                  profile={profileData}
+                                  onDelete={onDelete}
+                                  index={i}
+                                  selectedChatId={selectedChatId}
+                                  handleReply={handleReply}
+                                  replayData={replayData}
+                                  handleForward={handleForward}
+                                  handlePinMessage={handlePinMessage}
+                                  pinnedMessages={pinnedMessages}
+                                />
+                              )
+                            )
+                          )}
+                        </>
+                      )}
+                      <PinnedMessages
+                        pinnedMessages={pinnedMessages}
+                        handleUnpinMessage={handleUnpinMessage}
+                      />
+                    </div>
+                  </CardContent>
+                  <CardFooter className="flex-none flex-col px-0 py-4 border-t border-border">
+                    <MessageFooter
+                      handleSendMessage={handleSendMessage}
+                      replay={replay}
+                      setReply={setReply}
+                      replayData={replayData}
+                    />
+                  </CardFooter>
+                </Card>
+              </div>
+
+              {showInfo && (
+                <ContactInfo
+                  handleSetIsOpenSearch={handleSetIsOpenSearch}
+                  handleShowInfo={handleShowInfo}
+                  contact={contacts?.contacts?.find(
+                    (contact: ContactType) => contact.id === selectedChatId
+                  )}
+                />
+              )}
+            </div>
+          </div>
+        ) : (
+          <Blank mblChatHandler={() => setShowContactSidebar(true)} />
+        )}
+        <ForwardMessage
+          open={isForward}
+          setIsOpen={setIsForward}
+          contacts={contacts}
+        />
+      </div>
+    </>
   );
 };
 

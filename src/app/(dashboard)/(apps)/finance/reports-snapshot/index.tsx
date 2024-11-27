@@ -55,25 +55,25 @@ const ReportsSnapshot = () => {
   const tabsTrigger = [
     {
       value: "all",
-      text: "all user",
+      text: "Doenças Reportadas",
       total: "10,234",
       color: "primary",
     },
     {
       value: "event",
-      text: "Event Count",
+      text: "Novos Animais",
       total: "536",
       color: "warning",
     },
     {
       value: "conversation",
-      text: "conversations",
+      text: "Animais Vendidos",
       total: "21",
       color: "success",
     },
     {
       value: "newuser",
-      text: "New User",
+      text: "Relatórios Preenchidos",
       total: "3321",
       color: "info",
     },
@@ -101,15 +101,15 @@ const ReportsSnapshot = () => {
     },
   ];
   return (
-    <Card>
+    <Card className="h-full">
       <CardHeader className="border-none pb-0">
         <div className="flex items-center gap-2 flex-wrap ">
           <div className="flex-1">
             <div className="text-xl font-semibold text-default-900 whitespace-nowrap">
-              Reports Snapshot
+              Relatório Geral
             </div>
             <span className="text-xs text-default-600">
-              Demographic properties of your customer
+              Veja dados gerais de seus clientes.
             </span>
           </div>
           <div className="flex-none">
@@ -165,7 +165,6 @@ const ReportsSnapshot = () => {
               </TabsTrigger>
             ))}
           </TabsList>
-          charts data
           {tabsContentData.map((item, index) => (
             <TabsContent key={`report-tab-${index}`} value={item.value}>
               <ReportsChart series={item.series} chartColor={item.color} />

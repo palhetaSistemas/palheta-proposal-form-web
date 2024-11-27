@@ -10,8 +10,8 @@ const nextMonth = date.getMonth() === 11 ? new Date(date.getFullYear() + 1, 0, 1
 const prevMonth = date.getMonth() === 11 ? new Date(date.getFullYear() - 1, 0, 1) : new Date(date.getFullYear(), date.getMonth() - 1, 1)
 export const calendarEvents = [
   {
-    id: faker.string.uuid() ,
-    title: "All Day Event",
+    id: faker.string.uuid(),
+    title: "Evento o Dia Todo",
     start: date,
     end: nextDay,
     allDay: false,
@@ -20,64 +20,64 @@ export const calendarEvents = [
       calendar: "business",
     },
   },
-  {
-    id: faker.string.uuid(),
-    title: "Meeting With Client",
-    start: new Date(date.getFullYear(), date.getMonth() + 1, -11),
-    end: new Date(date.getFullYear(), date.getMonth() + 1, -10),
-    allDay: true,
-    //className: "success",
-    extendedProps: {
-      calendar: "personal",
-    },
-  },
-  {
-    id: faker.string.uuid(),
-    title: "Lunch",
-    allDay: true,
-    start: new Date(date.getFullYear(), date.getMonth() + 1, -9),
-    end: new Date(date.getFullYear(), date.getMonth() + 1, -7),
-    // className: "info",
-    extendedProps: {
-      calendar: "family",
-    },
-  },
-  {
-    id: faker.string.uuid(),
-    title: "Birthday Party",
-    start: new Date(date.getFullYear(), date.getMonth() + 1, -11),
-    end: new Date(date.getFullYear(), date.getMonth() + 1, -10),
-    allDay: true,
-    //className: "primary",
-    extendedProps: {
-      calendar: "meeting",
-    },
-  },
-  {
-    id: faker.string.uuid(),
-    title: "Birthday Party",
-    start: new Date(date.getFullYear(), date.getMonth() + 1, -13),
-    end: new Date(date.getFullYear(), date.getMonth() + 1, -12),
-    allDay: true,
-    // className: "danger",
-    extendedProps: {
-      calendar: "holiday",
-    },
-  },
-  {
-    id: faker.string.uuid(),
-    title: "Monthly Meeting",
-    start: nextMonth,
-    end: nextMonth,
-    allDay: true,
-    //className: "primary",
-    extendedProps: {
-      calendar: "business",
-    },
-  },
+  // {
+  //   id: faker.string.uuid(),
+  //   title: "Meeting With Client",
+  //   start: new Date(date.getFullYear(), date.getMonth() + 1, -11),
+  //   end: new Date(date.getFullYear(), date.getMonth() + 1, -10),
+  //   allDay: true,
+  //   //className: "success",
+  //   extendedProps: {
+  //     calendar: "personal",
+  //   },
+  // },
+  // {
+  //   id: faker.string.uuid(),
+  //   title: "Lunch",
+  //   allDay: true,
+  //   start: new Date(date.getFullYear(), date.getMonth() + 1, -9),
+  //   end: new Date(date.getFullYear(), date.getMonth() + 1, -7),
+  //   // className: "info",
+  //   extendedProps: {
+  //     calendar: "family",
+  //   },
+  // },
+  // {
+  //   id: faker.string.uuid(),
+  //   title: "Birthday Party",
+  //   start: new Date(date.getFullYear(), date.getMonth() + 1, -11),
+  //   end: new Date(date.getFullYear(), date.getMonth() + 1, -10),
+  //   allDay: true,
+  //   //className: "primary",
+  //   extendedProps: {
+  //     calendar: "meeting",
+  //   },
+  // },
+  // {
+  //   id: faker.string.uuid(),
+  //   title: "Birthday Party",
+  //   start: new Date(date.getFullYear(), date.getMonth() + 1, -13),
+  //   end: new Date(date.getFullYear(), date.getMonth() + 1, -12),
+  //   allDay: true,
+  //   // className: "danger",
+  //   extendedProps: {
+  //     calendar: "holiday",
+  //   },
+  // },
+  // {
+  //   id: faker.string.uuid(),
+  //   title: "Monthly Meeting",
+  //   start: nextMonth,
+  //   end: nextMonth,
+  //   allDay: true,
+  //   //className: "primary",
+  //   extendedProps: {
+  //     calendar: "business",
+  //   },
+  // },
 ];
 
-export const calendarCategories  = [
+export const calendarCategories = [
   {
     label: "Business",
     value: "business",
@@ -151,6 +151,6 @@ export const categories = [
   },
 ];
 
-export type CalendarEvent = (typeof  calendarEvents)[number]
-export type CalendarCategory = (typeof  calendarCategories)[number]
-export type Category = (typeof  categories)[number]
+export type CalendarEvent = (typeof calendarEvents)[number];
+export type CalendarCategory = (typeof calendarCategories)[number];
+export type Category = (typeof categories)[number];

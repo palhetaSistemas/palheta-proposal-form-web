@@ -32,10 +32,10 @@ const EditNickname = () => {
           <span className="w-5 h-5 rounded-full bg-default-200 group-hover:bg-default-300 flex justify-center items-center">
             <Pen className="w-2.5 h-2.5 text-default-700" />
           </span>
-          <span className="text-xs text-default-600">Edit nickname</span>
+          <span className="text-xs text-default-600">Trocar Nome</span>
         </Button>
       </DialogTrigger>
-      <DialogContent size="xl">
+      {/* <DialogContent size="xl">
         <DialogHeader>
           <DialogTitle className="text-center">Nicknames</DialogTitle>
         </DialogHeader>
@@ -133,7 +133,7 @@ justify-center items-center h-8 w-8
           </DialogClose>
           <Button type="submit">Next</Button>
         </DialogFooter>
-      </DialogContent>
+      </DialogContent> */}
     </Dialog>
   );
 };

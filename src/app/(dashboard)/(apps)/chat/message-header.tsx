@@ -56,7 +56,7 @@ const MessageHeader = ({
             <span className="relative">{profile?.fullName}</span>
           </div>
           <span className="text-xs text-default-500">
-            {active ? "Active Now" : "Offline"}
+            {active ? "Online" : "Offline"}
           </span>
         </div>
       </div>
@@ -75,7 +75,7 @@ const MessageHeader = ({
               </Button>
             </TooltipTrigger>
             <TooltipContent side="bottom" align="end">
-              <p>Start a voice call</p>
+              <p>Iniciar Chamada de Voz</p>
               <TooltipArrow className="fill-primary" />
             </TooltipContent>
           </Tooltip>
@@ -95,7 +95,7 @@ const MessageHeader = ({
               </Button>
             </TooltipTrigger>
             <TooltipContent side="bottom" align="end">
-              <p>Start a video call</p>
+              <p>Iniciar Chamada de Vídeo</p>
               <TooltipArrow className="fill-primary" />
             </TooltipContent>
           </Tooltip>
@@ -125,7 +125,7 @@ const MessageHeader = ({
               </Button>
             </TooltipTrigger>
             <TooltipContent side="bottom" align="end">
-              <p>Conversation information</p>
+              <p>Informações</p>
               <TooltipArrow className="fill-primary" />
             </TooltipContent>
           </Tooltip>

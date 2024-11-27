@@ -14,7 +14,7 @@ const layout = async ({
   const session = await getServerSession(authOptions as NextAuthOptions);
 
   if (!session?.user?.email) {
-    redirect("/auth/login");
+    redirect("/auth/login4");
   }
 
   const trans = await getDictionary(lang);

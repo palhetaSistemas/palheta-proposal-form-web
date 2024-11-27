@@ -6,33 +6,33 @@ import Link from "next/link";
 const WorksNote = () => {
   const data = [
     {
-      task: "Zoom Meeting with client",
+      task: "Atendimento Cliente",
       date: "11 Jan 2024",
-      host: "Michel Jeksone",
+      host: "Matheus Reis",
       link: "#",
     },
     {
-      task: "Zoom Meeting with client",
+      task: "Atendimento Cliente",
       date: "11 Jan 2024",
-      host: "Michel Jeksone",
+      host: "João Reis",
       link: "#",
     },
     {
-      task: "Zoom Meeting with client",
+      task: "Atendimento Cliente",
       date: "11 Jan 2024",
-      host: "Michel Jeksone",
+      host: "André Reis",
       link: "#",
     },
     {
-      task: "Zoom Meeting with client",
+      task: "Atendimento Cliente",
       date: "11 Jan 2024",
-      host: "Michel Jeksone",
+      host: "Bruno Reis",
       link: "#",
     },
     {
-      task: "Zoom Meeting with client",
+      task: "Atendimento Cliente",
       date: "11 Jan 2024",
-      host: "Michel Jeksone",
+      host: "Thiago Reis",
       link: "#",
     },
   ];
@@ -40,15 +40,13 @@ const WorksNote = () => {
     <Card>
       <CardHeader className="sm:flex-row border-none gap-4 pt-6">
         <div className="flex-1">
-          <div className="text-xl font-medium tex-default-900">
-            What's on the Note!
-          </div>
-          <div className="text-sm font-medium text-default-600">
+          <div className="text-xl font-medium tex-default-900">Sua Agenda</div>
+          {/* <div className="text-sm font-medium text-default-600">
             Total 482 participants
-          </div>
+          </div> */}
         </div>
         <Button type="button" color="secondary" asChild>
-          <Link href="#">View All</Link>
+          <Link href="#">Ver Todos</Link>
         </Button>
       </CardHeader>
       <CardContent className="p-3 md:p-6 pt-0">
@@ -68,7 +66,7 @@ const WorksNote = () => {
                   {item.task}
                 </div>
                 <div className="text-xs text-default-600">
-                  Lead By
+                  Responsável
                   <span className="font-medium text-primary/90 ml-1">
                     {item.host}
                   </span>
@@ -76,12 +74,12 @@ const WorksNote = () => {
               </div>
               <Button
                 type="button"
-                color="secondary"
+                color="primary"
                 size="sm"
                 className="h-8"
                 asChild
               >
-                <Link href={item.link}>View</Link>
+                <Link href={item.link}>Abrir Compromisso</Link>
               </Button>
             </div>
           ))}

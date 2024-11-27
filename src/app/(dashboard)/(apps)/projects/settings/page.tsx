@@ -25,13 +25,13 @@ const Settings = () => {
   return (
     <Card>
       <CardHeader className="border-none mb-3 px-7 pt-7">
-        <CardTitle>Project Settings</CardTitle>
+        <CardTitle>Configurações</CardTitle>
       </CardHeader>
       <CardContent className="px-7 mt-5 space-y-6">
         <div className="grid grid-cols-12 gap-5">
           <div className="col-span-12 md:col-span-3">
             <div className="text-sm font-medium text-default-700">
-              Project Logo
+              Foto da Fazenda
             </div>
           </div>
           <div className="col-span-12 md:col-span-9">
@@ -60,13 +60,13 @@ const Settings = () => {
                     </Label>
                   </TooltipTrigger>
                   <TooltipContent>
-                    <p>Change Avatar</p>
+                    <p>Trocar Foto</p>
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
             </div>
             <div className="mt-2 text-sm font-medium text-default-500">
-              Allowed file types: png, jpg, jpeg.
+              Arquivos permitidos: png, jpg, jpeg.
             </div>
           </div>
         </div>
@@ -77,12 +77,12 @@ const Settings = () => {
               htmlFor="projectName"
               className="text-sm font-medium text-default-700"
             >
-              Project Name
+              Nome da Fazenda
             </Label>
           </div>
           <div className="col-span-12 md:col-span-9">
             <Input
-              defaultValue="Dashtail Dashboard Template"
+              defaultValue="Fazenda Ana Maria"
               size="lg"
               id="projectName"
             />
@@ -95,11 +95,11 @@ const Settings = () => {
               htmlFor="projectType"
               className="text-sm font-medium text-default-700"
             >
-              Project Type
+              Cidade e Estado
             </Label>
           </div>
           <div className="col-span-12 md:col-span-9">
-            <Input id="projectType" defaultValue="Admin Template" size="lg" />
+            <Input id="projectType" defaultValue="Curitiba / PR" size="lg" />
           </div>
         </div>
         {/* project Descriptions */}
@@ -109,25 +109,27 @@ const Settings = () => {
               htmlFor="projectDescription"
               className="text-sm font-medium text-default-700"
             >
-              Project Description
+              Descrição
             </Label>
           </div>
           <div className="col-span-12 md:col-span-9">
             <Textarea
               id="projectDescription"
-              defaultValue="Elevate your web app with our sleek Next.js dashboard template. Packed with modern components, responsive design, and easy customization, it's the perfect foundation for crafting stunning, efficient dashboards. Boost productivity now!"
+              defaultValue="Fazenda com falta de profissionalismo e tem diversos maus tratos com animais que devido a isso tem perda de produtividade."
             />
           </div>
         </div>
         {/* Due Date */}
         <div className="grid grid-cols-12 items-center gap-5">
           <div className="col-span-12 md:col-span-3">
-            <div className="text-sm font-medium text-default-700">Due Date</div>
+            <div className="text-sm font-medium text-default-700">
+              Data de Início
+            </div>
           </div>
           <div className="col-span-12 md:col-span-9">
             <Flatpickr
               className="w-full bg-background border border-default-300 pl-3 text-default-500 placeholder:text-default-500 text-sm   focus:outline-none h-10 rounded-md px-2 "
-              placeholder="Due Date"
+              placeholder="Data Início"
             />
           </div>
         </div>
@@ -135,7 +137,7 @@ const Settings = () => {
         <div className="grid grid-cols-12 items-center gap-5">
           <div className="col-span-12 md:col-span-3">
             <div className="text-sm font-medium text-default-700">
-              Notifications
+              Notificações
             </div>
           </div>
           <div className="col-span-12 md:col-span-9">
@@ -146,7 +148,7 @@ const Settings = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Checkbox className="w-4 h-4" id="phone" />
-                <Label htmlFor="phone">Phone</Label>
+                <Label htmlFor="phone">Telefone</Label>
               </div>
             </div>
           </div>
@@ -159,15 +161,15 @@ const Settings = () => {
           <div className="col-span-12 md:col-span-9">
             <div className="flex items-center gap-3">
               <Switch defaultChecked id="active" />
-              <Label htmlFor="active">Active</Label>
+              <Label htmlFor="active">Ativo</Label>
             </div>
           </div>
         </div>
         <div className="grid grid-cols-12">
           <div className="md:col-span-3"></div>
           <div className="col-span-12 md:col-span-9 flex items-center gap-3">
-            <Button variant="outline">Discard</Button>
-            <Button>Save Changes</Button>
+            <Button variant="outline">Descartar</Button>
+            <Button>Salvar Mudanças</Button>
           </div>
         </div>
       </CardContent>

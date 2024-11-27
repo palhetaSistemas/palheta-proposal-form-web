@@ -41,6 +41,7 @@ import {
   LucideIcon,
   CustomIcon,
   Mail,
+  User,
 } from "@/src/components/svg";
 
 export interface MenuItemProps {
@@ -57,48 +58,38 @@ export interface MenuItemProps {
 export const menusConfig = {
   mainNav: [
     {
-      title: "Dashboard",
+      title: "Home",
       icon: DashBoard,
-      route: "/dashboard",
+      route: "/",
     },
     {
       title: "Tarefas",
-      icon: Application,
+      icon: ListFill,
       route: "/task",
     },
     {
       title: "Agenda",
-      icon: Components,
+      icon: Calendar,
       route: "/calendar",
     },
     {
-      title: "Documentos",
-      icon: Stacks2,
-      route: "/document",
+      title: "Chat",
+      icon: Messages,
+      route: "/chat",
     },
     {
       title: "CRM",
-      icon: Files,
+      icon: Grid,
       route: "/crm",
     },
     {
-      title: "BI",
-      icon: Grid,
-      route: "/bi",
-    },
-    {
-      title: "Clientes",
-      icon: Chart,
-      route: "/client",
-    },
-    {
-      title: "Recursos Humanos",
-      icon: ChartArea,
-      route: "/hr",
+      title: "Projetos",
+      icon: Map,
+      route: "/projects",
     },
     {
       title: "Finanças",
-      icon: Map,
+      icon: ListFill,
       route: "/finance",
     },
   ],

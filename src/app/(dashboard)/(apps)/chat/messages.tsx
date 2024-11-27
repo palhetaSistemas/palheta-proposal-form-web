@@ -110,11 +110,11 @@ const Messages = ({
                         side="top"
                       >
                         <DropdownMenuItem
-                          onClick={() => onDelete(selectedChatId, index)}
+                        // onClick={() => onDelete(selectedChatId, index)}
                         >
-                          Delete
+                          Apagar
                         </DropdownMenuItem>
-                        <DropdownMenuItem>Forward</DropdownMenuItem>
+                        <DropdownMenuItem>Copiar</DropdownMenuItem>
                       </DropdownMenuContent>
                     </DropdownMenu>
                   </div>
@@ -181,24 +181,14 @@ const Messages = ({
                         side="top"
                       >
                         <DropdownMenuItem
-                          onClick={() => onDelete(selectedChatId, index)}
+                        // onClick={() => onDelete(selectedChatId, index)}
                         >
-                          Remove
+                          Apagar
                         </DropdownMenuItem>
                         <DropdownMenuItem
-                          onClick={() => handleReply(chatMessage, contact)}
+                        // onClick={() => handleReply(chatMessage, contact)}
                         >
-                          Reply
-                        </DropdownMenuItem>
-                        <DropdownMenuItem
-                          onClick={() => handlePinMessageLocal(chatMessage)}
-                        >
-                          {isMessagePinned ? "Unpin" : "Pin"}
-                        </DropdownMenuItem>
-                        <DropdownMenuItem
-                          onClick={() => handleForward(chatMessage)}
-                        >
-                          Forward
+                          Responder
                         </DropdownMenuItem>
                       </DropdownMenuContent>
                     </DropdownMenu>

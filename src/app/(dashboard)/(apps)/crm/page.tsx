@@ -3,24 +3,20 @@ import {
   getTasks,
   getSubtasks,
   getComments,
+  getTasks2,
 } from "@/src/config/project-config";
 import KanbanBreadCrumbs from "./bread-crumbs";
 import TaskBoard from "@/src/components/task-board";
 
 const Kanban = async () => {
   const boards = await getBoards();
-  const tasks = await getTasks();
+  const tasks = await getTasks2();
   const subTasks = await getSubtasks();
   const comments = await getComments();
   return (
     <>
       <div className="flex flex-wrap mb-7">
-        <div className="text-xl font-medium text-default-900 flex-1">
-          Kanban Board
-        </div>
-        <div className="flex-none">
-          <KanbanBreadCrumbs />
-        </div>
+        <div className="text-xl font-medium text-default-900 flex-1">CRM</div>
       </div>
       <TaskBoard
         boards={boards}
