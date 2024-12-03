@@ -1,5 +1,6 @@
 import { NextResponse, NextRequest } from "next/server";
 import { chats } from "../data";
+import { string } from "zod";
 
 export async function POST(request: NextRequest, response: NextResponse) {
   const obj = await request.json();
@@ -8,7 +9,7 @@ export async function POST(request: NextRequest, response: NextResponse) {
 
   const newMessageData = {
     message: obj.message,
-    time: new Date(),
+    time: new Date().toString(),
     senderId: 11,
     replayMetadata: obj.replayMetadata,
   };
