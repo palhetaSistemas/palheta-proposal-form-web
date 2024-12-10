@@ -46,7 +46,7 @@ const ReportsArea = () => {
   return (
     <>
       {reports.map((item, index) => (
-        <Card className="w-[48.5%] " key={`report-card-${index}`}>
+        <Card className="w-full lg:w-[48.5%] " key={`report-card-${index}`}>
           <CardHeader className="flex-col-reverse sm:flex-row flex-wrap gap-2  border-none mb-0 pb-0">
             <span className="text-sm font-medium text-default-900 flex-1">
               {item.name}

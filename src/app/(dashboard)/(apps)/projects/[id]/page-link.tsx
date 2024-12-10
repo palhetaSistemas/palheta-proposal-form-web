@@ -10,15 +10,15 @@ const pages = [
   },
   {
     text: "Tarefas",
-    value: "task",
+    value: "#",
   },
   {
     text: "Documentos",
-    value: "documents",
+    value: "#",
   },
   {
     text: "Formulários",
-    value: "files",
+    value: "#",
   },
   {
     text: "Ajustes",
@@ -27,7 +27,6 @@ const pages = [
 ];
 const PageLink = ({ id }: { id: string }) => {
   const locationName = usePathname();
-  console.log("locationName: ", locationName);
   return pages.map((item) => (
     <Link
       key={item.value}

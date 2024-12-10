@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader } from "@/src/components/ui/card";
 import { cn } from "@/src/lib/utils";
 import { Icon } from "@iconify/react";
 import { Cup, Eye, Increase, Session } from "@/src/components/svg";
+import { Calendar, FormInput } from "lucide-react";
 
 const ReportsArea = () => {
   const reports = [
@@ -13,7 +14,7 @@ const ReportsArea = () => {
       rate: "150",
       isUp: true,
       icon: <Session className="h-4 w-4" />,
-      color: "primary",
+      color: "blue-500",
     },
     {
       id: 2,
@@ -22,7 +23,7 @@ const ReportsArea = () => {
       rate: "202",
       isUp: false,
       icon: <Eye className="h-4 w-4" />,
-      color: "info",
+      color: "#826AF9",
     },
     {
       id: 3,
@@ -48,8 +49,8 @@ const ReportsArea = () => {
       count: "46s",
       rate: "30",
       isUp: false,
-      icon: <Cup className="h-4 w-4" />,
-      color: "destructive",
+      icon: <FormInput className="h-4 w-4" />,
+      color: "info",
     },
     {
       id: 6,
@@ -57,8 +58,8 @@ const ReportsArea = () => {
       count: "46s",
       rate: "30",
       isUp: false,
-      icon: <Cup className="h-4 w-4" />,
-      color: "destructive",
+      icon: <Calendar className="h-4 w-4" />,
+      color: "success",
     },
   ];
   return (
@@ -73,13 +74,17 @@ const ReportsArea = () => {
               className={cn(
                 "flex-none h-9 w-9 flex justify-center items-center bg-default-100 rounded-full",
                 {
-                  "bg-primary bg-opacity-10 text-primary":
-                    item.color === "primary",
-                  "bg-info bg-opacity-10 text-info": item.color === "info",
+                  "bg-blue-500 bg-opacity-10 text-primary":
+                    item.color === "blue-500",
+                  "bg-[#826AF9] bg-opacity-10 text-info":
+                    item.color === "#826AF9",
                   "bg-warning bg-opacity-10 text-warning":
                     item.color === "warning",
                   "bg-destructive bg-opacity-10 text-destructive":
                     item.color === "destructive",
+                  "bg-success bg-opacity-10 text-success":
+                    item.color === "success",
+                  "bg-info bg-opacity-10 text-info": item.color === "info",
                 }
               )}
             >

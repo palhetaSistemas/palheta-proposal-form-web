@@ -30,7 +30,7 @@ const FarmHeader = ({ farm }: { farm: FarmProps }) => {
       <CardHeader className="flex-row items-center">
         <div className="flex-none flex items-center gap-3">{/* elipsis */}</div>
       </CardHeader>
-      <CardContent className="border-b border-default-200 flex flex-row justify-between">
+      <CardContent className="border-b gap-4 border-default-200 flex flex-col lg:flex-row justify-between">
         <div className="flex flex-col md:flex-row gap-4">
           <div className="flex-none">
             <div className="h-[148px] w-[148px] rounded">

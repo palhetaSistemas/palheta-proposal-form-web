@@ -20,7 +20,7 @@ export function IncomeDonutGraph() {
       },
       legend: {
         show: true,
-        position: "right" as const,
+        position: "bottom" as const,
         horizontalAlign: "center" as const,
         floating: false,
         offsetY: 0,

@@ -1,5 +1,5 @@
-import { SiteLogo } from "@/src/components/svg";
 import { useSidebar } from "@/src/store";
+import Image from "next/image";
 import React from "react";
 
 const SidebarLogo = ({ hovered }: { hovered?: boolean }) => {
@@ -8,11 +8,14 @@ const SidebarLogo = ({ hovered }: { hovered?: boolean }) => {
     <div className="px-4 py-4 ">
       <div className=" flex items-center">
         <div className="flex flex-1 items-center gap-x-3  ">
-          <SiteLogo className="text-primary h-8 w-8" />
           {(!collapsed || hovered) && (
-            <div className="flex-1  text-xl text-primary  font-semibold">
-              DashTail
-            </div>
+            <Image
+              src="/images/logo/logo-red.png"
+              alt=""
+              width={500}
+              height={100}
+              className="h-max w-full object-contain"
+            />
           )}
         </div>
         {sidebarType === "classic" && (!collapsed || hovered) && (

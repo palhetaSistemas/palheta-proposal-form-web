@@ -79,7 +79,7 @@ const WorksNote = () => {
                 className="h-8"
                 asChild
               >
-                <Link href={item.link}>Abrir Compromisso</Link>
+                <Link href={item.link}>Abrir</Link>
               </Button>
             </div>
           ))}

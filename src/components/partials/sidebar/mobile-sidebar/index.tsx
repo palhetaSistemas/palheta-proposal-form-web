@@ -11,6 +11,8 @@ import { usePathname } from "next/navigation";
 import SingleMenuItem from "./single-menu-item";
 import SubMenuHandler from "./sub-menu-handler";
 import NestedSubMenu from "../common/nested-menus";
+import { twMerge } from "tailwind-merge";
+import Link from "next/link";
 const MobileSidebar = ({
   className,
   trans,
@@ -21,8 +23,9 @@ const MobileSidebar = ({
   const { sidebarBg, mobileMenu, setMobileMenu } = useSidebar();
   const [activeSubmenu, setActiveSubmenu] = useState<number | null>(null);
   const [activeMultiMenu, setMultiMenu] = useState<number | null>(null);
-  const menus = menusConfig?.sidebarNav?.classic || [];
+  const menus = menusConfig.mainNav || [];
   const { collapsed } = useSidebar();
+  const path = usePathname();
 
   const toggleSubmenu = (i: number) => {
     if (activeSubmenu === i) {
@@ -91,25 +94,22 @@ const MobileSidebar = ({
             "px-4": !collapsed,
           })}
         >
-          <ul
+          {/* <ul
             className={cn("", {
               " space-y-2 text-center": collapsed,
             })}
           >
             {menus.map((item, i) => (
               <li key={`menu_key_${i}`}>
-                {/* single menu  */}
 
                 {!item.child && !item.isHeader && (
                   <SingleMenuItem item={item} collapsed={collapsed} />
                 )}
 
-                {/* menu label */}
                 {item.isHeader && !item.child && !collapsed && (
                   <MenuLabel item={item} trans={trans} />
                 )}
 
-                {/* sub menu */}
                 {item.child && (
                   <>
                     <SubMenuHandler
@@ -135,7 +135,33 @@ const MobileSidebar = ({
                 )}
               </li>
             ))}
-          </ul>
+          </ul> */}
+          {menus?.map((item: any, index: number) => (
+            <div key={`item-${index}`}>
+              <div className=" flex items-center">
+                <div
+                  className={twMerge([
+                    " flex items-center gap-2 py-4 cursor-pointer group data-[state=open]:text-primary-300 px-6 w-full ",
+                    path === item.route
+                      ? "bg-gradient-to-r from-primary/5 from-0% to-100% via-primary/30 to-primary/5 backdrop-filter backdrop-blur border-b-2 border-primary-500 text-default-900"
+                      : "text-default-500",
+                  ])}
+                >
+                  <item.icon className="h-5 w-5 " />
+                  <Link href={item.route}>
+                    <span className="text-sm font-medium">{item.title}</span>
+                  </Link>
+                </div>
+              </div>
+              {path !== item.route && (
+                <div
+                  className={cn(
+                    "w-full border-primary-300  rounded-md border bg-popover text-popover-foreground shadow-lg   "
+                  )}
+                />
+              )}
+            </div>
+          ))}
         </ScrollArea>
       </div>
       {mobileMenu && (

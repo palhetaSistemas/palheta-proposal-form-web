@@ -51,7 +51,7 @@ const DashboardPageView = ({ trans }: DashboardPageViewProps) => {
           />
         </div>
       </div>
-      <div className="flex justify-between w-full gap-4">
+      <div className="flex flex-col lg:flex-row justify-between w-full gap-4">
         <ReportsArea />
       </div>
       <div className="grid grid-cols-12 gap-6">
@@ -62,7 +62,7 @@ const DashboardPageView = ({ trans }: DashboardPageViewProps) => {
           <TopTen />
         </div>
       </div>
-      <div className="grid grid-cols-12 gap-4">
+      <div className="lg:grid lg:grid-cols-12 flex flex-col gap-4">
         <div className="col-span-7">
           <OverdueTask />
         </div>
