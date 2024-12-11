@@ -89,7 +89,7 @@ export function FilterFixedData() {
               <span className="font-bold">Foco AI</span>
             </span>
             <span className="text-sm leading-5">
-              Supere outros colegas usando o máximo do LegisAI no dia a dia.
+              Supere outros colegas usando o máximo do FocoAI no dia a dia.
             </span>
             <button className="group flex items-center gap-2 text-nowrap rounded-3xl border border-primary-500 p-1 pr-4 transition duration-200 hover:bg-primary-500 hover:font-semibold hover:text-default-900">
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary-500">
@@ -136,10 +136,10 @@ export function FilterFixedData() {
               LOCAL COMBINADO, VEJA AGORA
             </span>
             <span className="text-sm text-[#828690]">
-              “Em breve resumo, usando a inteligência artificial da LegisAI
+              “Em breve resumo, usando a inteligência artificial da FocoAI
               podemos acreditar que abc abc abc mas não só isso (...)”{" "}
               <span className="italic text-primary-500">
-                REALIZADO POR <strong>LEGIS.AI*</strong>
+                REALIZADO POR <strong>FOCO.AI*</strong>
               </span>
             </span>
             <span className="w-max cursor-pointer text-xs font-semibold hover:underline">
@@ -164,7 +164,7 @@ export function FilterFixedData() {
           </div>
           <div
             className={twMerge(
-              "flex w-full flex-col gap-2 rounded-xl border border-default-900 p-2  transition delay-[400ms] duration-500 lg:w-1/3 xl:p-4"
+              "flex w-full flex-col gap-2 rounded-xl border border-default-900 p-2  transition  duration-500 lg:w-1/3 xl:p-4"
             )}
           >
             <span className="font-semibold">
@@ -172,10 +172,10 @@ export function FilterFixedData() {
               LOCAL COMBINADO, VEJA AGORA
             </span>
             <span className="text-sm text-[#828690]">
-              “Em breve resumo, usando a inteligência artificial da LegisAI
+              “Em breve resumo, usando a inteligência artificial da FocoAI
               podemos acreditar que abc abc abc mas não só isso (...)”{" "}
               <span className="italic text-primary-500">
-                REALIZADO POR <strong>LEGIS.AI*</strong>
+                REALIZADO POR <strong>FOCO.AI*</strong>
               </span>
             </span>
             <span className="w-max cursor-pointer text-xs font-semibold hover:underline">
@@ -208,10 +208,10 @@ export function FilterFixedData() {
               LOCAL COMBINADO, VEJA AGORA
             </span>
             <span className="text-sm text-[#828690]">
-              “Em breve resumo, usando a inteligência artificial da LegisAI
+              “Em breve resumo, usando a inteligência artificial da FocoAI
               podemos acreditar que abc abc abc mas não só isso (...)”{" "}
               <span className="italic text-primary-500">
-                REALIZADO POR <strong>LEGIS.AI*</strong>
+                REALIZADO POR <strong>FOCO.AI*</strong>
               </span>
             </span>
             <span className="w-max cursor-pointer text-xs font-semibold hover:underline">
