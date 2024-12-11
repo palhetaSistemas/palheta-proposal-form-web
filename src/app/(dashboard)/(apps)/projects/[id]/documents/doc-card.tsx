@@ -21,7 +21,7 @@ const DocCard = ({ item }: { item: Document }) => {
           </div>
           <div className="bg-background py-3 rounded-b-sm border-t border-default-300">
             <div className="text-base font-medium text-default-900 mb-1 px-4">
-              Dashtail Template
+              {title}
             </div>
             <div className="flex items-center justify-between gap-1 px-4">
               <div className="flex-1 flex items-center gap-1">
@@ -32,7 +32,8 @@ const DocCard = ({ item }: { item: Document }) => {
                   />
                 </div>
                 <div className="text-sm font-medium text-default-600 truncate">
-                  Opend <span className="text-default-800">Dec 20,2023</span>
+                  Aberto por ultimo{" "}
+                  <span className="text-default-800">{last_view}</span>
                 </div>
               </div>
 
@@ -47,8 +48,8 @@ const DocCard = ({ item }: { item: Document }) => {
                   align="end"
                   side="top"
                 >
-                  <DropdownMenuLabel>Open</DropdownMenuLabel>
-                  <DropdownMenuLabel>Remove</DropdownMenuLabel>
+                  <DropdownMenuLabel>Abrir</DropdownMenuLabel>
+                  <DropdownMenuLabel>Excluir</DropdownMenuLabel>
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>

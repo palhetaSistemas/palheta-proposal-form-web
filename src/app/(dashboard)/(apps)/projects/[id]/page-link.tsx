@@ -16,7 +16,7 @@ const PageLink = ({ id }: { id: string }) => {
     },
     {
       text: "Documentos",
-      value: `${id}/#`,
+      value: `${id}/documents`,
     },
     {
       text: "Formulários",
