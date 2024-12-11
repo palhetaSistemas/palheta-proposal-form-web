@@ -45,7 +45,7 @@ const ChartWithTable = ({
             </span>
           </div>
           <div className="flex-none flex items-center gap-1">
-            <span className="text-4xl font-semibold text-primary">63</span>
+            <span className="text-4xl font-semibold text-primary">1200</span>
             <span className="text-2xl text-success">
               <Icon icon="heroicons:arrow-trending-up-16-solid" />
             </span>

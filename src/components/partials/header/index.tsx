@@ -15,7 +15,8 @@ import { useMediaQuery } from "@/src/hooks/use-media-query";
 import MobileMenuHandler from "./mobile-menu-handler";
 import ClassicHeader from "./layout/classic-header";
 import FullScreen from "./full-screen";
-
+import { LogOut } from "lucide-react";
+import { signOut } from "next-auth/react";
 const NavTools = ({
   isDesktop,
   isMobile,
@@ -34,8 +35,16 @@ const NavTools = ({
       {/* <Inbox /> */}
       {/* <NotificationMessage /> */}
 
-      <div className="ltr:pl-2 rtl:pr-2">
+      <div className="ltr:pl-2 rtl:pr-2 flex items-center gap-2">
         <ProfileInfo />
+        <LogOut
+          className="cursor-pointer"
+          onClick={() => {
+            if (confirm("Tem certeza que deseja sair?")) {
+              signOut();
+            }
+          }}
+        />
       </div>
       {!isDesktop && sidebarType !== "module" && <MobileMenuHandler />}
     </div>

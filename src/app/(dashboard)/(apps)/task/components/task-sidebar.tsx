@@ -105,10 +105,6 @@ const TaskSidebar = ({ contacts }: { contacts: ContactType[] }) => {
         </ul>
       </div>
       <div className="border border-dashed mt-5 border-default-300"></div>
-      <div className="text-xs font-medium text-default-800 uppercase my-3 px-4">
-        {" "}
-        Chats
-      </div>
 
       {contacts &&
         Array.isArray(contacts) &&

@@ -6,18 +6,19 @@ import {
   getSubtasks,
   getComments,
 } from "@/src/config/project-config";
+import ViewTask from "../../../task/view-task";
+import { getContacts } from "../../../chat/chat-config";
 const task = async ({ params }: { params: { id: string } }) => {
-  const boards = await getBoards();
   const tasks = await getTasks();
-  const subTasks = await getSubtasks();
-  const comments = await getComments();
+  const contacts = await getContacts();
   return (
-    <TaskBoard
-      boards={boards}
-      tasks={tasks}
-      subTasks={subTasks}
-      comments={comments}
-    />
+    // <TaskBoard
+    //   boards={boards}
+    //   tasks={tasks}
+    //   subTasks={subTasks}
+    //   comments={comments}
+    // />
+    <ViewTask header={false} contacts={contacts} tasks={tasks} />
   );
 };
 

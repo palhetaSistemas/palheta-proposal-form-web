@@ -12,7 +12,7 @@ const PageLink = ({ id }: { id: string }) => {
     },
     {
       text: "Tarefas",
-      value: `${id}/#`,
+      value: `${id}/task`,
     },
     {
       text: "Documentos",
@@ -20,7 +20,7 @@ const PageLink = ({ id }: { id: string }) => {
     },
     {
       text: "Formulários",
-      value: `${id}/#`,
+      value: `${id}/forms`,
     },
     {
       text: "Ajustes",

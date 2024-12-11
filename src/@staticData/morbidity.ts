@@ -2,11 +2,11 @@ export const morbidityStaticData = {
   tableData: {
     headers: ["Raças", "Quantidade"],
     content: [
-      ["Nelore", "05"],
-      ["Angus", "06"],
-      ["Devon", "06"],
-      ["Brahman", "10"],
-      ["Senepol", "08"],
+      ["Nelore", "120"],
+      ["Angus", "180"],
+      ["Devon", "160"],
+      ["Brahman", "210"],
+      ["Senepol", "328"],
     ],
   },
   chartData: {

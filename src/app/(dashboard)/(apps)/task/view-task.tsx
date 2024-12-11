@@ -16,9 +16,11 @@ import { type Task as TaskType } from "@/src/app/api/tasks/data";
 const ViewTask = ({
   contacts,
   tasks,
+  header = true,
 }: {
   contacts: ContactType[];
   tasks: TaskType[];
+  header?: boolean;
 }) => {
   const [open, setOpen] = useState<boolean>(false);
   const [openEdit, setOpenEdit] = useState<boolean>(false);
@@ -32,14 +34,16 @@ const ViewTask = ({
   const isDesktop = useMediaQuery("(max-width: 1280px)");
   return (
     <>
-      <div className="flex flex-wrap mb-7">
-        <div className="text-xl font-medium text-default-900 flex-1">
-          Tarefas
-        </div>
-        {/* <div className="flex-none">
+      {header && (
+        <div className="flex flex-wrap mb-7">
+          <div className="text-xl font-medium text-default-900 flex-1">
+            Tarefas
+          </div>
+          {/* <div className="flex-none">
           <TaskBreadCrumbs />
         </div> */}
-      </div>
+        </div>
+      )}
 
       <div className="app-height flex gap-6 relative overflow-hidden">
         {isDesktop && showSidebar && (

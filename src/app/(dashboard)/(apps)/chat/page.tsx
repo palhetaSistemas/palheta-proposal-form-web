@@ -36,6 +36,7 @@ import ContactInfo from "./contact-info";
 import { useMediaQuery } from "@/src/hooks/use-media-query";
 import { cn } from "@/src/lib/utils";
 import { type Contact as ContactType } from "@/src/app/api/chat/data";
+import Image from "next/image";
 const ChatPage = () => {
   const [selectedChatId, setSelectedChatId] = useState<any | null>(null);
   const [showContactSidebar, setShowContactSidebar] = useState<boolean>(false);
@@ -361,8 +362,15 @@ const ChatPage = () => {
           contacts={contacts}
         />
       </div> */}
-      <div className="absolute w-full h-full top-0 left-0 flex items-center justify-center">
-        <span className="text-4xl font-bold"> Em Breve</span>
+      <div className="flex w-full items-center justify-center">
+        <Image
+          src="/images/soon.png"
+          width={5000}
+          height={5000}
+          priority
+          className="w-2/3 rounded-md"
+          alt="coming soon"
+        />
       </div>
     </>
   );
