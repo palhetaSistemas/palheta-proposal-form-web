@@ -116,6 +116,8 @@ export const projects = [
     status: "in progress",
     label: "bug",
     priority: "low",
+    city: "Sinop",
+    state: "MT",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     percentage: 32,
@@ -138,6 +140,8 @@ export const projects = [
     status: "in progress",
     label: "bug",
     priority: "low",
+    city: "Sinop",
+    state: "MT",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     percentage: 32,
@@ -160,6 +164,8 @@ export const projects = [
     status: "in progress",
     label: "bug",
     priority: "low",
+    city: "Sinop",
+    state: "MT",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     percentage: 32,
@@ -182,6 +188,8 @@ export const projects = [
     status: "in progress",
     label: "bug",
     priority: "low",
+    city: "Sinop",
+    state: "MT",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     percentage: 32,
@@ -204,6 +212,8 @@ export const projects = [
     status: "in progress",
     label: "bug",
     priority: "low",
+    city: "Sinop",
+    state: "MT",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     percentage: 32,
@@ -226,6 +236,8 @@ export const projects = [
     status: "in progress",
     label: "bug",
     priority: "low",
+    city: "Sinop",
+    state: "MT",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     percentage: 32,
@@ -248,6 +260,8 @@ export const projects = [
     status: "in progress",
     label: "bug",
     priority: "low",
+    city: "Sinop",
+    state: "MT",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     percentage: 32,
@@ -270,6 +284,8 @@ export const projects = [
     status: "in progress",
     label: "bug",
     priority: "low",
+    city: "Sinop",
+    state: "MT",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     percentage: 32,
@@ -292,6 +308,8 @@ export const projects = [
     status: "in progress",
     label: "bug",
     priority: "low",
+    city: "Sinop",
+    state: "MT",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     percentage: 32,

@@ -35,7 +35,10 @@ const FarmHeader = ({ farm }: { farm: FarmProps }) => {
           <div className="flex-none">
             <div className="h-[148px] w-[148px] rounded">
               <Image
-                src={farm.image}
+                src={farm.logo}
+                quality={100}
+                width={1000}
+                height={1000}
                 alt="dashtail"
                 className="w-full h-full object-cover rounded"
               />
@@ -45,7 +48,7 @@ const FarmHeader = ({ farm }: { farm: FarmProps }) => {
             <div className="flex flex-wrap justify-between gap-4">
               <div className="text-xl font-medium text-default-950 truncate">
                 {" "}
-                {farm.name}{" "}
+                {farm.title}{" "}
               </div>
             </div>
             <div className="text-sm text-default-600 w-full  mt-1">

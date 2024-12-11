@@ -126,7 +126,7 @@ export const formatDate = (date: string | number | Date): string => {
     month: "long",
     day: "numeric",
   };
-  return new Date(date).toLocaleDateString("en-US", options);
+  return new Date(date).toLocaleDateString("pt-BR", options);
 };
 
 // random word

@@ -67,6 +67,7 @@ import {
 import { Calendar } from "@/src/components/ui/calendar";
 const wait = () => new Promise((resolve) => setTimeout(resolve, 1000));
 import { type Project } from "@/src/app/api/projects/data";
+import { ptBR } from "date-fns/locale";
 
 const OptionComponent = ({ data, ...props }: any) => {
   //const Icon = data.icon;
@@ -109,10 +110,15 @@ const ProjectsSheet = ({
   const [endDate, setEndDate] = useState<Date>(new Date());
   const [isPending, startTransition] = useTransition();
 
+  const priorities = [
+    { value: "low", label: "Baixa" },
+    { value: "medium", label: "Média" },
+    { value: "high", label: "Alta" },
+  ];
+
   const sizes = [
-    { value: "small", label: "Fazenda Pequena" },
-    { value: "medium", label: "Fazenda Média" },
-    { value: "large", label: "Fazenda Grande" },
+    { value: "active", label: "Ativo" },
+    { value: "inactive", label: "Inativo" },
   ];
 
   const colorStyles = {
@@ -265,7 +271,7 @@ const ProjectsSheet = ({
                           classNamePrefix="select"
                           options={sizes}
                           styles={colorStyles}
-                          placeholder="Tamanho da Tarefa"
+                          placeholder="Status"
                         />
                       )}
                     />
@@ -281,9 +287,9 @@ const ProjectsSheet = ({
                         <Select
                           className="react-select"
                           classNamePrefix="select"
-                          options={sizes}
+                          options={priorities}
                           styles={colorStyles}
-                          placeholder="Tamanho da Tarefa"
+                          placeholder="Prioridade"
                         />
                       )}
                     />
@@ -301,6 +307,7 @@ const ProjectsSheet = ({
                         {...field}
                         onChange={(data) => setAssign(data)}
                         options={assignOption}
+                        placeholder="Reponsável"
                         className="react-select"
                         classNamePrefix="select"
                         isMulti
@@ -316,7 +323,7 @@ const ProjectsSheet = ({
                 <div className="grid grid-cols-1 gap-4">
                   <div>
                     <Label htmlFor="startDate" className="mb-1.5">
-                      Start Date
+                      Data de Início
                     </Label>
                     <Popover>
                       <PopoverTrigger asChild>
@@ -330,7 +337,7 @@ const ProjectsSheet = ({
                           {startDate ? (
                             formatDate(startDate)
                           ) : (
-                            <span>Pick a date</span>
+                            <span>Selecione uma Data</span>
                           )}
                           <CalendarIcon className="h-4 w-4 " />
                         </Button>
@@ -341,6 +348,7 @@ const ProjectsSheet = ({
                           control={control}
                           render={({ field }) => (
                             <Calendar
+                              locale={ptBR}
                               mode="single"
                               selected={startDate}
                               onSelect={(date) => setStartDate(date as Date)}
@@ -353,7 +361,7 @@ const ProjectsSheet = ({
                   </div>
                   <div>
                     <Label htmlFor="endDate" className="mb-1.5">
-                      End Date
+                      Data de Encerramento
                     </Label>
                     <Popover>
                       <PopoverTrigger asChild>
@@ -367,7 +375,7 @@ const ProjectsSheet = ({
                           {endDate ? (
                             formatDate(endDate)
                           ) : (
-                            <span>Pick a date</span>
+                            <span>Selecione uma Data</span>
                           )}
                           <CalendarIcon className=" h-4 w-4" />
                         </Button>
@@ -378,6 +386,7 @@ const ProjectsSheet = ({
                           control={control}
                           render={({ field }) => (
                             <Calendar
+                              locale={ptBR}
                               mode="single"
                               selected={endDate}
                               onSelect={(date) => setEndDate(date as Date)}
@@ -393,18 +402,18 @@ const ProjectsSheet = ({
 
               <div className="mt-12 flex gap-6">
                 <Button
-                  color="warning"
-                  variant="soft"
+                  color="primary"
+                  variant="outline"
                   className="flex-1"
                   onClick={() => {
                     onClose();
                   }}
                 >
-                  Cancel
+                  Cancelar
                 </Button>
 
                 <Button type="submit" disabled={isPending} className="flex-1">
-                  {project ? "Update" : "  Create  "} Project
+                  {project ? "Editar" : "  Criar  "} Cliente
                 </Button>
               </div>
             </form>
