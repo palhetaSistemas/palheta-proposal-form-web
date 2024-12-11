@@ -33,6 +33,7 @@ import { type Board as BoardType } from "@/src/app/api/boards/data";
 import { type Task as TaskType } from "@/src/app/api/tasks2/data";
 import { type SubTask as SubTaskType } from "@/src/app/api/tasks/data";
 import { type Comment as CommentType } from "@/src/app/api/comments/data";
+import CreateClient from "@/src/app/(dashboard)/(apps)/crm/CreateClient";
 const wait = () => new Promise((resolve) => setTimeout(resolve, 1000));
 
 interface TaskBoardProps {
@@ -170,7 +171,7 @@ const TaskBoard = ({ boards, tasks, subTasks, comments }: TaskBoardProps) => {
     })
   );
   const onDragOver = (event: DragOverEvent) => {
-    console.log("ami k");
+    return;
   };
   return (
     <>
@@ -273,25 +274,17 @@ const TaskBoard = ({ boards, tasks, subTasks, comments }: TaskBoardProps) => {
       ) : (
         <Blank className="max-w-[353px] mx-auto space-y-4">
           <div className=" text-xl font-semibold text-default-900">
-            No Task Here
+            Nenhum Cliente
           </div>
           <div className=" text-default-600 text-sm">
-            There is no task create. If you create a new task then click this
-            button & create new board.
+            Crie um novo cliente para começar
           </div>
           <Button onClick={openCreateBoard}>
             <Plus className="w-4 h-4 mr-1" /> Create Board
           </Button>
         </Blank>
       )}
-      {/* update task  modal/sheet */}
-      <CreateBoard
-        open={open}
-        onClose={closeCreateBoard}
-        board={selectedBoard}
-        boardId={selectedBoardId}
-      />
-      {/* update task  modal/sheet */}
+      <CreateClient open={open} onClose={closeCreateBoard} />
       <TaskSheet
         open={open3}
         onClose={closeUpdateTaskHandler}

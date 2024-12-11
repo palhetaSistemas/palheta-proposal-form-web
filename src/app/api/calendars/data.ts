@@ -119,35 +119,15 @@ export const calendarCategories = [
 
 export const categories = [
   {
-    label: "Business",
-    value: "business",
+    label: "Visitas Técnicas",
+    value: "Visitas Técnicas",
     className: "data-[state=checked]:bg-primary border-primary",
   },
   {
-    label: "Personal",
-    value: "personal",
+    label: "Compromissos",
+    value: "Compromissos",
 
     className: "data-[state=checked]:bg-success border-success",
-  },
-  {
-    label: "Holiday",
-    value: "holiday",
-    className: "data-[state=checked]:bg-destructive  border-destructive",
-  },
-  {
-    label: "Family",
-    value: "family",
-    className: "data-[state=checked]:bg-info border-info",
-  },
-  {
-    label: "Meeting",
-    value: "meeting",
-    className: "data-[state=checked]:bg-warning border-warning",
-  },
-  {
-    label: "Etc",
-    value: "etc",
-    className: "data-[state=checked]:bg-info border-info",
   },
 ];
 

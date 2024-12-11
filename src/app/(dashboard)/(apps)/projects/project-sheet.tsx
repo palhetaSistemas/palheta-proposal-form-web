@@ -109,6 +109,22 @@ const ProjectsSheet = ({
   const [endDate, setEndDate] = useState<Date>(new Date());
   const [isPending, startTransition] = useTransition();
 
+  const sizes = [
+    { value: "small", label: "Fazenda Pequena" },
+    { value: "medium", label: "Fazenda Média" },
+    { value: "large", label: "Fazenda Grande" },
+  ];
+
+  const colorStyles = {
+    option: (styles: any, { data, isDisabled, isFocused, isSelected }: any) => {
+      return {
+        ...styles,
+        color: isSelected ? "#000" : "#fff",
+        background: isSelected ? "#fff" : "#000",
+      };
+    },
+  };
+
   const {
     register,
     handleSubmit,
@@ -180,16 +196,14 @@ const ProjectsSheet = ({
           className="px-6"
         >
           <SheetHeader className="px-0">
-            <SheetTitle>
-              {project ? "Edit " : "Create a new"} Project
-            </SheetTitle>
+            <SheetTitle>{project ? "Editar " : "Criar "} Cliente</SheetTitle>
           </SheetHeader>
           <ScrollArea className="h-[calc(100%-40px)]">
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="space-y-4  mt-6">
                 <div className="flex items-center gap-4">
                   <div className="text-xs font-medium text-default-600">
-                    Thumbnail
+                    Foto
                   </div>
 
                   <Controller
@@ -215,12 +229,12 @@ const ProjectsSheet = ({
 
                 <div>
                   <Label htmlFor="projectName" className="mb-1.5">
-                    Project Name
+                    Nome do Cliente
                   </Label>
                   <Input
                     type="text"
                     {...register("title")}
-                    placeholder="Project Name"
+                    placeholder="Insira o nome do Cliente"
                     className={cn("", {
                       "border-destructive focus:border-destructive":
                         errors.title,
@@ -229,11 +243,11 @@ const ProjectsSheet = ({
                 </div>
                 <div>
                   <Label htmlFor="description" className="mb-1.5">
-                    Description
+                    Descrição
                   </Label>
                   <Textarea
                     id="description"
-                    placeholder="Project Description"
+                    placeholder="Fale mais sobre o cliente"
                     {...register("description")}
                   />
                 </div>
@@ -246,50 +260,38 @@ const ProjectsSheet = ({
                       name="status"
                       control={control}
                       render={({ field }) => (
-                        <UiSelect>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Status" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="todo">To do</SelectItem>
-                            <SelectItem value="inprogress">
-                              In Progress
-                            </SelectItem>
-                            <SelectItem value="urgent">Urgent</SelectItem>
-                            <SelectItem value="completed">Completed</SelectItem>
-                          </SelectContent>
-                        </UiSelect>
+                        <Select
+                          className="react-select"
+                          classNamePrefix="select"
+                          options={sizes}
+                          styles={colorStyles}
+                          placeholder="Tamanho da Tarefa"
+                        />
                       )}
                     />
                   </div>
                   <div>
                     <Label htmlFor="priority" className="mb-1.5">
-                      Priority
+                      Prioridade
                     </Label>
                     <Controller
                       name="priority"
                       control={control}
                       render={({ field }) => (
-                        <UiSelect
-                          defaultValue={priority}
-                          onValueChange={(data) => setPriority(data)}
-                        >
-                          <SelectTrigger>
-                            <SelectValue placeholder="Priority" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="low">Low</SelectItem>
-                            <SelectItem value="medium">Medium</SelectItem>
-                            <SelectItem value="high">High</SelectItem>
-                          </SelectContent>
-                        </UiSelect>
+                        <Select
+                          className="react-select"
+                          classNamePrefix="select"
+                          options={sizes}
+                          styles={colorStyles}
+                          placeholder="Tamanho da Tarefa"
+                        />
                       )}
                     />
                   </div>
                 </div>
                 <div>
                   <Label htmlFor="assign" className="mb-1.5">
-                    Assign
+                    Responsável
                   </Label>
                   <Controller
                     name="assign"
@@ -302,6 +304,7 @@ const ProjectsSheet = ({
                         className="react-select"
                         classNamePrefix="select"
                         isMulti
+                        styles={colorStyles}
                         components={{
                           Option: OptionComponent,
                         }}

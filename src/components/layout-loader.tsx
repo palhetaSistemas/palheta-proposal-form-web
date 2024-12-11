@@ -15,7 +15,7 @@ const LayoutLoader = () => {
       />
       <span className=" inline-flex gap-1">
         <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-        Loading...
+        Carregando...
       </span>
     </div>
   );

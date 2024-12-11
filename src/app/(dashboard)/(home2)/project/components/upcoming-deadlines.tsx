@@ -22,11 +22,16 @@ import {
 import { Progress } from "@/src/components/ui/progress";
 
 // images
-import avatar1 from "@/public/images/avatar/avatar-7.jpg";
-import avatar2 from "@/public/images/avatar/avatar-2.jpg";
-import avatar3 from "@/public/images/avatar/avatar-3.jpg";
-import avatar4 from "@/public/images/avatar/avatar-4.jpg";
-import avatar5 from "@/public/images/avatar/avatar-5.jpg";
+import farm1 from "@/public/images/staticDataImage/farm1.png";
+import farm2 from "@/public/images/staticDataImage/farm2.png";
+import farm3 from "@/public/images/staticDataImage/farm3.png";
+import farm4 from "@/public/images/staticDataImage/farm4.png";
+import farm5 from "@/public/images/staticDataImage/farm5.png";
+import farm6 from "@/public/images/staticDataImage/farm6.png";
+import farm7 from "@/public/images/staticDataImage/farm7.png";
+import farm8 from "@/public/images/staticDataImage/farm8.png";
+import farm9 from "@/public/images/staticDataImage/farm9.png";
+import farm10 from "@/public/images/staticDataImage/farm10.png";
 
 const columns = [
   {
@@ -65,7 +70,7 @@ const upcomingDeadlineData: DataItem[] = [
     task: "Relatório de animais",
     deadline: "21 Jan 2024",
     workload: 50,
-    avatar: avatar1,
+    avatar: farm5,
   },
   {
     id: 2,
@@ -73,7 +78,7 @@ const upcomingDeadlineData: DataItem[] = [
     task: "Relatório de animais",
     deadline: "21 Jan 2024",
     workload: 40,
-    avatar: avatar1,
+    avatar: farm6,
   },
   {
     id: 3,
@@ -81,7 +86,7 @@ const upcomingDeadlineData: DataItem[] = [
     task: "Relatório de animais",
     deadline: "21 Jan 2024",
     workload: 70,
-    avatar: avatar2,
+    avatar: farm7,
   },
   {
     id: 4,
@@ -89,7 +94,7 @@ const upcomingDeadlineData: DataItem[] = [
     task: "Relatório de animais",
     deadline: "21 Jan 2024",
     workload: 80,
-    avatar: avatar3,
+    avatar: farm8,
   },
   {
     id: 5,
@@ -97,7 +102,7 @@ const upcomingDeadlineData: DataItem[] = [
     task: "Relatório de animais",
     deadline: "21 Jan 2024",
     workload: 60,
-    avatar: avatar4,
+    avatar: farm9,
   },
   {
     id: 6,
@@ -105,7 +110,7 @@ const upcomingDeadlineData: DataItem[] = [
     task: "Relatório de animais",
     deadline: "21 Jan 2024",
     workload: 90,
-    avatar: avatar5,
+    avatar: farm10,
   },
 ];
 const UpcomingDeadline = () => {

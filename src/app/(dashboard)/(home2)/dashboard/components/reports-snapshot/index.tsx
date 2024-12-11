@@ -17,21 +17,25 @@ import { cn } from "@/src/lib/utils";
 const allUsersSeries = [
   {
     data: [90, 70, 85, 60, 80, 70, 90, 75, 60, 80],
+    name: " ",
   },
 ];
 const conversationSeries = [
   {
     data: [80, 70, 65, 40, 40, 100, 100, 75, 60, 80],
+    name: " ",
   },
 ];
 const eventCountSeries = [
   {
     data: [20, 70, 65, 60, 40, 60, 90, 75, 60, 40],
+    name: " ",
   },
 ];
 const newUserSeries = [
   {
     data: [20, 70, 65, 40, 100, 60, 100, 75, 60, 80],
+    name: " ",
   },
 ];
 const ReportsSnapshot = () => {
@@ -125,7 +129,7 @@ const ReportsSnapshot = () => {
                 key={`report-trigger-${index}`}
                 value={item.value}
                 className={cn(
-                  "flex flex-col gap-1.5 p-4 overflow-hidden   items-start  relative before:absolute before:left-1/2 before:-translate-x-1/2 before:bottom-1 before:h-[2px] before:w-9 before:bg-primary/50 dark:before:bg-primary-foreground before:hidden data-[state=active]:shadow-none data-[state=active]:before:block",
+                  "flex flex-col gap-1.5 p-4 overflow-hidden data-[state=inactive]:opacity-50 items-start  relative before:absolute before:left-1/2 before:-translate-x-1/2 before:bottom-1 before:h-[2px] before:w-9 before:bg-primary/50 dark:before:bg-primary-foreground before:hidden data-[state=active]:shadow-none data-[state=active]:before:block",
                   {
                     "bg-primary/30 data-[state=active]:bg-primary/30 dark:bg-primary/70":
                       item.color === "primary",

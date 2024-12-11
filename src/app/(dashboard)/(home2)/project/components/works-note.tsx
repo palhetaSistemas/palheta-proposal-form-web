@@ -38,7 +38,7 @@ const WorksNote = () => {
   ];
   return (
     <Card>
-      <CardHeader className="sm:flex-row border-none gap-4 pt-6">
+      <CardHeader className="sm:flex-row border-none gap-2 pt-6">
         <div className="flex-1">
           <div className="text-xl font-medium tex-default-900">Sua Agenda</div>
           {/* <div className="text-sm font-medium text-default-600">
@@ -49,7 +49,7 @@ const WorksNote = () => {
           <Link href="#">Ver Todos</Link>
         </Button>
       </CardHeader>
-      <CardContent className="p-3 md:p-6 pt-0">
+      <CardContent className="p-3 pt-0">
         <Calendar className=" dark:bg-background shadow-sm rounded-lg" />
         {/* task list */}
         <div className="space-y-5 mt-6">

@@ -69,7 +69,9 @@ const ProjectGrid = ({ project, onEdit }: ProjectGridProps) => {
               variant={mode === "dark" ? "soft" : "soft"}
               className=" capitalize"
             >
-              {project?.status}
+              {project?.status === "in progress"
+                ? "Em Andamento"
+                : project?.status}
             </Badge>
           </div>
           <div className="flex-none cursor-pointer">
@@ -103,20 +105,20 @@ const ProjectGrid = ({ project, onEdit }: ProjectGridProps) => {
                   className="w-full"
                   target="_blank"
                 >
-                  View
+                  Ver
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem
                 className="cursor-pointer"
-                onSelect={() => setOpen(true)}
+                // onSelect={() => setOpen(true)}
               >
-                Delete
+                Apagar
               </DropdownMenuItem>
               <DropdownMenuItem
                 className="cursor-pointer"
-                onSelect={() => onEdit(project)}
+                // onSelect={() => onEdit(project)}
               >
-                Edit
+                Editar
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -125,7 +127,7 @@ const ProjectGrid = ({ project, onEdit }: ProjectGridProps) => {
           {/* logo, title,desc */}
           <Link
             href={{
-              pathname: `projects/${project?.id}/overview`,
+              pathname: `projects/${project?.id}`,
             }}
           >
             <div className="flex gap-2">
@@ -153,7 +155,7 @@ const ProjectGrid = ({ project, onEdit }: ProjectGridProps) => {
           <div className="flex  mt-6 gap-10">
             <div className="flex-1">
               <div className="text-sm font-medium text-default-900 mb-3">
-                Team:
+                Time:
               </div>
               {project?.assign?.length > 0 && (
                 <div>
@@ -178,14 +180,18 @@ const ProjectGrid = ({ project, onEdit }: ProjectGridProps) => {
 
             <div className="flex flex-col items-end">
               <div className="text-sm font-medium text-default-900 mb-3 text-right ">
-                Priority:
+                Prioridade:
               </div>
               {project.priority && (
                 <Badge
                   color={prioritiesColorMap[project.priority]}
                   className=" capitalize"
                 >
-                  {project?.priority}
+                  {project?.priority === "low"
+                    ? "Baixa"
+                    : project?.priority === "medium"
+                    ? "Média"
+                    : "Alta"}
                 </Badge>
               )}
             </div>
@@ -193,7 +199,7 @@ const ProjectGrid = ({ project, onEdit }: ProjectGridProps) => {
           <div className="mt-5">
             <div className="flex justify-between mb-2">
               <span className="text-sm font-medium text-default-900 capitalize">
-                Project Progress:
+                Progresso:
               </span>
               <span className="text-xs font-medium text-default-600">
                 {project?.percentage ? project?.percentage : 0}%
@@ -205,14 +211,16 @@ const ProjectGrid = ({ project, onEdit }: ProjectGridProps) => {
         <CardFooter className="flex justify-between border-t  p-4">
           <div>
             <div className="text-xs  text-default-600 mb-[2px]">
-              Assigned Date:
+              Data de Início:
             </div>
             <span className="text-xs font-medium text-default-900">
               {project?.assignDate}
             </span>
           </div>
           <div>
-            <div className="text-xs  text-default-600 mb-[2px]">Due Date:</div>
+            <div className="text-xs  text-default-600 mb-[2px]">
+              Data de Conclusão:
+            </div>
             <span className="text-xs font-medium text-default-900">
               {project?.dueDate}
             </span>

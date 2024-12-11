@@ -46,8 +46,8 @@ const CalendarView = ({ events, categories }: CalendarViewProps) => {
   const [dragEvents] = useState([
     { title: "Reuniões / Eventos", id: "101", tag: "business" },
     { title: "Reunião Interna", id: "102", tag: "meeting" },
-    { title: "Atendimento Clientes", id: "103", tag: "holiday" },
-    { title: "Compromissos com Clientes", id: "104", tag: "etc" },
+    { title: "Visitas Técnicas", id: "103", tag: "holiday" },
+    { title: "Compromissos Pessoais", id: "104", tag: "etc" },
   ]);
 
   useEffect(() => {

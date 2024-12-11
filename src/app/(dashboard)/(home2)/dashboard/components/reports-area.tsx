@@ -10,7 +10,7 @@ const ReportsArea = () => {
     {
       id: 1,
       name: "Vacinas Aplicadas",
-      count: "6,132",
+      count: "6.132",
       rate: "150",
       isUp: true,
       icon: <Session className="h-4 w-4" />,
@@ -19,7 +19,7 @@ const ReportsArea = () => {
     {
       id: 2,
       name: "Tarefas",
-      count: "11,236",
+      count: "11.236",
       rate: "202",
       isUp: false,
       icon: <Eye className="h-4 w-4" />,
@@ -28,7 +28,7 @@ const ReportsArea = () => {
     {
       id: 3,
       name: "Visitas Técnicas",
-      count: "46s",
+      count: "460",
       rate: "22",
       isUp: true,
       icon: <Increase className="h-4 w-4" />,
@@ -37,7 +37,7 @@ const ReportsArea = () => {
     {
       id: 4,
       name: "Novos Clientes",
-      count: "46s",
+      count: "360",
       rate: "30",
       isUp: false,
       icon: <Cup className="h-4 w-4" />,
@@ -46,7 +46,7 @@ const ReportsArea = () => {
     {
       id: 5,
       name: "Formulários",
-      count: "46s",
+      count: "620",
       rate: "30",
       isUp: false,
       icon: <FormInput className="h-4 w-4" />,
@@ -55,7 +55,7 @@ const ReportsArea = () => {
     {
       id: 6,
       name: "Compromissos",
-      count: "46s",
+      count: "168",
       rate: "30",
       isUp: false,
       icon: <Calendar className="h-4 w-4" />,

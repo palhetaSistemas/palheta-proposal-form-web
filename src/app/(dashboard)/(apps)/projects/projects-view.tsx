@@ -103,7 +103,7 @@ const ProjectsView = ({ projects }: ProjectsViewProps) => {
         <div></div>
         <Button onClick={addProjectModal}>
           <Plus className="w-4 h-4 text-primary-foreground mr-2" />
-          Add Project
+          Adicionar Projeto
         </Button>
       </Blank>
     );
@@ -116,10 +116,10 @@ const ProjectsView = ({ projects }: ProjectsViewProps) => {
             <div className="flex-1 flex gap-3">
               <Button onClick={addProjectModal} className="whitespace-nowrap">
                 <Plus className="w-4 h-4  ltr:mr-2 rtl:ml-2 " />
-                Add Project
+                Adicionar Projeto
               </Button>
 
-              <Button
+              {/* <Button
                 size="icon"
                 variant="outline"
                 className={cn("hover:bg-transparent  ", {
@@ -146,10 +146,10 @@ const ProjectsView = ({ projects }: ProjectsViewProps) => {
                 onClick={() => setPageView("list")}
               >
                 <List className="h-5 w-5" />
-              </Button>
+              </Button> */}
             </div>
             <div className=" flex-none  flex flex-wrap gap-3">
-              {pageView === "grid" && <Input placeholder="search..." />}
+              {pageView === "grid" && <Input placeholder="Pesquisar..." />}
               {pageView === "list" && <DataTableToolbar table={table} />}
             </div>
           </div>

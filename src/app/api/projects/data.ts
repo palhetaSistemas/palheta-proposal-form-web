@@ -1,16 +1,13 @@
-import avatar1 from "@/public/images/avatar/avatar-1.jpg";
-import avatar2 from "@/public/images/avatar/avatar-2.jpg";
-import avatar3 from "@/public/images/avatar/avatar-3.jpg";
-import avatar4 from "@/public/images/avatar/avatar-4.jpg";
-import avatar5 from "@/public/images/avatar/avatar-5.jpg";
-import avatar6 from "@/public/images/avatar/avatar-6.jpg";
-import avatar7 from "@/public/images/avatar/avatar-7.jpg";
-import avatar8 from "@/public/images/avatar/avatar-8.jpg";
-import avatar9 from "@/public/images/avatar/avatar-9.jpg";
-import avatar10 from "@/public/images/avatar/avatar-10.jpg";
-import avatar11 from "@/public/images/avatar/avatar-11.jpg";
-import avatar12 from "@/public/images/avatar/avatar-12.jpg";
-import avatar13 from "@/public/images/avatar/avatar-13.jpg";
+import farm1 from "@/public/images/staticDataImage/farm1.png";
+import farm2 from "@/public/images/staticDataImage/farm2.png";
+import farm3 from "@/public/images/staticDataImage/farm3.png";
+import farm4 from "@/public/images/staticDataImage/farm4.png";
+import farm5 from "@/public/images/staticDataImage/farm5.png";
+import farm6 from "@/public/images/staticDataImage/farm6.png";
+import farm7 from "@/public/images/staticDataImage/farm7.png";
+import farm8 from "@/public/images/staticDataImage/farm8.png";
+import farm9 from "@/public/images/staticDataImage/farm9.png";
+import farm10 from "@/public/images/staticDataImage/farm10.png";
 
 import ass from "@/public/images/projects/ass.jpg";
 import productify from "@/public/images/projects/productify.jpg";
@@ -113,133 +110,200 @@ export function generateAssignments(numAssign: number) {
 export const projects = [
   {
     id: "76b99e8a-4d5e-4818-92cb-7932a5b8f42a",
-    title: "Acculance – A POS Application.",
+    title: "Projeto 1",
     subtitle:
-      "Acculance stands out as a web application crafted for point of sale, inventory management, & etc.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     status: "in progress",
     label: "bug",
     priority: "low",
     description:
-      "Acculance stands out as a web application crafted for point of sale, inventory management, & etc.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     percentage: 32,
     assign: [
-      { image: avatar1, label: "John Doe", value: "john.doe" },
-      { image: avatar2, label: "Jane Smith", value: "jane.smith" },
-      { image: avatar3, label: "Bob Johnson", value: "bob.johnson" },
-      { image: avatar4, label: "Alice Lee", value: "alice.lee" },
+      { image: farm1, label: "John Doe", value: "john.doe" },
+      { image: farm2, label: "Jane Smith", value: "jane.smith" },
+      { image: farm3, label: "Bob Johnson", value: "bob.johnson" },
+      { image: farm4, label: "Alice Lee", value: "alice.lee" },
+    ],
+    assignDate: formatDate(faker.date.past(1, new Date())),
+    dueDate: formatDate(faker.date.future(1, new Date())),
+    logo: farm5,
+    isFavorite: false,
+  },
+  {
+    id: "76b99e8a-4d5e-4818-92cb-7932a5b8f42b",
+    title: "Projeto 2",
+    subtitle:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    status: "in progress",
+    label: "bug",
+    priority: "low",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    percentage: 32,
+    assign: [
+      { image: farm1, label: "John Doe", value: "john.doe" },
+      { image: farm2, label: "Jane Smith", value: "jane.smith" },
+      { image: farm3, label: "Bob Johnson", value: "bob.johnson" },
+      { image: farm4, label: "Alice Lee", value: "alice.lee" },
+    ],
+    assignDate: formatDate(faker.date.past(1, new Date())),
+    dueDate: formatDate(faker.date.future(1, new Date())),
+    logo: farm6,
+    isFavorite: true,
+  },
+  {
+    id: "76b99e8a-4d5e-4818-92cb-7932a5b8f42c",
+    title: "Projeto 3",
+    subtitle:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    status: "in progress",
+    label: "bug",
+    priority: "low",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    percentage: 32,
+    assign: [
+      { image: farm1, label: "John Doe", value: "john.doe" },
+      { image: farm2, label: "Jane Smith", value: "jane.smith" },
+      { image: farm3, label: "Bob Johnson", value: "bob.johnson" },
+      { image: farm4, label: "Alice Lee", value: "alice.lee" },
+    ],
+    assignDate: formatDate(faker.date.past(1, new Date())),
+    dueDate: formatDate(faker.date.future(1, new Date())),
+    logo: farm7,
+    isFavorite: true,
+  },
+  {
+    id: "76b99e8a-4d5e-4818-92cb-7932a5b8f42d",
+    title: "Projeto 4",
+    subtitle:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    status: "in progress",
+    label: "bug",
+    priority: "low",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    percentage: 32,
+    assign: [
+      { image: farm1, label: "John Doe", value: "john.doe" },
+      { image: farm2, label: "Jane Smith", value: "jane.smith" },
+      { image: farm3, label: "Bob Johnson", value: "bob.johnson" },
+      { image: farm4, label: "Alice Lee", value: "alice.lee" },
+    ],
+    assignDate: formatDate(faker.date.past(1, new Date())),
+    dueDate: formatDate(faker.date.future(1, new Date())),
+    logo: farm8,
+    isFavorite: false,
+  },
+  {
+    id: "76b99e8a-4d5e-4818-92cb-7932a5b8f42e",
+    title: "Projeto 5",
+    subtitle:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    status: "in progress",
+    label: "bug",
+    priority: "low",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    percentage: 32,
+    assign: [
+      { image: farm1, label: "John Doe", value: "john.doe" },
+      { image: farm2, label: "Jane Smith", value: "jane.smith" },
+      { image: farm3, label: "Bob Johnson", value: "bob.johnson" },
+      { image: farm4, label: "Alice Lee", value: "alice.lee" },
+    ],
+    assignDate: formatDate(faker.date.past(1, new Date())),
+    dueDate: formatDate(faker.date.future(1, new Date())),
+    logo: farm9,
+    isFavorite: false,
+  },
+  {
+    id: "76b99e8a-4d5e-4818-92cb-7932a5b8f42f",
+    title: "Projeto 6",
+    subtitle:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    status: "in progress",
+    label: "bug",
+    priority: "low",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    percentage: 32,
+    assign: [
+      { image: farm1, label: "John Doe", value: "john.doe" },
+      { image: farm2, label: "Jane Smith", value: "jane.smith" },
+      { image: farm3, label: "Bob Johnson", value: "bob.johnson" },
+      { image: farm4, label: "Alice Lee", value: "alice.lee" },
+    ],
+    assignDate: formatDate(faker.date.past(1, new Date())),
+    dueDate: formatDate(faker.date.future(1, new Date())),
+    logo: farm10,
+    isFavorite: true,
+  },
+  {
+    id: "76b99e8a-4d5e-4818-92cb-7932a5b8f42g",
+    title: "Projeto 7",
+    subtitle:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    status: "in progress",
+    label: "bug",
+    priority: "low",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    percentage: 32,
+    assign: [
+      { image: farm1, label: "John Doe", value: "john.doe" },
+      { image: farm2, label: "Jane Smith", value: "jane.smith" },
+      { image: farm3, label: "Bob Johnson", value: "bob.johnson" },
+      { image: farm4, label: "Alice Lee", value: "alice.lee" },
     ],
     assignDate: formatDate(faker.date.past(1, new Date())),
     dueDate: formatDate(faker.date.future(1, new Date())),
 
     isFavorite: true,
   },
-
   {
-    id: "a91b39a7-0c96-4e7c-8fb1-2204d3d26d64",
-    title: "Productify - Production System.",
+    id: "76b99e8a-4d5e-4818-92cb-7932a5b8f42h",
+    title: "Projeto 8",
     subtitle:
-      "Productify is a secure, and high-speed production management system constructed by Laravel.",
-    status: "review",
-    label: "bug",
-    priority: "medium",
-    description:
-      "Productify is a secure, and high-speed production management system constructed by Laravel.",
-    percentage: 90,
-    assign: [
-      { image: avatar5, label: "John Doe", value: "john.doe" },
-      { image: avatar6, label: "Jane Smith", value: "jane.smith" },
-      { image: avatar7, label: "Bob Johnson", value: "bob.johnson" },
-      { image: avatar8, label: "Alice Lee", value: "alice.lee" },
-    ],
-    assignDate: "02 Feb 2023",
-    dueDate: "02 Apr 2023",
-    logo: productify,
-    isFavorite: false,
-  },
-  {
-    id: "f3696e32-70f4-492f-8dc3-135e7c2e0f78",
-    title: "UR-Advisor - Online Advisor Tool.",
-    subtitle:
-      "UR-Advisor stands as a lightweight quiz/survey web application built on PHP.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     status: "in progress",
     label: "bug",
     priority: "low",
     description:
-      "UR-Advisor stands as a lightweight quiz/survey web application built on PHP.",
-    percentage: 61,
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    percentage: 32,
     assign: [
-      { image: avatar9, label: "John Doe", value: "john.doe" },
-      { image: avatar10, label: "Jane Smith", value: "jane.smith" },
-    ],
-    assignDate: formatDate(faker.date.past(1, new Date())),
-    dueDate: formatDate(faker.date.future(1, new Date())),
-    logo: uradvisor,
-    isFavorite: false,
-  },
-  {
-    id: "4fb0b5e1-d6db-4e2e-a296-08dc5476d5b8",
-    title: "Konst - Construction Website.",
-    subtitle:
-      "Konst professional, clean, creative, corporate, modern, and easy-to-use xd template designed.",
-    status: "completed",
-    label: "bug",
-    priority: "high",
-    description:
-      "Konst professional, clean, creative, corporate, modern, and easy-to-use xd template designed.",
-    percentage: 100,
-    assign: [
-      { image: avatar11, label: "John Doe", value: "john.doe" },
-      { image: avatar12, label: "Jane Smith", value: "jane.smith" },
-      { image: avatar13, label: "Bob Johnson", value: "bob.johnson" },
-      { image: avatar1, label: "Alice Lee", value: "alice.lee" },
-    ],
-    assignDate: "09 Dec 2022",
-    dueDate: "14 Jan 2024",
-    logo: konst,
-    isFavorite: false,
-  },
-  {
-    id: "e31b77ab-3151-41d0-858f-1f33c4dcf131",
-    title: "DashCode - Admin Dashboard.",
-    subtitle:
-      "DashCode stands out as the fastest and extensive customizable admin dashboard template.",
-    status: "review",
-    label: "bug",
-    priority: "medium",
-    description:
-      "DashCode stands out as the fastest and extensive customizable admin dashboard template.",
-    percentage: 84,
-    assign: [
-      { image: avatar2, label: "John Doe", value: "john.doe" },
-      { image: avatar3, label: "Jane Smith", value: "jane.smith" },
-      { image: avatar4, label: "Bob Johnson", value: "bob.johnson" },
-      { image: avatar5, label: "Alice Lee", value: "alice.lee" },
+      { image: farm1, label: "John Doe", value: "john.doe" },
+      { image: farm2, label: "Jane Smith", value: "jane.smith" },
+      { image: farm3, label: "Bob Johnson", value: "bob.johnson" },
+      { image: farm4, label: "Alice Lee", value: "alice.lee" },
     ],
     assignDate: formatDate(faker.date.past(1, new Date())),
     dueDate: formatDate(faker.date.future(1, new Date())),
 
-    isFavorite: false,
+    isFavorite: true,
   },
   {
-    id: "9d41eae4-5c96-4a7f-a70e-0ed9c4c5f5a1",
-    title: "Acculance SaaS - POS System.",
+    id: "76b99e8a-4d5e-4818-92cb-7932a5b8f42i",
+    title: "Projeto 9",
     subtitle:
-      "Create a Brand logo design for a DashTail Admin. Total 21/25 tasks logo design for completed.",
-    status: "completed",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    status: "in progress",
     label: "bug",
-    priority: "high",
+    priority: "low",
     description:
-      "Create a Brand logo design for a DashTail Admin. Total 21/25 tasks logo design for completed.",
-    percentage: 100,
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    percentage: 32,
     assign: [
-      { image: avatar6, label: "John Doe", value: "john.doe" },
-      { image: avatar7, label: "Jane Smith", value: "jane.smith" },
-      { image: avatar8, label: "Bob Johnson", value: "bob.johnson" },
-      { image: avatar9, label: "Alice Lee", value: "alice.lee" },
+      { image: farm1, label: "John Doe", value: "john.doe" },
+      { image: farm2, label: "Jane Smith", value: "jane.smith" },
+      { image: farm3, label: "Bob Johnson", value: "bob.johnson" },
+      { image: farm4, label: "Alice Lee", value: "alice.lee" },
     ],
     assignDate: formatDate(faker.date.past(1, new Date())),
     dueDate: formatDate(faker.date.future(1, new Date())),
-    logo: ass,
+
     isFavorite: false,
   },
 ];

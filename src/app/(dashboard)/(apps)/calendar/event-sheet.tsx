@@ -36,7 +36,7 @@ import DeleteConfirmationDialog from "@/src/components/delete-confirmation-dialo
 import { ScrollArea } from "@/src/components/ui/scroll-area";
 import { CalendarCategory } from "@/src/lib/interface";
 const schema = z.object({
-  title: z.string().min(3, { message: "Required" }),
+  title: z.string().min(3, { message: "Obrigatório" }),
 });
 
 const EventSheet = ({
@@ -170,7 +170,7 @@ const EventSheet = ({
         >
           <SheetHeader className="px-6">
             <SheetTitle>
-              {event ? "Edit Event" : "Create Event"} {event?.title}
+              {event ? "Editar Agendamento" : "Novo Agendamento"} {event?.title}
             </SheetTitle>
           </SheetHeader>
           <div className="mt-6 h-full">
@@ -179,11 +179,11 @@ const EventSheet = ({
                 <ScrollArea className="h-full">
                   <div className="space-y-4 pb-5 px-6">
                     <div className=" space-y-1.5">
-                      <Label htmlFor="title">Event Name</Label>
+                      <Label htmlFor="title">Nome</Label>
                       <Input
                         id="title"
                         type="text"
-                        placeholder="Enter Event Name"
+                        placeholder="Insira o Nome do Agendamento"
                         {...register("title")}
                       />
                       {errors?.title?.message && (
@@ -197,7 +197,7 @@ const EventSheet = ({
 
                     <div>
                       <Label htmlFor="startDate" className="mb-1.5">
-                        Start Date
+                        Data de Início
                       </Label>
                       <Popover>
                         <PopoverTrigger asChild>
@@ -211,7 +211,7 @@ const EventSheet = ({
                             {startDate ? (
                               formatDate(startDate)
                             ) : (
-                              <span>Pick a date</span>
+                              <span>Escolha uma Data</span>
                             )}
                             <CalendarIcon className="h-4 w-4 " />
                           </Button>
@@ -235,7 +235,7 @@ const EventSheet = ({
 
                     <div>
                       <Label htmlFor="endDate" className="mb-1.5">
-                        End Date
+                        Data de Conclusão
                       </Label>
                       <Popover>
                         <PopoverTrigger asChild>
@@ -249,7 +249,7 @@ const EventSheet = ({
                             {endDate ? (
                               formatDate(endDate)
                             ) : (
-                              <span>Pick a date</span>
+                              <span>Escolha uma Data</span>
                             )}
                             <CalendarIcon className=" h-4 w-4" />
                           </Button>
@@ -273,7 +273,7 @@ const EventSheet = ({
 
                     <div>
                       <Label htmlFor="calendarProps" className="mb-1.5">
-                        Label
+                        Categoria
                       </Label>
                       <Controller
                         name="calendarProps"
@@ -284,7 +284,7 @@ const EventSheet = ({
                             onValueChange={(data) => setCalendarProps(data)}
                           >
                             <SelectTrigger>
-                              <SelectValue placeholder="Label" />
+                              <SelectValue placeholder="Categoria" />
                             </SelectTrigger>
                             <SelectContent>
                               {categories.map((category: CalendarCategory) => (
@@ -308,22 +308,23 @@ const EventSheet = ({
                   {isPending ? (
                     <>
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                      {event ? "Updating..." : "Adding..."}
+                      {event ? "Editando..." : "Criando..."}
                     </>
                   ) : event ? (
-                    "Update Event"
+                    "Editar Compromisso"
                   ) : (
-                    "Add Event"
+                    "Criar Compromisso"
                   )}
                 </Button>
                 {event && (
                   <Button
                     type="button"
-                    color="destructive"
+                    color="primary"
+                    variant="outline"
                     onClick={() => handleOpenDeleteModal(event?.event?.id)}
                     className="flex-1"
                   >
-                    Delete
+                    Apagar
                   </Button>
                 )}
               </div>

@@ -219,13 +219,11 @@ const ChatPage = () => {
   const isLg = useMediaQuery("(max-width: 1024px)");
   return (
     <>
-      <div className="flex flex-wrap mb-7">
+      {/* <div className="flex flex-wrap mb-7">
         <div className="text-xl font-medium text-default-900 flex-1">
           Chat Interno
         </div>
-        {/* <div className="flex-none">
-          <TaskBreadCrumbs />
-        </div> */}
+
       </div>
       <div className="flex gap-5 app-height  relative rtl:space-x-reverse">
         {isLg && showContactSidebar && (
@@ -272,8 +270,6 @@ const ChatPage = () => {
             </CardContent>
           </Card>
         </div>
-        {/* chat sidebar  end*/}
-        {/* chat messages start */}
         {selectedChatId ? (
           <div className="flex-1 ">
             <div className=" flex space-x-5 h-full rtl:space-x-reverse">
@@ -364,6 +360,9 @@ const ChatPage = () => {
           setIsOpen={setIsForward}
           contacts={contacts}
         />
+      </div> */}
+      <div className="absolute w-full h-full top-0 left-0 flex items-center justify-center">
+        <span className="text-4xl font-bold"> Em Breve</span>
       </div>
     </>
   );
