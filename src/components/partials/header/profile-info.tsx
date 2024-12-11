@@ -25,8 +25,10 @@ const ProfileInfo = () => {
         <div className=" flex items-center  ">
           {session?.user?.image && (
             <Image
-              src={session?.user?.image}
-              alt={session?.user?.name ?? ""}
+              // src={session?.user?.image}
+              // alt={session?.user?.name ?? ""}
+              alt=""
+              src="/images/logo/2.png"
               width={36}
               height={36}
               className="rounded-full"

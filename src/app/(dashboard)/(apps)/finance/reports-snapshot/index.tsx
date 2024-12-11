@@ -55,27 +55,27 @@ const ReportsSnapshot = () => {
   const tabsTrigger = [
     {
       value: "all",
-      text: "Doenças Reportadas",
-      total: "10,234",
+      text: "Despesas",
+      total: 10234,
       color: "primary",
     },
     {
       value: "event",
-      text: "Novos Animais",
-      total: "536",
-      color: "warning",
+      text: "À Pagar (Neste Mês)",
+      total: 546,
+      color: "primary",
     },
     {
       value: "conversation",
-      text: "Animais Vendidos",
-      total: "21",
+      text: "Receitas",
+      total: 12850,
       color: "success",
     },
     {
       value: "newuser",
-      text: "Relatórios Preenchidos",
-      total: "3321",
-      color: "info",
+      text: "À Receber (Neste Mês)",
+      total: 3282,
+      color: "success",
     },
   ];
   const tabsContentData = [
@@ -87,7 +87,7 @@ const ReportsSnapshot = () => {
     {
       value: "event",
       series: eventCountSeries,
-      color: warning,
+      color: primary,
     },
     {
       value: "conversation",
@@ -97,7 +97,7 @@ const ReportsSnapshot = () => {
     {
       value: "newuser",
       series: newUserSeries,
-      color: info,
+      color: success,
     },
   ];
   return (
@@ -106,10 +106,10 @@ const ReportsSnapshot = () => {
         <div className="flex items-center gap-2 flex-wrap ">
           <div className="flex-1">
             <div className="text-xl font-semibold text-default-900 whitespace-nowrap">
-              Relatório Geral
+              Suas Finanças
             </div>
             <span className="text-xs text-default-600">
-              Veja dados gerais de seus clientes.
+              Veja dados gerais de suas finanças.
             </span>
           </div>
           <div className="flex-none">
@@ -125,7 +125,7 @@ const ReportsSnapshot = () => {
                 key={`report-trigger-${index}`}
                 value={item.value}
                 className={cn(
-                  "flex flex-col gap-1.5 p-4 overflow-hidden   items-start  relative before:absolute before:left-1/2 before:-translate-x-1/2 before:bottom-1 before:h-[2px] before:w-9 before:bg-primary/50 dark:before:bg-primary-foreground before:hidden data-[state=active]:shadow-none data-[state=active]:before:block",
+                  "flex flex-col gap-1.5 p-4 overflow-hidden data-[state=inactive]:opacity-30  items-start  relative before:absolute before:left-1/2 before:-translate-x-1/2 before:bottom-1 before:h-[2px] before:w-9 before:bg-primary/50 dark:before:bg-primary-foreground before:hidden data-[state=active]:shadow-none data-[state=active]:before:block",
                   {
                     "bg-primary/30 data-[state=active]:bg-primary/30 dark:bg-primary/70":
                       item.color === "primary",
@@ -160,7 +160,10 @@ const ReportsSnapshot = () => {
                 <span
                   className={`text-lg font-semibold text-${item.color}/80 dark:text-primary-foreground`}
                 >
-                  {item.total}
+                  {item.total.toLocaleString("pt-BR", {
+                    style: "currency",
+                    currency: "BRL",
+                  })}
                 </span>
               </TabsTrigger>
             ))}
