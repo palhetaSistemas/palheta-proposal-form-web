@@ -200,7 +200,7 @@ export function FilterFixedData() {
           </div>
           <div
             className={twMerge(
-              "flex w-full flex-col gap-2 rounded-xl border border-default-900 p-2  transition delay-[600ms] duration-500 lg:w-1/3 xl:p-4"
+              "flex w-full flex-col gap-2 rounded-xl border border-default-900 p-2  transition duration-500 lg:w-1/3 xl:p-4"
             )}
           >
             <span className="font-semibold">
