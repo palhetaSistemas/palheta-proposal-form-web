@@ -22,7 +22,7 @@ import UpcomingDeadline from "../project/components/upcoming-deadlines";
 import OverdueTask from "../project/components/overdue-task";
 import ChartWithTable from "../../../../components/charts/chartWithTable";
 import { IndicatorCard } from "./components/indicator-cards";
-import { ExpenseDonutGraph } from "../../(apps)/finance/expenseDonutGraph";
+import { ExpenseDonutGraph } from "../../(apps)/finance2/expenseDonutGraph";
 import { IncomeDonutGraph } from "./components/income-DonutGraph";
 
 interface DashboardPageViewProps {

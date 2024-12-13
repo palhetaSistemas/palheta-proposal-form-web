@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "Foco Consultoria",
+  name: "Palheta",
   description: null,
   theme: "neutral",
   layout: "vertical",

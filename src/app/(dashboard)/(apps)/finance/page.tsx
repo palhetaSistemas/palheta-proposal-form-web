@@ -1,20 +1,34 @@
-import { ExpenseDonutGraph } from "./expenseDonutGraph";
-import { IncomeDonutGraph } from "./incomeDonutGraph";
-import ReportsSnapshot from "./reports-snapshot";
+"use client";
+import { Button } from "@/src/components/ui/button";
+import React from "react";
+import { Releases } from "./components/releases";
+import { IncomeDonutGraph } from "./components/income-DonutGraph";
+import { BiggestRevenueDonutGraph } from "./components/biggest-revenue-DonutGraph copy 2";
+import { HigherCostsDonutGraph } from "./components/higher-costs-DonutGraph copy";
 
-export default async function FinancesPage({ params }: { params: string }) {
+export default function financialPage() {
   return (
-    <div>
+    <div className="space-y-6">
+      <div className="flex items-center flex-wrap justify-between gap-4">
+        <div className="text-2xl font-medium text-default-800 ">Financeiro</div>
+        <div className="flex flex-row items-center gap-2">
+          <Button>BALANÇO</Button>
+          <Button>ENTRADAS E SAÍDAS</Button>
+          <Button>INVESTIMENTOS</Button>
+        </div>
+        <Button>LANÇAMENTOS</Button>
+      </div>
+
       <div className="grid grid-cols-12  gap-6 ">
         <div className="col-span-12 lg:col-span-8">
-          <ReportsSnapshot />
+          <Releases />
         </div>
-        <div className="col-span-12 lg:col-span-4 flex flex-col gap-6">
-          <div className="col-span-12 lg:col-span-4">
-            <ExpenseDonutGraph />
-          </div>
-          <div className="col-span-12 lg:col-span-4">
-            <IncomeDonutGraph />
+        <div className="col-span-12 lg:col-span-4 grid grid-cols-2 gap-4">
+          <div className="col-span-12 lg:col-span-2">
+            <HigherCostsDonutGraph />
+          </div>{" "}
+          <div className="col-span-12 lg:col-span-2">
+            <BiggestRevenueDonutGraph />
           </div>
         </div>
       </div>

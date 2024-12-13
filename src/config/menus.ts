@@ -77,6 +77,11 @@ export const menusConfig = {
       icon: DashBoard,
       route: "/projects",
     },
+    {
+      title: "Financeiro",
+      icon: DashBoard,
+      route: "/finance",
+    },
   ],
   sidebarNav: {
     modern: [

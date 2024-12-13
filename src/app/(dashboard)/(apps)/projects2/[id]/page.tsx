@@ -2,7 +2,7 @@ import { getProjects } from "@/src/config/project-config";
 import UsersStat from "@/src/components/landing-page/color-schemas/users-stat";
 import { morbidityStaticData } from "@/src/@staticData/morbidity";
 import ChartWithTable from "@/src/components/charts/chartWithTable";
-import ReportsSnapshot from "../../finance/reports-snapshot";
+import ReportsSnapshot from "../../finance2/reports-snapshot";
 import ReportsArea from "../reports-area";
 import { AnimalsDonutGraph } from "../animalsDonutGraph";
 import { RaceDonutGraph } from "../raceDonutGraph";
