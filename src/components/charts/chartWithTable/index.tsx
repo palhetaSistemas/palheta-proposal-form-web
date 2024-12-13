@@ -33,7 +33,7 @@ const ChartWithTable = ({
   indicator,
 }: Props) => {
   return (
-    <Card className=" h-full bg-neutral-800">
+    <Card className=" h-full ">
       <CardHeader className="border-none pb-0 mb-5">
         <div className="flex items-center gap-1">
           <div className="flex-1">

@@ -40,7 +40,11 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
         } as React.CSSProperties
       }
     >
-      <ThemeProvider attribute="class" enableSystem={false} defaultTheme="dark">
+      <ThemeProvider
+        attribute="class"
+        enableSystem={false}
+        defaultTheme="light"
+      >
         <div className={cn("h-full  ")}>
           {children}
           <ReactToaster />

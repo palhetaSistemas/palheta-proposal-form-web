@@ -21,9 +21,6 @@ import WorksNote from "../project/components/works-note";
 import UpcomingDeadline from "../project/components/upcoming-deadlines";
 import OverdueTask from "../project/components/overdue-task";
 import ChartWithTable from "../../../../components/charts/chartWithTable";
-import { IndicatorCard } from "./components/indicator-cards";
-import { ExpenseDonutGraph } from "../../(apps)/finance/expenseDonutGraph";
-import { IncomeDonutGraph } from "./components/income-DonutGraph";
 
 interface DashboardPageViewProps {
   trans: {
@@ -35,18 +32,14 @@ const DashboardPageView = ({ trans }: DashboardPageViewProps) => {
     <div className="space-y-6">
       <div className="flex items-center flex-wrap justify-between gap-4">
         <div className="text-2xl font-medium text-default-800 ">
-          Dashboard Inicial1s
+          Dashboard Inicial1
         </div>
         <DatePickerWithRange />
       </div>
       {/* reports area */}
       <div className="grid grid-cols-12  gap-6 ">
-        <div className="col-span-12 ">
-          <IndicatorCard />
-        </div>
-        <div className="col-span-12 lg:col-span-8"></div>
-        <div className="col-span-12 lg:col-span-4">
-          <IncomeDonutGraph />
+        <div className="col-span-12 lg:col-span-8">
+          <ReportsSnapshot />
         </div>
         <div className="col-span-12 lg:col-span-4">
           <ChartWithTable

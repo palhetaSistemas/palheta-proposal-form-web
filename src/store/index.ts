@@ -20,7 +20,7 @@ interface ThemeStoreState {
 export const useThemeStore = create<ThemeStoreState>()(
   persist(
     (set) => ({
-      theme: "red",
+      theme: "blue",
       setTheme: (theme) => set({ theme }),
       radius: siteConfig.radius,
       setRadius: (value) => set({ radius: value }),

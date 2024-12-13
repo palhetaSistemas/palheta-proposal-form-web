@@ -63,6 +63,26 @@ export const menusConfig = {
       route: "/",
     },
     {
+      title: "Dashboard",
+      icon: DashBoard,
+      route: "/tela1",
+    },
+    {
+      title: "Atividades",
+      icon: DashBoard,
+      route: "/tela2",
+    },
+    {
+      title: "Orçamentos",
+      icon: DashBoard,
+      route: "/tela3",
+    },
+    {
+      title: "Projetos",
+      icon: DashBoard,
+      route: "/tela4",
+    },
+    {
       title: "Tarefas",
       icon: ListFill,
       route: "/task",
