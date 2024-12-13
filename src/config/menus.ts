@@ -82,6 +82,21 @@ export const menusConfig = {
       icon: DashBoard,
       route: "/finance",
     },
+    {
+      title: "Receitas",
+      icon: DashBoard,
+      route: "/finance",
+    },
+    {
+      title: "Clientes",
+      icon: DashBoard,
+      route: "/clients",
+    },
+    {
+      title: "Objetivos",
+      icon: DashBoard,
+      route: "/objectives",
+    },
   ],
   sidebarNav: {
     modern: [

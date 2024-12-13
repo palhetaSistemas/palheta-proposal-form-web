@@ -5,6 +5,7 @@ import { Releases } from "./components/releases";
 import { IncomeDonutGraph } from "./components/income-DonutGraph";
 import { BiggestRevenueDonutGraph } from "./components/biggest-revenue-DonutGraph copy 2";
 import { HigherCostsDonutGraph } from "./components/higher-costs-DonutGraph copy";
+import TableWithCards from "./components/table-withCards";
 
 export default function financialPage() {
   return (
@@ -30,6 +31,9 @@ export default function financialPage() {
           <div className="col-span-12 lg:col-span-2">
             <BiggestRevenueDonutGraph />
           </div>
+        </div>
+        <div className="col-span-12 lg:col-span-12">
+          <TableWithCards />
         </div>
       </div>
     </div>
