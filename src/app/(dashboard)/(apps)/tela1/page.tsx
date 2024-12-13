@@ -8,7 +8,7 @@ import RevenueComponent from "./components/revenue-graph/revenue-component";
 import OutstandingPayments from "./components/outstanding-payments";
 import Task from "./components/overdue-task";
 import ActiveProjectsComponent from "./components/active-projects/active-project-component";
-export default async function Tela1Page({ params }: { params: string }) {
+export default async function Dashboard({ params }: { params: string }) {
   return (
     <div className="space-y-6">
       <div className="flex items-center flex-wrap justify-between gap-4">

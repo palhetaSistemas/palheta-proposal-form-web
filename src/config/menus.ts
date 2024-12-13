@@ -60,7 +60,7 @@ export const menusConfig = {
     {
       title: "Dashboard",
       icon: DashBoard,
-      route: "/tela1",
+      route: "/",
     },
     {
       title: "Atividades",
