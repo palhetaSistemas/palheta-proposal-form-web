@@ -8,7 +8,7 @@ import {
 import KanbanBreadCrumbs from "./bread-crumbs";
 import TaskBoard from "./components/task-board";
 
-const Projects = async () => {
+const Budgets = async () => {
   const boards = await getBoards();
   const tasks = await getTasks2();
   const subTasks = await getSubtasks();
@@ -17,7 +17,7 @@ const Projects = async () => {
     <>
       <div className="flex flex-wrap mb-7">
         <div className="text-xl font-medium text-default-900 flex-1">
-          Projetos
+          Orçamentos
         </div>
       </div>
       <TaskBoard
@@ -30,4 +30,4 @@ const Projects = async () => {
   );
 };
 
-export default Projects;
+export default Budgets;

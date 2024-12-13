@@ -58,11 +58,6 @@ export interface MenuItemProps {
 export const menusConfig = {
   mainNav: [
     {
-      title: "Home",
-      icon: DashBoard,
-      route: "/",
-    },
-    {
       title: "Dashboard",
       icon: DashBoard,
       route: "/tela1",
@@ -70,47 +65,17 @@ export const menusConfig = {
     {
       title: "Atividades",
       icon: DashBoard,
-      route: "/tela2",
+      route: "/activities",
     },
     {
       title: "Orçamentos",
       icon: DashBoard,
-      route: "/tela3",
+      route: "/budgets",
     },
     {
       title: "Projetos",
       icon: DashBoard,
-      route: "/tela4",
-    },
-    {
-      title: "Tarefas",
-      icon: ListFill,
-      route: "/task",
-    },
-    {
-      title: "Agenda",
-      icon: Calendar,
-      route: "/calendar",
-    },
-    {
-      title: "Chat",
-      icon: Messages,
-      route: "/chat",
-    },
-    {
-      title: "CRM",
-      icon: Grid,
-      route: "/crm",
-    },
-    {
-      title: "Projetos",
-      icon: Map,
       route: "/projects",
-    },
-    {
-      title: "Finanças",
-      icon: ListFill,
-      route: "/finance",
     },
   ],
   sidebarNav: {

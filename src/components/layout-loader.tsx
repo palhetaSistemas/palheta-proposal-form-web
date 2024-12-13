@@ -5,7 +5,7 @@ import { Loader2 } from "lucide-react";
 import Image from "next/image";
 const LayoutLoader = () => {
   return (
-    <div className="bg-[#171717] h-screen flex items-center justify-center flex-col space-y-2">
+    <div className="h-screen flex items-center justify-center flex-col space-y-2">
       <Image
         src="/images/logo/icon.png"
         alt=""
