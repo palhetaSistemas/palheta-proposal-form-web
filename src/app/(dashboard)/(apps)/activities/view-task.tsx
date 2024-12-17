@@ -15,7 +15,6 @@ import { type Board as BoardType } from "@/src/app/api/boards/data";
 import { type Task as TaskType } from "@/src/app/api/tasks2/data";
 import { type SubTask as SubTaskType } from "@/src/app/api/tasks/data";
 import { type Comment as CommentType } from "@/src/app/api/comments/data";
-import { IndicatorCard } from "../tela1/components/indicator-cards";
 import { Kanban } from "./components/kanban";
 import TaskBoard from "./components/task-board";
 

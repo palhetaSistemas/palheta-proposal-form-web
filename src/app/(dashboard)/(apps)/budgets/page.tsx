@@ -4,13 +4,14 @@ import {
   getSubtasks,
   getComments,
   getTasks2,
+  getBoards2,
 } from "@/src/config/project-config";
 import KanbanBreadCrumbs from "./bread-crumbs";
 import TaskBoard from "./components/task-board";
 
 const Budgets = async () => {
-  const boards = await getBoards();
-  const tasks = await getTasks();
+  const boards = await getBoards2();
+  const tasks = await getTasks2();
   const subTasks = await getSubtasks();
   const comments = await getComments();
   return (

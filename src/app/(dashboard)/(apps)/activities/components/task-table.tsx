@@ -219,7 +219,7 @@ const TaskTable = ({
               size="icon"
               variant="outline"
               className=" h-7 w-7"
-              onClick={handleEditSheetOpen}
+              // onClick={handleEditSheetOpen}
             >
               <Icon icon="heroicons:pencil" className=" h-4 w-4  " />
             </Button>

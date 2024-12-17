@@ -96,6 +96,8 @@ const taskBoard = ({
             "border-primary": status === "primary",
             "border-warning": status === "warning",
             "border-success": status === "success",
+            "border-destructive": status === "destructive",
+            "border-info": status === "info",
             "opacity-50": isDragging,
           }
         )}
