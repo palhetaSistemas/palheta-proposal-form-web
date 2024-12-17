@@ -11,6 +11,7 @@ import { cn } from "@/src/lib/utils";
 import { Tabs, TabsList } from "@/src/components/ui/tabs";
 import { useState } from "react";
 import RevenueChart from "../../../(home)/components/revenue-graph/revenue-chart";
+import FinanceChart from "./finance-chart";
 
 export function Releases() {
   const cards = [
@@ -40,11 +41,87 @@ export function Releases() {
     },
   ];
   const [quarter, setQuarter] = useState(0);
-  const allUsersSeries = [
+
+  const seriesFirstQuarter = [
     {
-      data: [90, 70, 85, 60, 80, 70, 90, 75, 60, 80],
+      name: "Despesas",
+      data: [90, 60, 70, 80, 50, 40],
+    },
+    {
+      name: "Receitas",
+      data: [50, 55, 40, 30, 35, 40],
+    },
+    {
+      name: "A Receber",
+      data: [40, 45, 60, 45, 20, 35],
+    },
+    {
+      name: "A Pagar",
+      data: [55, 20, 35, 53, 34, 50],
     },
   ];
+  const seriesSecondQuarter = [
+    {
+      name: "Despesas",
+      data: [85, 65, 75, 70, 55, 45],
+    },
+    {
+      name: "Receitas",
+      data: [55, 50, 45, 35, 40, 45],
+    },
+    {
+      name: "A Receber",
+      data: [45, 50, 55, 50, 25, 40],
+    },
+    {
+      name: "A Pagar",
+      data: [55, 20, 35, 53, 34, 50],
+    },
+  ];
+  const seriesThirdQuarter = [
+    {
+      name: "Despesas",
+      data: [80, 70, 60, 90, 60, 50],
+    },
+    {
+      name: "Receitas",
+      data: [60, 65, 50, 40, 45, 50],
+    },
+    {
+      name: "A Receber",
+      data: [50, 55, 50, 55, 30, 45],
+    },
+    {
+      name: "A Pagar",
+      data: [55, 20, 35, 53, 34, 50],
+    },
+  ];
+  const seriesFourthQuarter = [
+    {
+      name: "Despesas",
+      data: [95, 75, 85, 100, 70, 60],
+    },
+    {
+      name: "Receitas",
+      data: [65, 70, 55, 45, 50, 55],
+    },
+    {
+      name: "A Receber",
+      data: [55, 60, 65, 60, 35, 50],
+    },
+    {
+      name: "A Pagar",
+      data: [55, 20, 35, 53, 34, 50],
+    },
+  ];
+  const selectedSeries =
+    quarter === 0
+      ? seriesFirstQuarter
+      : quarter === 1
+      ? seriesSecondQuarter
+      : quarter === 2
+      ? seriesThirdQuarter
+      : seriesFourthQuarter;
 
   return (
     <Card className="h-full">
@@ -101,7 +178,7 @@ export function Releases() {
       </CardContent>
       <CardContent className="p-2">
         <CardTitle>Receitas x Despesas x À Receber x À Pagar</CardTitle>
-        <RevenueChart series={allUsersSeries} chartColor={"blue"} />
+        <FinanceChart series={selectedSeries} key={quarter} />
       </CardContent>
       <CardContent className="p-2 pb-10  flex flex-row justify-between">
         <Button
@@ -113,7 +190,7 @@ export function Releases() {
           color={quarter === 0 ? "secondary" : "primary"}
           asChild
         >
-          <Link href="#">Na Semana</Link>
+          <span>Na Semana</span>
         </Button>
         <Button
           className={` ${
@@ -124,7 +201,7 @@ export function Releases() {
           color={quarter === 1 ? "secondary" : "primary"}
           asChild
         >
-          <Link href="#">No Mês</Link>
+          <span>No Mês</span>
         </Button>
         <Button
           className={` ${
@@ -135,7 +212,7 @@ export function Releases() {
           color={quarter === 2 ? "secondary" : "primary"}
           asChild
         >
-          <Link href="#">No Trimestre</Link>
+          <span>No Trimestre</span>
         </Button>
         <Button
           className={` ${
@@ -146,7 +223,7 @@ export function Releases() {
           color={quarter === 3 ? "secondary" : "primary"}
           asChild
         >
-          <Link href="#">No Semestre</Link>
+          <span>No Semestre</span>
         </Button>
       </CardContent>
     </Card>

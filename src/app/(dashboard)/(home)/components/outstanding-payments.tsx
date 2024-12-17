@@ -24,8 +24,8 @@ const pending = [
     id: 1,
     name: "John Doe",
     church: "Igreja Batista",
-    quantity: "4963",
-    date: "2023-10-01",
+    quantity: "R$ 10.000,00",
+    date: "01/01/2025",
     isOverdue: false,
     image: farm1,
   },
@@ -33,8 +33,8 @@ const pending = [
     id: 2,
     name: "Jane Smith",
     church: "Igreja Presbiteriana",
-    quantity: "2963",
-    date: "2023-09-15",
+    quantity: "R$ 23.000,00",
+    date: "30/08/2024",
     isOverdue: true,
     image: farm2,
   },
@@ -42,8 +42,8 @@ const pending = [
     id: 3,
     name: "Michael Johnson",
     church: "Igreja Metodista",
-    quantity: "1963",
-    date: "2023-08-20",
+    quantity: "R$ 19.630,90",
+    date: "30/07/2024",
     isOverdue: true,
     image: farm3,
   },
@@ -51,8 +51,8 @@ const pending = [
     id: 4,
     name: "Emily Davis",
     church: "Igreja Católica",
-    quantity: "963",
-    date: "2023-10-10",
+    quantity: "R$ 9.620,00",
+    date: "05/02/2025",
     isOverdue: false,
     image: farm4,
   },
@@ -60,9 +60,9 @@ const pending = [
     id: 5,
     name: "David Wilson",
     church: "Igreja Adventista",
-    quantity: "663",
-    date: "2023-09-25",
-    isOverdue: true,
+    quantity: "R$ 6.630,00",
+    date: "21/03/2025",
+    isOverdue: false,
     image: farm5,
   },
 ];
@@ -73,11 +73,11 @@ const OutstandingPayments = () => {
         <CardTitle> À Receber Pendente </CardTitle>
         {/* <DashboardDropdown /> */}
         <Image
-          className=" w-8 h-8"
+          className=" w-32 h-10"
           alt=""
           width={400}
           height={400}
-          src={"/images/logo/logo.svg"}
+          src={"/images/logo/logo.png"}
         />
       </CardHeader>
       <CardContent className="px-0">
@@ -97,17 +97,48 @@ const OutstandingPayments = () => {
                   />
                 </div>
                 <div>
-                  <div className="text-sm font-medium text-default-600">
+                  <div
+                    className={` ${
+                      item.isOverdue ? "text-[#FC5757]" : "text-primary"
+                    } text-sm font-medium `}
+                  >
                     {item.name}
                   </div>
-                  <div className="text-sm font-medium text-default-600">
+                  <div
+                    className={`text-sm font-medium ${
+                      item.isOverdue ? "text-[#FC5757]" : "text-primary"
+                    }`}
+                  >
                     {item.church}
                   </div>
                 </div>
               </div>
               <div className="flex items-center flex-col gap-1.5">
-                <div className="text-lg text-default-600"> {item.quantity}</div>
-                <div className="text-sm  text-default-600"> {item.date}</div>
+                <div
+                  className={`text-lg font-bold ${
+                    item.isOverdue ? "text-[#FC5757]" : "text-primary"
+                  }`}
+                >
+                  {" "}
+                  {item.quantity}
+                </div>
+                <div
+                  className={`text-sm ${
+                    item.isOverdue ? "text-[#FC5757]" : "text-primary"
+                  } `}
+                >
+                  {" "}
+                  {item.date}
+                </div>
+                {item.isOverdue && (
+                  <div className="flex flex-row items-center gap-2">
+                    <div className="border border-[#FC5757] rounded-full h-2 w-2" />
+                    <div className={`text-[10px]  text-[#FC5757]`}>
+                      {" "}
+                      ATRASADA
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           ))}

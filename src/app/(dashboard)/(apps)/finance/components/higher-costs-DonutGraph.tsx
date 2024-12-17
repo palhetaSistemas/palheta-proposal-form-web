@@ -10,7 +10,7 @@ const ReactApexChart = dynamic(() => import("react-apexcharts"), {
 
 export function HigherCostsDonutGraph() {
   const series = [2200, 850, 1450];
-  const labels = ["Cliente A", "Cliente B", "Cliente C"];
+  const labels = ["Colaboradores", "Escritório", "Viagens e Vales"];
 
   const options = {
     labels: labels,
@@ -81,7 +81,7 @@ export function HigherCostsDonutGraph() {
         },
       },
     },
-    colors: ["#22C55E", "#7BAF8E", "#1F6D3C"],
+    colors: ["#DC2626", "#FFD1A7", "#FF9E69"],
     responsive: [
       {
         breakpoint: 1024,
@@ -114,7 +114,7 @@ export function HigherCostsDonutGraph() {
     <Card className="h-full">
       <CardHeader className="border-none pb-0 mb-5">
         <div className="text-xl font-semibold text-default-900">
-          Top 3 Maiores Receitas
+          Top 3 Maiores Custos
         </div>
       </CardHeader>
       <CardContent>

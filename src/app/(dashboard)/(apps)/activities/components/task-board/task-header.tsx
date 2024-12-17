@@ -73,9 +73,6 @@ const TaskHeader = ({
       </div>
       {/* right */}
       <div className="flex-none flex items-center gap-4">
-        <Button onClick={openCreateBoard}>
-          <Plus className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> Criar Cliente
-        </Button>
         <div className="relative">
           <span className="absolute top-1/2 -translate-y-1/2 right-2.5 text-default-600 w-8 h-full border-l border-default-200 flex justify-center items-center">
             <Settings className="w-4 h-4 " />
@@ -90,6 +87,9 @@ const TaskHeader = ({
             </SelectContent>
           </Select>
         </div>
+        <Button onClick={openCreateBoard}>
+          <Plus className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> Criar Cliente
+        </Button>
       </div>
     </div>
   );

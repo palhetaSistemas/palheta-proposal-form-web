@@ -11,12 +11,16 @@ import { cn } from "@/src/lib/utils";
 import { Tabs, TabsList } from "@/src/components/ui/tabs";
 import { useState } from "react";
 import RevenueChart from "../../../(home)/components/revenue-graph/revenue-chart";
+import { Settings2 } from "lucide-react";
+import { HorizontalBarGraph } from "./objectiver-chart";
 
 export function ObjectivesGraph() {
   return (
     <Card className="h-full">
       <CardHeader className="flex-row justify-between items-center mb-0">
-        <Button>AJUSTAR METAS</Button>
+        <Button>
+          <Settings2 className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> AJUSTAR METAS
+        </Button>
         <div className="flex flex-row items-center gap-2">
           <Button type="button" color="primary" asChild>
             <Link href="#">2024</Link>
@@ -26,9 +30,9 @@ export function ObjectivesGraph() {
           </Button>
         </div>
       </CardHeader>
-      <CardContent className="p-2 "></CardContent>
-      <CardContent className="p-2"></CardContent>
-      <CardContent className="p-2 pb-10  flex flex-row justify-between"></CardContent>
+      <CardContent className="p-2 ">
+        <HorizontalBarGraph />
+      </CardContent>
     </Card>
   );
 }

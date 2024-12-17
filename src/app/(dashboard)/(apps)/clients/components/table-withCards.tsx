@@ -35,8 +35,9 @@ import farm9 from "@/public/images/staticDataImage/farm9.png";
 import farm10 from "@/public/images/staticDataImage/farm10.png";
 import Link from "next/link";
 import Image from "next/image";
-import { Folder } from "lucide-react";
+import { Calendar, Folder, Plus, Search, Tags } from "lucide-react";
 import { Pagination } from "@/src/components/ui/pagination";
+import DatePickerWithRange from "@/src/components/date-picker-with-range";
 
 const columns = [
   {
@@ -112,24 +113,24 @@ const TableWithCards = () => {
       title: "PROJETOS",
       total: "20",
       price: "R$:10,234",
-      imageSrc: farm6,
+      imageSrc: "images/tableCard.png",
     },
     {
       id: 2,
       title: "CLIENTES",
       total: "20",
       price: "R$:10,234",
-      imageSrc: farm7,
+      imageSrc: "images/tableCard2.png",
     },
   ];
   const columns = [
     { key: "isProfit", label: "" },
-    { key: "name", label: "Nome" },
-    { key: "date", label: "Inicio" },
-    { key: "value", label: "Receita r$" },
-    { key: "city", label: "cidade" },
-    { key: "destinationAccount", label: "Data de término" },
-    { key: "monthReference", label: "pagamentos" },
+    { key: "origin", label: "Origin" },
+    { key: "date", label: "Date" },
+    { key: "value", label: "Value" },
+    { key: "project", label: "Project" },
+    { key: "destinationAccount", label: "Destination Account" },
+    { key: "monthReference", label: "Month Reference" },
     { key: "status", label: "Status" },
   ];
   const transactions = [
@@ -140,7 +141,7 @@ const TableWithCards = () => {
       value: "R$ 6,500.00",
       project: "Igreja X",
       destinationAccount: "ITAÚ",
-      monthReference: "FEBRUARY",
+      monthReference: "FEVEREIRO",
       status: "PAID",
       isProfit: true,
     },
@@ -151,7 +152,7 @@ const TableWithCards = () => {
       value: "R$ 6,500.00",
       project: "Igreja X",
       destinationAccount: "ITAÚ",
-      monthReference: "FEBRUARY",
+      monthReference: "FEVEREIRO",
       status: "OPEN",
     },
     {
@@ -161,7 +162,7 @@ const TableWithCards = () => {
       value: "R$ 6,500.00",
       project: "Igreja X",
       destinationAccount: "ITAÚ",
-      monthReference: "FEBRUARY",
+      monthReference: "FEVEREIRO",
       status: "PAID",
       isProfit: true,
     },
@@ -171,8 +172,8 @@ const TableWithCards = () => {
       date: "25/02/2025",
       value: "R$ 6,500.00",
       project: "Igreja X",
-      destinationAccount: "CASH",
-      monthReference: "FEBRUARY",
+      destinationAccount: "DINHEIRO",
+      monthReference: "FEVEREIRO",
       status: "PAID",
       isProfit: true,
     },
@@ -182,8 +183,8 @@ const TableWithCards = () => {
       date: "25/02/2025",
       value: "R$ 6,500.00",
       project: "Igreja X",
-      destinationAccount: "CASH",
-      monthReference: "FEBRUARY",
+      destinationAccount: "DINHEIRO",
+      monthReference: "FEVEREIRO",
       status: "PAID",
       isProfit: true,
     },
@@ -193,8 +194,8 @@ const TableWithCards = () => {
       date: "25/02/2025",
       value: "R$ 6,500.00",
       project: "Igreja X",
-      destinationAccount: "CASH",
-      monthReference: "FEBRUARY",
+      destinationAccount: "DINHEIRO",
+      monthReference: "FEVEREIRO",
       status: "PAID",
       isProfit: true,
     },
@@ -205,7 +206,183 @@ const TableWithCards = () => {
       value: "R$ 6,500.00",
       project: "Igreja X",
       destinationAccount: "ITAÚ",
-      monthReference: "FEBRUARY",
+      monthReference: "FEVEREIRO",
+      status: "OPEN",
+      isProfit: true,
+    },
+    {
+      id: 8,
+      origin: "PR GABRIEL",
+      date: "25/02/2025",
+      value: "R$ 6,500.00",
+      project: "Igreja X",
+      destinationAccount: "ITAÚ",
+      monthReference: "FEVEREIRO",
+      status: "OPEN",
+      isProfit: true,
+    },
+    {
+      id: 9,
+      origin: "PR GABRIEL",
+      date: "25/02/2025",
+      value: "R$ 6,500.00",
+      project: "Igreja X",
+      destinationAccount: "ITAÚ",
+      monthReference: "FEVEREIRO",
+      status: "OPEN",
+      isProfit: true,
+    },
+    {
+      id: 10,
+      origin: "PR GABRIEL",
+      date: "25/02/2025",
+      value: "R$ 6,500.00",
+      project: "Igreja X",
+      destinationAccount: "ITAÚ",
+      monthReference: "FEVEREIRO",
+      status: "OPEN",
+      isProfit: true,
+    },
+    {
+      id: 11,
+      origin: "PR GABRIEL",
+      date: "25/02/2025",
+      value: "R$ 6,500.00",
+      project: "Igreja X",
+      destinationAccount: "ITAÚ",
+      monthReference: "FEVEREIRO",
+      status: "OPEN",
+      isProfit: true,
+    },
+    {
+      id: 12,
+      origin: "PR GABRIEL",
+      date: "25/02/2025",
+      value: "R$ 6,500.00",
+      project: "Igreja X",
+      destinationAccount: "ITAÚ",
+      monthReference: "FEVEREIRO",
+      status: "OPEN",
+      isProfit: true,
+    },
+    {
+      id: 13,
+      origin: "PR GABRIEL",
+      date: "25/02/2025",
+      value: "R$ 6,500.00",
+      project: "Igreja X",
+      destinationAccount: "ITAÚ",
+      monthReference: "FEVEREIRO",
+      status: "OPEN",
+      isProfit: true,
+    },
+    {
+      id: 13,
+      origin: "PR GABRIEL",
+      date: "25/02/2025",
+      value: "R$ 6,500.00",
+      project: "Igreja X",
+      destinationAccount: "ITAÚ",
+      monthReference: "FEVEREIRO",
+      status: "OPEN",
+      isProfit: true,
+    },
+    {
+      id: 13,
+      origin: "PR GABRIEL",
+      date: "25/02/2025",
+      value: "R$ 6,500.00",
+      project: "Igreja X",
+      destinationAccount: "ITAÚ",
+      monthReference: "FEVEREIRO",
+      status: "OPEN",
+      isProfit: true,
+    },
+    {
+      id: 13,
+      origin: "PR GABRIEL",
+      date: "25/02/2025",
+      value: "R$ 6,500.00",
+      project: "Igreja X",
+      destinationAccount: "ITAÚ",
+      monthReference: "FEVEREIRO",
+      status: "OPEN",
+      isProfit: true,
+    },
+    {
+      id: 13,
+      origin: "PR GABRIEL",
+      date: "25/02/2025",
+      value: "R$ 6,500.00",
+      project: "Igreja X",
+      destinationAccount: "ITAÚ",
+      monthReference: "FEVEREIRO",
+      status: "OPEN",
+      isProfit: true,
+    },
+    {
+      id: 13,
+      origin: "PR GABRIEL",
+      date: "25/02/2025",
+      value: "R$ 6,500.00",
+      project: "Igreja X",
+      destinationAccount: "ITAÚ",
+      monthReference: "FEVEREIRO",
+      status: "OPEN",
+      isProfit: true,
+    },
+    {
+      id: 13,
+      origin: "PR GABRIEL",
+      date: "25/02/2025",
+      value: "R$ 6,500.00",
+      project: "Igreja X",
+      destinationAccount: "ITAÚ",
+      monthReference: "FEVEREIRO",
+      status: "OPEN",
+      isProfit: true,
+    },
+    {
+      id: 13,
+      origin: "PR GABRIEL",
+      date: "25/02/2025",
+      value: "R$ 6,500.00",
+      project: "Igreja X",
+      destinationAccount: "ITAÚ",
+      monthReference: "FEVEREIRO",
+      status: "OPEN",
+      isProfit: true,
+    },
+    {
+      id: 13,
+      origin: "PR GABRIEL",
+      date: "25/02/2025",
+      value: "R$ 6,500.00",
+      project: "Igreja X",
+      destinationAccount: "ITAÚ",
+      monthReference: "FEVEREIRO",
+      status: "OPEN",
+      isProfit: true,
+    },
+    {
+      id: 13,
+      origin: "PR GABRIEL",
+      date: "25/02/2025",
+      value: "R$ 6,500.00",
+      project: "Igreja X",
+      destinationAccount: "ITAÚ",
+      monthReference: "FEVEREIRO",
+      status: "OPEN",
+      isProfit: true,
+    },
+    {
+      id: 13,
+      origin: "PR GABRIEL",
+      date: "25/02/2025",
+      value: "R$ 6,500.00",
+      project: "Igreja X",
+      destinationAccount: "ITAÚ",
+      monthReference: "FEVEREIRO",
       status: "OPEN",
       isProfit: true,
     },
@@ -217,22 +394,60 @@ const TableWithCards = () => {
         <div className="flex flex-row w-full items-center">
           <div className="flex flex-col w-2/3 gap-4 justify-between">
             <div className="flex flex-row items-center gap-2 ">
-              <Button>Adicionar Cliente</Button>
-              <Button>GERAL</Button>
-              <Button>CONTRATADOS</Button>
-              <Button>NEGATIVADO</Button>
-              <Button>PENDENTES</Button>
+              <Button>
+                <Plus className="w-4 h-4 ltr:mr-1 rtl:ml-1" />
+                Adicionar Cliente
+              </Button>
+              <Button
+                className="bg-white border border-primary "
+                color="secondary"
+              >
+                <Tags className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> GERAL
+              </Button>
+              <Button
+                className="bg-primary/70 text-white border border-primary "
+                color="secondary"
+              >
+                <Tags className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> CONTRATADOS
+              </Button>
+              <Button
+                className="bg-white border border-primary "
+                color="secondary"
+              >
+                <Tags className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> NEGATIVADO
+              </Button>
+              <Button
+                className="bg-white border border-primary "
+                color="secondary"
+              >
+                <Tags className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> PENDENTES
+              </Button>
             </div>
-            <div className="w-full h-6 items-center flex flex-row gap-4 ">
-              <div className="w-[300px] h-full rounded-lg border border-zinc-400"></div>
-              <Button>Selecionar Data</Button>
+            <div className="items-center flex flex-row gap-4 ">
+              <div className="w-[300px] h-6 rounded-lg flex flex-row items-center gap-1 p-0.5 border border-zinc-400">
+                <Search className="text-zinc-400 h-4 w-4" />
+                <input
+                  className="outline-none text-zinc-400 placeholder:text-zinc-400 flex-w"
+                  placeholder="Procurar"
+                />
+              </div>
+              <Button
+                className="bg-white border border-primary "
+                color="secondary"
+              >
+                <Calendar className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> Selecionar
+                Data
+              </Button>
             </div>
           </div>
           <div className="flex items-center flex-1  w-1/3 flex-row justify-end gap-4">
             {cards.map((item) => (
-              <div className="flex relative flex-col items-center justify-evenly text-center text-white h-24  w-28 border border-[#013466] shadow-md bg-[url(/images/tableCard.png)] bg-cover bg-center bg-no-repeat shadow-[#013466] overflow-hidden rounded-lg">
+              <div
+                style={{ backgroundImage: `url(${item.imageSrc})` }}
+                className="flex relative flex-col items-center justify-evenly text-center text-white h-24  w-28 border border-[#013466] shadow-md  bg-cover bg-center bg-no-repeat shadow-[#013466] overflow-hidden rounded-lg"
+              >
                 <h3 className="text-[10px]">{item.title}</h3>
-                <h3 className="text-sm font-bold">{item.total}</h3>
+                <h3 className="text-md font-bold">{item.total}</h3>
                 <h3 className="text-sm">{item.price}</h3>
               </div>
             ))}
@@ -241,7 +456,7 @@ const TableWithCards = () => {
       </CardHeader>
       <CardContent className="px-0 pb-0 overflow-x-auto">
         <Table>
-          <TableHeader className="bg-default-200">
+          <TableHeader className="">
             <TableRow className="gap-[1px]">
               {columns.map((column) => (
                 <TableHead
@@ -256,13 +471,19 @@ const TableWithCards = () => {
           <TableBody>
             {transactions.map((transaction) => (
               <TableRow key={transaction.id} className="hover:bg-default-100">
-                <TableCell className="text-sm font-medium  py-1 whitespace-nowrap">
+                <TableCell className="text-sm font-medium  py-1 ">
                   <div
                     className={` ${
                       transaction.isProfit ? "bg-primary" : "bg-[#DC2626]"
-                    } rounded-md overflow-hidden flex p-1 items-center justify-center`}
+                    } rounded-md overflow-hidden flex py-1  items-center justify-center`}
                   >
-                    <Folder fill="white" color="white" />
+                    <Image
+                      src={"/images/folderIcon.svg"}
+                      alt=""
+                      width={500}
+                      height={500}
+                      className="h-5 w-5"
+                    />
                   </div>
                 </TableCell>
                 <TableCell className="text-sm font-medium text-[#020817]  py-1 whitespace-nowrap">
@@ -300,7 +521,6 @@ const TableWithCards = () => {
             ))}
           </TableBody>
         </Table>
-        <Pagination />
       </CardContent>
     </Card>
   );

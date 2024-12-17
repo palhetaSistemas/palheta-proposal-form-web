@@ -10,36 +10,19 @@ import {
   getYAxisConfig,
 } from "@/src/lib/appex-chart-options";
 
-interface RevenueChartProps {
+interface FinanceChartProps {
   series: ApexAxisChartSeries;
-  chartColor: string;
   height?: number;
 }
 
-const RevenueChart = ({
-  series,
-  chartColor,
-  height = 300,
-}: RevenueChartProps) => {
-  const { theme: config, setTheme: setConfig } = useThemeStore();
+const FinanceChart = ({ series, height = 300 }: FinanceChartProps) => {
+  const { theme: config } = useThemeStore();
   const { theme: mode } = useTheme();
 
   const theme = themes.find((theme) => theme.name === config);
 
   const options: any = {
     chart: {
-      animations: {
-        enabled: true,
-        speed: 800,
-        animateGradually: {
-          enabled: true,
-          delay: 150,
-        },
-        dynamicAnimation: {
-          enabled: true,
-          speed: 350,
-        },
-      },
       toolbar: {
         show: false,
       },
@@ -49,24 +32,20 @@ const RevenueChart = ({
     },
     stroke: {
       curve: "smooth",
-      width: 4,
+      width: 2,
     },
-    colors: [chartColor],
+    colors: ["#EF4444", "#21C45D", "#2563EB"], // Cores das linhas: Vermelha, Verde e Azul
     tooltip: {
       theme: mode === "dark" ? "dark" : "light",
     },
     grid: getGridConfig(
       `hsl(${theme?.cssVars[mode === "dark" ? "dark" : "light"].chartGird})`
     ),
-    fill: {
-      type: "gradient",
-      colors: chartColor,
-      gradient: {
-        shadeIntensity: 0.1,
-        opacityFrom: 0.4,
-        opacityTo: 0.1,
-        stops: [50, 100, 0],
-      },
+    markers: {
+      size: 4,
+      colors: ["#EF4444", "#21C45D", "#2563EB"],
+      strokeColors: "#fff",
+      strokeWidth: 2,
     },
     yaxis: getYAxisConfig(
       `hsl(${theme?.cssVars[mode === "dark" ? "dark" : "light"].chartLabel})`
@@ -74,22 +53,17 @@ const RevenueChart = ({
     xaxis: getXAxisConfig(
       `hsl(${theme?.cssVars[mode === "dark" ? "dark" : "light"].chartLabel})`
     ),
-    padding: {
-      top: 0,
-      right: 0,
-      bottom: 0,
-      left: 0,
-    },
   };
+
   return (
     <Chart
       options={options}
       series={series}
-      type="area"
+      type="line"
       height={height}
       width={"100%"}
     />
   );
 };
 
-export default RevenueChart;
+export default FinanceChart;

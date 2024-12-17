@@ -11,9 +11,7 @@ export default async function Dashboard({ params }: { params: string }) {
   return (
     <div className="space-y-6">
       <div className="flex items-center flex-wrap justify-between gap-4">
-        <div className="text-2xl font-medium text-default-800 ">
-          Dashboard Inicial1s
-        </div>
+        <div className="text-2xl font-medium text-default-800 ">Dashboard</div>
         <DatePickerWithRange />
       </div>
       {/* reports area */}

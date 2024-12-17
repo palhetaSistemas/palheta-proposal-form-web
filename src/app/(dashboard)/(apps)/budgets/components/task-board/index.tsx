@@ -29,7 +29,7 @@ import {
 import { SortableContext, arrayMove } from "@dnd-kit/sortable";
 import { createPortal } from "react-dom";
 import { editBoardAction, swapBoardAction } from "@/src/action/project-action";
-import { type Board as BoardType } from "@/src/app/api/boards/data";
+import { type Board as BoardType } from "@/src/app/api/boards/data-for-budgets";
 import { type Task as TaskType } from "@/src/app/api/tasks2/data";
 import { type SubTask as SubTaskType } from "@/src/app/api/tasks/data";
 import { type Comment as CommentType } from "@/src/app/api/comments/data";
@@ -237,19 +237,6 @@ const TaskBoard = ({ boards, tasks, subTasks, comments }: TaskBoardProps) => {
                     </SortableContext>
                   </div>
                 </div>
-
-                {/* <DragOverlay adjustScale={false}>
-                  {activeBoard && (
-                    <Board board={activeBoard}>
-                      {filteredTasks(tasks, activeBoard.id)?.[0] && (
-                        <Task
-                          task={filteredTasks(tasks, activeBoard.id)?.[0]}
-                          boards={boards}
-                        />
-                      )}
-                    </Board>
-                  )}
-                </DragOverlay> */}
               </DndContext>
             )}
 

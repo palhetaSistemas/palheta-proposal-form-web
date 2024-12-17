@@ -3,8 +3,8 @@ import { Button } from "@/src/components/ui/button";
 import React from "react";
 import { Releases } from "./components/releases";
 import { IncomeDonutGraph } from "./components/income-DonutGraph";
-import { BiggestRevenueDonutGraph } from "./components/biggest-revenue-DonutGraph copy 2";
-import { HigherCostsDonutGraph } from "./components/higher-costs-DonutGraph copy";
+import { BiggestRevenueDonutGraph } from "./components/biggest-revenue-DonutGraph";
+import { HigherCostsDonutGraph } from "./components/higher-costs-DonutGraph";
 import TableWithCards from "./components/table-withCards";
 
 export default function financialPage() {

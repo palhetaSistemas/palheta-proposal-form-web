@@ -8,7 +8,7 @@ const ReactApexChart = dynamic(() => import("react-apexcharts"), {
   ssr: false,
 });
 
-export function HigherCostsDonutGraph() {
+export function BiggestRevenueDonutGraph() {
   const series = [2200, 850, 1450];
   const labels = ["Cliente A", "Cliente B", "Cliente C"];
 
