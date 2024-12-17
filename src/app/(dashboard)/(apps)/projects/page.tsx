@@ -10,7 +10,7 @@ import TaskBoard from "./components/task-board";
 
 const Projects = async () => {
   const boards = await getBoards();
-  const tasks = await getTasks2();
+  const tasks = await getTasks();
   const subTasks = await getSubtasks();
   const comments = await getComments();
   return (
