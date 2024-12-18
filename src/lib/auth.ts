@@ -5,7 +5,6 @@ import GoogleProvider from "next-auth/providers/google";
 import GithubProvider from "next-auth/providers/github";
 
 import avatar3 from "@/public/images/avatar/avatar-3.jpg";
-
 export const authOptions = {
   providers: [
     GoogleProvider({
