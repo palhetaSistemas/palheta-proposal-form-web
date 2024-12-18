@@ -1,6 +1,7 @@
 "use client";
 import { Card, CardContent, CardHeader } from "@/src/components/ui/card";
 import DashboardSelect from "@/src/components/dasboard-select";
+import MapClusterExpand from "../../../(map)/map-unovis-leaflet/cluster-expand";
 
 const ActiveProjectsComponent = () => {
   const allProjectsData = [
@@ -66,7 +67,9 @@ const ActiveProjectsComponent = () => {
           ))}
         </div>
       </CardContent>
-      <CardContent className="p-1 md:p-5"></CardContent>
+      <CardContent className="p-1 md:p-5">
+        <MapClusterExpand />
+      </CardContent>
     </Card>
   );
 };
