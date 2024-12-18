@@ -120,7 +120,7 @@ export function MonthlyReportChart() {
         breakpoint: 1920,
         options: {
           chart: {
-            height: 2500,
+            height: 250,
           },
         },
       },

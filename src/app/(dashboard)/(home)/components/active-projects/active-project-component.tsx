@@ -1,6 +1,5 @@
 "use client";
 import { Card, CardContent, CardHeader } from "@/src/components/ui/card";
-import DashboardSelect from "@/src/components/dasboard-select";
 import MapClusterExpand from "../../../(map)/map-unovis-leaflet/cluster-expand";
 
 const ActiveProjectsComponent = () => {
