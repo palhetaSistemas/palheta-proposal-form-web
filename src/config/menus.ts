@@ -85,7 +85,7 @@ export const menusConfig = {
     {
       title: "Receitas",
       icon: DashBoard,
-      route: "/finance",
+      route: "/revenue",
     },
     {
       title: "Clientes",

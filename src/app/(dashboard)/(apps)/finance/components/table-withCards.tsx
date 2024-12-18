@@ -1,11 +1,6 @@
 "use client";
 import { Button } from "@/src/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/src/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/src/components/ui/card";
 import {
   Table,
   TableBody,
@@ -14,44 +9,9 @@ import {
   TableHeader,
   TableRow,
 } from "@/src/components/ui/table";
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/src/components/ui/avatar";
-import { Badge } from "@/src/components/ui/badge";
-
-// avatar
-
-import farm1 from "@/public/images/staticDataImage/farm1.png";
-import farm2 from "@/public/images/staticDataImage/farm2.png";
-import farm3 from "@/public/images/staticDataImage/farm3.png";
-import farm4 from "@/public/images/staticDataImage/farm4.png";
-import farm5 from "@/public/images/staticDataImage/farm5.png";
-import farm6 from "@/public/images/staticDataImage/farm6.png";
-import farm7 from "@/public/images/staticDataImage/farm7.png";
-import farm8 from "@/public/images/staticDataImage/farm8.png";
-import farm9 from "@/public/images/staticDataImage/farm9.png";
-import farm10 from "@/public/images/staticDataImage/farm10.png";
-import Link from "next/link";
 import Image from "next/image";
-import { Folder, Plus, Search, Tags } from "lucide-react";
+import { Plus, Search, Tags } from "lucide-react";
 import { Pagination } from "@/src/components/ui/pagination";
-
-const columns = [
-  {
-    key: "employee",
-    label: "Responsável",
-  },
-  {
-    key: "task name",
-    label: "Titulo",
-  },
-  {
-    key: "deadline",
-    label: "Data Final",
-  },
-];
 
 interface User {
   id: number;
@@ -61,50 +21,6 @@ interface User {
   overdue: string;
   avatar: { src: string };
 }
-
-const users: User[] = [
-  {
-    id: 1,
-    name: "João da Silva",
-    task: "Ligar para cliente x",
-    deadline: "21 Jan 2024",
-    overdue: "01",
-    avatar: farm1,
-  },
-  {
-    id: 2,
-    name: "João da Silva",
-    task: "Enviar relatório para cliente",
-    deadline: "21 Jan 2024",
-    overdue: "01",
-    avatar: farm2,
-  },
-  {
-    id: 3,
-    name: "João da Silva",
-    task: "Visitar o cliente",
-    deadline: "21 Jan 2024",
-    overdue: "01",
-    avatar: farm3,
-  },
-  {
-    id: 4,
-    name: "João da Silva",
-    task: "Levar vacinas para fazenda",
-    deadline: "21 Jan 2024",
-    overdue: "01",
-    avatar: farm4,
-  },
-  {
-    id: 5,
-    name: "João da Silva",
-    task: "Entregar produtos",
-    deadline: "21 Jan 2024",
-    overdue: "01",
-    avatar: farm5,
-  },
-];
-
 const TableWithCards = () => {
   const cards = [
     {
@@ -278,7 +194,7 @@ const TableWithCards = () => {
       </CardHeader>
       <CardContent className="px-0 pb-0 overflow-x-auto">
         <Table>
-          <TableHeader className=" pr-8">
+          <TableHeader className="- pr-8">
             <TableRow className="gap-[1px] ">
               {columns.map((column) => (
                 <TableHead
@@ -343,7 +259,6 @@ const TableWithCards = () => {
             ))}
           </TableBody>
         </Table>
-        <Pagination />
       </CardContent>
     </Card>
   );

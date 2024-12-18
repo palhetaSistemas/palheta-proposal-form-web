@@ -3,7 +3,7 @@ import React from "react";
 
 import TableWithCards from "./components/table-withCards";
 
-export default function ObjectivesPage() {
+export default function ClientPage() {
   return (
     <div className="space-y-6">
       <div className="flex items-center flex-wrap justify-between gap-4">
