@@ -33,6 +33,17 @@ export const getBoards = async () => {
   const response = await api.get("/boards");
   return response.data;
 };
+
+export const getBoards2 = async () => {
+  const response = await api.get("/boards2");
+  return response.data;
+};
+
+export const getBoards3 = async () => {
+  const response = await api.get("/boards3");
+  return response.data;
+};
+
 export const createBoard = async (board: Board) => {
   const response = await api.post("/boards", board);
   return response.data;

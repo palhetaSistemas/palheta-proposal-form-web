@@ -1,33 +1,33 @@
 import avatar from "@/public/images/avatar/avatar-7.jpg";
 import img1 from "@/public/images/all-img/headphone-2.png";
 import { faker } from "@faker-js/faker";
-import { formatDate } from "@/src/lib/utils";
 import { statuses, generateAssignments, priorities } from "../projects/data";
-import { demoBoards } from "@/src/app/api/boards/data";
+import { demoBoards } from "../boards/data";
+import { formatDate } from "@/src/lib/utils";
 export const tasks = [
   {
-    boardId: demoBoards[0].id,
+    boardId: demoBoards[2].id,
     id: "2e09c2fc-9d92-4df1-a3cc-bd8c8c51d85c",
-    title: "Enviar B.I Fazenda A...",
-    desc: "Create a Brand logo design for a DashTail Admin.",
+    title: "Lorem Ipsum ",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
     status: "inprogress",
     tags: ["design", "planning"],
     priority: "high",
     assign: [
       {
-        name: "João",
+        name: "Rajib",
         image: avatar,
       },
       {
-        name: "Gabriel",
+        name: "Rakib",
         image: avatar,
       },
       {
-        name: "Victor",
+        name: "Rajib",
         image: avatar,
       },
       {
-        name: "Maycon",
+        name: "Rahad",
         image: avatar,
       },
     ],
@@ -54,20 +54,20 @@ export const tasks = [
     ],
   },
   {
-    boardId: demoBoards[1].id,
+    boardId: demoBoards[3].id,
     id: "8613e1d1-2046-4f0e-bacb-dca57db5b1a9",
-    title: "Reunião Antônio São...",
-    desc: "Create a Brand logo design for a DashTail Admin.",
+    title: "Lorem Ipsum ",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
     status: "completed",
     tags: ["development", "planning"],
     priority: "low",
     assign: [
       {
-        name: "João",
+        name: "Rajib",
         image: avatar,
       },
       {
-        name: "Gabriel",
+        name: "Rakib",
         image: avatar,
       },
     ],
@@ -94,80 +94,32 @@ export const tasks = [
     ],
   },
   {
-    boardId: demoBoards[2].id,
+    boardId: demoBoards[4].id,
     id: "5d4818ef-9f51-48f2-80bc-2df7e50a1f64",
-    title: "Reunião interna",
-    desc: "Create a Brand logo design for a DashTail Admin.",
-    status: "todo",
-    tags: ["development", "planning"],
-    priority: "medium",
-    assign: [
-      {
-        name: "João",
-        image: avatar,
-      },
-      {
-        name: "Gabriel",
-        image: avatar,
-      },
-      {
-        name: "Victor",
-        image: avatar,
-      },
-      {
-        name: "Maycon",
-        image: avatar,
-      },
-    ],
-    image: "",
-    category: "ui & ux",
-    pages: "0/7",
-    messageCount: "05",
-    link: "02",
-    date: "31 Jan,2024",
-    time: "5:19pm",
-    list: [
-      {
-        id: "item-1",
-        title: "Collect Data",
-      },
-      {
-        id: "item-2",
-        title: "Collect Icons",
-      },
-      {
-        id: "item-1",
-        title: "Make Project Layout",
-      },
-    ],
-  },
-  {
-    boardId: demoBoards[2].id,
-    id: "e0e88989-0876-4f1f-9e07-3b69e7e6e05c",
-    title: "Estande Evento",
-    desc: "Create a Brand logo design for a DashTail Admin.",
+    title: "Lorem Ipsum ",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
     status: "inprogress",
     tags: ["development", "planning"],
     priority: "medium",
     assign: [
       {
-        name: "João",
+        name: "Rajib",
         image: avatar,
       },
       {
-        name: "Gabriel",
+        name: "Rakib",
         image: avatar,
       },
       {
-        name: "Victor",
+        name: "Rajib",
         image: avatar,
       },
       {
-        name: "Maycon",
+        name: "Rahad",
         image: avatar,
       },
     ],
-    image: img1,
+    image: "",
     category: "ui & ux",
     pages: "0/7",
     messageCount: "05",

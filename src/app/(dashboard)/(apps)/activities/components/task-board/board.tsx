@@ -153,7 +153,7 @@ const taskBoard = ({
           {showButton && (
             <Button
               className="flex justify-center items-center gap-1 w-full bg-transparent hover:bg-transparent"
-              onClick={taskHandler}
+              // onClick={taskHandler}
             >
               <Plus className="w-5 h-5 text-primary" />
               <span className="text-xs font-semibold text-primary">
