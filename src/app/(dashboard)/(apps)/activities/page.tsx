@@ -14,6 +14,12 @@ const Activities = async () => {
   const subTasks = await getSubtasks();
   const comments = await getComments();
 
+  console.log("tasks", tasks);
+  console.log("contacts", contacts);
+  console.log("boards", boards);
+  console.log("subTasks", subTasks);
+  console.log("comments", comments);
+
   return (
     <ViewTask
       contacts={contacts}

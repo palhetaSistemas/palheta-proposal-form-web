@@ -36,7 +36,7 @@ const ProfileInfo = () => {
           )}
         </div>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56 p-0" align="end">
+      {/* <DropdownMenuContent className="w-56 p-0" align="end">
         <DropdownMenuLabel className="flex gap-2 items-center mb-1 p-3">
           {session?.user?.image && (
             <Image
@@ -176,7 +176,7 @@ const ProfileInfo = () => {
           <Icon icon="heroicons:power" className="w-4 h-4" />
           Log out
         </DropdownMenuItem>
-      </DropdownMenuContent>
+      </DropdownMenuContent> */}
     </DropdownMenu>
   );
 };

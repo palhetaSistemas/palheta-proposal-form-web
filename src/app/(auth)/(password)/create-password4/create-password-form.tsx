@@ -167,7 +167,7 @@ const CreatePasswordForm = () => {
       </form>
       <div className="mt-6 text-center text-base text-default-600">
         Not now? Return{" "}
-        <Link href="/auth/login4" className="text-primary">
+        <Link href="/login" className="text-primary">
           {" "}
           Sign In{" "}
         </Link>

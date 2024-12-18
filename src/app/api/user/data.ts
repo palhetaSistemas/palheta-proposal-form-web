@@ -5,7 +5,7 @@ export const user = [
     name: "dashtail",
     image: avatar3,
     password: "1234",
-    email: "foco@exemplo.com.br",
+    email: "palheta@exemplo.com.br",
     resetToken: null,
     resetTokenExpiry: null,
     profile: null,
