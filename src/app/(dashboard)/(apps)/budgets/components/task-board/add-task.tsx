@@ -13,10 +13,9 @@ import { z } from "zod";
 import { Input } from "@/src/components/ui/input";
 import { ChevronDown, Plus } from "lucide-react";
 import Select from "react-select";
-import { addTaskAction } from "@/src/action/project-action";
 import { useForm } from "react-hook-form";
 import { cn } from "@/src/lib/utils";
-import { type Board as BoardType } from "@/src/app/api/boards/data";
+import { budgetBoardType } from "@/src/@staticData/budgets/boards";
 const options = [
   { value: "plan-2023", label: "Plan 2023" },
   { value: "plan-2024", label: "Plan 2024" },
@@ -38,7 +37,7 @@ const AddTask = ({
   boardId,
 }: {
   onClose: () => void;
-  boardId: BoardType["id"];
+  boardId: budgetBoardType["id"];
 }) => {
   const [isPending, startTransition] = React.useTransition();
   const {
@@ -57,7 +56,6 @@ const AddTask = ({
     var result;
 
     startTransition(async () => {
-      result = await addTaskAction(data);
       toast.success("Successfully added");
     });
 

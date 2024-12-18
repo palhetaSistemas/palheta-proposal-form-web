@@ -64,14 +64,14 @@ const priorityColors: { [key: string]: any } = {
   low: "success",
 };
 import { Menu } from "lucide-react";
-import { type Task as TaskType } from "@/src/app/api/tasks/data";
+import { activityTaskType } from "@/src/@staticData/activities/tasks";
 
 const TaskTable = ({
   data,
   handleEditSheetOpen,
   handleSidebar,
 }: {
-  data: TaskType[];
+  data: activityTaskType[];
   handleEditSheetOpen: () => void;
   handleSidebar: () => void;
 }) => {
@@ -83,7 +83,7 @@ const TaskTable = ({
   const [columnVisibility, setColumnVisibility] =
     React.useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = React.useState({});
-  const columns: ColumnDef<TaskType, any>[] = [
+  const columns: ColumnDef<activityTaskType, any>[] = [
     {
       accessorKey: "title",
       header: ({ table }) => (

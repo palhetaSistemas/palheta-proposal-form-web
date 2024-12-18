@@ -81,14 +81,9 @@ import {
 } from "@/src/components/ui/tabs";
 import { Calendar } from "@/src/components/ui/calendar";
 import { faker } from "@faker-js/faker";
-import {
-  deleteTaskAction,
-  updateTaskAction,
-  addTaskAction,
-} from "@/src/action/project-action";
 import DeleteConfirmationDialog from "@/src/components/delete-confirmation-dialog";
-import { type Task as TaskType } from "@/src/app/api/tasks2/data";
-import { type Board as BoardType } from "@/src/app/api/boards/data";
+import { projectTaskType } from "@/src/@staticData/projects/tasks";
+import { projectBoardType } from "@/src/@staticData/projects/boards";
 const members = [
   {
     name: "Nick Jonas",
@@ -133,9 +128,9 @@ const schema = z.object({
 });
 
 interface TaskTableProps {
-  data: TaskType[];
-  boards: BoardType[];
-  onUpdateTask: (task: TaskType) => void;
+  data: projectTaskType[];
+  boards: projectBoardType[];
+  onUpdateTask: (task: projectTaskType) => void;
   boardID2: string;
 }
 const TaskTable = ({
@@ -158,21 +153,21 @@ const TaskTable = ({
 
   // create task
   const [isPending, startTransition] = React.useTransition();
-  const getBoardNameById = (boardId: BoardType["id"]) => {
+  const getBoardNameById = (boardId: projectBoardType["id"]) => {
     const foundBoard = boards.find((board) => board.id === boardId);
     return foundBoard ? foundBoard.name : "Unknown Board";
   };
-  const handleMoveTask = (task: TaskType, boardId: BoardType["id"]) => {
+  const handleMoveTask = (
+    task: projectTaskType,
+    boardId: projectBoardType["id"]
+  ) => {
     const newData = {
       ...task,
       boardId: boardId,
     };
-    updateTaskAction(task.id, newData);
   };
 
-  const onAction = async (dltId: string) => {
-    await deleteTaskAction(dltId);
-  };
+  const onAction = async (dltId: string) => {};
 
   const {
     register,
@@ -190,14 +185,13 @@ const TaskTable = ({
     var result;
 
     startTransition(async () => {
-      result = await addTaskAction(data);
       toast.success("Successfully added");
     });
 
     reset();
   };
 
-  const columns: ColumnDef<TaskType, any>[] = [
+  const columns: ColumnDef<projectTaskType, any>[] = [
     {
       id: "id",
       header: ({ table }) => (

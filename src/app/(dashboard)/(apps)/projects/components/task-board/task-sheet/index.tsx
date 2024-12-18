@@ -18,18 +18,15 @@ import { cn } from "@/src/lib/utils";
 import Attachments from "./attachments";
 import SheetActions from "./sheet-actions";
 import { X } from "lucide-react";
-import { type Board as BoardType } from "@/src/app/api/boards/data";
-import { type Task as TaskType } from "@/src/app/api/tasks/data";
-import { type SubTask as SubTaskType } from "@/src/app/api/tasks/data";
-import { type Comment as CommentType } from "@/src/app/api/comments/data";
+import { projectTaskType } from "@/src/@staticData/projects/tasks";
+import { projectSubTaskType } from "@/src/@staticData/projects/subtasks";
 
 interface TaskSheetProps {
   open: boolean;
   onClose: () => void;
-  taskId: TaskType["id"];
-  task: TaskType;
-  subTasks: SubTaskType[];
-  comments: CommentType[];
+  taskId: projectTaskType["id"];
+  task: projectTaskType;
+  subTasks: projectSubTaskType[];
 }
 const TaskSheet = ({
   open,
@@ -37,7 +34,6 @@ const TaskSheet = ({
   taskId,
   task,
   subTasks,
-  comments,
 }: TaskSheetProps) => {
   const [collapseSheet, setCollapseSheet] = useState(false);
   const toggleCollapse = () => setCollapseSheet(!collapseSheet);
@@ -116,7 +112,6 @@ const TaskSheet = ({
                   </TabsContent>
                   <TabsContent value="comments">
                     <Comments
-                      comments={comments}
                       taskId={taskId}
                       className="h-[calc(100vh-400px)]"
                     />
@@ -132,11 +127,7 @@ const TaskSheet = ({
               "xl:hidden": collapseSheet,
             })}
           >
-            <Comments
-              className="h-[calc(100vh-210px)]"
-              comments={comments}
-              taskId={taskId}
-            />
+            <Comments className="h-[calc(100vh-210px)]" taskId={taskId} />
           </div>
         </div>
       </SheetContent>

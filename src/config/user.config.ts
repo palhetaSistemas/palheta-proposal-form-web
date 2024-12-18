@@ -1,5 +1,5 @@
 import { api } from "@/src/config/axios.config";
-import { type User } from "@/src/app/api/user/data";
+import { User } from "../@staticData/user";
 export const registerUser = async (data: User) => {
   try {
     const response = await api.post("/user/register", data);

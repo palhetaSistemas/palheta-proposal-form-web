@@ -21,25 +21,24 @@ import { Button } from "@/src/components/ui/button";
 import { cn } from "@/src/lib/utils";
 import { Icon } from "@iconify/react";
 
-import { deleteBoardAction } from "@/src/action/project-action";
 import DeleteConfirmationDialog from "@/src/components/delete-confirmation-dialog";
 
 // dnd
 import { SortableContext, useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import Task from "./task";
-import { type Board as BoardType } from "@/src/app/api/boards/data";
-import { type Task as TaskType } from "@/src/app/api/tasks2/data";
+import { projectBoardType } from "@/src/@staticData/projects/boards";
+import { projectTaskType } from "@/src/@staticData/projects/tasks";
 interface TaskBoardProps {
-  board: BoardType;
+  board: projectBoardType;
   children?: React.ReactNode;
   onEdit?: () => void;
   taskHandler?: () => void;
   isTaskOpen?: boolean;
   showButton?: boolean;
-  tasks?: TaskType[];
-  onUpdateTask?: (task: TaskType) => void;
-  boards?: BoardType[];
+  tasks?: projectTaskType[];
+  onUpdateTask?: (task: projectTaskType) => void;
+  boards?: projectBoardType[];
 }
 const taskBoard = ({
   board,
@@ -55,7 +54,7 @@ const taskBoard = ({
   const [open, setOpen] = React.useState<boolean>(false);
 
   async function onAction(id: string) {
-    await deleteBoardAction(id);
+    return;
   }
   const { name, status, id } = board;
 

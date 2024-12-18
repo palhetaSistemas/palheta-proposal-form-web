@@ -8,27 +8,15 @@ import {
   AvatarImage,
 } from "@/src/components/ui/avatar";
 import { Check } from "lucide-react";
-import { type Task as TaskType } from "@/src/app/api/tasks/data";
-import { type Comment as CommentType } from "@/src/app/api/comments/data";
+import { budgetTaskType } from "@/src/@staticData/budgets/tasks";
 
 const Comments = ({
   className,
-  comments,
   taskId,
 }: {
   className?: string;
-  comments?: CommentType[];
-  taskId?: TaskType["id"];
+  taskId?: budgetTaskType["id"];
 }) => {
-  const filteredComments =
-    comments?.filter((cm) => cm.subTaskId === taskId) || [];
-
-  const totalComments = filteredComments ? filteredComments.length : 0;
-  let content = "comments";
-  if (totalComments < 2) {
-    content = "comment";
-  }
-
   return (
     <div className="flex flex-col justify-between">
       <div className="border-none mb-0 flex-none py-3.5 px-2">
@@ -38,8 +26,8 @@ const Comments = ({
             className="h-4 w-4 text-default-500"
           />
           <div className="text-base font-medium text-default-800">
-            {totalComments}
-            <span className="ml-1 capitalize">{content}</span>
+            totalComments
+            <span className="ml-1 capitalize">content</span>
           </div>
         </div>
       </div>
@@ -51,35 +39,29 @@ const Comments = ({
         <div className={className}>
           <ScrollArea className="h-full">
             <div className="space-y-3.5 px-5">
-              {filteredComments?.length > 0 ? (
-                filteredComments.map((comment) => (
-                  <div className="flex gap-2" key={`comment-key-${comment.id}`}>
-                    <div className="felx-none">
-                      <Avatar>
-                        <AvatarImage src={comment.avatar} />
-                        <AvatarFallback>CS</AvatarFallback>
-                      </Avatar>
+              <div className="flex gap-2">
+                <div className="flex-none">
+                  <Avatar>
+                    <AvatarImage src="/public/images/avatar/avatar-1.jpg" />
+                    <AvatarFallback>CS</AvatarFallback>
+                  </Avatar>
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2">
+                    <div className="text-sm font-medium text-default-900 capitalize">
+                      comment.name
                     </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2">
-                        <div className="text-sm font-medium text-default-900 capitalize">
-                          {comment.name}
-                        </div>
-                        <div className="text-xs text-default-400">
-                          {comment.date}
-                        </div>
-                        <div className="text-xs text-default-400">
-                          <Check className="w-3 h-3" />
-                        </div>
-                      </div>
-                      <div className="mt-1 text-default-600 font-medium ">
-                        {comment.text}
-                      </div>
+                    <div className="text-xs text-default-400">comment.date</div>
+                    <div className="text-xs text-default-400">
+                      <Check className="w-3 h-3" />
                     </div>
                   </div>
-                ))
-              ) : (
-                <div>
+                  <div className="mt-1 text-default-600 font-medium ">
+                    comment.text
+                  </div>
+                </div>
+              </div>
+              {/* <div>
                   <div className="flex items-center gap-2 hover:bg-default-50 rounded-md group py-3 px-2">
                     <div>
                       <span className="h-10 w-10 rounded-full bg-default-50 group-hover:bg-default-100 block"></span>
@@ -89,8 +71,7 @@ const Comments = ({
                       discussion. @Mention someone to notify them.
                     </div>
                   </div>
-                </div>
-              )}
+                </div> */}
             </div>
           </ScrollArea>
         </div>

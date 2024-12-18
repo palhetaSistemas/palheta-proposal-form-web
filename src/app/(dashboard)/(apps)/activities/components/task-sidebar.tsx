@@ -2,8 +2,6 @@
 
 import { cn } from "@/src/lib/utils";
 import { Icon } from "@iconify/react";
-import ContactList from "./contact-list";
-import { type Contact as ContactType } from "@/src/app/api/chat/data";
 const taskFilters = [
   {
     icon: "heroicons:document-text",
@@ -46,7 +44,7 @@ const priorityFilters = [
     total: "03",
   },
 ];
-const TaskSidebar = ({ contacts }: { contacts: ContactType[] }) => {
+const TaskSidebar = () => {
   return (
     <>
       <ul>
@@ -104,13 +102,6 @@ const TaskSidebar = ({ contacts }: { contacts: ContactType[] }) => {
           ))}
         </ul>
       </div>
-      <div className="border border-dashed mt-5 border-default-300"></div>
-
-      {contacts &&
-        Array.isArray(contacts) &&
-        contacts.map((contact: ContactType, index: number) => (
-          <ContactList key={`contact-${index}`} contact={contact} />
-        ))}
     </>
   );
 };

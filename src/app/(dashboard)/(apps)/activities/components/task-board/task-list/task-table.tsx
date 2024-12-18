@@ -81,14 +81,10 @@ import {
 } from "@/src/components/ui/tabs";
 import { Calendar } from "@/src/components/ui/calendar";
 import { faker } from "@faker-js/faker";
-import {
-  deleteTaskAction,
-  updateTaskAction,
-  addTaskAction,
-} from "@/src/action/project-action";
+
 import DeleteConfirmationDialog from "@/src/components/delete-confirmation-dialog";
-import { type Task as TaskType } from "@/src/app/api/tasks2/data";
-import { type Board as BoardType } from "@/src/app/api/boards/data";
+import { activityTaskType } from "@/src/@staticData/activities/tasks";
+import { activityBoardType } from "@/src/@staticData/activities/boards";
 const members = [
   {
     name: "Nick Jonas",
@@ -133,9 +129,9 @@ const schema = z.object({
 });
 
 interface TaskTableProps {
-  data: TaskType[];
-  boards: BoardType[];
-  onUpdateTask: (task: TaskType) => void;
+  data: activityTaskType[];
+  boards: activityBoardType[];
+  onUpdateTask: (task: activityTaskType) => void;
   boardID2: string;
 }
 const TaskTable = ({
@@ -158,20 +154,22 @@ const TaskTable = ({
 
   // create task
   const [isPending, startTransition] = React.useTransition();
-  const getBoardNameById = (boardId: BoardType["id"]) => {
+  const getBoardNameById = (boardId: activityBoardType["id"]) => {
     const foundBoard = boards.find((board) => board.id === boardId);
     return foundBoard ? foundBoard.name : "Unknown Board";
   };
-  const handleMoveTask = (task: TaskType, boardId: BoardType["id"]) => {
+  const handleMoveTask = (
+    task: activityTaskType,
+    boardId: activityBoardType["id"]
+  ) => {
     const newData = {
       ...task,
       boardId: boardId,
     };
-    updateTaskAction(task.id, newData);
   };
 
   const onAction = async (dltId: string) => {
-    await deleteTaskAction(dltId);
+    return;
   };
 
   const {
@@ -190,14 +188,13 @@ const TaskTable = ({
     var result;
 
     startTransition(async () => {
-      result = await addTaskAction(data);
       toast.success("Successfully added");
     });
 
     reset();
   };
 
-  const columns: ColumnDef<TaskType, any>[] = [
+  const columns: ColumnDef<activityTaskType, any>[] = [
     {
       id: "id",
       header: ({ table }) => (

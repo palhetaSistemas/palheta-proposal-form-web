@@ -1,5 +1,3 @@
-import DatePickerWithRange from "@/src/components/date-picker-with-range";
-import { morbidityStaticData } from "@/src/@staticData/morbidity";
 import { IndicatorCard } from "./components/indicator-cards";
 import { IncomeDonutGraph } from "./components/income-DonutGraph";
 import { FinancialOverview } from "./components/financial-overview";
@@ -7,7 +5,8 @@ import RevenueComponent from "./components/revenue-graph/revenue-component";
 import OutstandingPayments from "./components/outstanding-payments";
 import Task from "./components/overdue-task";
 import ActiveProjectsComponent from "./components/active-projects/active-project-component";
-export default async function Dashboard({ params }: { params: string }) {
+import DatePickerWithRange from "./components/date-picker-with-range";
+export default async function Dashboard() {
   return (
     <div className="space-y-6">
       <div className="flex items-center flex-wrap justify-between gap-4">

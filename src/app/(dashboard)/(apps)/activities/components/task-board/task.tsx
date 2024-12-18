@@ -39,12 +39,6 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/src/components/ui/tooltip";
-import { getWords } from "@/src/lib/utils";
-
-import {
-  deleteTaskAction,
-  updateTaskAction,
-} from "@/src/action/project-action";
 import AssignMembers from "./common/assign-members";
 import DeleteConfirmationDialog from "@/src/components/delete-confirmation-dialog";
 import { cn } from "@/src/lib/utils";
@@ -65,12 +59,12 @@ const tagsColorMap: { [key: string]: any } = {
 import { SortableContext, useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 
-import { type Board as BoardType } from "@/src/app/api/boards/data";
-import { type Task as TaskType } from "@/src/app/api/tasks2/data";
+import { activityTaskType } from "@/src/@staticData/activities/tasks";
+import { activityBoardType } from "@/src/@staticData/activities/boards";
 interface TaskProps {
-  task: TaskType;
-  onUpdateTask: (task: TaskType) => void;
-  boards: BoardType[];
+  task: activityTaskType;
+  onUpdateTask: (task: activityTaskType) => void;
+  boards: activityBoardType[];
 }
 
 const Task = ({ task, onUpdateTask, boards }: TaskProps) => {
@@ -90,24 +84,27 @@ const Task = ({ task, onUpdateTask, boards }: TaskProps) => {
     link,
     date,
     time,
-    size,
   } = task;
 
-  const handleMoveTask = (task: TaskType, boardId: BoardType["id"]) => {
+  const handleMoveTask = (
+    task: activityTaskType,
+    boardId: activityBoardType["id"]
+  ) => {
     const newData = {
       ...task,
       boardId: boardId,
     };
-    updateTaskAction(task.id, newData);
   };
 
-  const getBoardNameById = (boardId: BoardType["id"]) => {
-    const foundBoard = boards.find((board: BoardType) => board.id === boardId);
+  const getBoardNameById = (boardId: activityBoardType["id"]) => {
+    const foundBoard = boards.find(
+      (board: activityBoardType) => board.id === boardId
+    );
     return foundBoard ? foundBoard.name : "Unknown Board";
   };
   // delete task
   const onAction = async (dltId: string) => {
-    await deleteTaskAction(dltId);
+    return;
   };
   // dnd
   const {
@@ -147,18 +144,13 @@ const Task = ({ task, onUpdateTask, boards }: TaskProps) => {
             "opacity-50": isDragging,
           }
         )}
-        // onClick={() => onUpdateTask(task)}
+        onClick={() => onUpdateTask(task)}
       >
         <CardHeader className="space-x-0 space-y-0 p-0 flex-row items-center justify-between mb-0 border-none">
           <div className="flex items-center gap-1">
             <div
               className={cn(
-                "text-[10px] leading-[14px] font-semibold uppercase text-default-600 border border-default-200 px-1.5  rounded-sm",
-                size === "Fazenda Média"
-                  ? "text-blue-700"
-                  : size === "Fazenda Pequena"
-                  ? "text-orange-700"
-                  : "text-green-700"
+                "text-[10px] leading-[14px] font-semibold uppercase text-default-600 border border-default-200 px-1.5  rounded-sm"
               )}
             >
               lorem
@@ -173,7 +165,7 @@ const Task = ({ task, onUpdateTask, boards }: TaskProps) => {
                   </div>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-[50px]" align="start">
-                  {boards?.map((board: BoardType) => (
+                  {boards?.map((board: activityBoardType) => (
                     <DropdownMenuItem
                       onSelect={() => handleMoveTask(task, board.id)}
                       className="text-[10px] leading-[14px] font-semibold  text-default-600 py-1"

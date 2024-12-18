@@ -1,15 +1,10 @@
 "use client";
-import { data } from "@/src/app/(dashboard)/(map)/map-unovis-advance/data";
-import { Card, CardHeader, CardContent } from "../ui/card";
-import ChartTable from "./chartWithTable/chartTable";
-import TableChart from "./chartWithTable/tableChart";
-import { Icon } from "@iconify/react";
 import { themes } from "@/src/config/thems";
-import { categories } from "@/src/app/api/calendars/data";
 import { getGridConfig } from "@/src/lib/appex-chart-options";
 import { useThemeStore } from "@/src/store";
 import { useTheme } from "next-themes";
 import dynamic from "next/dynamic";
+import { Card, CardContent, CardHeader } from "../ui/card";
 import {
   Select,
   SelectContent,

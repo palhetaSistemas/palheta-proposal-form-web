@@ -39,12 +39,6 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/src/components/ui/tooltip";
-import { getWords } from "@/src/lib/utils";
-
-import {
-  deleteTaskAction,
-  updateTaskAction,
-} from "@/src/action/project-action";
 import AssignMembers from "./common/assign-members";
 import DeleteConfirmationDialog from "@/src/components/delete-confirmation-dialog";
 import { cn } from "@/src/lib/utils";
@@ -64,13 +58,13 @@ const tagsColorMap: { [key: string]: any } = {
 // dnd
 import { SortableContext, useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
+import { budgetTaskType } from "@/src/@staticData/budgets/tasks";
+import { budgetBoardType } from "@/src/@staticData/budgets/boards";
 
-import { type Board as BoardType } from "@/src/app/api/boards/data";
-import { type Task as TaskType } from "@/src/app/api/tasks2/data";
 interface TaskProps {
-  task: TaskType;
-  onUpdateTask: (task: TaskType) => void;
-  boards: BoardType[];
+  task: budgetTaskType;
+  onUpdateTask: (task: budgetTaskType) => void;
+  boards: budgetBoardType[];
 }
 
 const Task = ({ task, onUpdateTask, boards }: TaskProps) => {
@@ -90,24 +84,27 @@ const Task = ({ task, onUpdateTask, boards }: TaskProps) => {
     link,
     date,
     time,
-    size,
   } = task;
 
-  const handleMoveTask = (task: TaskType, boardId: BoardType["id"]) => {
+  const handleMoveTask = (
+    task: budgetTaskType,
+    boardId: budgetBoardType["id"]
+  ) => {
     const newData = {
       ...task,
       boardId: boardId,
     };
-    updateTaskAction(task.id, newData);
   };
 
-  const getBoardNameById = (boardId: BoardType["id"]) => {
-    const foundBoard = boards.find((board: BoardType) => board.id === boardId);
+  const getBoardNameById = (boardId: budgetBoardType["id"]) => {
+    const foundBoard = boards.find(
+      (board: budgetBoardType) => board.id === boardId
+    );
     return foundBoard ? foundBoard.name : "Unknown Board";
   };
   // delete task
   const onAction = async (dltId: string) => {
-    await deleteTaskAction(dltId);
+    return;
   };
   // dnd
   const {
@@ -168,7 +165,7 @@ const Task = ({ task, onUpdateTask, boards }: TaskProps) => {
                   </div>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-[50px]" align="start">
-                  {boards?.map((board: BoardType) => (
+                  {boards?.map((board: budgetBoardType) => (
                     <DropdownMenuItem
                       onSelect={() => handleMoveTask(task, board.id)}
                       className="text-[10px] leading-[14px] font-semibold  text-default-600 py-1"

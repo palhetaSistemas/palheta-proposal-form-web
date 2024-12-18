@@ -10,14 +10,14 @@ import {
 } from "@/src/components/ui/collapsible";
 import TaskItem from "./task-item";
 import AddSubTask from "./add-sub-task";
-import { type Task as TaskType } from "@/src/app/api/tasks/data";
-import { type SubTask as SubTaskType } from "@/src/app/api/tasks/data";
+import { activitySubTaskType } from "@/src/@staticData/activities/subtasks";
+import { activityTaskType } from "@/src/@staticData/activities/tasks";
 const SubTasks = ({
   subTasks,
   taskId,
 }: {
-  subTasks: SubTaskType[];
-  taskId: TaskType["id"];
+  subTasks: activitySubTaskType[];
+  taskId: activityTaskType["id"];
 }) => {
   const [showComplete, setShowComplete] = useState<boolean>(false);
   const filteredSubtasks = subTasks.filter((st) => st.taskId === taskId);

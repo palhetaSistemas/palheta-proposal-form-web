@@ -10,28 +10,21 @@ import CreateTask from "./components/create-task";
 import EditTask from "./components/edit-task";
 import { useMediaQuery } from "@/src/hooks/use-media-query";
 import { cn } from "@/src/lib/utils";
-import { type Contact as ContactType } from "@/src/app/api/chat/data";
-import { type Board as BoardType } from "@/src/app/api/boards/data";
-import { type Task as TaskType } from "@/src/app/api/tasks2/data";
-import { type SubTask as SubTaskType } from "@/src/app/api/tasks/data";
-import { type Comment as CommentType } from "@/src/app/api/comments/data";
-import { Kanban } from "./components/kanban";
 import TaskBoard from "./components/task-board";
+import { activityTaskType } from "@/src/@staticData/activities/tasks";
+import { activityBoardType } from "@/src/@staticData/activities/boards";
+import { activitySubTaskType } from "@/src/@staticData/activities/subtasks";
 
 const ViewTask = ({
-  contacts,
   tasks,
   header = true,
   boards,
   subTasks,
-  comments,
 }: {
-  contacts: ContactType[];
-  tasks: TaskType[];
+  tasks: activityTaskType[];
   header?: boolean;
-  boards: BoardType[];
-  subTasks: SubTaskType[];
-  comments: CommentType[];
+  boards: activityBoardType[];
+  subTasks: activitySubTaskType[];
 }) => {
   const [open, setOpen] = useState<boolean>(false);
   const [openEdit, setOpenEdit] = useState<boolean>(false);
@@ -55,12 +48,7 @@ const ViewTask = ({
       <div className="grid grid-cols-12  gap-6 ">
         <div className="col-span-12 ">
           {" "}
-          <TaskBoard
-            boards={boards}
-            tasks={tasks}
-            subTasks={subTasks}
-            comments={comments}
-          />
+          <TaskBoard boards={boards} tasks={tasks} subTasks={subTasks} />
         </div>
 
         <div className=" col-span-12 flex gap-6 relative overflow-hidden">
@@ -86,7 +74,7 @@ const ViewTask = ({
                 </Button>
               </CardHeader>
               <CardContent className="h-full p-2 md:px-6">
-                <TaskSidebar contacts={contacts} />
+                <TaskSidebar />
               </CardContent>
             </Card>
           </div>

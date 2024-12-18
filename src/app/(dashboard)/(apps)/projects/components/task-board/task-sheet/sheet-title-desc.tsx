@@ -3,11 +3,10 @@ import React, { useState } from "react";
 import { Button } from "@/src/components/ui/button";
 import { Checkbox } from "@/src/components/ui/checkbox";
 import { Icon } from "@iconify/react";
-import { updateTaskAction } from "@/src/action/project-action";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { type Task as TaskType } from "@/src/app/api/tasks/data";
+import { projectTaskType } from "@/src/@staticData/projects/tasks";
 const schema = z.object({
   title: z.string().min(1, {
     message: "What is your task title? ???",
@@ -18,8 +17,8 @@ const SheetTitleDesc = ({
   task,
   taskId,
 }: {
-  task: TaskType;
-  taskId: TaskType["id"];
+  task: projectTaskType;
+  taskId: projectTaskType["id"];
 }) => {
   const [isFocused, setIsFocused] = useState<boolean>(false);
 
@@ -52,7 +51,6 @@ const SheetTitleDesc = ({
       desc: data.desc,
     };
     try {
-      await updateTaskAction(taskId, newData);
     } catch (error) {
       console.log(error);
     }

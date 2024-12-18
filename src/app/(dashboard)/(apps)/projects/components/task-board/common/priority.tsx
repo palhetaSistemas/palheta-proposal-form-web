@@ -8,18 +8,17 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/src/components/ui/select";
-import { updateTaskAction } from "@/src/action/project-action";
-import { type Task as TaskType } from "@/src/app/api/tasks/data";
+import { projectTaskType } from "@/src/@staticData/projects/tasks";
 const Priority = ({
   task,
   taskId,
 }: {
-  task?: TaskType | any;
-  taskId?: TaskType["id"];
+  task?: projectTaskType | any;
+  taskId?: projectTaskType["id"];
 }) => {
-  const [selectedPriority, setSelectedPriority] = useState<TaskType | any>(
-    task?.priority
-  );
+  const [selectedPriority, setSelectedPriority] = useState<
+    projectTaskType | any
+  >(task?.priority);
 
   const handlePriorityChange = async (value: any) => {
     if (taskId) {
@@ -28,8 +27,6 @@ const Priority = ({
           ...task,
           priority: value,
         };
-
-        await updateTaskAction(taskId, newData);
       } catch (error) {
         console.log(error);
       }

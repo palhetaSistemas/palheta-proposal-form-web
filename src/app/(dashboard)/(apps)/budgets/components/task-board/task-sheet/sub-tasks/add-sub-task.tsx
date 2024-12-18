@@ -8,12 +8,11 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { cn, formatDate } from "@/src/lib/utils";
 import { toast } from "react-hot-toast";
-import { addSubTaskAction } from "@/src/action/project-action";
+import { budgetTaskType } from "@/src/@staticData/budgets/tasks";
 const schema = z.object({
   title: z.string().min(2, { message: "title lagbe re vai ." }),
 });
-import { type Task as TaskType } from "@/src/app/api/tasks/data";
-const AddSubTask = ({ taskId }: { taskId: TaskType["id"] }) => {
+const AddSubTask = ({ taskId }: { taskId: budgetTaskType["id"] }) => {
   const [isPending, startTransition] = React.useTransition();
   const {
     register,
@@ -32,7 +31,6 @@ const AddSubTask = ({ taskId }: { taskId: TaskType["id"] }) => {
     var result;
 
     startTransition(async () => {
-      result = await addSubTaskAction(data);
       toast.success("Successfully added");
     });
 

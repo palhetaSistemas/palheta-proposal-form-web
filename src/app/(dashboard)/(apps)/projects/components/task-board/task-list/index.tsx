@@ -12,23 +12,22 @@ import {
   CollapsibleTrigger,
 } from "@/src/components/ui/collapsible";
 import { ChevronDown, Plus, Trash2, Minus } from "lucide-react";
-import { deleteBoardAction } from "@/src/action/project-action";
 import DeleteConfirmationDialog from "@/src/components/delete-confirmation-dialog";
 import { Icon } from "@iconify/react";
 import { cn } from "@/src/lib/utils";
-import { type Board as BoardType } from "@/src/app/api/boards/data";
+import { projectBoardType } from "@/src/@staticData/projects/boards";
 interface TaskListProps {
-  board: BoardType;
-  onEdit: (board: BoardType) => void;
+  board: projectBoardType;
+  onEdit: (board: projectBoardType) => void;
   length: number;
   children?: React.ReactNode;
-  onAction?: (id: BoardType["id"]) => void;
+  onAction?: (id: projectBoardType["id"]) => void;
 }
 const TaskList = ({ board, children, onEdit, length }: TaskListProps) => {
   const [open, setOpen] = React.useState<boolean>(false);
   const [show, setShow] = React.useState<boolean>(true);
   async function onAction(id: string) {
-    await deleteBoardAction(id);
+    return;
   }
   const { name, status, id } = board;
   return (

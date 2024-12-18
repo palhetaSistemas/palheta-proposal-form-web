@@ -8,7 +8,6 @@ import { z } from "zod";
 import { cn } from "@/src/lib/utils";
 import { useForm, Controller } from "react-hook-form";
 
-import { addBoardAction, editBoardAction } from "@/src/action/project-action";
 import {
   Dialog,
   DialogContent,
@@ -20,7 +19,7 @@ import {
 
 import { X } from "lucide-react";
 import { Label } from "@/src/components/ui/label";
-import { type Board as BoardType } from "@/src/app/api/boards/data";
+import { budgetBoardType } from "@/src/@staticData/budgets/boards";
 const schema = z.object({
   name: z.string().min(2, { message: "Your email is invalid." }),
   status: z.string().optional(),
@@ -28,8 +27,8 @@ const schema = z.object({
 interface CreateBoardProps {
   open: boolean;
   onClose: () => void;
-  board?: BoardType;
-  boardId?: BoardType["id"];
+  board?: budgetBoardType;
+  boardId?: budgetBoardType["id"];
 }
 const CreateBoard = ({ open, onClose, board, boardId }: CreateBoardProps) => {
   const [isPending, startTransition] = useTransition();
@@ -56,12 +55,10 @@ const CreateBoard = ({ open, onClose, board, boardId }: CreateBoardProps) => {
     var result;
     if (board) {
       startTransition(async () => {
-        result = await editBoardAction(boardId as any, updatedData as any);
         toast.success("Successfully update");
       });
     } else {
       startTransition(async () => {
-        result = await addBoardAction(data);
         toast.success("Successfully added");
       });
     }

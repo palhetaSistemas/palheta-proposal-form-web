@@ -10,11 +10,10 @@ import {
   CommandInput,
   CommandItem,
 } from "@/src/components/ui/command";
-import { updateTaskAction } from "@/src/action/project-action";
 import { Input } from "@/src/components/ui/input";
 import { CustomPopover } from "@/src/components/ui/popover";
 import { Badge } from "@/src/components/ui/badge";
-import { type Task as TaskType } from "@/src/app/api/tasks/data";
+import { projectTaskType } from "@/src/@staticData/projects/tasks";
 
 const newtags = [
   {
@@ -45,8 +44,8 @@ const AssignTags = ({
   task,
   taskId,
 }: {
-  task: TaskType;
-  taskId: TaskType["id"];
+  task: projectTaskType;
+  taskId: projectTaskType["id"];
 }) => {
   const [open, setOpen] = React.useState(false);
   const [selectedValues, setSelectedValues] = React.useState(task?.tags || []);
@@ -84,7 +83,6 @@ const AssignTags = ({
     };
 
     try {
-      await updateTaskAction(taskId, newVal);
     } catch (error) {
       console.log(error);
     }
@@ -107,7 +105,6 @@ const AssignTags = ({
     };
 
     try {
-      await updateTaskAction(taskId, newVal);
       closePopover();
       setNewTagName("");
     } catch (error) {

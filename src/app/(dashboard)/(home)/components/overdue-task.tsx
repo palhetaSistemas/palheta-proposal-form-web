@@ -19,7 +19,6 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@/src/components/ui/avatar";
-import { Badge } from "@/src/components/ui/badge";
 
 // avatar
 
@@ -28,11 +27,6 @@ import farm2 from "@/public/images/staticDataImage/farm2.png";
 import farm3 from "@/public/images/staticDataImage/farm3.png";
 import farm4 from "@/public/images/staticDataImage/farm4.png";
 import farm5 from "@/public/images/staticDataImage/farm5.png";
-import farm6 from "@/public/images/staticDataImage/farm6.png";
-import farm7 from "@/public/images/staticDataImage/farm7.png";
-import farm8 from "@/public/images/staticDataImage/farm8.png";
-import farm9 from "@/public/images/staticDataImage/farm9.png";
-import farm10 from "@/public/images/staticDataImage/farm10.png";
 import Link from "next/link";
 
 const columns = [

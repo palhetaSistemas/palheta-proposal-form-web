@@ -28,21 +28,18 @@ import {
 } from "@dnd-kit/core";
 import { SortableContext, arrayMove } from "@dnd-kit/sortable";
 import { createPortal } from "react-dom";
-import { editBoardAction, swapBoardAction } from "@/src/action/project-action";
-import { type Board as BoardType } from "@/src/app/api/boards/data";
-import { type Task as TaskType } from "@/src/app/api/tasks2/data";
-import { type SubTask as SubTaskType } from "@/src/app/api/tasks/data";
-import { type Comment as CommentType } from "@/src/app/api/comments/data";
-import CreateClient from "@/src/app/(dashboard)/(apps)/crm/CreateClient";
+import { activityTaskType } from "@/src/@staticData/activities/tasks";
+import { activityBoardType } from "@/src/@staticData/activities/boards";
+import { activitySubTaskType } from "@/src/@staticData/activities/subtasks";
+import CreateClient from "../CreateClient";
 const wait = () => new Promise((resolve) => setTimeout(resolve, 1000));
 
 interface TaskBoardProps {
-  boards: BoardType[];
-  tasks: TaskType[];
-  subTasks: SubTaskType[];
-  comments: CommentType[];
+  boards: activityBoardType[];
+  tasks: activityTaskType[];
+  subTasks: activitySubTaskType[];
 }
-const TaskBoard = ({ boards, tasks, subTasks, comments }: TaskBoardProps) => {
+const TaskBoard = ({ boards, tasks, subTasks }: TaskBoardProps) => {
   const [taskView, setTaskView] = useState<string>("kanban");
 
   const [open, setOpen] = useState<boolean>(false);
@@ -52,20 +49,20 @@ const TaskBoard = ({ boards, tasks, subTasks, comments }: TaskBoardProps) => {
   const [open3, setOpen3] = useState<boolean>(false);
   // for board
   const [selectedBoardId, setSelectedBoardId] = React.useState<
-    BoardType["id"] | undefined
+    activityBoardType["id"] | undefined
   >(undefined);
   const [selectedBoard, setSelectedBoard] = React.useState<
-    BoardType | undefined
+    activityBoardType | undefined
   >(undefined);
   // for task
   const [selectedTaskId, setSelectedTaskId] = React.useState<
-    TaskType["id"] | undefined
+    activityTaskType["id"] | undefined
   >(undefined);
-  const [selectedTask, setSelectedTask] = React.useState<TaskType | undefined>(
-    undefined
-  );
+  const [selectedTask, setSelectedTask] = React.useState<
+    activityTaskType | undefined
+  >(undefined);
   const [selectedBoardForTask, setSelectedBoardForTask] = React.useState<
-    BoardType["id"] | undefined
+    activityBoardType["id"] | undefined
   >(undefined);
 
   // handler task view
@@ -79,7 +76,7 @@ const TaskBoard = ({ boards, tasks, subTasks, comments }: TaskBoardProps) => {
     setOpen(true);
   };
   // handle edit board
-  const openEdit = (board: BoardType) => {
+  const openEdit = (board: activityBoardType) => {
     setSelectedBoardId(board.id);
     setSelectedBoard(board);
     setOpen(true);
@@ -94,7 +91,7 @@ const TaskBoard = ({ boards, tasks, subTasks, comments }: TaskBoardProps) => {
   };
 
   // handle task board opener
-  const handleTaskOpener = (boardId: BoardType["id"]) => {
+  const handleTaskOpener = (boardId: activityBoardType["id"]) => {
     setSelectedTaskId(undefined);
     setSelectedTask(undefined);
     setSelectedBoardForTask(boardId);
@@ -109,7 +106,7 @@ const TaskBoard = ({ boards, tasks, subTasks, comments }: TaskBoardProps) => {
   };
 
   // update task handler
-  const updateTaskHandler = (task: TaskType) => {
+  const updateTaskHandler = (task: activityTaskType) => {
     setSelectedTaskId(task.id);
     setSelectedTask(task);
     setOpen3(true);
@@ -120,7 +117,10 @@ const TaskBoard = ({ boards, tasks, subTasks, comments }: TaskBoardProps) => {
     setOpen3(false);
   };
 
-  const filteredTasks = (tasks: TaskType[], boardId: BoardType["id"]) => {
+  const filteredTasks = (
+    tasks: activityTaskType[],
+    boardId: activityBoardType["id"]
+  ) => {
     // Add your filtering logic here
     return tasks?.filter((task) => task.boardId === boardId);
   };
@@ -157,7 +157,6 @@ const TaskBoard = ({ boards, tasks, subTasks, comments }: TaskBoardProps) => {
       };
       var result;
       startTransition(async () => {
-        result = await swapBoardAction(data);
         toast.success("Successfully update");
       });
     }
@@ -252,23 +251,6 @@ const TaskBoard = ({ boards, tasks, subTasks, comments }: TaskBoardProps) => {
                 </DragOverlay> */}
               </DndContext>
             )}
-
-            {taskView === "list" &&
-              boards.map((board, i) => (
-                <TaskList
-                  key={`list-view-key-${i}`}
-                  board={board}
-                  onEdit={openEdit}
-                  length={filteredTasks(tasks, board.id).length}
-                >
-                  <TaskTable
-                    boards={boards}
-                    data={filteredTasks(tasks, board.id)}
-                    onUpdateTask={updateTaskHandler}
-                    boardID2={board.id}
-                  />
-                </TaskList>
-              ))}
           </CardContent>
         </Card>
       ) : (
@@ -288,10 +270,9 @@ const TaskBoard = ({ boards, tasks, subTasks, comments }: TaskBoardProps) => {
       <TaskSheet
         open={open3}
         onClose={closeUpdateTaskHandler}
-        task={selectedTask as TaskType}
-        taskId={selectedTaskId as TaskType["id"]}
+        task={selectedTask as activityTaskType}
+        taskId={selectedTaskId as activityTaskType["id"]}
         subTasks={subTasks}
-        comments={comments}
       />
     </>
   );

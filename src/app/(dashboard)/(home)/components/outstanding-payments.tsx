@@ -1,5 +1,5 @@
 "use client";
-import { ChevronDown, Eye } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import {
   Card,
@@ -7,17 +7,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/src/components/ui/card";
-import DashboardDropdown from "@/src/components/dashboard-dropdown";
 import farm1 from "@/public/images/staticDataImage/farm1.png";
 import farm2 from "@/public/images/staticDataImage/farm2.png";
 import farm3 from "@/public/images/staticDataImage/farm3.png";
 import farm4 from "@/public/images/staticDataImage/farm4.png";
 import farm5 from "@/public/images/staticDataImage/farm5.png";
-import farm6 from "@/public/images/staticDataImage/farm6.png";
-import farm7 from "@/public/images/staticDataImage/farm7.png";
-import farm8 from "@/public/images/staticDataImage/farm8.png";
-import farm9 from "@/public/images/staticDataImage/farm9.png";
-import farm10 from "@/public/images/staticDataImage/farm10.png";
+
 import { Button } from "@/src/components/ui/button";
 const pending = [
   {

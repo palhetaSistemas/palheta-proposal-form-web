@@ -41,10 +41,6 @@ import {
 } from "@/src/components/ui/tooltip";
 import { getWords } from "@/src/lib/utils";
 
-import {
-  deleteTaskAction,
-  updateTaskAction,
-} from "@/src/action/project-action";
 import AssignMembers from "./common/assign-members";
 import DeleteConfirmationDialog from "@/src/components/delete-confirmation-dialog";
 import { cn } from "@/src/lib/utils";
@@ -64,13 +60,12 @@ const tagsColorMap: { [key: string]: any } = {
 // dnd
 import { SortableContext, useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-
-import { type Board as BoardType } from "@/src/app/api/boards/data";
-import { type Task as TaskType } from "@/src/app/api/tasks2/data";
+import { projectTaskType } from "@/src/@staticData/projects/tasks";
+import { projectBoardType } from "@/src/@staticData/projects/boards";
 interface TaskProps {
-  task: TaskType;
-  onUpdateTask: (task: TaskType) => void;
-  boards: BoardType[];
+  task: projectTaskType;
+  onUpdateTask: (task: projectTaskType) => void;
+  boards: projectBoardType[];
 }
 
 const Task = ({ task, onUpdateTask, boards }: TaskProps) => {
@@ -93,21 +88,25 @@ const Task = ({ task, onUpdateTask, boards }: TaskProps) => {
     size,
   } = task;
 
-  const handleMoveTask = (task: TaskType, boardId: BoardType["id"]) => {
+  const handleMoveTask = (
+    task: projectTaskType,
+    boardId: projectBoardType["id"]
+  ) => {
     const newData = {
       ...task,
       boardId: boardId,
     };
-    updateTaskAction(task.id, newData);
   };
 
-  const getBoardNameById = (boardId: BoardType["id"]) => {
-    const foundBoard = boards.find((board: BoardType) => board.id === boardId);
+  const getBoardNameById = (boardId: projectBoardType["id"]) => {
+    const foundBoard = boards.find(
+      (board: projectBoardType) => board.id === boardId
+    );
     return foundBoard ? foundBoard.name : "Unknown Board";
   };
   // delete task
   const onAction = async (dltId: string) => {
-    await deleteTaskAction(dltId);
+    return;
   };
   // dnd
   const {

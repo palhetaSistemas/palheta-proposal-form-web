@@ -1,19 +1,9 @@
-import {
-  getBoards,
-  getTasks,
-  getSubtasks,
-  getComments,
-  getTasks2,
-  getBoards2,
-} from "@/src/config/project-config";
-import KanbanBreadCrumbs from "./bread-crumbs";
 import TaskBoard from "./components/task-board";
+import { budgetsBoards } from "@/src/@staticData/budgets/boards";
+import { budgetsTasks } from "@/src/@staticData/budgets/tasks";
+import { budgetsSubTasks } from "@/src/@staticData/budgets/subtasks";
 
 const Budgets = async () => {
-  const boards = await getBoards2();
-  const tasks = await getTasks();
-  const subTasks = await getSubtasks();
-  const comments = await getComments();
   return (
     <>
       <div className="flex flex-wrap mb-7">
@@ -22,10 +12,9 @@ const Budgets = async () => {
         </div>
       </div>
       <TaskBoard
-        boards={boards}
-        tasks={tasks}
-        subTasks={subTasks}
-        comments={comments}
+        boards={budgetsBoards}
+        tasks={budgetsTasks}
+        subTasks={budgetsSubTasks}
       />
     </>
   );

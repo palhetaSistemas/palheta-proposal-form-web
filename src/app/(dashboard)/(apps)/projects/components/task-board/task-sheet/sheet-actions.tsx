@@ -22,14 +22,14 @@ import {
 } from "@/src/components/ui/tooltip";
 import Priority from "../common/priority";
 import AssignList from "../common/assign-list";
-import { type Task as TaskType } from "@/src/app/api/tasks/data";
+import { projectTaskType } from "@/src/@staticData/projects/tasks";
 
 const SheetActions = ({
   task,
   taskId,
 }: {
-  task: TaskType;
-  taskId: TaskType["id"];
+  task: projectTaskType;
+  taskId: projectTaskType["id"];
 }) => {
   return (
     <div className="py-5 px-4 lg:px-6 border-b border-default-200">
@@ -54,7 +54,7 @@ const SheetActions = ({
                 total={task?.assign?.length}
                 max={3}
               >
-                {task?.assign?.map((member, i) => (
+                {task?.assign?.map((member: any, i: number) => (
                   <TooltipProvider key={`assign-member-task-${i}`}>
                     <Tooltip>
                       <TooltipTrigger asChild>

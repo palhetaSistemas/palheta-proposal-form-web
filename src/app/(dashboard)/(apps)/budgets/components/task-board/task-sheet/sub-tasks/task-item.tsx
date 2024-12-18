@@ -16,10 +16,7 @@ import { ArrowRightLeft, Check, Tag, Trash2, X } from "lucide-react";
 
 import AssignMembers from "../../common/assign-members";
 import { cn } from "@/src/lib/utils";
-import {
-  updateSubTaskAction,
-  deleteSubTaskAction,
-} from "@/src/action/project-action";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -29,12 +26,12 @@ import {
   DropdownMenuTrigger,
 } from "@/src/components/ui/dropdown-menu";
 import DeleteConfirmationDialog from "@/src/components/delete-confirmation-dialog";
-import { type SubTask as SubTaskType } from "@/src/app/api/tasks/data";
+import { budgetSubTaskType } from "@/src/@staticData/budgets/subtasks";
 const TaskItem = ({
   subtask,
   handlerSubSheet,
 }: {
-  subtask: SubTaskType;
+  subtask: budgetSubTaskType;
   handlerSubSheet: () => void;
 }) => {
   const { completed, assignDate, id } = subtask;
@@ -48,8 +45,6 @@ const TaskItem = ({
         ...subtask,
         completed: value,
       };
-
-      await updateSubTaskAction(id, newData);
     } catch (error) {
       console.log(error);
     }
@@ -57,7 +52,7 @@ const TaskItem = ({
   };
 
   const onAction = async (dltId: string) => {
-    await deleteSubTaskAction(dltId);
+    return;
   };
   return (
     <>
