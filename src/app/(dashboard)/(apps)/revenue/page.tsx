@@ -20,7 +20,7 @@ export default function RevenuePage() {
         <div className="col-span-12 lg:col-span-4">
           <InvoicingBarsCard />
         </div>
-        <div className="col-span-12 grid-cols-2  grid lg:col-span-12">
+        <div className="col-span-12 grid-cols-2 grid lg:col-span-12">
           <div className="col-span-2 lg:col-span-1">
             <MonthlyReport />
           </div>

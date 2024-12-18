@@ -12,7 +12,7 @@ import {
 
 interface RevenueChartProps {
   series: ApexAxisChartSeries;
-  chartColor: string;
+  chartColor?: string;
   height?: number;
 }
 
@@ -48,10 +48,10 @@ const RevenueChart = ({
       enabled: false,
     },
     stroke: {
-      curve: "smooth",
-      width: 4,
+      curve: "straight",
+      width: 5,
     },
-    colors: [chartColor],
+    colors: ["#013466"],
     tooltip: {
       theme: mode === "dark" ? "dark" : "light",
     },
@@ -60,7 +60,7 @@ const RevenueChart = ({
     ),
     fill: {
       type: "gradient",
-      colors: chartColor,
+      colors: ["#21C45D", "#fff"],
       gradient: {
         shadeIntensity: 0.1,
         opacityFrom: 0.4,
@@ -80,16 +80,50 @@ const RevenueChart = ({
       bottom: 0,
       left: 0,
     },
+    responsive: [
+      {
+        breakpoint: 1024,
+        options: {
+          chart: {
+            height: 200,
+          },
+        },
+      },
+      {
+        breakpoint: 1440,
+        options: {
+          chart: {
+            height: 250,
+          },
+        },
+      },
+      {
+        breakpoint: 1920,
+        options: {
+          chart: {
+            height: 350,
+          },
+        },
+      },
+      {
+        breakpoint: 2560,
+        options: {
+          chart: {
+            height: 400,
+          },
+        },
+      },
+      {
+        breakpoint: 2561,
+        options: {
+          chart: {
+            height: 400,
+          },
+        },
+      },
+    ],
   };
-  return (
-    <Chart
-      options={options}
-      series={series}
-      type="area"
-      height={height}
-      width={"100%"}
-    />
-  );
+  return <Chart options={options} series={series} type="area" width={"100%"} />;
 };
 
 export default RevenueChart;

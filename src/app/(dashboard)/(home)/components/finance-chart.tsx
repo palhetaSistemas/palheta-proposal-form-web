@@ -31,7 +31,6 @@ const FinanceChart = ({ series, height = 300 }: FinanceChartProps) => {
       enabled: false,
     },
     stroke: {
-      curve: "smooth",
       width: 2,
     },
     colors: ["#EF4444", "#21C45D", "#2563EB"], // Cores das linhas: Vermelha, Verde e Azul

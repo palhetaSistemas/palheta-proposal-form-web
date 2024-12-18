@@ -142,172 +142,24 @@ const Task = ({ task, onUpdateTask, boards }: TaskProps) => {
         style={style}
         {...attributes}
         className={cn(
-          "shadow  border-default-200  p-3 cursor-pointer group relative",
+          "shadow-black/50 border-default-200 shadow-md p-0 rounded-2xl cursor-pointer group relative",
           {
             "opacity-50": isDragging,
           }
         )}
         // onClick={() => onUpdateTask(task)}
       >
-        <CardHeader className="space-x-0 space-y-0 p-0 flex-row items-center justify-between mb-0 border-none">
-          <div className="flex items-center gap-1">
-            <div
-              className={cn(
-                "text-[10px] leading-[14px] font-semibold uppercase text-default-600 border border-default-200 px-1.5  rounded-sm",
-                size === "Fazenda Média"
-                  ? "text-blue-700"
-                  : size === "Fazenda Pequena"
-                  ? "text-orange-700"
-                  : "text-green-700"
-              )}
-            >
-              {size}
-            </div>
-
-            {/* <div onClick={(e) => e.stopPropagation()}>
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <div className="text-[10px] leading-[14px] font-semibold  text-default-600 border border-default-200 px-1.5  rounded-sm flex justify-center items-center gap-[2px]">
-                    {getBoardNameById(task.boardId)}
-                    <ChevronDown className="w-3 h-3" />
-                  </div>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-[50px]" align="start">
-                  {boards?.map((board: BoardType) => (
-                    <DropdownMenuItem
-                      onSelect={() => handleMoveTask(task, board.id)}
-                      className="text-[10px] leading-[14px] font-semibold  text-default-600 py-1"
-                      key={`key-dropdown-${board.id}`}
-                    >
-                      {board.name}
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </div> */}
+        {image && (
+          <div className="w-full mt-3 rounded-2xl">
+            <Image
+              alt=""
+              src={image}
+              className=" rounded-2xl"
+              height={190}
+              width={277}
+            />
           </div>
-          <div
-            className="flex items-center gap-1 opacity-0 group-hover:opacity-100"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button
-                  type="button"
-                  size="icon"
-                  className="h-6 w-6 rounded-full bg-transparent hover:bg-transparent "
-                >
-                  <MoreHorizontal className="w-4 h-4 text-default-900" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-[196px]" align="start">
-                <DropdownMenuItem onSelect={() => setOpen(true)}>
-                  Delete
-                </DropdownMenuItem>
-                <DropdownMenuItem>Change List</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-            <Checkbox radius="xl" size="sm" />
-          </div>
-        </CardHeader>
-        <CardContent className="p-0">
-          <div className="relative">
-            <div className="text-sm font-semibold text-default-700 my-1 capitalize">
-              {title}
-            </div>
-          </div>
-          <div className="text-[13px] whitespace-pre-line text-default-500">
-            {desc}
-          </div>
-          {image && (
-            <div className="w-full mt-3 rounded">
-              <Image
-                alt=""
-                src={image}
-                className=" rounded"
-                height={190}
-                width={277}
-              />
-            </div>
-          )}
-
-          {/* <div className="flex flex-wrap items-center gap-1 mt-2">
-            <Badge
-              color={prioritiesColorMap[task.priority]}
-              className="text-[10px] px-1 py-0 rounded leading-4 capitalize"
-            >
-              {priority}
-            </Badge>
-            {tags?.map((tag, i) => (
-              <Badge
-                key={`badge-key-ssk-${i}`}
-                color={tagsColorMap[tag]}
-                className="text-[10px] px-1 py-0 rounded leading-4 capitalize"
-              >
-                {tag}
-              </Badge>
-            ))}
-          </div>
-          <div className="mt-4 flex items-center gap-4">
-            <div onClick={(e) => e.stopPropagation()}>
-              <AssignMembers icon={null} />
-            </div>
-            {assign?.length > 0 && (
-              <AvatarGroup total={assign?.length} max={3} countClass="w-5 h-5">
-                {assign?.map((member, i) => (
-                  <TooltipProvider key={`assign-member-task-${i}`}>
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <Avatar className="w-5 h-5 ring-1 ring-background ring-offset-[2px]  ring-offset-background">
-                          <AvatarImage src={member.image.src} />
-                          <AvatarFallback></AvatarFallback>
-                        </Avatar>
-                      </TooltipTrigger>
-                      <TooltipContent side="bottom" className="py-[2px] px-1">
-                        <p className="text-xs font-medium">{member.name}</p>
-                        <TooltipArrow className=" fill-primary" />
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                ))}
-              </AvatarGroup>
-            )}
-          </div> */}
-        </CardContent>
-        {/* <CardFooter className="p-0 mt-2">
-          <div className="w-full flex flex-wrap items-center gap-x-3 gap-y-2">
-            <div className="flex items-center gap-1 text-xs text-default-600">
-              <List className="w-3.5 h-3.5 text-default-500" />
-              {category}
-            </div>
-            <div
-              className="flex items-center gap-1 text-xs text-default-600"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <Icon icon="arcticons:documents" className="w-4 h-4" />
-              0/7
-              <ChevronDown className="w-3.5 h-3.5 text-default-600" />
-            </div>
-            <div className="flex items-center gap-1 text-xs text-default-600">
-              <Icon
-                icon="heroicons:chat-bubble-oval-left-ellipsis"
-                className="w-3.5 h-3.5 text-default-500"
-              />
-              {messageCount}
-            </div>
-            <div className="flex items-center gap-1 text-xs text-default-600">
-              <Link className="w-2.5 h-2.5 text-default-500" />
-              {link}
-            </div>
-            <div
-              className="flex items-center gap-1 text-xs text-default-600"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <Calendar className="w-3.5 h-3.5 text-default-500" />
-              {date} / {time}
-            </div>
-          </div>
-        </CardFooter> */}
+        )}
       </Card>
     </>
   );

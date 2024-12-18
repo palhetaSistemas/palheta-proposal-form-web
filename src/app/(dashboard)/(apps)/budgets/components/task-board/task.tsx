@@ -153,18 +153,13 @@ const Task = ({ task, onUpdateTask, boards }: TaskProps) => {
           <div className="flex items-center gap-1">
             <div
               className={cn(
-                "text-[10px] leading-[14px] font-semibold uppercase text-default-600 border border-default-200 px-1.5  rounded-sm",
-                size === "Fazenda Média"
-                  ? "text-blue-700"
-                  : size === "Fazenda Pequena"
-                  ? "text-orange-700"
-                  : "text-green-700"
+                "text-[10px] leading-[14px] font-semibold uppercase text-default-600 border border-default-200 px-1.5  rounded-sm"
               )}
             >
-              {size}
+              Lorem
             </div>
 
-            {/* <div onClick={(e) => e.stopPropagation()}>
+            <div onClick={(e) => e.stopPropagation()}>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <div className="text-[10px] leading-[14px] font-semibold  text-default-600 border border-default-200 px-1.5  rounded-sm flex justify-center items-center gap-[2px]">
@@ -184,7 +179,7 @@ const Task = ({ task, onUpdateTask, boards }: TaskProps) => {
                   ))}
                 </DropdownMenuContent>
               </DropdownMenu>
-            </div> */}
+            </div>
           </div>
           <div
             className="flex items-center gap-1 opacity-0 group-hover:opacity-100"
@@ -201,10 +196,8 @@ const Task = ({ task, onUpdateTask, boards }: TaskProps) => {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-[196px]" align="start">
-                <DropdownMenuItem onSelect={() => setOpen(true)}>
-                  Delete
-                </DropdownMenuItem>
-                <DropdownMenuItem>Change List</DropdownMenuItem>
+                <DropdownMenuItem>Editar</DropdownMenuItem>
+                <DropdownMenuItem>Apagar</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
             <Checkbox radius="xl" size="sm" />
@@ -219,19 +212,8 @@ const Task = ({ task, onUpdateTask, boards }: TaskProps) => {
           <div className="text-[13px] whitespace-pre-line text-default-500">
             {desc}
           </div>
-          {image && (
-            <div className="w-full mt-3 rounded">
-              <Image
-                alt=""
-                src={image}
-                className=" rounded"
-                height={190}
-                width={277}
-              />
-            </div>
-          )}
 
-          {/* <div className="flex flex-wrap items-center gap-1 mt-2">
+          <div className="flex flex-wrap items-center gap-1 mt-2">
             <Badge
               color={prioritiesColorMap[task.priority]}
               className="text-[10px] px-1 py-0 rounded leading-4 capitalize"
@@ -272,9 +254,9 @@ const Task = ({ task, onUpdateTask, boards }: TaskProps) => {
                 ))}
               </AvatarGroup>
             )}
-          </div> */}
+          </div>
         </CardContent>
-        {/* <CardFooter className="p-0 mt-2">
+        <CardFooter className="p-0 mt-2">
           <div className="w-full flex flex-wrap items-center gap-x-3 gap-y-2">
             <div className="flex items-center gap-1 text-xs text-default-600">
               <List className="w-3.5 h-3.5 text-default-500" />
@@ -307,7 +289,7 @@ const Task = ({ task, onUpdateTask, boards }: TaskProps) => {
               {date} / {time}
             </div>
           </div>
-        </CardFooter> */}
+        </CardFooter>
       </Card>
     </>
   );

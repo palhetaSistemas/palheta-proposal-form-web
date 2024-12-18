@@ -20,67 +20,102 @@ export function MonthlyReport() {
 
   const columns = [
     {
-      key: "employee",
-      label: "Responsável",
+      key: "month",
+      label: "Mês",
     },
     {
-      key: "task name",
-      label: "Titulo",
+      key: "conversion",
+      label: "Conversão",
     },
     {
-      key: "deadline",
-      label: "Data Final",
+      key: "conversion",
+      label: "Conversão",
+    },
+    {
+      key: "contracts",
+      label: "Contratos",
+    },
+    {
+      key: "avgSpend",
+      label: "Ticket Médio",
+    },
+    {
+      key: "revenue",
+      label: "Faturamento",
     },
   ];
 
   interface User {
     id: number;
-    name: string;
-    task: string;
-    deadline: string;
-    overdue: string;
+    month: string;
+    conversion: number;
+    contracts: number;
+    avgSpend: number;
+    revenue: number;
   }
 
   const users: User[] = [
     {
       id: 1,
-      name: "João da Silva",
-      task: "Ligar para cliente x",
-      deadline: "21 Jan 2024",
-      overdue: "01",
+      month: "Jan/24",
+      conversion: 3548,
+      contracts: 8,
+      avgSpend: 3548,
+      revenue: 35345.32,
     },
     {
       id: 2,
-      name: "João da Silva",
-      task: "Enviar relatório para cliente",
-      deadline: "21 Jan 2024",
-      overdue: "01",
+      month: "Fev/24",
+      conversion: 3548,
+      contracts: 8,
+      avgSpend: 3548,
+      revenue: 35345.32,
     },
     {
       id: 3,
-      name: "João da Silva",
-      task: "Visitar o cliente",
-      deadline: "21 Jan 2024",
-      overdue: "01",
+      month: "Mar/24",
+      conversion: 3548,
+      contracts: 8,
+      avgSpend: 3548,
+      revenue: 35345.32,
     },
     {
       id: 4,
-      name: "João da Silva",
-      task: "Levar vacinas para fazenda",
-      deadline: "21 Jan 2024",
-      overdue: "01",
+      month: "Abr/24",
+      conversion: 3548,
+      contracts: 8,
+      avgSpend: 3548,
+      revenue: 35345.32,
     },
     {
       id: 5,
-      name: "João da Silva",
-      task: "Entregar produtos",
-      deadline: "21 Jan 2024",
-      overdue: "01",
+      month: "Maio/24",
+      conversion: 3548,
+      contracts: 8,
+      avgSpend: 3548,
+      revenue: 35345.32,
+    },
+    {
+      id: 6,
+      month: "Jun/24",
+      conversion: 3548,
+      contracts: 8,
+      avgSpend: 3548,
+      revenue: 35345.32,
+    },
+    {
+      id: 7,
+      month: "Jul/24",
+      conversion: 3548,
+      contracts: 8,
+      avgSpend: 3548,
+      revenue: 35345.32,
     },
   ];
+
   return (
     <Card className="h-full rounded-r-none">
-      <CardHeader className="flex-row  justify-between items-center mb-0">
+      <CardHeader className="flex-row  justify-between items-center mb-0 p-2">
         <CardTitle>Dados de Faturamento</CardTitle>
         <div className="flex flex-row items-center gap-2">
           <div className="bg-[#8C8C8C]/20 relative p-2 rounded-md gap-2 flex">
@@ -128,7 +163,7 @@ export function MonthlyReport() {
               {columns.map((column) => (
                 <TableHead
                   key={column.key}
-                  className="text-sm font-semibold text-default-800 last:text-right  h-12"
+                  className="text-sm font-semibold text-white last:text-right bg-primary h-12"
                 >
                   {column.label}
                 </TableHead>
@@ -138,11 +173,35 @@ export function MonthlyReport() {
           <TableBody>
             {users.map((item) => (
               <TableRow key={item.id} className="hover:bg-default-100">
-                <TableCell className="text-sm font-medium text-default-600 py-1 overflow-hidden text-ellipsis whitespace-nowrap max-w-[181px]">
-                  {item.task}
+                <TableCell className="text-sm font-medium text-default-600 py-1 whitespace-nowrap">
+                  {item.month}
                 </TableCell>
                 <TableCell className="text-sm font-medium text-default-600 py-1 whitespace-nowrap">
-                  {item.deadline}
+                  {item.conversion.toLocaleString("pt-BR", {
+                    style: "currency",
+                    currency: "BRL",
+                  })}
+                </TableCell>
+                <TableCell className="text-sm font-medium text-default-600 py-1 whitespace-nowrap">
+                  {item.conversion.toLocaleString("pt-BR", {
+                    style: "currency",
+                    currency: "BRL",
+                  })}
+                </TableCell>
+                <TableCell className="text-sm font-medium text-default-600 py-1 whitespace-nowrap">
+                  {item.contracts}
+                </TableCell>
+                <TableCell className="text-sm font-medium text-default-600 py-1 whitespace-nowrap">
+                  {item.avgSpend.toLocaleString("pt-BR", {
+                    style: "currency",
+                    currency: "BRL",
+                  })}
+                </TableCell>
+                <TableCell className="text-sm font-medium text-default-600 py-1 whitespace-nowrap">
+                  {item.revenue.toLocaleString("pt-BR", {
+                    style: "currency",
+                    currency: "BRL",
+                  })}
                 </TableCell>
               </TableRow>
             ))}

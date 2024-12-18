@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Card,
   CardContent,
@@ -9,8 +9,145 @@ import {
 import { Button } from "@/src/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import FinanceChart from "./invoicing-chart";
-
+import { ApexOptions } from "apexcharts";
+import { cn } from "@/src/lib/utils";
+import dynamic from "next/dynamic";
+const ReactApexChart = dynamic(() => import("react-apexcharts"), {
+  ssr: false,
+});
 export function InvoicingCard() {
+  const [graphsSelected, setGraphsSelected] = useState({
+    revenue: false,
+    avgSpend: true,
+    leads: false,
+    contracts: true,
+    conversion: true,
+  });
+
+  const [chartOptions, setChartOptions] = useState({
+    series: [],
+
+    options: {
+      chart: {
+        type: "line",
+        dropShadow: {
+          enabled: true,
+          color: "#000",
+          top: 5,
+          left: 2,
+          blur: 5,
+          opacity: 0.1,
+        },
+        zoom: {
+          enabled: false,
+        },
+        toolbar: {
+          show: false,
+        },
+      },
+      theme: {
+        mode: "light",
+      },
+      colors: ["#93c5fd", "#3b82f6", "#1d4ed8", "#1e3a8a", "#013466"],
+      stroke: {
+        curve: "smooth",
+      },
+      legend: {
+        show: false,
+      },
+      tooltip: {},
+      markers: {
+        size: 1,
+      },
+      xaxis: {
+        categories: [
+          "Jan",
+          "Fev",
+          "Mar",
+          "Abr",
+          "Mai",
+          "Jun",
+          "Jul",
+          "Ago",
+          "Set",
+          "Out",
+          "Nov",
+          "Dez",
+        ],
+      },
+      yaxis: {
+        min: 0,
+        labels: {
+          show: true,
+          formatter: (value: number) => `R$${value.toLocaleString()} mil`,
+        },
+      },
+      responsive: [
+        {
+          breakpoint: 1920,
+          options: {
+            chart: {
+              height: 300,
+            },
+          },
+        },
+        {
+          breakpoint: 2560,
+          options: {
+            chart: {
+              height: 300,
+            },
+          },
+        },
+        {
+          breakpoint: 2561,
+          options: {
+            chart: {
+              height: 350,
+            },
+          },
+        },
+      ],
+    },
+  });
+
+  useEffect(() => {
+    const series = [
+      {
+        name: "Faturamento",
+        data: graphsSelected.revenue
+          ? [40, 30, 50, 70, 60, 90, 50, 70, 60, 90]
+          : [],
+      },
+      {
+        name: "Ticket Médio",
+        data: graphsSelected.avgSpend
+          ? [31, 21, 41, 61, 51, 81, 41, 61, 51, 81]
+          : [],
+      },
+      {
+        name: "Leads",
+        data: graphsSelected.leads
+          ? [22, 12, 32, 52, 42, 72, 32, 52, 42, 72]
+          : [],
+      },
+      {
+        name: "Contratos",
+        data: graphsSelected.contracts
+          ? [13, 3, 23, 43, 33, 63, 23, 43, 33, 63]
+          : [],
+      },
+      {
+        name: "Conversão",
+        data: graphsSelected.conversion
+          ? [4, 0, 14, 34, 24, 54, 14, 34, 24, 54]
+          : [],
+      },
+    ].filter((series) => series.data.length > 0);
+
+    setChartOptions((prevOptions: any) => ({ ...prevOptions, series }));
+  }, [graphsSelected]);
+
   const [quarter, setQuarter] = useState(0); // 0: Mensal, 1: Trimestral, 2: Anual
 
   const seriesData = {
@@ -69,6 +206,7 @@ export function InvoicingCard() {
           data: Array.isArray(item.data) ? item.data : [],
         }))
       : [{ name: "Sem Dados", data: [] }];
+
   return (
     <Card className="h-full">
       <CardHeader className="flex-row justify-between items-center mb-0">
@@ -122,27 +260,89 @@ export function InvoicingCard() {
 
       {/* Botões de indicadores */}
       <CardContent className="px-2 py-2 flex flex-row justify-between gap-2">
-        {cards.map((item) => (
-          <button
-            type="button"
-            key={item}
-            className={`flex flex-col gap-1.5 w-full rounded-md p-4 ${
-              activeCards.includes(item)
-                ? "bg-primary text-white"
-                : "bg-gray-200 text-gray-600"
-            }`}
-            onClick={() => toggleCard(item)}
-          >
-            {item}
-          </button>
-        ))}
+        <button
+          type="button"
+          className={cn(
+            "flex flex-col bg-gray-200 text-gray-600 gap-1.5 w-full rounded-md p-4 ",
+            graphsSelected.revenue && "bg-primary text-white"
+          )}
+          onClick={() => {
+            setGraphsSelected({
+              ...graphsSelected,
+              revenue: !graphsSelected.revenue,
+            });
+          }}
+        >
+          Faturamento
+        </button>
+        <button
+          type="button"
+          className={cn(
+            "flex flex-col bg-gray-200 text-gray-600 gap-1.5 w-full rounded-md p-4 ",
+            graphsSelected.avgSpend && "bg-primary text-white"
+          )}
+          onClick={() => {
+            setGraphsSelected({
+              ...graphsSelected,
+              avgSpend: !graphsSelected.avgSpend,
+            });
+          }}
+        >
+          Ticket Médio
+        </button>
+        <button
+          type="button"
+          className={cn(
+            "flex flex-col bg-gray-200 text-gray-600 gap-1.5 w-full rounded-md p-4 ",
+            graphsSelected.leads && "bg-primary text-white"
+          )}
+          onClick={() => {
+            setGraphsSelected({
+              ...graphsSelected,
+              leads: !graphsSelected.leads,
+            });
+          }}
+        >
+          Leads
+        </button>
+        <button
+          type="button"
+          className={cn(
+            "flex flex-col bg-gray-200 text-gray-600 gap-1.5 w-full rounded-md p-4 ",
+            graphsSelected.contracts && "bg-primary text-white"
+          )}
+          onClick={() => {
+            setGraphsSelected({
+              ...graphsSelected,
+              contracts: !graphsSelected.contracts,
+            });
+          }}
+        >
+          Contratos
+        </button>
+        <button
+          type="button"
+          className={cn(
+            "flex flex-col bg-gray-200 text-gray-600 gap-1.5 w-full rounded-md p-4 ",
+            graphsSelected.conversion && "bg-primary text-white"
+          )}
+          onClick={() => {
+            setGraphsSelected({
+              ...graphsSelected,
+              conversion: !graphsSelected.conversion,
+            });
+          }}
+        >
+          Conversão
+        </button>
       </CardContent>
 
       {/* Gráfico */}
       <CardContent className="px-2 py-2 overflow-x-auto">
-        <FinanceChart
-          series={safeSeries}
-          key={quarter + activeCards.join(",")}
+        <ReactApexChart
+          options={chartOptions.options as ApexOptions}
+          series={chartOptions.series}
+          type="line"
         />
       </CardContent>
     </Card>

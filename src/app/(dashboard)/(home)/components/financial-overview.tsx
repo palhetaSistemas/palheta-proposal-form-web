@@ -89,7 +89,7 @@ export function FinancialOverview() {
           </Button>
         </div>
       </CardHeader>
-      <CardContent className="px-2 py-2 overflow-x-auto pr-2  flex flex-row justify-between">
+      <CardContent className="px-2 py-2 overflow-x-auto pr-2 gap-4 flex flex-row justify-between">
         <Button
           className={` ${
             quarter === 0

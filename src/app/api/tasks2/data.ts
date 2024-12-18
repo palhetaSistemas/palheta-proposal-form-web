@@ -1,5 +1,5 @@
 import avatar from "@/public/images/avatar/avatar-7.jpg";
-import img1 from "@/public/images/staticDataImage/crm1.png";
+import img1 from "@/public/images/staticDataImage/facade1.png";
 import img2 from "@/public/images/staticDataImage/crm2.png";
 import img3 from "@/public/images/staticDataImage/crm3.png";
 import { faker } from "@faker-js/faker";
@@ -35,96 +35,6 @@ export const tasks = [
       },
     ],
     image: img1,
-    category: "ui & ux",
-    pages: "0/7",
-    messageCount: "05",
-    link: "02",
-    date: "31 Jan,2024",
-    time: "5:19pm",
-    list: [
-      {
-        id: "item-1",
-        title: "Collect Data",
-      },
-      {
-        id: "item-2",
-        title: "Collect Icons",
-      },
-      {
-        id: "item-1",
-        title: "Make Project Layout",
-      },
-    ],
-  },
-  {
-    boardId: demoBoards[1].id,
-    id: "8613e1d1-2046-4f0e-bacb-dca57db5b1a9",
-    title: "Faz. Santana",
-    size: "Fazenda Pequena",
-    desc: "Nome: Antonio Queiroz \n Telefone: (22) 9 9909-0909",
-    status: "completed",
-    tags: ["development", "planning"],
-    priority: "low",
-    assign: [
-      {
-        name: "João",
-        image: avatar,
-      },
-      {
-        name: "Gabriel",
-        image: avatar,
-      },
-    ],
-    image: img2,
-    category: "ui & ux",
-    pages: "0/7",
-    messageCount: "05",
-    link: "02",
-    date: "31 Jan,2024",
-    time: "5:19pm",
-    list: [
-      {
-        id: "item-1",
-        title: "Collect Data",
-      },
-      {
-        id: "item-2",
-        title: "Collect Icons",
-      },
-      {
-        id: "item-1",
-        title: "Make Project Layout",
-      },
-    ],
-  },
-  {
-    boardId: demoBoards[2].id,
-    id: "e0e88989-0876-4f1f-9e07-3b69e7e6e05c",
-    title: "Faz. Boi Gordo",
-    size: "Fazenda Grande",
-    desc: "Nome: Vitor Cardoso \n Telefone: (11) 9 9909-0909",
-    status: "inprogress",
-    tags: ["development", "planning"],
-    priority: "medium",
-    assign: [
-      {
-        name: "João",
-        image: avatar,
-      },
-      {
-        name: "Gabriel",
-        image: avatar,
-      },
-      {
-        name: "Victor",
-        image: avatar,
-      },
-      {
-        name: "Maycon",
-        image: avatar,
-      },
-    ],
-    image: img3,
     category: "ui & ux",
     pages: "0/7",
     messageCount: "05",
