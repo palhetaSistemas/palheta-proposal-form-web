@@ -31,16 +31,19 @@ export const updateProject = async (id: Project["id"], project: Project) => {
 // board
 export const getBoards = async () => {
   const response = await api.get("/boards");
+  console.log("response getBoards", response);
   return response.data;
 };
 
 export const getBoards2 = async () => {
   const response = await api.get("/boards2");
+  console.log("response getBoards2", response);
   return response.data;
 };
 
 export const getBoards3 = async () => {
   const response = await api.get("/boards3");
+  console.log("response getBoards3", response);
   return response.data;
 };
 
@@ -63,11 +66,13 @@ export const swapBoard = async (data: any) => {
 // tasks
 export const getTasks = async () => {
   const response = await api.get("/tasks");
+  console.log("response getTasks", response);
   return response.data;
 };
 
 export const getTasks2 = async () => {
   const response = await api.get("/tasks2");
+  console.log("response getTasks2", response);
   return response.data;
 };
 

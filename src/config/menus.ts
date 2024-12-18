@@ -449,7 +449,7 @@ export const menusConfig = {
               },
               {
                 title: "Sign In 04",
-                href: "/auth/login4",
+                href: "/login",
               },
               {
                 title: "Sign In 05",
@@ -1214,7 +1214,7 @@ export const menusConfig = {
           },
           {
             title: "Sign In 04",
-            href: "/auth/login4",
+            href: "/login",
           },
           {
             title: "Sign In 05",

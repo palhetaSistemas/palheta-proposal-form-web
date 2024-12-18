@@ -1,4 +1,4 @@
-import background from "@/public/images/logo/logo_bg.png";
+import background from "@/public/images/staticDataImage/loginBg.png";
 import LogInForm from "./login-form";
 import Image from "next/image";
 
@@ -9,16 +9,17 @@ const LoginPage = () => {
         <div className=" lg:basis-1/2 w-full lg:min-w-[600px] flex justify-start items-center relative lg:pr-12 xl:pr-20 2xl:pr-[110px] px-5">
           <LogInForm />
         </div>
-        <div className="bg-gradient-to-r from-[#8f1220] to-black w-screen h-screen lg:flex  hidden">
+        <div className="bg-gradient-to-r from-primary to-black w-1/2 h-screen lg:flex relative hidden">
           <Image
             src={background}
             alt="background"
             quality={100}
             priority
-            className="absolute right-0 h-full object-contain w-max top-1/2 -translate-y-1/2"
-            height={500}
-            width={500}
+            className="absolute right-0 h-full object-cover w-full top-1/2 -translate-y-1/2"
+            height={1000}
+            width={1000}
           />
+          <div className="absolute bg-gradient-to-br from-[#D4AF37] to-primary opacity-50 w-full h-full" />
         </div>
       </div>
     </div>

@@ -45,7 +45,7 @@ const LogInForm = () => {
     resolver: zodResolver(schema),
     mode: "all",
     defaultValues: {
-      email: "foco@exemplo.com.br",
+      email: "palheta@exemplo.com.br",
       password: "1234",
     },
   });
@@ -94,11 +94,11 @@ const LogInForm = () => {
           Login
         </div>
         <div className="2xl:text-lg text-base text-default-900 mt-2 leading-6">
-          Entre agora no sistema oficial do Grupo Foco
+          Entre agora no sistema oficial do Grupo Palheta
         </div>
         <div className="2xl:text-lg text-base text-default-900 mt-2 leading-6 ">
           Se quiser conhecer mais pode{" "}
-          <Link href="#" className="italic text-[#8f1220] underline">
+          <Link href="#" className="italic text-primary underline">
             Clicar aqui agora!
           </Link>
         </div>
@@ -174,11 +174,11 @@ const LogInForm = () => {
               onClick={togglePasswordType}
             >
               {passwordType === "password" ? (
-                <Icon icon="heroicons:eye" className="w-4 h-4 text-[#8f1220]" />
+                <Icon icon="heroicons:eye" className="w-4 h-4 text-primary" />
               ) : (
                 <Icon
                   icon="heroicons:eye-slash"
-                  className="w-4 h-4 text-[#8f1220]"
+                  className="w-4 h-4 text-primary"
                 />
               )}
             </div>
@@ -194,7 +194,7 @@ const LogInForm = () => {
             <div className="flex-1 flex  items-center gap-1.5 ">
               <Checkbox
                 size="sm"
-                className="border-[#8f1220] data-[state=checked]:bg-[#8f1220] mt-[1px]"
+                className="border-primary data-[state=checked]:bg-primary mt-[1px]"
                 id="isRemebered"
               />
               <Label
@@ -206,13 +206,13 @@ const LogInForm = () => {
             </div>
             <Link
               href="#"
-              className="flex-none text-sm text-[#8f1220] hover:text-[#8f1220]/90"
+              className="flex-none text-sm text-primary hover:text-primary/90"
             >
               Esqueceu a senha?
             </Link>
           </div>
           <Button
-            className="w-full bg-[#8f1220] hover:bg-[#8f1220]/90"
+            className="w-full bg-primary hover:bg-primary/90"
             disabled={isPending}
             size={!isDesktop2xl ? "lg" : "md"}
           >
@@ -223,7 +223,7 @@ const LogInForm = () => {
 
         <div className="mt-6 text-center text-base text-default-600">
           Ainda não possui conta?{" "}
-          <Link href="#" className="text-[#8f1220]">
+          <Link href="#" className="text-primary">
             {" "}
             Cadastre-se{" "}
           </Link>
