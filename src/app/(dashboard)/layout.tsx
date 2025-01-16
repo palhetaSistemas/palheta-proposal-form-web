@@ -11,12 +11,6 @@ const layout = async ({
   children: React.ReactNode;
   params: { lang: any };
 }) => {
-  const session = await getServerSession(authOptions as NextAuthOptions);
-
-  if (!session?.user?.email) {
-    redirect("/login");
-  }
-
   const trans = await getDictionary(lang);
 
   return (
