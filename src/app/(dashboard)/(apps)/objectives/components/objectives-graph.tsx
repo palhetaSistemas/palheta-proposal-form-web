@@ -14,11 +14,15 @@ import RevenueChart from "../../../(home)/components/revenue-graph/revenue-chart
 import { Settings2 } from "lucide-react";
 import { HorizontalBarGraph } from "./objectiver-chart";
 
-export function ObjectivesGraph() {
+interface ObjectivesGraphProps {
+  openSheet: () => void;
+}
+
+export function ObjectivesGraph({ openSheet }: ObjectivesGraphProps) {
   return (
     <Card className="h-full">
       <CardHeader className="flex-row justify-between items-center mb-0">
-        <Button>
+        <Button onClick={openSheet}>
           <Settings2 className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> AJUSTAR METAS
         </Button>
         <div className="flex flex-row items-center gap-2">

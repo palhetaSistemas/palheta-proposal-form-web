@@ -423,8 +423,8 @@ const TableWithCards = () => {
                 <Tags className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> PENDENTES
               </Button>
             </div>
-            <div className="items-center flex flex-row gap-4 ">
-              <div className="w-[300px] h-6 rounded-lg flex flex-row items-center gap-1 p-0.5 border border-zinc-400">
+            <div className="items-center flex flex-row  gap-4 ">
+              <div className="w-[300px] h-10 rounded-lg flex flex-row items-center gap-1 p-0.5 border border-zinc-400">
                 <Search className="text-zinc-400 h-4 w-4" />
                 <input
                   className="outline-none text-zinc-400 placeholder:text-zinc-400 flex-w"

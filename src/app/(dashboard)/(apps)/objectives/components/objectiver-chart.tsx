@@ -49,18 +49,19 @@ export function HorizontalBarGraph() {
               {""}
               {indicador.atualValue}
             </div>
-            <div
-              className="h-10 bg-[#013466] rounded-r"
-              style={{
-                width: calculateWidth(indicador.goal, indicador.atualValue),
-              }}
-            ></div>
-
-            <div className="absolute top-[0.2px] left-0.5 w-full ml-[-1px] h-[1px] border-t-2 border-dashed border-[#013466]"></div>
+            <div className="h-10 border  bg-gradient-to-r from-[#3792a9] to-[#013466]  border-[#013466] overflow-hidden rounded-r-lg  w-full">
+              <div className="flex flex-row w-full h-full items-center">
+                <div
+                  className="h-full    rounded-r-lg"
+                  style={{
+                    width: calculateWidth(indicador.goal, indicador.atualValue),
+                  }}
+                ></div>
+                <div className="h-full  bg-white flex-1"></div>
+              </div>
+            </div>
           </div>
-          <div className="h-10 bg-[#013466] w-1" />
-          {/* Valor ao Final */}
-          <div className="w-1/5 text-start pr-8 text-sm  text-[#013466]">
+          <div className="w-1/5 text-start ml-4 pr-8 text-sm  text-[#013466]">
             {indicador.goal}
           </div>
         </div>
