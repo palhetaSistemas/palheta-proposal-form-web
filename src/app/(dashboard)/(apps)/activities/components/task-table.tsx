@@ -266,51 +266,6 @@ const TaskTable = ({
               onClick={handleSidebar}
             />
           )}
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button
-                variant="outline"
-                className="border-default-300 text-default-500"
-              >
-                Filtrar <ChevronDown className="ml-2 h-4 w-4" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="start">
-              <DropdownMenuItem>Asc</DropdownMenuItem>
-              <DropdownMenuItem>Desc</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button
-                variant="outline"
-                className="border-default-300 text-default-500"
-              >
-                Todas Tarefas <ChevronDown className="ml-2 h-4 w-4" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="start">
-              <DropdownMenuItem>Tarefa 1</DropdownMenuItem>
-              <DropdownMenuItem>Tarefa 2</DropdownMenuItem>
-              <DropdownMenuItem>Tarefa 3</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
-        <div className="w-full md:w-fit md:flex-none">
-          <div className="relative">
-            <Search className="w-4 h-4 text-default-400 absolute top-1/2 ltr:left-2 rtl:right-2 -translate-y-1/2" />
-            <Input
-              placeholder="Buscar Tarefas"
-              className="ltr:pl-7 rtl:pr-7 h-10"
-              value={
-                (table.getColumn("title")?.getFilterValue() as string) ?? ""
-              }
-              onChange={(event) =>
-                table.getColumn("title")?.setFilterValue(event.target.value)
-              }
-            />
-          </div>
         </div>
       </CardHeader>
 

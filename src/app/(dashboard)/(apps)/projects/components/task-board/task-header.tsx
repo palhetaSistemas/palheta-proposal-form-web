@@ -11,6 +11,8 @@ import {
 } from "@/src/components/ui/select";
 import { Icon } from "@iconify/react";
 import { Button } from "@/src/components/ui/button";
+import { useState } from "react";
+import { cn } from "@/src/lib/utils";
 
 const TaskHeader = ({
   taskViewHandler,
@@ -21,6 +23,7 @@ const TaskHeader = ({
   openCreateBoard: () => void;
   taskView: string;
 }) => {
+  const [selected, setSelected] = useState("all");
   return (
     <div className="flex items-center flex-wrap justify-between gap-4">
       <div className=" flex items-center   gap-4">
@@ -38,13 +41,34 @@ const TaskHeader = ({
         </div>
       </div>
       <div className=" flex items-center gap-4">
-        <Button className="bg-primary/70">
+        <Button
+          className={cn(
+            "border border-primary font-bold",
+            selected !== "all" && "bg-secondary text-primary"
+          )}
+          onClick={() => setSelected("all")}
+        >
+          {" "}
           <Tags className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> TODOS
         </Button>
-        <Button className="border border-primary font-bold" color="secondary">
+        <Button
+          className={cn(
+            "border border-primary font-bold",
+            selected !== "done" && "bg-secondary text-primary"
+          )}
+          onClick={() => setSelected("done")}
+        >
+          {" "}
           <Tags className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> ENCERRADOS
         </Button>
-        <Button className="border border-primary font-bold" color="secondary">
+        <Button
+          className={cn(
+            "border border-primary font-bold",
+            selected !== "pending" && "bg-secondary text-primary"
+          )}
+          onClick={() => setSelected("pending")}
+        >
+          {" "}
           <Tags className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> A INICIAR
         </Button>
       </div>

@@ -42,8 +42,7 @@ export function IncomeDonutGraph() {
         return `${val.toFixed(1)}%`;
       },
       style: {
-        fontSize: "14px",
-        fontWeight: "bold",
+        fontSize: "10px",
       },
     },
     stroke: {

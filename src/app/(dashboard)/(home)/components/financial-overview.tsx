@@ -9,8 +9,17 @@ import { Button } from "@/src/components/ui/button";
 import Link from "next/link";
 import { useState } from "react";
 import FinanceChart from "./finance-chart";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/src/components/ui/dropdown-menu";
+import { DropdownMenuArrow } from "@radix-ui/react-dropdown-menu";
+import { cn } from "@/src/lib/utils";
 export function FinancialOverview() {
   const [quarter, setQuarter] = useState(0);
+  const [selectedYear, setSelectedYear] = useState(2025);
 
   const seriesFirstQuarter = [
     {
@@ -81,9 +90,48 @@ export function FinancialOverview() {
       <CardHeader className="flex-row justify-between items-center mb-0">
         <CardTitle>Clientes x Receitas x Despesasas</CardTitle>
         <div className="flex flex-row items-center gap-2">
-          <Button type="button" color="primary" asChild>
-            <Link href="#">2024</Link>
-          </Button>
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <Button type="button" color="primary" asChild>
+                <Link href="#">{selectedYear}</Link>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuArrow />
+              <DropdownMenuItem
+                onSelect={() => setSelectedYear(2025)}
+                className={cn(
+                  selectedYear === 2025 && "bg-primary/40 text-white"
+                )}
+              >
+                2025
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                onSelect={() => setSelectedYear(2024)}
+                className={cn(
+                  selectedYear === 2024 && "bg-primary/40 text-white"
+                )}
+              >
+                2024
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                onSelect={() => setSelectedYear(2023)}
+                className={cn(
+                  selectedYear === 2023 && "bg-primary/40 text-white"
+                )}
+              >
+                2023
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                onSelect={() => setSelectedYear(2022)}
+                className={cn(
+                  selectedYear === 2022 && "bg-primary/40 text-white"
+                )}
+              >
+                2022
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
           <Button type="button" color="secondary" asChild>
             <Link href="#">Ver Todos</Link>
           </Button>
