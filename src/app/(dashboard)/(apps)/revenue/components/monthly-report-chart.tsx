@@ -208,6 +208,21 @@ export function MonthlyReportChart() {
           />
         </span>
         <span
+          onClick={() => setSelectedOption("Leads")}
+          className={cn(
+            "text-white cursor-pointer text-sm opacity-50 flex items-center justify-center flex-col gap-0.5",
+            selectedOption === "Leads" && "font-semibold opacity-100"
+          )}
+        >
+          Leads
+          <div
+            className={cn(
+              "w-2/3 h-px hidden bg-white",
+              selectedOption === "Leads" && "block"
+            )}
+          />
+        </span>
+        <span
           onClick={() => setSelectedOption("Conversão")}
           className={cn(
             "text-white cursor-pointer text-sm opacity-50 flex items-center justify-center flex-col gap-0.5",
@@ -219,21 +234,6 @@ export function MonthlyReportChart() {
             className={cn(
               "w-2/3 h-px hidden bg-white",
               selectedOption === "Conversão" && "block"
-            )}
-          />
-        </span>
-        <span
-          onClick={() => setSelectedOption("Conversão1")}
-          className={cn(
-            "text-white cursor-pointer text-sm opacity-50 flex items-center justify-center flex-col gap-0.5",
-            selectedOption === "Conversão1" && "font-semibold opacity-100"
-          )}
-        >
-          Conversão
-          <div
-            className={cn(
-              "w-2/3 h-px hidden bg-white",
-              selectedOption === "Conversão1" && "block"
             )}
           />
         </span>

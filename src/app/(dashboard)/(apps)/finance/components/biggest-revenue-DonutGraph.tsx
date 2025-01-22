@@ -7,8 +7,10 @@ import dynamic from "next/dynamic";
 const ReactApexChart = dynamic(() => import("react-apexcharts"), {
   ssr: false,
 });
-
-export function BiggestRevenueDonutGraph() {
+interface Props {
+  scrollToTable: () => void;
+}
+export function BiggestRevenueDonutGraph({ scrollToTable }: Props) {
   const series = [2200, 850, 1450];
   const labels = ["Cliente A", "Cliente B", "Cliente C"];
 
@@ -122,6 +124,7 @@ export function BiggestRevenueDonutGraph() {
       </CardContent>
       <CardContent className="flex items-center justify-center">
         <Button
+          onClick={scrollToTable}
           color="secondary"
           className="border bg-white border-primary font-bold"
         >

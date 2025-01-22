@@ -25,7 +25,7 @@ export function MonthlyReport() {
     },
     {
       key: "conversion",
-      label: "Conversão",
+      label: "Leads",
     },
     {
       key: "conversion",
@@ -172,32 +172,29 @@ export function MonthlyReport() {
           </TableHeader>
           <TableBody>
             {users.map((item) => (
-              <TableRow key={item.id} className="hover:bg-default-100">
-                <TableCell className="text-sm font-medium text-default-600 py-1 whitespace-nowrap">
+              <TableRow key={item.id} className="hover:bg-default-100 ">
+                <TableCell className="text-sm font-medium text-default-600 py-4 whitespace-nowrap">
                   {item.month}
                 </TableCell>
-                <TableCell className="text-sm font-medium text-default-600 py-1 whitespace-nowrap">
+                <TableCell className="text-sm font-medium text-default-600 py-4 whitespace-nowrap">
+                  {item.conversion}
+                </TableCell>
+                <TableCell className="text-sm font-medium text-default-600 py-4 whitespace-nowrap">
                   {item.conversion.toLocaleString("pt-BR", {
                     style: "currency",
                     currency: "BRL",
                   })}
                 </TableCell>
-                <TableCell className="text-sm font-medium text-default-600 py-1 whitespace-nowrap">
-                  {item.conversion.toLocaleString("pt-BR", {
-                    style: "currency",
-                    currency: "BRL",
-                  })}
-                </TableCell>
-                <TableCell className="text-sm font-medium text-default-600 py-1 whitespace-nowrap">
+                <TableCell className="text-sm font-medium text-default-600 py-4 whitespace-nowrap">
                   {item.contracts}
                 </TableCell>
-                <TableCell className="text-sm font-medium text-default-600 py-1 whitespace-nowrap">
+                <TableCell className="text-sm font-medium text-default-600 py-4 whitespace-nowrap">
                   {item.avgSpend.toLocaleString("pt-BR", {
                     style: "currency",
                     currency: "BRL",
                   })}
                 </TableCell>
-                <TableCell className="text-sm font-medium text-default-600 py-1 whitespace-nowrap">
+                <TableCell className="text-sm font-medium text-default-600 py-4 whitespace-nowrap">
                   {item.revenue.toLocaleString("pt-BR", {
                     style: "currency",
                     currency: "BRL",

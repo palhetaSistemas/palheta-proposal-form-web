@@ -29,6 +29,8 @@ import avatar4 from "@/public/images/avatar/avatar-4.jpg";
 import avatar5 from "@/public/images/avatar/avatar-5.jpg";
 import Link from "next/link";
 import { ScrollArea } from "@/src/components/ui/scroll-area";
+import CreateActivities from "./CreateActivities";
+import { useState } from "react";
 
 const columns = [
   {
@@ -138,54 +140,68 @@ const users: User[] = [
 ];
 
 const Task = () => {
+  const [openActivitiesBoard, setOpenActivitiesBoard] = useState(false);
+  const closeCreateActivitiesBoard = () => {
+    setOpenActivitiesBoard(false);
+  };
   return (
-    <Card className="h-full">
-      <CardHeader className="flex-row justify-between items-center mb-0">
-        <CardTitle>Atividades</CardTitle>
-        <Button type="button" color="secondary" asChild>
-          <Link href="#">+ Atividades</Link>
-        </Button>
-      </CardHeader>
-      <CardContent className="px-0 pb-0 overflow-x-auto h-[30rem]">
-        <ScrollArea>
-          <Table>
-            <TableHeader className="bg-default-200">
-              <TableRow>
-                {columns.map((column) => (
-                  <TableHead
-                    key={column.key}
-                    className="text-sm font-semibold text-default-800 last:text-right  h-12"
-                  >
-                    {column.label}
-                  </TableHead>
-                ))}
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {users.map((item) => (
-                <TableRow key={item.id} className="hover:bg-default-100">
-                  <TableCell className="flex items-center gap-2 py-1">
-                    <Avatar className="h-10 w-10">
-                      <AvatarImage src={item?.avatar?.src} alt="" />
-                      <AvatarFallback>CD</AvatarFallback>
-                    </Avatar>
-                    <span className="text-sm font-medium text-defualt-600 py-1 whitespace-nowrap">
-                      {item.name}
-                    </span>
-                  </TableCell>
-                  <TableCell className="text-sm font-medium text-default-600 py-1 overflow-hidden text-ellipsis whitespace-nowrap max-w-[181px]">
-                    {item.task}
-                  </TableCell>
-                  <TableCell className="text-sm font-medium text-default-600 py-1 whitespace-nowrap">
-                    {item.deadline}
-                  </TableCell>
+    <>
+      <Card className="h-full">
+        <CardHeader className="flex-row justify-between items-center mb-0">
+          <CardTitle>Atividades</CardTitle>
+          <Button
+            onClick={() => setOpenActivitiesBoard(true)}
+            type="button"
+            color="secondary"
+          >
+            <p>+ Atividades</p>
+          </Button>
+        </CardHeader>
+        <CardContent className="px-0 pb-0 overflow-x-auto h-[30rem]">
+          <ScrollArea>
+            <Table>
+              <TableHeader className="bg-default-200">
+                <TableRow>
+                  {columns.map((column) => (
+                    <TableHead
+                      key={column.key}
+                      className="text-sm font-semibold text-default-800 last:text-right  h-12"
+                    >
+                      {column.label}
+                    </TableHead>
+                  ))}
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </ScrollArea>
-      </CardContent>
-    </Card>
+              </TableHeader>
+              <TableBody>
+                {users.map((item) => (
+                  <TableRow key={item.id} className="hover:bg-default-100">
+                    <TableCell className="flex items-center gap-2 py-1">
+                      <Avatar className="h-10 w-10">
+                        <AvatarImage src={item?.avatar?.src} alt="" />
+                        <AvatarFallback>CD</AvatarFallback>
+                      </Avatar>
+                      <span className="text-sm font-medium text-defualt-600 py-1 whitespace-nowrap">
+                        {item.name}
+                      </span>
+                    </TableCell>
+                    <TableCell className="text-sm font-medium text-default-600 py-1 overflow-hidden text-ellipsis whitespace-nowrap max-w-[181px]">
+                      {item.task}
+                    </TableCell>
+                    <TableCell className="text-sm font-medium text-default-600 py-1 whitespace-nowrap">
+                      {item.deadline}
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </ScrollArea>
+        </CardContent>
+      </Card>
+      <CreateActivities
+        open={openActivitiesBoard}
+        onClose={closeCreateActivitiesBoard}
+      />
+    </>
   );
 };
 

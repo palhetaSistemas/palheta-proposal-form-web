@@ -38,6 +38,8 @@ import Image from "next/image";
 import { Calendar, Folder, Plus, Search, Tags } from "lucide-react";
 import { Pagination } from "@/src/components/ui/pagination";
 import DatePickerWithRange from "@/src/components/date-picker-with-range";
+import { useState } from "react";
+import CreateClient from "./CreateClient";
 
 const columns = [
   {
@@ -387,142 +389,153 @@ const TableWithCards = () => {
       isProfit: true,
     },
   ];
-
+  const [openClientBoard, setOpenClientBoard] = useState(false);
+  const closeCreateClientBoard = () => {
+    setOpenClientBoard(false);
+  };
   return (
-    <Card className="h-full">
-      <CardHeader className="flex-row justify-between items-center mb-0">
-        <div className="flex flex-row w-full items-center">
-          <div className="flex flex-col w-2/3 gap-4 justify-between">
-            <div className="flex flex-row items-center gap-2 ">
-              <Button>
-                <Plus className="w-4 h-4 ltr:mr-1 rtl:ml-1" />
-                Adicionar Cliente
-              </Button>
-              <Button
-                className="bg-white border border-primary "
-                color="secondary"
-              >
-                <Tags className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> GERAL
-              </Button>
-              <Button
-                className="bg-primary/70 text-white border border-primary "
-                color="secondary"
-              >
-                <Tags className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> CONTRATADOS
-              </Button>
-              <Button
-                className="bg-white border border-primary "
-                color="secondary"
-              >
-                <Tags className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> NEGATIVADO
-              </Button>
-              <Button
-                className="bg-white border border-primary "
-                color="secondary"
-              >
-                <Tags className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> PENDENTES
-              </Button>
-            </div>
-            <div className="items-center flex flex-row  gap-4 ">
-              <div className="w-[300px] h-10 rounded-lg flex flex-row items-center gap-1 p-0.5 border border-zinc-400">
-                <Search className="text-zinc-400 h-4 w-4" />
-                <input
-                  className="outline-none text-zinc-400 placeholder:text-zinc-400 flex-w"
-                  placeholder="Procurar"
-                />
-              </div>
-              <Button
-                className="bg-white border border-primary "
-                color="secondary"
-              >
-                <Calendar className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> Selecionar
-                Data
-              </Button>
-            </div>
-          </div>
-          <div className="flex items-center flex-1  w-1/3 flex-row justify-end gap-4">
-            {cards.map((item) => (
-              <div
-                style={{ backgroundImage: `url(${item.imageSrc})` }}
-                className="flex relative flex-col items-center justify-evenly text-center text-white h-24  w-28 border border-[#013466] shadow-md  bg-cover bg-center bg-no-repeat shadow-[#013466] overflow-hidden rounded-lg"
-              >
-                <h3 className="text-[10px]">{item.title}</h3>
-                <h3 className="text-md font-bold">{item.total}</h3>
-                <h3 className="text-sm">{item.price}</h3>
-              </div>
-            ))}
-          </div>
-        </div>
-      </CardHeader>
-      <CardContent className="px-0 pb-0 overflow-x-auto">
-        <Table>
-          <TableHeader className="">
-            <TableRow className="gap-[1px]">
-              {columns.map((column) => (
-                <TableHead
-                  key={column.key}
-                  className="text-sm font-semibold text-center uppercase h-12 last:text-start "
+    <>
+      <Card className="h-full">
+        <CardHeader className="flex-row justify-between items-center mb-0">
+          <div className="flex flex-row w-full items-center">
+            <div className="flex flex-col w-2/3 gap-4 justify-between">
+              <div className="flex flex-row items-center gap-2 ">
+                <Button onClick={() => setOpenClientBoard(true)}>
+                  <Plus className="w-4 h-4 ltr:mr-1 rtl:ml-1" />
+                  Adicionar Cliente
+                </Button>
+                <Button
+                  className="bg-white border border-primary "
+                  color="secondary"
                 >
-                  {column.label}
-                </TableHead>
+                  <Tags className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> GERAL
+                </Button>
+                <Button
+                  className="bg-primary/70 text-white border border-primary "
+                  color="secondary"
+                >
+                  <Tags className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> CONTRATADOS
+                </Button>
+                <Button
+                  className="bg-white border border-primary "
+                  color="secondary"
+                >
+                  <Tags className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> NEGATIVADO
+                </Button>
+                <Button
+                  className="bg-white border border-primary "
+                  color="secondary"
+                >
+                  <Tags className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> PENDENTES
+                </Button>
+              </div>
+              <div className="items-center flex flex-row  gap-4 ">
+                <div className="w-[300px] h-10 rounded-lg flex flex-row items-center gap-1 p-0.5 border border-zinc-400">
+                  <Search className="text-zinc-400 h-4 w-4" />
+                  <input
+                    className="outline-none text-zinc-400 placeholder:text-zinc-400 flex-w"
+                    placeholder="Procurar"
+                  />
+                </div>
+                <Button
+                  className="bg-white border border-primary "
+                  color="secondary"
+                >
+                  <Calendar className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> Selecionar
+                  Data
+                </Button>
+              </div>
+            </div>
+            <div className="flex items-center flex-1  w-1/3 flex-row justify-end gap-4">
+              {cards.map((item) => (
+                <div
+                  style={{ backgroundImage: `url(${item.imageSrc})` }}
+                  className="flex relative flex-col items-center justify-evenly text-center text-white h-24  w-28 border border-[#013466] shadow-md  bg-cover bg-center bg-no-repeat shadow-[#013466] overflow-hidden rounded-lg"
+                >
+                  <h3 className="text-[10px]">{item.title}</h3>
+                  <h3 className="text-md font-bold">{item.total}</h3>
+                  <h3 className="text-sm">{item.price}</h3>
+                </div>
               ))}
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {transactions.map((transaction) => (
-              <TableRow key={transaction.id} className="hover:bg-default-100">
-                <TableCell className="text-sm font-medium  py-1 ">
-                  <div
-                    className={` ${
-                      transaction.isProfit ? "bg-primary" : "bg-[#DC2626]"
-                    } rounded-md overflow-hidden flex py-1  items-center justify-center`}
+            </div>
+          </div>
+        </CardHeader>
+        <CardContent className="px-0 pb-0 overflow-x-auto">
+          <Table>
+            <TableHeader className="">
+              <TableRow className="gap-[1px]">
+                {columns.map((column) => (
+                  <TableHead
+                    key={column.key}
+                    className={`text-sm font-semibold ${
+                      column.label === "Date" ? "" : ""
+                    }  text-end  flex-row  uppercase h-12 last:text-start `}
                   >
-                    <Image
-                      src={"/images/folderIcon.svg"}
-                      alt=""
-                      width={500}
-                      height={500}
-                      className="h-5 w-5"
-                    />
-                  </div>
-                </TableCell>
-                <TableCell className="text-sm font-medium text-[#020817]  py-1 whitespace-nowrap">
-                  {transaction.origin}
-                </TableCell>
-                <TableCell className="text-sm   text-[#475569] font-bold py-1 whitespace-nowrap">
-                  {transaction.date}
-                </TableCell>
-                <TableCell className="text-sm font-medium text-primary py-1 whitespace-nowrap">
-                  {transaction.value}
-                </TableCell>
-                <TableCell className="text-sm font-medium text-primar py-1 whitespace-nowrap">
-                  {transaction.project}
-                </TableCell>
-                <TableCell className="text-sm font-medium text-primar py-1 whitespace-nowrap">
-                  {transaction.destinationAccount}
-                </TableCell>
-                <TableCell className="text-sm font-medium text-primar py-1 whitespace-nowrap">
-                  {transaction.monthReference}
-                </TableCell>
-                <TableCell
-                  className={`text-sm py-1  flex items-center justify-end text-primary font-bold  `}
-                >
-                  <div
-                    className={` rounded-full px-2 ${
-                      transaction.status === "PAID"
-                        ? "bg-[#22C55E]/50"
-                        : "bg-[#DC2626]/50"
-                    }`}
-                  >
-                    {transaction.status}
-                  </div>
-                </TableCell>
+                    <p className="text-center">{column.label}</p>
+                  </TableHead>
+                ))}
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </CardContent>
-    </Card>
+            </TableHeader>
+            <TableBody>
+              {transactions.map((transaction) => (
+                <TableRow
+                  key={transaction.id}
+                  className="hover:bg-default-100 text-center"
+                >
+                  <TableCell className="text-sm font-medium  py-4 ">
+                    <div
+                      className={` ${
+                        transaction.isProfit ? "bg-primary" : "bg-[#DC2626]"
+                      } rounded-md overflow-hidden flex py-4  items-center justify-center`}
+                    >
+                      <Image
+                        src={"/images/folderIcon.svg"}
+                        alt=""
+                        width={500}
+                        height={500}
+                        className="h-5 w-5"
+                      />
+                    </div>
+                  </TableCell>
+                  <TableCell className="text-sm font-medium text-[#020817] text-center  py-4 whitespace-nowrap">
+                    {transaction.origin}
+                  </TableCell>
+                  <TableCell className="text-sm   text-[#475569] font-bold py-4 whitespace-nowrap">
+                    {transaction.date}
+                  </TableCell>
+                  <TableCell className="text-sm font-medium text-primary py-4 whitespace-nowrap">
+                    {transaction.value}
+                  </TableCell>
+                  <TableCell className="text-sm font-medium text-primar py-4 whitespace-nowrap">
+                    {transaction.project}
+                  </TableCell>
+                  <TableCell className="text-sm font-medium text-primar py-4 whitespace-nowrap">
+                    {transaction.destinationAccount}
+                  </TableCell>
+                  <TableCell className="text-sm font-medium text-primar py-4 whitespace-nowrap">
+                    {transaction.monthReference}
+                  </TableCell>
+                  <TableCell
+                    className={`text-sm font-medium text-primar py-4 whitespace-nowrap items-center justify-center `}
+                  >
+                    <div
+                      className={` rounded-full self-center text-center  ${
+                        transaction.status === "PAID"
+                          ? "bg-[#22C55E]/50"
+                          : "bg-[#DC2626]/50"
+                      }`}
+                    >
+                      {transaction.status}
+                    </div>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </CardContent>
+      </Card>
+      <CreateClient open={openClientBoard} onClose={closeCreateClientBoard} />
+    </>
   );
 };
 

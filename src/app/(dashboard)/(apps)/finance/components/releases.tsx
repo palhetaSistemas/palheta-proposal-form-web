@@ -126,7 +126,7 @@ export function Releases() {
   return (
     <Card className="h-full">
       <CardHeader className="flex-row justify-between items-center mb-0">
-        <Button>LANÇAMENTO</Button>
+        <CardTitle>Dashboard</CardTitle>
         <div className="flex flex-row items-center gap-2">
           <Button type="button" color="primary" asChild>
             <Link href="#">2024</Link>

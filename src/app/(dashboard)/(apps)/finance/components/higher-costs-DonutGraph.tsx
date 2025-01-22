@@ -7,8 +7,10 @@ import dynamic from "next/dynamic";
 const ReactApexChart = dynamic(() => import("react-apexcharts"), {
   ssr: false,
 });
-
-export function HigherCostsDonutGraph() {
+interface Props {
+  scrollToTable: () => void;
+}
+export function HigherCostsDonutGraph({ scrollToTable }: Props) {
   const series = [2200, 850, 1450];
   const labels = ["Colaboradores", "Escritório", "Viagens e Vales"];
 
@@ -123,6 +125,7 @@ export function HigherCostsDonutGraph() {
       <CardContent className="flex items-center justify-center">
         <Button
           color="secondary"
+          onClick={scrollToTable}
           className="border bg-white border-primary font-bold"
         >
           <Tags className="w-4 h-4 ltr:mr-1 rtl:ml-1" />

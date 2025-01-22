@@ -12,6 +12,9 @@ import {
 import Image from "next/image";
 import { Plus, Search, Tags } from "lucide-react";
 import { Pagination } from "@/src/components/ui/pagination";
+import { useState } from "react";
+import CreateTask from "./CreateLaunch";
+import CreateLaunch from "./CreateLaunch";
 
 interface User {
   id: number;
@@ -140,127 +143,137 @@ const TableWithCards = () => {
       isProfit: true,
     },
   ];
-
+  const [openLaunchBoard, setOpenLaunchBoard] = useState(false);
+  const closeCreateLaunchBoard = () => {
+    setOpenLaunchBoard(false);
+  };
   return (
-    <Card className="h-full">
-      <CardHeader className="flex-row justify-between items-center mb-0">
-        <div className="flex flex-row w-full items-center">
-          <div className="flex flex-col w-1/2 gap-4 justify-between">
-            <div className="flex flex-row items-center gap-2 justify-between">
-              <Button>
-                <Plus className="w-4 h-4 ltr:mr-1 rtl:ml-1" />
-                LANÇAMENTO
-              </Button>
-              <Button
-                className="bg-white border border-primary "
-                color="secondary"
-              >
-                <Tags className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> BALANÇO
-              </Button>
-              <Button
-                className="bg-primary/70 text-white border border-primary "
-                color="secondary"
-              >
-                <Tags className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> ENTRADAS E SAÍDAS
-              </Button>
-              <Button
-                className="bg-white border border-primary "
-                color="secondary"
-              >
-                <Tags className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> INVESTIMENTOS
-              </Button>
-            </div>
-            <div className="w-full h-6 rounded-lg flex flex-row items-center gap-1 p-0.5 border border-zinc-400">
-              <Search className="text-zinc-400 h-4 w-4" />
-              <input
-                className="outline-none text-zinc-400 placeholder:text-zinc-400 flex-w"
-                placeholder="Procurar"
-              />
-            </div>
-          </div>
-          <div className="flex items-center flex-1  w-[40%] flex-row justify-evenly">
-            {cards.map((item) => (
-              <div
-                style={{ backgroundImage: `url(${item.imageSrc})` }}
-                className="flex relative flex-col items-center justify-evenly text-center text-white h-24  w-28 border border-[#013466] shadow-md  bg-cover bg-center bg-no-repeat shadow-[#013466] overflow-hidden rounded-lg"
-              >
-                <h3 className="text-[10px]">{item.title}</h3>
-                <h3 className="text-sm font-bold">{item.total}</h3>
-                <h3 className="text-sm">{item.price}</h3>
+    <>
+      <Card className="h-full">
+        <CardHeader className="flex-row justify-between items-center mb-0">
+          <div className="flex flex-row w-full items-center">
+            <div className="flex flex-col w-1/2 gap-4 justify-between">
+              <div className="flex flex-row items-center gap-2 justify-between">
+                <Button
+                  onClick={() => setOpenLaunchBoard(true)}
+                  color="primary"
+                >
+                  <Plus className="w-4 h-4 ltr:mr-1 rtl:ml-1" />
+                  LANÇAMENTO
+                </Button>
+                <Button
+                  className="bg-white border border-primary "
+                  color="secondary"
+                >
+                  <Tags className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> BALANÇO
+                </Button>
+                <Button
+                  className="bg-primary/70 text-white border border-primary "
+                  color="secondary"
+                >
+                  <Tags className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> ENTRADAS E
+                  SAÍDAS
+                </Button>
+                <Button
+                  className="bg-white border border-primary "
+                  color="secondary"
+                >
+                  <Tags className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> INVESTIMENTOS
+                </Button>
               </div>
-            ))}
-          </div>
-        </div>
-      </CardHeader>
-      <CardContent className="px-0 pb-0 overflow-x-auto">
-        <Table>
-          <TableHeader className="- pr-8">
-            <TableRow className="gap-[1px] ">
-              {columns.map((column) => (
-                <TableHead
-                  key={column.key}
-                  className="text-sm font-semibold self-center  text-center h-12 last:text-start "
-                >
-                  {column.label}
-                </TableHead>
+              <div className="w-full h-6 rounded-lg flex flex-row items-center gap-1 p-0.5 border border-zinc-400">
+                <Search className="text-zinc-400 h-4 w-4" />
+                <input
+                  className="outline-none text-zinc-400 placeholder:text-zinc-400 flex-w"
+                  placeholder="Procurar"
+                />
+              </div>
+            </div>
+            <div className="flex items-center flex-1  w-[40%] flex-row justify-end gap-4">
+              {cards.map((item) => (
+                <div className="flex relative flex-col items-center justify-evenly text-center bg-primary text-white h-24  w-28 border border-[#013466] shadow-md  bg-cover bg-center bg-no-repeat shadow-[#013466] overflow-hidden rounded-lg">
+                  <h3 className="text-[10px]">{item.title}</h3>
+                  <h3 className="text-sm font-bold">{item.total}</h3>
+                  <h3 className="text-sm">{item.price}</h3>
+                </div>
               ))}
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {transactions.map((transaction) => (
-              <TableRow key={transaction.id} className="hover:bg-default-100">
-                <TableCell className="text-sm font-medium  py-1 ">
-                  <div
-                    className={` ${
-                      transaction.isProfit ? "bg-primary" : "bg-[#DC2626]"
-                    } rounded-md overflow-hidden flex py-1  items-center justify-center`}
+            </div>
+          </div>
+        </CardHeader>
+        <CardContent className="px-0 pb-0 overflow-x-auto">
+          <Table>
+            <TableHeader className="- pr-8">
+              <TableRow className="gap-[1px] ">
+                {columns.map((column) => (
+                  <TableHead
+                    key={column.key}
+                    className="text-sm font-semibold self-center  text-center h-12 last:text-start "
                   >
-                    <Image
-                      src={"/images/folderIcon.svg"}
-                      alt=""
-                      width={500}
-                      height={500}
-                      className="h-5 w-5"
-                    />
-                  </div>
-                </TableCell>
-                <TableCell className="text-sm font-medium text-[#020817]  py-1 whitespace-nowrap">
-                  {transaction.origin}
-                </TableCell>
-                <TableCell className="text-sm   text-[#475569] font-bold py-1 whitespace-nowrap">
-                  {transaction.date}
-                </TableCell>
-                <TableCell className="text-sm font-bold text-primary py-1 whitespace-nowrap">
-                  {transaction.value}
-                </TableCell>
-                <TableCell className="text-sm font-medium text-primar py-1 whitespace-nowrap">
-                  {transaction.project}
-                </TableCell>
-                <TableCell className="text-sm font-medium  text-primar py-1 whitespace-nowrap">
-                  {transaction.destinationAccount}
-                </TableCell>
-                <TableCell className="text-sm font-medium text-primar py-1 whitespace-nowrap">
-                  {transaction.monthReference}
-                </TableCell>
-                <TableCell
-                  className={`text-sm py-1  flex items-center justify-end text-primary font-bold  `}
-                >
-                  <div
-                    className={` rounded-full px-2 ${
-                      transaction.status === "PAID"
-                        ? "bg-[#22C55E]/50"
-                        : "bg-[#DC2626]/50"
-                    }`}
-                  >
-                    {transaction.status === "PAID" ? "PAGO" : "ABERTO"}
-                  </div>
-                </TableCell>
+                    <p className="text-center">{column.label}</p>
+                  </TableHead>
+                ))}
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </CardContent>
-    </Card>
+            </TableHeader>
+            <TableBody>
+              {transactions.map((transaction) => (
+                <TableRow
+                  key={transaction.id}
+                  className="hover:bg-default-100 text-center"
+                >
+                  <TableCell className="text-sm font-medium  py-1 ">
+                    <div
+                      className={` ${
+                        transaction.isProfit ? "bg-primary" : "bg-[#DC2626]"
+                      } rounded-md overflow-hidden flex py-1  items-center justify-center`}
+                    >
+                      <Image
+                        src={"/images/folderIcon.svg"}
+                        alt=""
+                        width={500}
+                        height={500}
+                        className="h-5 w-5"
+                      />
+                    </div>
+                  </TableCell>
+                  <TableCell className="text-sm font-medium text-[#020817]  py-1 whitespace-nowrap">
+                    {transaction.origin}
+                  </TableCell>
+                  <TableCell className="text-sm   text-[#475569] font-bold py-1 whitespace-nowrap">
+                    {transaction.date}
+                  </TableCell>
+                  <TableCell className="text-sm font-bold text-primary py-1 whitespace-nowrap">
+                    {transaction.value}
+                  </TableCell>
+                  <TableCell className="text-sm font-medium text-primar py-1 whitespace-nowrap">
+                    {transaction.project}
+                  </TableCell>
+                  <TableCell className="text-sm font-medium  text-primar py-1 whitespace-nowrap">
+                    {transaction.destinationAccount}
+                  </TableCell>
+                  <TableCell className="text-sm font-medium text-primar py-1 whitespace-nowrap">
+                    {transaction.monthReference}
+                  </TableCell>
+                  <TableCell
+                    className={`text-sm font-medium text-primar py-4 whitespace-nowrap items-center justify-center `}
+                  >
+                    <div
+                      className={` rounded-full self-center text-center  ${
+                        transaction.status === "PAID"
+                          ? "bg-[#22C55E]/50"
+                          : "bg-[#DC2626]/50"
+                      }`}
+                    >
+                      {transaction.status}
+                    </div>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </CardContent>
+      </Card>
+      <CreateLaunch open={openLaunchBoard} onClose={closeCreateLaunchBoard} />
+    </>
   );
 };
 
