@@ -2,6 +2,7 @@ import TaskBoard from "./components/task-board";
 import { projectsBoards } from "@/src/@staticData/projects/boards";
 import { projectsTasks } from "@/src/@staticData/projects/tasks";
 import { projectsSubTasks } from "@/src/@staticData/projects/subtasks";
+import { Gantt } from "./components/gantt";
 
 const Projects = async () => {
   return (
@@ -16,6 +17,7 @@ const Projects = async () => {
         tasks={projectsTasks}
         subTasks={projectsSubTasks}
       />
+      <Gantt />
     </>
   );
 };
