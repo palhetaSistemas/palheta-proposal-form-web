@@ -31,9 +31,9 @@ const clients = [
   { value: "3", label: "Cliente 3" },
 ];
 const sizes = [
-  { value: "small", label: "Fazenda Pequena" },
-  { value: "medium", label: "Fazenda Média" },
-  { value: "large", label: "Fazenda Grande" },
+  { value: "small", label: "Orçamento Pequena" },
+  { value: "medium", label: "Orçamento Média" },
+  { value: "large", label: "Orçamento Grande" },
 ];
 const prioriy = [
   { value: "high", label: "High" },
@@ -50,7 +50,7 @@ const colorStyles = {
     };
   },
 };
-const CreateClient = ({
+const CreateBudget = ({
   open,
   onClose,
 }: {
@@ -64,16 +64,16 @@ const CreateClient = ({
       <SheetContent className="pt-5">
         <SheetHeader className="flex-row items-center justify-between mb-4">
           <span className="text-lg font-semibold text-default-900">
-            Criar Cliente
+            Criar Orçamento
           </span>
         </SheetHeader>
         <form className=" h-full flex flex-col justify-between">
           <div className="space-y-4">
             <div>
               <Label htmlFor="farmName" className="mb-1.5 text-default-600">
-                Nome da Fazenda*
+                Nome do Orçamento*
               </Label>
-              <Input id="farmName" placeholder="Nome da Fazenda" />
+              <Input id="farmName" placeholder="Nome do Orçamento" />
             </div>
             <div>
               <Label htmlFor="phone" className="mb-1.5 text-default-600">
@@ -89,14 +89,14 @@ const CreateClient = ({
             </div>
             <div>
               <Label htmlFor="size" className="mb-1.5 text-default-600">
-                Tamanho da Fazenda
+                Tamanho do Orçamento
               </Label>
               <Select
                 className="react-select"
                 classNamePrefix="select"
                 options={sizes}
                 styles={colorStyles}
-                placeholder="Tamanho da Tarefa"
+                placeholder="Tamanho do Orçamento"
               />
             </div>
           </div>
@@ -106,7 +106,7 @@ const CreateClient = ({
                 Cancelar
               </Button>
             </SheetClose>
-            <Button>Criar Cliente</Button>
+            <Button>Criar Orçamento</Button>
           </SheetFooter>
         </form>
       </SheetContent>
@@ -114,4 +114,4 @@ const CreateClient = ({
   );
 };
 
-export default CreateClient;
+export default CreateBudget;

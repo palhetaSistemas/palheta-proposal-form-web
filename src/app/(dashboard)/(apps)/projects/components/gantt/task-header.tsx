@@ -66,7 +66,7 @@ const TaskHeader = ({ openCreateBoard }: { openCreateBoard: () => void }) => {
       </div>
       <div className="flex-none flex items-center gap-4">
         <Button onClick={openCreateBoard}>
-          <Plus className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> Novo Projeto
+          <Plus className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> Novo Orçamento
         </Button>
       </div>
     </div>

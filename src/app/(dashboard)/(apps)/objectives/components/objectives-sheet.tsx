@@ -52,7 +52,7 @@ const ObjectivesSheet = ({
       100,
       Math.max(0, parseInt(inputValue.replace(/[^\d]/g, ""), 10) || 0)
     );
-    setConversion(numericValue);
+    setConversion(numericValue.toString());
   }
 
   function handleSliderChange(e: React.ChangeEvent<HTMLInputElement>) {

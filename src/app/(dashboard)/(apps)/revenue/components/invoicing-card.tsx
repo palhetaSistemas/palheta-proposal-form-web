@@ -12,6 +12,14 @@ import FinanceChart from "./invoicing-chart";
 import { ApexOptions } from "apexcharts";
 import { cn } from "@/src/lib/utils";
 import dynamic from "next/dynamic";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/src/components/ui/dropdown-menu";
+import Link from "next/link";
+import { DropdownMenuArrow } from "@radix-ui/react-dropdown-menu";
 const ReactApexChart = dynamic(() => import("react-apexcharts"), {
   ssr: false,
 });
@@ -149,6 +157,7 @@ export function InvoicingCard() {
   }, [graphsSelected]);
 
   const [quarter, setQuarter] = useState(0); // 0: Mensal, 1: Trimestral, 2: Anual
+  const [selectedYear, setSelectedYear] = useState(2025);
 
   const seriesData = {
     0: [
@@ -212,10 +221,48 @@ export function InvoicingCard() {
       <CardHeader className="flex-row justify-between items-center mb-0">
         <CardTitle>Dados de Faturamento</CardTitle>
         <div className="flex flex-row items-center gap-2">
-          <Button type="button" color="primary">
-            <span>2024</span>
-            <ChevronDown className="w-4 h-4" />
-          </Button>
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <Button type="button" color="primary" asChild>
+                <Link href="#">{selectedYear}</Link>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuArrow />
+              <DropdownMenuItem
+                onSelect={() => setSelectedYear(2025)}
+                className={cn(
+                  selectedYear === 2025 && "bg-primary/40 text-white"
+                )}
+              >
+                2025
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                onSelect={() => setSelectedYear(2024)}
+                className={cn(
+                  selectedYear === 2024 && "bg-primary/40 text-white"
+                )}
+              >
+                2024
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                onSelect={() => setSelectedYear(2023)}
+                className={cn(
+                  selectedYear === 2023 && "bg-primary/40 text-white"
+                )}
+              >
+                2023
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                onSelect={() => setSelectedYear(2022)}
+                className={cn(
+                  selectedYear === 2022 && "bg-primary/40 text-white"
+                )}
+              >
+                2022
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </CardHeader>
 

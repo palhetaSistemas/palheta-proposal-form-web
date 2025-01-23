@@ -31,7 +31,7 @@ import { createPortal } from "react-dom";
 import { budgetBoardType } from "@/src/@staticData/budgets/boards";
 import { budgetTaskType } from "@/src/@staticData/budgets/tasks";
 import { budgetSubTaskType } from "@/src/@staticData/budgets/subtasks";
-import CreateClient from "../CreateClient";
+import CreateBudget from "../CreateBudget";
 const wait = () => new Promise((resolve) => setTimeout(resolve, 1000));
 
 interface TaskBoardProps {
@@ -270,7 +270,7 @@ const TaskBoard = ({ boards, tasks, subTasks }: TaskBoardProps) => {
           </Button>
         </Blank>
       )}
-      <CreateClient open={open} onClose={closeCreateBoard} />
+      <CreateBudget open={open} onClose={closeCreateBoard} />
       <TaskSheet
         open={open3}
         onClose={closeUpdateTaskHandler}

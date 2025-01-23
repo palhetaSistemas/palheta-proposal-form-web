@@ -31,9 +31,9 @@ const clients = [
   { value: "3", label: "Cliente 3" },
 ];
 const sizes = [
-  { value: "small", label: "Fazenda Pequena" },
-  { value: "medium", label: "Fazenda Média" },
-  { value: "large", label: "Fazenda Grande" },
+  { value: "small", label: "Tarefa Pequena" },
+  { value: "medium", label: "Tarefa Média" },
+  { value: "large", label: "Tarefa Grande" },
 ];
 const prioriy = [
   { value: "high", label: "High" },
@@ -45,12 +45,12 @@ const colorStyles = {
   option: (styles: any, { data, isDisabled, isFocused, isSelected }: any) => {
     return {
       ...styles,
-      color: isSelected ? "#000" : "#fff",
-      background: isSelected ? "#fff" : "#000",
+      color: isSelected ? "#fff" : "#000",
+      background: isSelected ? "#000" : "#fff",
     };
   },
 };
-const CreateActivities = ({
+const CreateTasks = ({
   open,
   onClose,
 }: {
@@ -64,16 +64,16 @@ const CreateActivities = ({
       <SheetContent className="pt-5">
         <SheetHeader className="flex-row items-center justify-between mb-4">
           <span className="text-lg font-semibold text-default-900">
-            Criar Atividade
+            Criar Tarefa
           </span>
         </SheetHeader>
         <form className=" h-full flex flex-col justify-between">
           <div className="space-y-4">
             <div>
               <Label htmlFor="farmName" className="mb-1.5 text-default-600">
-                Nome da Fazenda*
+                Nome da Tarefa*
               </Label>
-              <Input id="farmName" placeholder="Nome da Fazenda" />
+              <Input id="farmName" placeholder="Nome da Tarefa" />
             </div>
             <div>
               <Label htmlFor="phone" className="mb-1.5 text-default-600">
@@ -89,7 +89,7 @@ const CreateActivities = ({
             </div>
             <div>
               <Label htmlFor="size" className="mb-1.5 text-default-600">
-                Tamanho da Fazenda
+                Tamanho da Tarefa
               </Label>
               <Select
                 className="react-select"
@@ -106,7 +106,7 @@ const CreateActivities = ({
                 Cancelar
               </Button>
             </SheetClose>
-            <Button>Criar Atividade</Button>
+            <Button>Criar Tarefa</Button>
           </SheetFooter>
         </form>
       </SheetContent>
@@ -114,4 +114,4 @@ const CreateActivities = ({
   );
 };
 
-export default CreateActivities;
+export default CreateTasks;

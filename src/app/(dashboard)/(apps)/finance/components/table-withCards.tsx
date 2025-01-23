@@ -15,6 +15,7 @@ import { Pagination } from "@/src/components/ui/pagination";
 import { useState } from "react";
 import CreateTask from "./CreateLaunch";
 import CreateLaunch from "./CreateLaunch";
+import { cn } from "@/src/lib/utils";
 
 interface User {
   id: number;
@@ -30,28 +31,28 @@ const TableWithCards = () => {
       id: 1,
       title: "QNT. PROJETOS",
       total: "20",
-      price: "R$:10,234",
+      price: "R$10,234",
       imageSrc: "images/tableCard.png",
     },
     {
       id: 2,
       title: "QNT. PROJETOS",
       total: "20",
-      price: "R$:10,234",
+      price: "R$10,234",
       imageSrc: "images/tableCard2.png",
     },
     {
       id: 3,
       title: "PROJETADO",
       total: "20",
-      price: "R$:10,234",
+      price: "R$10,234",
       imageSrc: "images/tableCard3.png",
     },
     {
       id: 4,
       title: "PROJETADO",
       total: "20",
-      price: "R$:10,234",
+      price: "R$10,234",
       imageSrc: "images/tableCard4.png",
     },
   ];
@@ -144,6 +145,7 @@ const TableWithCards = () => {
     },
   ];
   const [openLaunchBoard, setOpenLaunchBoard] = useState(false);
+  const [selected, setSelected] = useState("1");
   const closeCreateLaunchBoard = () => {
     setOpenLaunchBoard(false);
   };
@@ -162,26 +164,35 @@ const TableWithCards = () => {
                   LANÇAMENTO
                 </Button>
                 <Button
-                  className="bg-white border border-primary "
-                  color="secondary"
+                  className={cn(
+                    "bg-white text-primary border border-primary",
+                    selected === "1" && "bg-primary text-white"
+                  )}
+                  onClick={() => setSelected("1")}
                 >
                   <Tags className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> BALANÇO
                 </Button>
                 <Button
-                  className="bg-primary/70 text-white border border-primary "
-                  color="secondary"
+                  className={cn(
+                    "bg-white text-primary border border-primary",
+                    selected === "2" && "bg-primary text-white"
+                  )}
+                  onClick={() => setSelected("2")}
                 >
                   <Tags className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> ENTRADAS E
                   SAÍDAS
                 </Button>
                 <Button
-                  className="bg-white border border-primary "
-                  color="secondary"
+                  className={cn(
+                    "bg-white text-primary border border-primary",
+                    selected === "3" && "bg-primary text-white"
+                  )}
+                  onClick={() => setSelected("3")}
                 >
                   <Tags className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> INVESTIMENTOS
                 </Button>
               </div>
-              <div className="w-full h-6 rounded-lg flex flex-row items-center gap-1 p-0.5 border border-zinc-400">
+              <div className="w-full h-10 rounded-lg flex flex-row items-center gap-1 p-0.5 border border-zinc-400">
                 <Search className="text-zinc-400 h-4 w-4" />
                 <input
                   className="outline-none text-zinc-400 placeholder:text-zinc-400 flex-w"

@@ -94,7 +94,7 @@ export function BiggestRevenueDonutGraph({ scrollToTable }: Props) {
       {
         breakpoint: 1920,
         options: {
-          chart: { height: 300 },
+          chart: { height: 175 },
         },
       },
       {

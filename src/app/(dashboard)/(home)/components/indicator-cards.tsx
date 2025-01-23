@@ -24,7 +24,7 @@ export function IndicatorCard() {
     },
     {
       value: "Receitas",
-      text: "Animais Vendidos",
+      text: "Receitas",
       total: "R$ 444.333,99",
       color: "success",
     },

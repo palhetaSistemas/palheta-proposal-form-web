@@ -35,7 +35,7 @@ const TaskHeader = ({
           </span>
           <Input
             type="text"
-            placeholder="Pesquisar Clientes"
+            placeholder="Pesquisar "
             className="ltr:pl-7 rtl:pr-7"
             size="lg"
           />

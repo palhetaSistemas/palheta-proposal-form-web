@@ -31,9 +31,9 @@ const clients = [
   { value: "3", label: "Cliente 3" },
 ];
 const sizes = [
-  { value: "small", label: "Fazenda Pequena" },
-  { value: "medium", label: "Fazenda Média" },
-  { value: "large", label: "Fazenda Grande" },
+  { value: "small", label: "Cliente Pequeno" },
+  { value: "medium", label: "Cliente Médio" },
+  { value: "large", label: "Cliente Grande" },
 ];
 const prioriy = [
   { value: "high", label: "High" },
@@ -71,9 +71,9 @@ const CreateClient = ({
           <div className="space-y-4">
             <div>
               <Label htmlFor="farmName" className="mb-1.5 text-default-600">
-                Nome da Fazenda*
+                Nome do Cliente*
               </Label>
-              <Input id="farmName" placeholder="Nome da Fazenda" />
+              <Input id="farmName" placeholder="Nome do Cliente" />
             </div>
             <div>
               <Label htmlFor="phone" className="mb-1.5 text-default-600">
@@ -89,14 +89,14 @@ const CreateClient = ({
             </div>
             <div>
               <Label htmlFor="size" className="mb-1.5 text-default-600">
-                Tamanho da Fazenda
+                Tamanho do Cliente
               </Label>
               <Select
                 className="react-select"
                 classNamePrefix="select"
                 options={sizes}
                 styles={colorStyles}
-                placeholder="Tamanho da Tarefa"
+                placeholder="Tamanho do Tarefa"
               />
             </div>
           </div>

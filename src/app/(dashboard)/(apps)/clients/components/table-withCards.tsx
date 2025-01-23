@@ -40,6 +40,7 @@ import { Pagination } from "@/src/components/ui/pagination";
 import DatePickerWithRange from "@/src/components/date-picker-with-range";
 import { useState } from "react";
 import CreateClient from "./CreateClient";
+import { cn } from "@/src/lib/utils";
 
 const columns = [
   {
@@ -390,6 +391,7 @@ const TableWithCards = () => {
     },
   ];
   const [openClientBoard, setOpenClientBoard] = useState(false);
+  const [selected, setSelected] = useState("1");
   const closeCreateClientBoard = () => {
     setOpenClientBoard(false);
   };
@@ -405,26 +407,38 @@ const TableWithCards = () => {
                   Adicionar Cliente
                 </Button>
                 <Button
-                  className="bg-white border border-primary "
-                  color="secondary"
+                  className={cn(
+                    "border-primary border text-primary bg-white",
+                    selected === "1" && "bg-primary text-white"
+                  )}
+                  onClick={() => setSelected("1")}
                 >
                   <Tags className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> GERAL
                 </Button>
                 <Button
-                  className="bg-primary/70 text-white border border-primary "
-                  color="secondary"
+                  className={cn(
+                    "border-primary border text-primary bg-white",
+                    selected === "2" && "bg-primary text-white"
+                  )}
+                  onClick={() => setSelected("2")}
                 >
                   <Tags className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> CONTRATADOS
                 </Button>
                 <Button
-                  className="bg-white border border-primary "
-                  color="secondary"
+                  className={cn(
+                    "border-primary border text-primary bg-white",
+                    selected === "3" && "bg-primary text-white"
+                  )}
+                  onClick={() => setSelected("3")}
                 >
                   <Tags className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> NEGATIVADO
                 </Button>
                 <Button
-                  className="bg-white border border-primary "
-                  color="secondary"
+                  className={cn(
+                    "border-primary border text-primary bg-white",
+                    selected === "4" && "bg-primary text-white"
+                  )}
+                  onClick={() => setSelected("4")}
                 >
                   <Tags className="w-4 h-4 ltr:mr-1 rtl:ml-1" /> PENDENTES
                 </Button>

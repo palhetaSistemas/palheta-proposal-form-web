@@ -27,19 +27,19 @@ export default function MainMenu({ trans }: { trans: any }) {
           {menus?.map((item: any, index: number) => (
             <NavigationMenu.Item key={`item-${index}`} value={item}>
               <NavigationMenu.Trigger asChild className=" flex items-center">
-                <div
-                  className={twMerge([
-                    " flex items-center gap-2 py-4 cursor-pointer group data-[state=open]:text-primary-300 px-6  ",
-                    path === item.route
-                      ? "bg-gradient-to-r from-primary/5 from-0% to-100% via-primary/30 to-primary/5 backdrop-filter backdrop-blur border-t-2 border-primary-500 text-default-900"
-                      : "text-default-500",
-                  ])}
-                >
-                  <item.icon className="h-5 w-5 " />
-                  <Link href={item.route}>
+                <Link href={item.route}>
+                  <div
+                    className={twMerge([
+                      " flex items-center gap-2 py-4 cursor-pointer group data-[state=open]:text-primary-300 px-6  ",
+                      path === item.route
+                        ? "bg-gradient-to-r from-primary/5 from-0% to-100% via-primary/30 to-primary/5 backdrop-filter backdrop-blur border-t-2 border-primary-500 text-default-900"
+                        : "text-default-500",
+                    ])}
+                  >
+                    <item.icon className="h-5 w-5 " />
                     <span className="text-sm font-medium">{item.title}</span>
-                  </Link>
-                </div>
+                  </div>
+                </Link>
               </NavigationMenu.Trigger>
               {path !== item.route && (
                 <NavigationMenu.Content

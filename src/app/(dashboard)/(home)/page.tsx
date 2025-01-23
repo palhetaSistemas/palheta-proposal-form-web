@@ -6,8 +6,6 @@ import OutstandingPayments from "./components/outstanding-payments";
 import Task from "./components/overdue-task";
 import ActiveProjectsComponent from "./components/active-projects/active-project-component";
 import DatePickerWithRange from "./components/date-picker-with-range";
-import { useState } from "react";
-import CreateActivities from "./components/CreateActivities";
 
 export default async function Dashboard() {
   return (

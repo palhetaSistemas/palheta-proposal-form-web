@@ -29,8 +29,8 @@ import avatar4 from "@/public/images/avatar/avatar-4.jpg";
 import avatar5 from "@/public/images/avatar/avatar-5.jpg";
 import Link from "next/link";
 import { ScrollArea } from "@/src/components/ui/scroll-area";
-import CreateActivities from "./CreateActivities";
 import { useState } from "react";
+import CreateTasks from "./CreateTasks";
 
 const columns = [
   {
@@ -140,21 +140,21 @@ const users: User[] = [
 ];
 
 const Task = () => {
-  const [openActivitiesBoard, setOpenActivitiesBoard] = useState(false);
-  const closeCreateActivitiesBoard = () => {
-    setOpenActivitiesBoard(false);
+  const [openTasksBoard, setOpenTasksBoard] = useState(false);
+  const closeCreateTasksBoard = () => {
+    setOpenTasksBoard(false);
   };
   return (
     <>
       <Card className="h-full">
         <CardHeader className="flex-row justify-between items-center mb-0">
-          <CardTitle>Atividades</CardTitle>
+          <CardTitle>Tarefas</CardTitle>
           <Button
-            onClick={() => setOpenActivitiesBoard(true)}
+            onClick={() => setOpenTasksBoard(true)}
             type="button"
             color="secondary"
           >
-            <p>+ Atividades</p>
+            <p>+ Tarefas</p>
           </Button>
         </CardHeader>
         <CardContent className="px-0 pb-0 overflow-x-auto h-[30rem]">
@@ -197,10 +197,7 @@ const Task = () => {
           </ScrollArea>
         </CardContent>
       </Card>
-      <CreateActivities
-        open={openActivitiesBoard}
-        onClose={closeCreateActivitiesBoard}
-      />
+      <CreateTasks open={openTasksBoard} onClose={closeCreateTasksBoard} />
     </>
   );
 };

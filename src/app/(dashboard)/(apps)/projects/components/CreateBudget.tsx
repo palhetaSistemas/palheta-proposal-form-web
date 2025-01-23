@@ -31,9 +31,9 @@ const clients = [
   { value: "3", label: "Cliente 3" },
 ];
 const sizes = [
-  { value: "small", label: "Lançamento Pequena" },
-  { value: "medium", label: "Lançamento Média" },
-  { value: "large", label: "Lançamento Grande" },
+  { value: "small", label: "Fazenda Pequena" },
+  { value: "medium", label: "Fazenda Média" },
+  { value: "large", label: "Fazenda Grande" },
 ];
 const prioriy = [
   { value: "high", label: "High" },
@@ -50,7 +50,7 @@ const colorStyles = {
     };
   },
 };
-const CreateLaunch = ({
+const CreateBudget = ({
   open,
   onClose,
 }: {
@@ -64,16 +64,16 @@ const CreateLaunch = ({
       <SheetContent className="pt-5">
         <SheetHeader className="flex-row items-center justify-between mb-4">
           <span className="text-lg font-semibold text-default-900">
-            Novo Lançamento
+            Criar Cliente
           </span>
         </SheetHeader>
         <form className=" h-full flex flex-col justify-between">
           <div className="space-y-4">
             <div>
               <Label htmlFor="farmName" className="mb-1.5 text-default-600">
-                Nome do Lançamento*
+                Nome da Fazenda*
               </Label>
-              <Input id="farmName" placeholder="Nome do Lançamento" />
+              <Input id="farmName" placeholder="Nome da Fazenda" />
             </div>
             <div>
               <Label htmlFor="phone" className="mb-1.5 text-default-600">
@@ -89,14 +89,14 @@ const CreateLaunch = ({
             </div>
             <div>
               <Label htmlFor="size" className="mb-1.5 text-default-600">
-                Tamanho do Lançamento
+                Tamanho da Fazenda
               </Label>
               <Select
                 className="react-select"
                 classNamePrefix="select"
                 options={sizes}
                 styles={colorStyles}
-                placeholder="Tamanho do Lançamento"
+                placeholder="Tamanho da Tarefa"
               />
             </div>
           </div>
@@ -106,7 +106,7 @@ const CreateLaunch = ({
                 Cancelar
               </Button>
             </SheetClose>
-            <Button>Criar Lançamento</Button>
+            <Button>Criar Cliente</Button>
           </SheetFooter>
         </form>
       </SheetContent>
@@ -114,4 +114,4 @@ const CreateLaunch = ({
   );
 };
 
-export default CreateLaunch;
+export default CreateBudget;
