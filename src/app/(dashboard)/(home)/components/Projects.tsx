@@ -3,8 +3,8 @@ import Image from "next/image";
 export function Projects() {
   return (
     <>
-      <div className="flex flex-col items-center justify-center h-screen w-full">
-        <div className="w-5/6 h-full justify-center flex flex-col gap-2">
+      <div className="flex flex-col items-center justify-center h-screen w-full p-2 pb-0 lg:p-0">
+        <div className="w-full lg:w-5/6 h-full justify-center flex flex-col gap-2">
           <div className="flex w-full items-center justify-between">
             <div className="flex items-center gap-2">
               <Image
@@ -14,8 +14,8 @@ export function Projects() {
                 height={1000}
                 className="w-20 h-36 object-contain"
               />
-              <div className="flex w-[575px] flex-col">
-                <span className="text-primary font-semibold text-4xl">
+              <div className="flex w-full lg:w-[575px] flex-col">
+                <span className="text-primary font-semibold text-xl lg:text-4xl">
                   SEU PROJETO ESTRUTURAL
                 </span>
                 <span>
@@ -34,11 +34,11 @@ export function Projects() {
               className="w-5/12 h-full object-cover"
             />
             <div className="w-7/12 h-full flex flex-col bg-[#E6EBF0]">
-              <div className="w-3/4 mx-auto h-full justify-center flex flex-col">
-                <span className="text-3xl font-semibold text-primary">
+              <div className="w-full p-2 lg:p-0 lg:w-3/4 mx-auto h-full justify-center flex flex-col">
+                <span className="lg:text-3xl font-semibold text-primary">
                   O QUE VOCÊ RECEBERÁ:
                 </span>
-                <div className="flex text-primary flex-col gap-2">
+                <div className="text-xs lg:text-base flex text-primary flex-col lg:gap-2">
                   <span>- VÍDEO 3D REALISTA E IMAGENS</span>
                   <span>- PASSEIO VIRTUAL 360º</span>
                   <span>- VÍDEO PARA O INSTAGRAM</span>
@@ -50,7 +50,7 @@ export function Projects() {
           </div>
           <div className="flex w-full items-end justify-end text-end">
             <div className="flex items-center gap-2">
-              <div className="flex w-[575px] flex-col">
+              <div className="flex w-full lg:w-[575px] flex-col">
                 <span className="text-primary font-semibold text-4xl">
                   SEU PROJETO ELÉTRICO
                 </span>
@@ -77,11 +77,11 @@ export function Projects() {
               className="w-5/12 h-full object-cover"
             />
             <div className="w-7/12 h-full flex flex-col bg-[#E6EBF0]">
-              <div className="w-3/4 mx-auto h-full justify-center flex flex-col">
-                <span className="text-3xl font-semibold text-primary">
+              <div className="w-full p-2 lg:p-0 lg:w-3/4 mx-auto h-full justify-center flex flex-col">
+                <span className="lg:text-3xl font-semibold text-primary">
                   O QUE VOCÊ RECEBERÁ:
                 </span>
-                <div className="flex text-primary flex-col gap-2">
+                <div className="flex text-xs lg:text-base text-primary flex-col lg:gap-2">
                   <span>- DEFINIÇÃO DAS CARGAS ELÉTRICAS</span>
                   <span>- LOCALIZAÇÃO DE PONTOS ELETRICOS</span>
                   <span>- PROTEÇÃO CONTRA SURTOS</span>

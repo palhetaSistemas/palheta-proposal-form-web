@@ -3,9 +3,9 @@ import Image from "next/image";
 export function Architectural() {
   return (
     <>
-      <div className="flex flex-col items-center justify-center h-screen w-full">
-        <div className="w-5/6 h-full justify-center flex flex-col gap-2">
-          <div className="flex w-full items-center justify-between">
+      <div className="flex flex-col items-center justify-center h-screen w-full p-2 pb-0 lg:p-0">
+        <div className="w-full lg:w-5/6 h-full justify-center flex flex-col gap-2">
+          <div className="flex flex-col lg:flex-row w-full items-end lg:items-center justify-between">
             <div className="flex items-center gap-2">
               <Image
                 src="/images/logo/vertical-logo.png"
@@ -14,8 +14,8 @@ export function Architectural() {
                 height={1000}
                 className="w-20 h-36 object-contain"
               />
-              <div className="flex w-[575px] flex-col">
-                <span className="text-primary font-semibold text-4xl">
+              <div className="flex w-full lg:w-[575px] flex-col">
+                <span className="text-primary font-semibold text-xl lg:text-4xl">
                   SEU PROJETO ARQUITETÔNICO
                 </span>
                 <span>
@@ -31,20 +31,20 @@ export function Architectural() {
               </span>
             </div>
           </div>
-          <div className="w-full h-3/5 border-2 border-primary rounded-3xl overflow-hidden flex">
+          <div className="w-full h-3/5 border-2 border-primary rounded-3xl overflow-hidden flex flex-col lg:flex-row">
             <Image
               src="/images/staticDataImage/facade2.png"
               alt=""
               width={1200}
               height={1500}
-              className="w-5/12 h-full object-cover"
+              className="w-full h-1/3 lg:h-full lg:w-5/12 object-cover"
             />
-            <div className="w-7/12 h-full flex flex-col bg-[#E6EBF0]">
-              <div className="w-3/4 mx-auto h-full justify-center flex flex-col">
-                <span className="text-3xl font-semibold text-primary">
+            <div className="w-full h-2/3 lg:w-7/12 lg:h-full flex flex-col bg-[#E6EBF0]">
+              <div className="w-full p-2 lg:p-0 lg:w-3/4 mx-auto h-full justify-center flex flex-col">
+                <span className="lg:text-3xl font-semibold text-primary">
                   O QUE VOCÊ RECEBE:
                 </span>
-                <div className="flex text-primary flex-col gap-2">
+                <div className="flex text-xs lg:text-base text-primary flex-col gap-1 lg:gap-2">
                   <span>- ANÁLISE DE NORMAS E LEGISLAÇÃO</span>
                   <span>- ESTUDO DE VIABILIDADE FINANCEIRA</span>
                   <span>- IMPLANTAÇÃO DA EDIF. NO TERRENO</span>

@@ -4,12 +4,12 @@ import Image from "next/image";
 
 export function Apps() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen w-full">
-      <div className="w-5/6 h-full justify-center flex flex-col gap-2">
+    <div className="flex flex-col items-center justify-center h-screen w-full p-2 pb-0 lg:p-0">
+      <div className="w-full lg:w-5/6 h-full justify-center flex flex-col gap-2">
         <div className="flex w-full items-center justify-center">
           <div className="flex items-center gap-2">
-            <div className="flex w-[575px] flex-col">
-              <span className="text-primary text-center font-semibold text-4xl">
+            <div className="flex lg:w-[575px] flex-col">
+              <span className="text-primary text-center font-semibold text-xl lg:text-4xl">
                 APLICATIVO PALHETA ARQUITETURA
               </span>
               <span>
@@ -18,8 +18,8 @@ export function Apps() {
             </div>
           </div>
         </div>
-        <div className="w-full h-3/5 items-center gap-8 flex">
-          <div className="w-1/2 h-full rounded-3xl bg-primary relative flex flex-col items-center justify-end p-8">
+        <div className="w-full h-3/5 items-center gap-2 lg:gap-8 flex flex-col lg:flex-row">
+          <div className="w-full lg:w-1/2 h-full rounded-3xl bg-primary relative flex flex-col items-center justify-end p-8">
             <div className="gap-2 flex flex-col">
               <span className="font-semibold text-white text-2xl">
                 Baixe seu app para iOS iPadOS
@@ -40,7 +40,7 @@ export function Apps() {
               </Button>
             </div>
           </div>
-          <div className="w-1/2 h-full rounded-3xl border relative flex flex-col items-center justify-end p-8">
+          <div className="w-full lg:w-1/2 h-full rounded-3xl border relative flex flex-col items-center justify-end p-8">
             <div className="gap-2 flex flex-col">
               <span className="font-semibold text-primary text-2xl">
                 Baixe seu app para iOS iPadOS

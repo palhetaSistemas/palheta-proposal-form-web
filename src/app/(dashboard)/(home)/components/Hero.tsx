@@ -10,15 +10,15 @@ import "swiper/css";
 export function Hero() {
   const [selectedFacade, setSelectedFacade] = useState(0);
   return (
-    <div className="flex flex-col justify-between h-screen w-full">
-      <div className="w-full h-20 p-2 flex items-center justify-end gap-2">
+    <div className="flex flex-col justify-between p-2 lg:p-0 h-screen w-full">
+      <div className="w-full h-20 p-2 flex items-center justify-center lg:justify-end gap-2">
         <Button className="rounded-full" variant="outline">
           Acessar App Cliente
         </Button>
         <Button className="rounded-full">Conversar com Escritório</Button>
       </div>
-      <div className="w-full flex">
-        <div className="w-1/2 h-full flex flex-col pl-16 pr-8 gap-2">
+      <div className="w-full flex flex-col lg:flex-row">
+        <div className="w-full lg:w-1/2 h-full flex flex-col lg:pl-16 lg:pr-8 gap-2">
           <Image
             src="/images/logo/vertical-logo.png"
             alt=""
@@ -26,8 +26,8 @@ export function Hero() {
             height={1000}
             className="w-20 h-36 object-contain"
           />
-          <span className="text-2xl">Projeto desenvolvido para:</span>
-          <span className="text-6xl font-semibold text-primary">
+          <span className="lg:text-2xl">Projeto desenvolvido para:</span>
+          <span className="text-2xl lg:text-6xl font-semibold text-primary">
             Pastor Edí Palheta
           </span>
           <span className="text-xl font-light">
@@ -40,10 +40,10 @@ export function Hero() {
               <CountUp
                 end={5}
                 duration={2}
-                className="font-semibold text-6xl"
+                className="font-semibold text-2xl lg:text-6xl"
               />
               <div className="flex items-center gap-2">
-                <div className="rounded-full bg-primary w-6 h-6" />
+                <div className="rounded-full bg-primary w-4 h-4 lg:w-6 lg:h-6" />
                 <span className="text-xl text-primary">PAÍSES</span>
               </div>
             </div>
@@ -52,23 +52,23 @@ export function Hero() {
                 <CountUp
                   end={130}
                   duration={2}
-                  className="font-semibold text-6xl"
+                  className="font-semibold text-2xl lg:text-6xl"
                 />
                 <span className="text-primary font-semibold text-3xl">+</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="rounded-full bg-primary w-6 h-6" />
+                <div className="rounded-full bg-primary w-4 h-4 lg:w-6 lg:h-6" />
                 <span className="text-xl text-primary">IGREJAS</span>
               </div>
             </div>
           </div>
         </div>
-        <div className="w-1/2 items-center flex gap-8 h-full ">
+        <div className="w-full lg:w-1/2 items-center flex gap-8 h-full ">
           <Swiper slidesPerView={2} spaceBetween={10}>
             <SwiperSlide className="flex items-center h-full my-auto">
               <div
                 className={cn(
-                  "border-primary overflow-hidden border-2 w-[400px] relative h-[600px] transition duration-300 rounded-3xl",
+                  "border-primary overflow-hidden border-2 w-full lg:w-[400px] relative h-[250px] lg:h-[600px] transition duration-300 rounded-3xl",
                   selectedFacade !== 0 && "scale-75 transition duration-300"
                 )}
                 onClick={() => setSelectedFacade(0)}
@@ -88,7 +88,7 @@ export function Hero() {
             <SwiperSlide className="flex items-center h-full my-auto">
               <div
                 className={cn(
-                  "border-primary overflow-hidden border-2 w-[400px] relative h-[600px] transition duration-300 rounded-3xl",
+                  "border-primary overflow-hidden border-2 w-full lg:w-[400px] relative h-[250px] lg:h-[600px] transition duration-300 rounded-3xl",
                   selectedFacade !== 1 && "scale-75 transition duration-300"
                 )}
                 onClick={() => setSelectedFacade(1)}
