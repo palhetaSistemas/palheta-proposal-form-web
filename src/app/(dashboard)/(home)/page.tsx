@@ -1,47 +1,24 @@
-import { IndicatorCard } from "./components/indicator-cards";
-import { IncomeDonutGraph } from "./components/income-DonutGraph";
-import { FinancialOverview } from "./components/financial-overview";
-import RevenueComponent from "./components/revenue-graph/revenue-component";
-import OutstandingPayments from "./components/outstanding-payments";
-import Task from "./components/overdue-task";
-import ActiveProjectsComponent from "./components/active-projects/active-project-component";
-import DatePickerWithRange from "./components/date-picker-with-range";
+import { Separator } from "@/src/components/ui/separator";
+import { Hero } from "./components/Hero";
+import { Architectural } from "./components/Archictural";
+import { View3d } from "./components/3dView";
+import { Projects } from "./components/Projects";
+import { Plans } from "./components/Plans";
+import { Portfolio } from "./components/Portfolio";
+import { Steps } from "./components/Steps";
+import { Apps } from "./components/Apps";
 
-export default async function Dashboard() {
+export default function Dashboard() {
   return (
-    <>
-      <div className="space-y-6">
-        <div className="flex items-center flex-wrap justify-between gap-4">
-          <div className="text-2xl font-medium text-default-800 ">
-            Dashboard
-          </div>
-          <DatePickerWithRange />
-        </div>
-        {/* reports area */}
-        <div className="grid grid-cols-12  gap-6 ">
-          <div className="col-span-12 ">
-            <IndicatorCard />
-          </div>
-          <div className="col-span-12 lg:col-span-8">
-            <FinancialOverview />
-          </div>
-          <div className="col-span-12 lg:col-span-4">
-            <IncomeDonutGraph />
-          </div>
-          <div className="col-span-12 lg:col-span-8">
-            <RevenueComponent />
-          </div>
-          <div className="col-span-12 lg:col-span-4">
-            <OutstandingPayments />
-          </div>
-          <div className="col-span-12 lg:col-span-6">
-            <ActiveProjectsComponent />
-          </div>
-          <div className="col-span-12 lg:col-span-6">
-            <Task />
-          </div>
-        </div>
-      </div>
-    </>
+    <div className="bg-white flex w-full flex-col min-h-screen">
+      <Hero />
+      <Architectural />
+      <View3d />
+      <Projects />
+      <Plans />
+      <Portfolio />
+      <Steps />
+      <Apps />
+    </div>
   );
 }
