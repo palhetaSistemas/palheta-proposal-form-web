@@ -40,10 +40,12 @@ export function Portfolio() {
                   CLIQUE E ASSISTA
                   <div className="w-full -translate-x-full opacity-0 group-hover:opacity-100 group-hover:translate-x-0 h-px bg-white transition duration-300" />
                 </span>
-                <span className="text-2xl font-semibold">
+                <span className="text-sm lg:text-2xl font-semibold">
                   DEPOIMENTO DO PASTOR UESLEN THOMAZ
                 </span>
-                <span className="text-xl">PORTO VELHO, RONDÔNIA</span>
+                <span className="text-xs lg:text-xl">
+                  PORTO VELHO, RONDÔNIA
+                </span>
               </div>
             </div>
             <div className="w-full lg:w-1/2 h-full flex flex-col gap-4">
@@ -61,10 +63,12 @@ export function Portfolio() {
                     CLIQUE E ASSISTA
                     <div className="w-full -translate-x-full opacity-0 group-hover:opacity-100 group-hover:translate-x-0 h-px bg-white transition duration-300" />
                   </span>
-                  <span className="text-2xl font-semibold">
+                  <span className="text-sm lg:text-2xl font-semibold">
                     IGREJA NOVA ALIANÇA COM DEUS
                   </span>
-                  <span className="text-xl">PORTO VELHO, RONDÔNIA</span>
+                  <span className="text-xs lg:text-xl">
+                    PORTO VELHO, RONDÔNIA
+                  </span>
                 </div>
               </div>
               <div className="h-52 lg:h-1/2 w-full group cursor-pointer relative overflow-hidden rounded-3xl flex flex-col items-center justify-end p-8">
@@ -81,10 +85,12 @@ export function Portfolio() {
                     CLIQUE E ASSISTA
                     <div className="w-full -translate-x-full opacity-0 group-hover:opacity-100 group-hover:translate-x-0 h-px bg-white transition duration-300" />
                   </span>
-                  <span className="text-2xl font-semibold">
+                  <span className="text-sm lg:text-2xl font-semibold">
                     IGREJA BATISTA COMUNIDADE ALIANÇA
                   </span>
-                  <span className="text-xl">PORTO VELHO, RONDÔNIA</span>
+                  <span className="text-xs lg:text-xl">
+                    PORTO VELHO, RONDÔNIA
+                  </span>
                 </div>
               </div>
             </div>

@@ -11,6 +11,7 @@ import DirectionProvider from "@/src/provider/direction.provider";
 const inter = Inter({ subsets: ["latin"] });
 import moment from "moment";
 import "moment/locale/pt-br";
+import { ProposalContextProvider } from "../context/Contex";
 
 moment.locale("pt-br");
 export const metadata = {
@@ -36,7 +37,9 @@ export default function RootLayout({
       <AuthProvider>
         <TanstackProvider>
           <Providers>
-            <DirectionProvider lang={lang}>{children}</DirectionProvider>
+            <DirectionProvider lang={lang}>
+              <ProposalContextProvider>{children}</ProposalContextProvider>
+            </DirectionProvider>
           </Providers>
         </TanstackProvider>
       </AuthProvider>

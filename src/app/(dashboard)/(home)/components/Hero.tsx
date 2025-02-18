@@ -12,10 +12,15 @@ export function Hero() {
   return (
     <div className="flex flex-col justify-between p-2 lg:p-0 h-screen w-full">
       <div className="w-full h-20 p-2 flex items-center justify-center lg:justify-end gap-2">
-        <Button className="rounded-full" variant="outline">
+        <Button
+          className="rounded-full px-2 lg:px-4 text-xs lg:text-base"
+          variant="outline"
+        >
           Acessar App Cliente
         </Button>
-        <Button className="rounded-full">Conversar com Escritório</Button>
+        <Button className="rounded-full px-2 lg:px-4 text-xs lg:text-base">
+          Conversar com Escritório
+        </Button>
       </div>
       <div className="w-full flex flex-col lg:flex-row">
         <div className="w-full lg:w-1/2 h-full flex flex-col lg:pl-16 lg:pr-8 gap-2">
@@ -68,7 +73,7 @@ export function Hero() {
             <SwiperSlide className="flex items-center h-full my-auto">
               <div
                 className={cn(
-                  "border-primary overflow-hidden border-2 w-full lg:w-[400px] relative h-[250px] lg:h-[600px] transition duration-300 rounded-3xl",
+                  "border-primary overflow-hidden border-2 w-full xl:w-[400px] relative h-[250px] xl:h-[600px] transition duration-300 rounded-3xl",
                   selectedFacade !== 0 && "scale-75 transition duration-300"
                 )}
                 onClick={() => setSelectedFacade(0)}
@@ -88,7 +93,7 @@ export function Hero() {
             <SwiperSlide className="flex items-center h-full my-auto">
               <div
                 className={cn(
-                  "border-primary overflow-hidden border-2 w-full lg:w-[400px] relative h-[250px] lg:h-[600px] transition duration-300 rounded-3xl",
+                  "border-primary overflow-hidden border-2 w-full xl:w-[400px] relative h-[250px] xl:h-[600px] transition duration-300 rounded-3xl",
                   selectedFacade !== 1 && "scale-75 transition duration-300"
                 )}
                 onClick={() => setSelectedFacade(1)}

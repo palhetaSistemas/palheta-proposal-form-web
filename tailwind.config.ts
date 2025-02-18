@@ -17,13 +17,6 @@ const config = {
         xl: "0",
         "2xl": "0",
       },
-      screens: {
-        sm: "640px",
-        md: "768px",
-        lg: "1024px",
-        xl: "1280px",
-        "2xl": "1392px",
-      },
     },
     extend: {
       colors: {
@@ -147,6 +140,16 @@ const config = {
         slideRightAndFade:
           "slideRightAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
       },
+    },
+    screens: {
+      xxs: "200px",
+      xs: "390px",
+      sm: "550px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1370px",
+      "2xl": "1920px",
+      "3xl": "2560px",
     },
   },
   plugins: [require("tailwindcss-animate")],
