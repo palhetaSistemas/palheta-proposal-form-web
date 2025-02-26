@@ -23,7 +23,7 @@ export function Architectural() {
                       className="w-20 h-36 object-contain"
                     />
                     <div className="flex w-full lg:w-[575px] flex-col">
-                      <span className="text-primary font-semibold text-xl lg:text-4xl">
+                      <span className="text-primary font-semibold text-xl xl:text-4xl">
                         SEU PROJETO{" "}
                         {Object.keys(proposalData).find(
                           (key: string) =>
@@ -47,7 +47,7 @@ export function Architectural() {
                           ? "ELÉTRICO"
                           : ""}
                       </span>
-                      <span>
+                      <span className="text-sm xl:text-base">
                         Soluções arquitetônicas completas, da concepção à
                         execução. Planejamento detalhado para viabilidade e
                         excelência.
@@ -71,10 +71,10 @@ export function Architectural() {
                   />
                   <div className="w-full h-2/3 lg:w-7/12 lg:h-full flex flex-col bg-[#E6EBF0]">
                     <div className="w-full p-2 lg:p-0 lg:w-3/4 mx-auto h-full justify-center flex flex-col">
-                      <span className="2xl:text-3xl font-semibold text-primary">
+                      <span className="md:text-xl lg:text-base xl:text-3xl font-semibold text-primary">
                         O QUE VOCÊ RECEBE:
                       </span>
-                      <div className="flex text-xs 2xl:text-base text-primary flex-col gap-1 2xl:gap-2">
+                      <div className="flex text-xs md:text-sm lg:text-xs xl:text-base text-primary flex-col gap-1 2xl:gap-2">
                         <span>- ANÁLISE DE NORMAS E LEGISLAÇÃO</span>
                         <span>- ESTUDO DE VIABILIDADE FINANCEIRA</span>
                         <span>- IMPLANTAÇÃO DA EDIF. NO TERRENO</span>

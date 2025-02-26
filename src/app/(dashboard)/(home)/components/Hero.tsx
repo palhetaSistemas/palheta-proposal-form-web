@@ -31,11 +31,13 @@ export function Hero() {
             height={1000}
             className="w-20 h-36 object-contain"
           />
-          <span className="lg:text-2xl">Projeto desenvolvido para:</span>
-          <span className="text-2xl lg:text-6xl font-semibold text-primary">
+          <span className="lg:text-lg xl:text-2xl">
+            Projeto desenvolvido para:
+          </span>
+          <span className="text-2xl lg:text-3xl xl:text-6xl font-semibold text-primary">
             Pastor Edí Palheta
           </span>
-          <span className="text-xl font-light">
+          <span className="text-sm xl:text-xl font-light">
             Somos o primeiro escritório especializado exclusivamente em projetos
             de igrejas evangélicas com sede na Av. Paulista, nossa expertise é a
             comprovado por mais:
@@ -45,11 +47,13 @@ export function Hero() {
               <CountUp
                 end={5}
                 duration={2}
-                className="font-semibold text-2xl lg:text-6xl"
+                className="font-semibold text-2xl lg:text-3xl xl:text-6xl"
               />
               <div className="flex items-center gap-2">
-                <div className="rounded-full bg-primary w-4 h-4 lg:w-6 lg:h-6" />
-                <span className="text-xl text-primary">PAÍSES</span>
+                <div className="rounded-full bg-primary w-4 h-4 xl:w-6 xl:h-6" />
+                <span className="text-base xl:text-xl text-primary">
+                  PAÍSES
+                </span>
               </div>
             </div>
             <div className="w-1/2 flex flex-col">
@@ -57,13 +61,17 @@ export function Hero() {
                 <CountUp
                   end={130}
                   duration={2}
-                  className="font-semibold text-2xl lg:text-6xl"
+                  className="font-semibold text-2xl lg:text-3xl xl:text-6xl"
                 />
-                <span className="text-primary font-semibold text-3xl">+</span>
+                <span className="text-primary font-semibold text-2xl lg:text-3xl xl:text-6xl">
+                  +
+                </span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="rounded-full bg-primary w-4 h-4 lg:w-6 lg:h-6" />
-                <span className="text-xl text-primary">IGREJAS</span>
+                <div className="rounded-full bg-primary w-4 h-4 xl:w-6 xl:h-6" />
+                <span className="text-base xl:text-xl text-primary">
+                  IGREJAS
+                </span>
               </div>
             </div>
           </div>
@@ -73,7 +81,7 @@ export function Hero() {
             <SwiperSlide className="flex items-center h-full my-auto">
               <div
                 className={cn(
-                  "border-primary overflow-hidden border-2 w-full xl:w-[400px] relative h-[250px] xl:h-[600px] transition duration-300 rounded-3xl",
+                  "border-primary overflow-hidden border-2 w-full 2xl:w-[400px] relative h-[250px] 2xl:h-[600px] transition duration-300 rounded-3xl",
                   selectedFacade !== 0 && "scale-75 transition duration-300"
                 )}
                 onClick={() => setSelectedFacade(0)}
@@ -93,7 +101,7 @@ export function Hero() {
             <SwiperSlide className="flex items-center h-full my-auto">
               <div
                 className={cn(
-                  "border-primary overflow-hidden border-2 w-full xl:w-[400px] relative h-[250px] xl:h-[600px] transition duration-300 rounded-3xl",
+                  "border-primary overflow-hidden border-2 w-full 2xl:w-[400px] relative h-[250px] 2xl:h-[600px] transition duration-300 rounded-3xl",
                   selectedFacade !== 1 && "scale-75 transition duration-300"
                 )}
                 onClick={() => setSelectedFacade(1)}

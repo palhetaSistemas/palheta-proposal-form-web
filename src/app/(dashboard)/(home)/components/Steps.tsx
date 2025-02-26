@@ -23,10 +23,10 @@ export function Steps() {
               className="w-20 h-36 object-contain"
             />
           </div>
-          <div className="w-full lg:w-5/6 mx-auto h-3/5 gap-2 lg:gap-0 items-center justify-between flex">
+          <div className="w-full lg:w-5/6 mx-auto h-2/5 lg:h-3/5 gap-2 lg:gap-0 items-center justify-between flex">
             <div className="w-full lg:w-2/5 overflow-hidden rounded-3xl border border-primary h-full flex flex-col items-center justify-between">
               <div className="w-full border-b border-y-primary h-1/4 p-1 xl:p-4 flex items-center gap-2">
-                <div className="flex w-4 h-4 min-w-4 min-h-4 max-w-4 max-h-4 xl:w-10 xl:min-h-10 xl:min-w-10 xl:max-w-10 xl:max-h-10 text-xs xl:text-xl xl:h-10 items-center justify-center rounded-full bg-primary text-white">
+                <div className="flex w-4 h-4 min-w-4 min-h-4 max-w-4 max-h-4 md:w-6 md:h-6 md:max-w-6 md:max-h-6 md:min-w-6 md:min-h-6 xl:w-10 xl:min-h-10 xl:min-w-10 xl:max-w-10 xl:max-h-10 text-xs xl:text-xl xl:h-10 items-center justify-center rounded-full bg-primary text-white">
                   1.
                 </div>
                 <span className="w-[calc(100%-1.25rem)] xl:w-[calc(100%-2.5rem)] text-primary text-xs xl:text-2xl font-semibold">
@@ -34,7 +34,7 @@ export function Steps() {
                 </span>
               </div>
               <div className="w-full border-b border-y-primary h-1/4 p-1 xl:p-4 flex items-center gap-2">
-                <div className="flex w-4 h-4 min-w-4 min-h-4 max-w-4 max-h-4 xl:w-10 xl:min-h-10 xl:min-w-10 xl:max-w-10 xl:max-h-10 text-xs xl:text-xl xl:h-10 items-center justify-center rounded-full bg-primary text-white">
+                <div className="flex w-4 h-4 min-w-4 min-h-4 max-w-4 max-h-4 md:w-6 md:h-6 md:max-w-6 md:max-h-6 md:min-w-6 md:min-h-6 xl:w-10 xl:min-h-10 xl:min-w-10 xl:max-w-10 xl:max-h-10 text-xs xl:text-xl xl:h-10 items-center justify-center rounded-full bg-primary text-white">
                   2.
                 </div>
                 <span className="w-[calc(100%-1.25rem)] xl:w-[calc(100%-2.5rem)] text-primary text-xs xl:text-2xl font-semibold">
@@ -42,7 +42,7 @@ export function Steps() {
                 </span>
               </div>
               <div className="w-full border-b border-y-primary h-1/4 p-1 xl:p-4 flex items-center gap-2">
-                <div className="flex w-4 h-4 min-w-4 min-h-4 max-w-4 max-h-4 xl:w-10 xl:min-h-10 xl:min-w-10 xl:max-w-10 xl:max-h-10 text-xs xl:text-xl xl:h-10 items-center justify-center rounded-full bg-primary text-white">
+                <div className="flex w-4 h-4 min-w-4 min-h-4 max-w-4 max-h-4 md:w-6 md:h-6 md:max-w-6 md:max-h-6 md:min-w-6 md:min-h-6 xl:w-10 xl:min-h-10 xl:min-w-10 xl:max-w-10 xl:max-h-10 text-xs xl:text-xl xl:h-10 items-center justify-center rounded-full bg-primary text-white">
                   3.
                 </div>
                 <span className="w-[calc(100%-1.25rem)] xl:w-[calc(100%-2.5rem)] text-primary text-xs xl:text-2xl font-semibold">
@@ -50,7 +50,7 @@ export function Steps() {
                 </span>
               </div>
               <div className="w-full h-1/4 p-1 xl:p-4 flex items-center gap-2">
-                <div className="flex w-4 h-4 min-w-4 min-h-4 max-w-4 max-h-4 xl:w-10 xl:min-h-10 xl:min-w-10 xl:max-w-10 xl:max-h-10 text-xs xl:text-xl xl:h-10 items-center justify-center rounded-full bg-primary text-white">
+                <div className="flex w-4 h-4 min-w-4 min-h-4 max-w-4 max-h-4 md:w-6 md:h-6 md:max-w-6 md:max-h-6 md:min-w-6 md:min-h-6 xl:w-10 xl:min-h-10 xl:min-w-10 xl:max-w-10 xl:max-h-10 text-xs xl:text-xl xl:h-10 items-center justify-center rounded-full bg-primary text-white">
                   4.
                 </div>
                 <span className="w-[calc(100%-1.25rem)] xl:w-[calc(100%-2.5rem)] text-primary text-xs xl:text-2xl font-semibold">
@@ -60,7 +60,7 @@ export function Steps() {
             </div>
             <div className="w-full lg:w-2/5 overflow-hidden rounded-3xl border border-primary h-full flex flex-col items-center justify-between">
               <div className="w-full border-b border-y-primary h-1/4 p-1 xl:p-4 flex items-center gap-2">
-                <div className="flex w-4 h-4 min-w-4 min-h-4 max-w-4 max-h-4 xl:w-10 xl:min-h-10 xl:min-w-10 xl:max-w-10 xl:max-h-10 text-xs xl:text-xl xl:h-10 items-center justify-center rounded-full bg-primary text-white">
+                <div className="flex w-4 h-4 min-w-4 min-h-4 max-w-4 max-h-4 md:w-6 md:h-6 md:max-w-6 md:max-h-6 md:min-w-6 md:min-h-6 xl:w-10 xl:min-h-10 xl:min-w-10 xl:max-w-10 xl:max-h-10 text-xs xl:text-xl xl:h-10 items-center justify-center rounded-full bg-primary text-white">
                   5.
                 </div>
                 <span className="w-[calc(100%-1.25rem)] xl:w-[calc(100%-2.5rem)] text-primary text-xs xl:text-2xl font-semibold">
@@ -68,7 +68,7 @@ export function Steps() {
                 </span>
               </div>
               <div className="w-full border-b border-y-primary h-1/4 p-1 xl:p-4 flex items-center gap-2">
-                <div className="flex w-4 h-4 min-w-4 min-h-4 max-w-4 max-h-4 xl:w-10 xl:min-h-10 xl:min-w-10 xl:max-w-10 xl:max-h-10 text-xs xl:text-xl xl:h-10 items-center justify-center rounded-full bg-primary text-white">
+                <div className="flex w-4 h-4 min-w-4 min-h-4 max-w-4 max-h-4 md:w-6 md:h-6 md:max-w-6 md:max-h-6 md:min-w-6 md:min-h-6 xl:w-10 xl:min-h-10 xl:min-w-10 xl:max-w-10 xl:max-h-10 text-xs xl:text-xl xl:h-10 items-center justify-center rounded-full bg-primary text-white">
                   6.
                 </div>
                 <span className="w-[calc(100%-1.25rem)] xl:w-[calc(100%-2.5rem)] text-primary text-xs xl:text-2xl font-semibold">
@@ -76,7 +76,7 @@ export function Steps() {
                 </span>
               </div>
               <div className="w-full border-b border-y-primary h-1/4 p-1 xl:p-4 flex items-center gap-2">
-                <div className="flex w-4 h-4 min-w-4 min-h-4 max-w-4 max-h-4 xl:w-10 xl:min-h-10 xl:min-w-10 xl:max-w-10 xl:max-h-10 text-xs xl:text-xl xl:h-10 items-center justify-center rounded-full bg-primary text-white">
+                <div className="flex w-4 h-4 min-w-4 min-h-4 max-w-4 max-h-4 md:w-6 md:h-6 md:max-w-6 md:max-h-6 md:min-w-6 md:min-h-6 xl:w-10 xl:min-h-10 xl:min-w-10 xl:max-w-10 xl:max-h-10 text-xs xl:text-xl xl:h-10 items-center justify-center rounded-full bg-primary text-white">
                   7.
                 </div>
                 <span className="w-[calc(100%-1.25rem)] xl:w-[calc(100%-2.5rem)] text-primary text-xs xl:text-2xl font-semibold">
@@ -84,7 +84,7 @@ export function Steps() {
                 </span>
               </div>
               <div className="w-full h-1/4 p-1 xl:p-4 flex items-center gap-2">
-                <div className="flex w-4 h-4 min-w-4 min-h-4 max-w-4 max-h-4 xl:w-10 xl:min-h-10 xl:min-w-10 xl:max-w-10 xl:max-h-10 text-xs xl:text-xl xl:h-10 items-center justify-center rounded-full bg-primary text-white">
+                <div className="flex w-4 h-4 min-w-4 min-h-4 max-w-4 max-h-4 md:w-6 md:h-6 md:max-w-6 md:max-h-6 md:min-w-6 md:min-h-6 xl:w-10 xl:min-h-10 xl:min-w-10 xl:max-w-10 xl:max-h-10 text-xs xl:text-xl xl:h-10 items-center justify-center rounded-full bg-primary text-white">
                   8.
                 </div>
                 <span className="w-[calc(100%-1.25rem)] xl:w-[calc(100%-2.5rem)] text-primary text-xs xl:text-2xl font-semibold">

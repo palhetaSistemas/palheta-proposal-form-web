@@ -15,10 +15,10 @@ export function Portfolio() {
                 className="w-20 h-36 object-contain"
               />
               <div className="flex w-full lg:w-[575px] flex-col">
-                <span className="text-primary font-semibold text-xl lg:text-4xl">
+                <span className="text-primary font-semibold text-xl xl:text-4xl">
                   UM POUCO DO QUE JÁ REALIZAMOS
                 </span>
-                <span>
+                <span className="text-sm xl:text-base">
                   Quem conhece sempre Indica Palheta Arquitetura, do Norte ao
                   Sul do Brasil e no Mundo com 5 Países
                 </span>
@@ -40,10 +40,10 @@ export function Portfolio() {
                   CLIQUE E ASSISTA
                   <div className="w-full -translate-x-full opacity-0 group-hover:opacity-100 group-hover:translate-x-0 h-px bg-white transition duration-300" />
                 </span>
-                <span className="text-sm lg:text-2xl font-semibold">
+                <span className="text-sm xl:text-2xl font-semibold">
                   DEPOIMENTO DO PASTOR UESLEN THOMAZ
                 </span>
-                <span className="text-xs lg:text-xl">
+                <span className="text-xs xl:text-xl">
                   PORTO VELHO, RONDÔNIA
                 </span>
               </div>
@@ -63,10 +63,10 @@ export function Portfolio() {
                     CLIQUE E ASSISTA
                     <div className="w-full -translate-x-full opacity-0 group-hover:opacity-100 group-hover:translate-x-0 h-px bg-white transition duration-300" />
                   </span>
-                  <span className="text-sm lg:text-2xl font-semibold">
+                  <span className="text-sm xl:text-2xl font-semibold">
                     IGREJA NOVA ALIANÇA COM DEUS
                   </span>
-                  <span className="text-xs lg:text-xl">
+                  <span className="text-xs xl:text-xl">
                     PORTO VELHO, RONDÔNIA
                   </span>
                 </div>
@@ -85,10 +85,10 @@ export function Portfolio() {
                     CLIQUE E ASSISTA
                     <div className="w-full -translate-x-full opacity-0 group-hover:opacity-100 group-hover:translate-x-0 h-px bg-white transition duration-300" />
                   </span>
-                  <span className="text-sm lg:text-2xl font-semibold">
+                  <span className="text-sm xl:text-2xl font-semibold">
                     IGREJA BATISTA COMUNIDADE ALIANÇA
                   </span>
-                  <span className="text-xs lg:text-xl">
+                  <span className="text-xs xl:text-xl">
                     PORTO VELHO, RONDÔNIA
                   </span>
                 </div>

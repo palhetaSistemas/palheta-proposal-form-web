@@ -10,25 +10,25 @@ export function Plans() {
           alt=""
           width={200}
           height={1000}
-          className="w-20 h-36 object-contain"
+          className="w-20 h-36 lg:w-[3.75rem] lg:h-[6.75rem] xl:w-20 xl:h-36 object-contain"
         />
         <div className="text-primary text-center flex flex-col font-bold">
           <span className="xl:text-2xl">CONFIANÇA E TRANSPARÊNCIA</span>
           <span className="text-xl xl:text-4xl">INVESTIMENTO</span>
         </div>
-        <div className="flex w-full lg:w-5/6 mx-auto items-center lg:h-1/2 flex-col gap-4">
+        <div className="flex w-full lg:w-5/6 mx-auto items-center xl:h-1/2 flex-col gap-4">
           <div className="flex items-center gap-2">
             <Button className="rounded-full">Em até 7 dias</Button>
             <Button className="rounded-full" variant="outline">
               Pós 7 dias*
             </Button>
           </div>
-          <div className="w-full justify-center h-full flex flex-col lg:flex-row gap-4 items-center">
+          <div className="w-full max-w-[500px] lg:max-w-none justify-center h-full flex flex-col lg:flex-row gap-4 items-center">
             <div className="w-full lg:w-1/4 text-center items-center justify-between h-full rounded-3xl border border-primary flex flex-col p-2 gap-2">
-              <span className="text-xl xl:text-4xl font-semibold text-primary">
+              <span className="text-xl 2xl:text-4xl font-semibold text-primary">
                 SOMENTE ARQUITETURA
               </span>
-              <span className="text-xl xl:text-4xl font-semibold text-primary">
+              <span className="text-xl 2xl:text-4xl font-semibold text-primary">
                 R$9.997
               </span>
               <div className="w-5/6 mx-auto h-px bg-primary" />
@@ -39,18 +39,18 @@ export function Plans() {
                 <Button className="w-max bg-white text-primary rounded-full">
                   MAIS ESCOLHIDO
                 </Button>
-                <span className="text-xl xl:text-4xl font-semibold text-white">
+                <span className="text-xl 2xl:text-4xl font-semibold text-white">
                   TODOS OS SERVIÇOS
                 </span>
               </div>
-              <span className="text-xl xl:text-4xl font-semibold text-white">
+              <span className="text-xl 2xl:text-4xl font-semibold text-white">
                 R$12.997
               </span>
               <div className="flex flex-col text-white">
-                <span className="text-sm xl:text-xl">
+                <span className="text-sm 2xl:text-xl">
                   EM 3X NO BOLETO OU PIX
                 </span>
-                <span className="text-sm xl:text-xl">
+                <span className="text-sm 2xl:text-xl">
                   EM 5X NO CARTÃO DE CRÉDITO
                 </span>
               </div>
@@ -62,10 +62,10 @@ export function Plans() {
               </Button>
             </div>
             <div className="w-full lg:w-1/4 text-center items-center justify-between h-full rounded-3xl border border-primary flex flex-col p-2 gap-2">
-              <span className="text-xl xl:text-4xl font-semibold text-primary">
+              <span className="text-xl 2xl:text-4xl font-semibold text-primary">
                 ARQUITETURA E VISUALIZAÇÃO 3D
               </span>
-              <span className="text-xl xl:text-4xl font-semibold text-primary">
+              <span className="text-xl 2xl:text-4xl font-semibold text-primary">
                 R$6.997
               </span>
               <div className="w-5/6 mx-auto h-px bg-primary" />

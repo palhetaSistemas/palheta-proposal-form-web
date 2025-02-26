@@ -19,10 +19,10 @@ export function Projects() {
                       alt=""
                       width={200}
                       height={1000}
-                      className="w-20 h-36 object-contain"
+                      className="w-20 h-36 lg:w-[3.75rem] lg:h-[6.75rem] xl:w-20 xl:h-36 object-contain"
                     />
                     <div className="flex w-full lg:w-[575px] flex-col">
-                      <span className="text-primary font-semibold text-xl lg:text-4xl">
+                      <span className="text-primary font-semibold text-xl xl:text-4xl">
                         SEU PROJETO {""}
                         {Object.values(proposalData).filter((value) => value)
                           .length === 3
@@ -69,7 +69,7 @@ export function Projects() {
                           ? "ELÉTRICO"
                           : ""}
                       </span>
-                      <span>
+                      <span className="text-sm xl:text-base">
                         Segurança e eficiência desde a fundação. Cálculos
                         precisos para estruturas duráveis e seguras
                       </span>
@@ -86,10 +86,10 @@ export function Projects() {
                   />
                   <div className="w-7/12 h-full flex flex-col bg-[#E6EBF0]">
                     <div className="w-full p-1 lg:p-0 lg:w-3/4 mx-auto h-full justify-center flex flex-col">
-                      <span className="text-sm xl:text-3xl font-semibold text-primary">
+                      <span className="md:text-xl lg:text-base 2xl:text-3xl font-semibold text-primary">
                         O QUE VOCÊ RECEBERÁ:
                       </span>
-                      <div className="text-[10px] xl:text-sm 2xl:text-base flex text-primary flex-col xl:gap-2">
+                      <div className="text-[10px] xl:text-sm 2xl:text-base flex text-primary flex-col lg:flex-row xl:flex-col xl:flex-nowrap lg:flex-wrap justify-between w-full xl:gap-2">
                         <span>- VÍDEO 3D REALISTA E IMAGENS</span>
                         <span>- PASSEIO VIRTUAL 360º</span>
                         <span>- VÍDEO PARA O INSTAGRAM</span>
@@ -102,7 +102,7 @@ export function Projects() {
                 <div className="flex w-full items-end justify-end text-end">
                   <div className="flex items-center gap-2">
                     <div className="flex w-full lg:w-[575px] flex-col">
-                      <span className="text-primary font-semibold text-xl lg:text-4xl">
+                      <span className="text-primary font-semibold text-xl xl:text-4xl">
                         SEU PROJETO {""}
                         {Object.values(proposalData).filter((value) => value)
                           .length === 3
@@ -149,7 +149,7 @@ export function Projects() {
                           ? "ELÉTRICO"
                           : ""}
                       </span>
-                      <span>
+                      <span className="text-sm xl:text-base">
                         Sistemas elétricos seguros e eficientes. Planejamento
                         estratégico para otimizar desempenho e consumo.
                       </span>
@@ -159,7 +159,7 @@ export function Projects() {
                       alt=""
                       width={200}
                       height={1000}
-                      className="w-20 h-36 object-contain"
+                      className="w-20 h-36 lg:w-[3.75rem] lg:h-[6.75rem] xl:w-20 xl:h-36 object-contain"
                     />
                   </div>
                 </div>
@@ -173,10 +173,10 @@ export function Projects() {
                   />
                   <div className="w-7/12 h-full flex flex-col bg-[#E6EBF0]">
                     <div className="w-full p-1 lg:p-0 lg:w-3/4 mx-auto h-full justify-center flex flex-col">
-                      <span className="text-sm xl:text-3xl font-semibold text-primary">
+                      <span className="md:text-xl lg:text-base 2xl:text-3xl font-semibold text-primary">
                         O QUE VOCÊ RECEBERÁ:
                       </span>
-                      <div className="flex text-[10px] xl:text-sm 2xl:text-base text-primary flex-col leading-4 xl:leading-[14px] xl:gap-2">
+                      <div className="text-[10px] xl:text-sm 2xl:text-base flex text-primary flex-col lg:flex-row xl:flex-col xl:flex-nowrap lg:flex-wrap justify-between w-full xl:gap-2">
                         <span>- DEFINIÇÃO DAS CARGAS ELÉTRICAS</span>
                         <span>- LOCALIZAÇÃO DE PONTOS ELÉTRICOS</span>
                         <span>- PROTEÇÃO CONTRA SURTOS</span>
