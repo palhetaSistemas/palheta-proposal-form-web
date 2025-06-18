@@ -2331,6 +2331,18 @@
     "@parcel/watcher-win32-ia32" "2.5.0"
     "@parcel/watcher-win32-x64" "2.5.0"
 
+"@photo-sphere-viewer/compass-plugin@^5.13.3":
+  version "5.13.3"
+  resolved "https://registry.yarnpkg.com/@photo-sphere-viewer/compass-plugin/-/compass-plugin-5.13.3.tgz#3dc3594a086ae848fd31883ae328b7864d300fdf"
+  integrity sha512-a1swRvvt/JD3pQ4N0RxatoM8WwJ4AQrWHyF++/d7ku0fkYJbi9yvlDt7dY6eQsbXZJEj69BpXK8fRZ32QT4m9w==
+
+"@photo-sphere-viewer/core@^5.13.3":
+  version "5.13.3"
+  resolved "https://registry.yarnpkg.com/@photo-sphere-viewer/core/-/core-5.13.3.tgz#07e8ee8da99b1d21c826960e1b89bb9045a43393"
+  integrity sha512-6Fjkx2fTUFSmoy6jJxXn+FrwNlMtTi6M8ErEZkQgn7ULenMpIUx6tdFz3l85NM7Br/Rj4CK8IyUo8Le1eI1Fdg==
+  dependencies:
+    three "^0.175.0"
+
 "@pkgjs/parseargs@^0.11.0":
   version "0.11.0"
   resolved "https://registry.yarnpkg.com/@pkgjs/parseargs/-/parseargs-0.11.0.tgz#a77ea742fab25775145434eb1d2328cf5013ac33"
@@ -6915,6 +6927,11 @@ eventemitter3@^4.0.1, eventemitter3@^4.0.4:
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-4.0.7.tgz#2de9b68f6528d5644ef5c59526a1b4a07306169f"
   integrity sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==
 
+eventemitter3@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-5.0.1.tgz#53f5ffd0a492ac800721bb42c66b841de96423c4"
+  integrity sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA==
+
 events@^3.2.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/events/-/events-3.3.0.tgz#31a95ad0a924e2d2c419a813aeb2c4e878ea7400"
@@ -10630,6 +10647,13 @@ react-leaflet@^4.2.1:
   dependencies:
     "@react-leaflet/core" "^2.1.0"
 
+react-photo-sphere-viewer@^6.2.3:
+  version "6.2.3"
+  resolved "https://registry.yarnpkg.com/react-photo-sphere-viewer/-/react-photo-sphere-viewer-6.2.3.tgz#bdbe33a03315077b1d49f2d4690f0dc72563ac9a"
+  integrity sha512-VzG0aY9CI8OIQjdIoJCjYF1QlnLFpN2pM+zKm1JrpAKQrBZ6B+Uxy94vpVQkGDERgn8FWE0+LIntTgAr60pLyQ==
+  dependencies:
+    eventemitter3 "^5.0.1"
+
 react-quilljs@^1.3.3:
   version "1.3.4"
   resolved "https://registry.yarnpkg.com/react-quilljs/-/react-quilljs-1.3.4.tgz#2ea7c7f32206d82ae10a0ec483d6536f0b4f7157"
@@ -12007,6 +12031,11 @@ three@^0.135.0:
   version "0.135.0"
   resolved "https://registry.yarnpkg.com/three/-/three-0.135.0.tgz#cff4ec8edd3c51ce9bc7e88d13e8eafed4d0ddfc"
   integrity sha512-kuEpuuxRzLv0MDsXai9huCxOSQPZ4vje6y0gn80SRmQvgz6/+rI0NAvCRAw56zYaWKMGMfqKWsxF9Qa2Z9xymQ==
+
+three@^0.175.0:
+  version "0.175.0"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.175.0.tgz#67b357b0b1ee8ef0445b9a768f59363ab1fa7921"
+  integrity sha512-nNE3pnTHxXN/Phw768u0Grr7W4+rumGg/H6PgeseNJojkJtmeHJfZWi41Gp2mpXl1pg1pf1zjwR4McM1jTqkpg==
 
 throttle-debounce@^5.0.0:
   version "5.0.2"
