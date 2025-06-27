@@ -1,14 +1,7 @@
 "use client";
-import { Hero } from "./components/Hero";
-import { Architectural } from "./components/Archictural";
-import { View3d } from "./components/3dView";
-import { Projects } from "./components/Projects";
-import { Plans } from "./components/Plans";
-import { Portfolio } from "./components/Portfolio";
-import { Steps } from "./components/Steps";
-import { Apps } from "./components/Apps";
-import { useEffect } from "react";
 import Lenis from "lenis";
+import { useEffect } from "react";
+import { ProjectView } from "./components/project-view";
 
 export default function Dashboard() {
   useEffect(() => {
@@ -21,15 +14,16 @@ export default function Dashboard() {
   }, []);
 
   return (
-    <div className="bg-white flex w-full flex-col min-h-screen">
-      <Hero />
+    <div className="bg-[#123262] relative flex w-full  items-center flex-col min-h-screen max-h-screen">
+      <ProjectView />
+      {/* <Hero />
       <Architectural />
       <View3d />
       <Projects />
       <Plans />
       <Portfolio />
       <Steps />
-      <Apps />
+      <Apps /> */}
     </div>
   );
 }
