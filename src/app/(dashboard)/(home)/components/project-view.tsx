@@ -71,7 +71,7 @@ export function ProjectView() {
           />
         </div>
         <div className="flex flex-col gap-4 w-full">
-          <div className="w-full flex items-center justify-between">
+          <div className="w-full flex items-center justify-evenly">
             <button
               onClick={() => {
                 router.push(`/tour/${id}`);
@@ -79,11 +79,11 @@ export function ProjectView() {
               className="bg-[#174570] border border-white p-2 px-4 gap-2 flex flex-row items-center rounded-md "
             >
               <Layers color="white" size={20} />
-              <span className="text-white font-semibold">Tour 360</span>
+              <span className="text-white font-semibold">TOUR 360</span>
             </button>
             <button className="bg-[#174570] border border-white p-2 px-4 gap-2 flex flex-row items-center rounded-md ">
               <Printer color="white" size={20} />
-              <span className="text-white font-semibold">Imagens</span>
+              <span className="text-white font-semibold">IMAGENS</span>
             </button>
           </div>
           <button
@@ -94,7 +94,7 @@ export function ProjectView() {
           >
             <CircleDollarSign color="white" size={20} />
             <span className="text-white font-semibold">
-              Seja um investidor! Copie a chave pix aqui
+              SEJA UM INVESTIDOR! COPIE A CHAVE PIX AQUI
             </span>
           </button>
         </div>
