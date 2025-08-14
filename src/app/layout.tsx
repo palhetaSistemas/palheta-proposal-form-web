@@ -5,6 +5,7 @@ import TanstackProvider from "@/src/provider/providers.client";
 import "flatpickr/dist/themes/light.css";
 import moment from "moment";
 import "moment/locale/pt-br";
+import { CookiesProvider } from "next-client-cookies/server";
 import { Inter } from "next/font/google";
 import "simplebar-react/dist/simplebar.min.css";
 import { ProposalContextProvider } from "../context/Contex";
@@ -31,15 +32,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang={lang}>
-      <AuthProvider>
-        <TanstackProvider>
-          <Providers>
-            <DirectionProvider lang={lang}>
-              <ProposalContextProvider>{children}</ProposalContextProvider>
-            </DirectionProvider>
-          </Providers>
-        </TanstackProvider>
-      </AuthProvider>
+      <CookiesProvider>
+        <AuthProvider>
+          <TanstackProvider>
+            <Providers>
+              <DirectionProvider lang={lang}>
+                <ProposalContextProvider>{children}</ProposalContextProvider>
+              </DirectionProvider>
+            </Providers>
+          </TanstackProvider>
+        </AuthProvider>
+      </CookiesProvider>
     </html>
   );
 }

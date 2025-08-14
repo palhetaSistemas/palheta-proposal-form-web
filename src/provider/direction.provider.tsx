@@ -1,7 +1,7 @@
 "use client";
-import React from "react";
 import { useThemeStore } from "@/src/store";
 import { DirectionProvider as RadixDirectionProvider } from "@radix-ui/react-direction";
+import React from "react";
 
 const DirectionProvider = ({
   children,
@@ -15,7 +15,7 @@ const DirectionProvider = ({
   const direction = lang === "ar" || isRtl ? "rtl" : "ltr";
 
   return (
-    <div dir={direction}>
+    <div className="bg-[#123262]" dir={direction}>
       <RadixDirectionProvider dir={direction}>
         {children}
       </RadixDirectionProvider>
