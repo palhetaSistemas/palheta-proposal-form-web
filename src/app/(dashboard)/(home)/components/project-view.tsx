@@ -79,11 +79,11 @@ export function ProjectView() {
             {proposalData?.name}
           </span>
           <Image
-            src="/static1.png"
+            src={proposalData?.imageUrl ?? ""}
             alt="Imagem do projeto"
             width={500}
             height={350}
-            className="w-full h-max object-contain"
+            className="w-full max-h-40 h-max object-contain"
           />
         </div>
 
