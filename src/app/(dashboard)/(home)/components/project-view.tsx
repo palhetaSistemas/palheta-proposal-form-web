@@ -62,7 +62,7 @@ export function ProjectView() {
     <div className="bg-[#123262] gap-8 lg:bg-[#07234E] relative flex w-full lg:w-[500px] lg:mx-auto items-center flex-col h-screen min-h-screen max-h-screen">
       <div className="w-full relative h-40 rounded-b-3xl flex items-end p-4 justify-center overflow-hidden">
         <Image
-          src="/static1.png"
+          src={proposalData?.imageUrl ?? ""}
           alt="Capa do projeto"
           width={500}
           height={350}
@@ -78,23 +78,33 @@ export function ProjectView() {
           <span className="text-white font-semibold text-lg">
             {proposalData?.name}
           </span>
-          <Image
-            src={proposalData?.imageUrl ?? ""}
-            alt="Imagem do projeto"
-            width={500}
-            height={350}
-            className="w-full max-h-40 h-max object-contain"
-          />
+          {proposalData?.videos && proposalData.videos.length > 0 ? (
+            <iframe
+              width="100%"
+              height="315"
+              src={proposalData.videos[0].url}
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; web-share"
+            ></iframe>
+          ) : (
+            <iframe
+              width="100%"
+              height="315"
+              src="https://www.youtube.com/embed/MwBJLRX6VVM?si=VJn_pyotkC7Nx0AH"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen;gyroscope; web-share"
+            ></iframe>
+          )}
         </div>
 
         <div className="flex flex-col gap-4 w-full">
-          <div className="w-full flex items-center justify-evenly">
+          <div className="w-full grid grid-cols-2 gap-4 justify-evenly">
             <button
               onClick={() => {
                 const first360Id = proposalData?.image3ds?.[0]?.id;
                 if (first360Id) router.push(`/tour/${first360Id}`);
               }}
-              className="bg-[#174570] border border-white p-2 px-4 gap-2 flex flex-row items-center rounded-md disabled:opacity-50"
+              className="bg-[#174570] border w-full  border-white p-2 px-4 gap-2 flex flex-row items-center justify-center rounded-md disabled:opacity-50"
               disabled={!proposalData?.image3ds?.length}
             >
               <Layers color="white" size={20} />
@@ -105,23 +115,24 @@ export function ProjectView() {
               onClick={() =>
                 router.push(`/images?projectId=${proposalData?.id}`)
               }
-              className="bg-[#174570] border border-white p-2 px-4 gap-2 flex flex-row items-center rounded-md"
+              className="bg-[#174570] border w-full border-white p-2 px-4 gap-2 flex flex-row items-center justify-center rounded-md"
             >
               <Printer color="white" size={20} />
               <span className="text-white font-semibold">IMAGENS</span>
             </button>
           </div>
 
-          {/* Botão que abre a modal da chave PIX */}
-          <button
-            onClick={() => setShowPixModal(true)}
-            className="bg-[#174570] border border-white p-2 px-4 gap-2 flex flex-row items-center justify-center rounded-md "
-          >
-            <CircleDollarSign color="white" size={20} />
-            <span className="text-white font-semibold">
-              SEJA UM INVESTIDOR! VER CHAVE PIX
-            </span>
-          </button>
+          {proposalData?.churchPixKey && (
+            <button
+              onClick={() => setShowPixModal(true)}
+              className="bg-[#174570] border border-white p-2 px-4 gap-2 flex flex-row items-center justify-center rounded-md "
+            >
+              <CircleDollarSign color="white" size={20} />
+              <span className="text-white font-semibold">
+                SEJA UM INVESTIDOR! VER CHAVE PIX
+              </span>
+            </button>
+          )}
         </div>
 
         <div className="flex flex-col items-center justify-center self-center rounded-md px-6 py-2  ">

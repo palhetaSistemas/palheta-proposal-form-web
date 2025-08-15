@@ -37,6 +37,11 @@ export interface ProposalDataProps {
     projectId: string;
     url: string;
   }[];
+  videos: {
+    id: string;
+    projectId: string;
+    url: string;
+  }[];
   projectStatus: {
     color: string;
     id: string;
