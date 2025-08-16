@@ -1,5 +1,6 @@
 "use client";
 import { useProposalContext } from "@/src/context/Contex";
+import { toYouTubeEmbed } from "@/src/lib/toYouTubeEmbed";
 import {
   CircleDollarSign,
   Copy as CopyIcon,
@@ -58,6 +59,10 @@ export function ProjectView() {
     }
   };
 
+  const src = toYouTubeEmbed(proposalData?.videoUrl ?? "", {
+    debug: true,
+    noCookie: true,
+  });
   return (
     <div className="bg-[#123262] gap-8 lg:bg-[#07234E] relative flex w-full lg:w-[500px] lg:mx-auto items-center flex-col h-screen min-h-screen max-h-screen">
       <div className="w-full relative h-40 rounded-b-3xl flex items-end p-4 justify-center overflow-hidden">
@@ -78,11 +83,11 @@ export function ProjectView() {
           <span className="text-white font-semibold text-lg">
             {proposalData?.name}
           </span>
-          {proposalData?.videos && proposalData.videos.length > 0 ? (
+          {src ? (
             <iframe
               width="100%"
               height="315"
-              src={proposalData.videos[0].url}
+              src={src}
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; web-share"
             ></iframe>
