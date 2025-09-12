@@ -60,6 +60,7 @@ export interface ProposalDataProps {
 
 interface ProposalContextProps {
   proposalData: ProposalDataProps | undefined;
+  isGettingData: boolean;
 }
 
 const ProposalContext = createContext({} as ProposalContextProps);
@@ -73,22 +74,23 @@ export const ProposalContextProvider = ({
   const { GetAPI } = useApiContext();
   const params = useSearchParams();
   const projectId = params.get("projectId");
+  const [isGettingData, setIsGettingData] = useState(true);
+
   async function handleGetProject() {
     try {
       if (!projectId) {
-        console.log("projectId não encontrado");
-        return;
+        return setIsGettingData(false);
       }
       const response = await GetAPI(`project/details/${projectId}`, false);
-      console.log("resposta", response);
       if (response.status === 200) {
-        console.log("resposta correta", response);
         setProposalData(response.body.project);
+        setIsGettingData(false);
       } else {
-        console.log("resposta errada", response);
+        setIsGettingData(false);
       }
     } catch (error) {
-      console.log("error", error);
+      console.error(error);
+      setIsGettingData(false);
     }
   }
   useEffect(() => {
@@ -97,6 +99,7 @@ export const ProposalContextProvider = ({
 
   const value = {
     proposalData,
+    isGettingData,
   };
 
   return (
@@ -107,7 +110,7 @@ export const ProposalContextProvider = ({
 };
 
 export function useProposalContext() {
-  const { proposalData } = useContext(ProposalContext);
+  const { proposalData, isGettingData } = useContext(ProposalContext);
 
-  return { proposalData };
+  return { proposalData, isGettingData };
 }

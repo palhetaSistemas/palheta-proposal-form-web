@@ -7,6 +7,7 @@ import {
   Instagram,
   Layers,
   Printer,
+  VideoOff,
   X,
   Youtube,
 } from "lucide-react";
@@ -17,10 +18,9 @@ import toast from "react-hot-toast";
 
 export function ProjectView() {
   const router = useRouter();
-  const { proposalData } = useProposalContext();
+  const { proposalData, isGettingData } = useProposalContext();
 
   const [showPixModal, setShowPixModal] = useState(false);
-  const [showToast, setShowToast] = useState(false);
 
   const copyToClipboard = async (text: string) => {
     if (!text) return false;
@@ -59,23 +59,43 @@ export function ProjectView() {
     }
   };
 
-  const src = toYouTubeEmbed(proposalData?.videoUrl ?? "", {
-    debug: true,
-    noCookie: true,
-  });
+  function driveToPreview(url: string) {
+    if (url.includes("drive")) {
+      const m1 = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+      if (m1) return `https://drive.google.com/file/d/${m1[1]}/preview`;
+      // match ?id=<id>
+      const m2 = url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+      if (m2) return `https://drive.google.com/file/d/${m2[1]}/preview`;
+      return url; // fallback
+    } else if (url.includes("youtube")) {
+      const m = toYouTubeEmbed(proposalData?.videoUrl ?? "", {
+        debug: true,
+        noCookie: true,
+      });
+      if (m) return m;
+      return url;
+    }
+  }
+
   return (
     <div className="bg-[#123262] gap-8 lg:bg-[#07234E] relative flex w-full lg:w-[500px] lg:mx-auto items-center flex-col h-screen min-h-screen max-h-screen">
       <div className="w-full relative h-40 rounded-b-3xl flex items-end p-4 justify-center overflow-hidden">
-        <Image
-          src={proposalData?.imageUrl ?? ""}
-          alt="Capa do projeto"
-          width={500}
-          height={350}
-          className="w-full h-max absolute -top-10 left-0 object-cover"
-        />
-        <span className=" text-white bg-black/50 z-10 p-2 rounded-md font-semibold text-xl">
-          DETALHES DO PROJETO
-        </span>
+        {isGettingData ? (
+          <div className="w-full absolute -top-10 left-0 h-[350px] bg-zinc-400" />
+        ) : (
+          <>
+            <Image
+              src={proposalData?.imageUrl ?? ""}
+              alt="Capa do projeto"
+              width={500}
+              height={350}
+              className="w-full h-max absolute -top-10 left-0 object-cover"
+            />
+            <span className=" text-white bg-black/50 z-10 p-2 rounded-md font-semibold text-xl">
+              DETALHES DO PROJETO
+            </span>
+          </>
+        )}
       </div>
 
       <div className="items-center gap-8 justify-between w-full  h-full flex flex-col p-4">
@@ -83,22 +103,25 @@ export function ProjectView() {
           <span className="text-white font-semibold text-lg">
             {proposalData?.name}
           </span>
-          {src ? (
+          {isGettingData ? (
+            <div className="w-full h-[315px] bg-zinc-400 animate-pulse rounded-xl" />
+          ) : !isGettingData && proposalData?.videoUrl ? (
             <iframe
               width="100%"
               height="315"
-              src={src}
+              src={driveToPreview(proposalData?.videoUrl)}
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; web-share"
+              className="rounded-xl"
             ></iframe>
           ) : (
-            <iframe
-              width="100%"
-              height="315"
-              src="https://www.youtube.com/embed/MwBJLRX6VVM?si=VJn_pyotkC7Nx0AH"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen;gyroscope; web-share"
-            ></iframe>
+            !isGettingData &&
+            !proposalData?.videoUrl && (
+              <div className="w-full flex-col h-[315px] bg-zinc-400 flex rounded-xl items-center justify-center">
+                <VideoOff />
+                <span>VÍDEO NÃO DISPONÍVEL</span>
+              </div>
+            )
           )}
         </div>
 
@@ -109,7 +132,7 @@ export function ProjectView() {
                 const first360Id = proposalData?.image3ds?.[0]?.id;
                 if (first360Id) router.push(`/tour/${first360Id}`);
               }}
-              className="bg-[#174570] border w-full  border-white p-2 px-4 gap-2 flex flex-row items-center justify-center rounded-md disabled:opacity-50"
+              className="bg-[#174570] border w-full cursor-not-allowed border-white p-2 px-4 gap-2 flex flex-row items-center justify-center rounded-md disabled:opacity-50"
               disabled={!proposalData?.image3ds?.length}
             >
               <Layers color="white" size={20} />
@@ -120,7 +143,8 @@ export function ProjectView() {
               onClick={() =>
                 router.push(`/images?projectId=${proposalData?.id}`)
               }
-              className="bg-[#174570] border w-full border-white p-2 px-4 gap-2 flex flex-row items-center justify-center rounded-md"
+              className="bg-[#174570] border w-full cursor-not-allowed border-white p-2 px-4 gap-2 flex flex-row items-center justify-center rounded-md disabled:opacity-50"
+              disabled={!proposalData?.photos?.length}
             >
               <Printer color="white" size={20} />
               <span className="text-white font-semibold">IMAGENS</span>

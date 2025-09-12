@@ -71,14 +71,6 @@ export default function Images() {
     setCurrentIndex((prev) => (prev + 1) % photos.length);
   };
 
-  // Logs de debug (remova em produção)
-  if (typeof window !== "undefined") {
-    console.log("projectId:", projectId);
-    console.log("Total photos:", photos.length);
-    console.log("currentIndex:", currentIndex);
-    console.log("current:", current);
-  }
-
   // Estados de carregamento/sem dados
   if (!proposalData) {
     return (

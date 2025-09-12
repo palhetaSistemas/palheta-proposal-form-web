@@ -78,14 +78,6 @@ export default function Tour() {
   // Imagem atual (se existir)
   const current = images[currentIndex];
 
-  // Logs de debug (remova em produção)
-  if (typeof window !== "undefined") {
-    console.log("Current imageId:", imageId);
-    console.log("Current index:", currentIndex);
-    console.log("Images count:", images.length);
-    console.log("Current image:", current);
-  }
-
   // Estados de carregamento/sem dados
   if (!proposalData) {
     return (
